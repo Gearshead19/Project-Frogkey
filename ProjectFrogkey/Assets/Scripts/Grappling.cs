@@ -34,7 +34,8 @@ public class Grappling : MonoBehaviour
     void Uodate()
     {
         if (Input.GetKeyDown(grappleKey)) StartGrapple();
-        
+       
+
         if (grapplingCdTimer > 0)
         {
             grapplingCdTimer -= Time.deltaTime;
@@ -43,18 +44,20 @@ public class Grappling : MonoBehaviour
     private void LateUpdate()
     {
         if(grappling)
-        {
-            lr.SetPosition(0, mouthTip.position);
-        }
+          lr.SetPosition(0, mouthTip.position);
+        
     }
 
 
 
     private void StartGrapple()
     {
+        
         if (grapplingCdTimer > 0) return;
+        
 
         grappling = true;
+
 
         RaycastHit hit;
         if(Physics.Raycast(cam.position, cam.forward, out hit, maxGrappleDistance, whatIsGrappleable))
