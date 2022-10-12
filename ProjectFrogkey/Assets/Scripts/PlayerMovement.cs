@@ -26,6 +26,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Ground Check")]
     public float playerHeight;
     public LayerMask whatIsGround;
+    public float maxDistance = .5f;
+   // public int layerMask = .2f;
+
     bool grounded;
 
     [Header("Slope Handling")]
@@ -64,8 +67,8 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         //Ground Check
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, whatIsGround);
-
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * maxDistance + 0.2f, whatIsGround);
+        
 
         MyInput();
         SpeedControl();
@@ -101,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
             Jump();
 
             Invoke(nameof(ResetJump), jumpCooldown);
-           // Debug.Log("I jump");
+            // Debug.Log("I jump");
         }
 
 
