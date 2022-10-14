@@ -48,6 +48,8 @@ public class PlayerMovement : MonoBehaviour
 
     public MovementState state;
 
+    public float Fallfaster = 1;
+
     public enum MovementState
     {
         walking,
@@ -59,9 +61,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;    
         readyToJump = true;
+    }
+
+    private void FixUpdate()
+    {
+        GetComponent<Rigidbody>().AddForce(Physics.gravity * Fallfaster, ForceMode.Acceleration);
     }
 
     private void Update()
