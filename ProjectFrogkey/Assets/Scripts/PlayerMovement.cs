@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
         StateHandler();
 
         //This will Handle the Drag.
-        if (grounded)
+        if (grounded == true)
         {
             rb.drag = groundDrag;
         }
@@ -116,14 +116,14 @@ public class PlayerMovement : MonoBehaviour
     private void StateHandler()
     {
         //Mode - Sprinting
-        if (grounded && Input.GetKey(sprintKey))
+        if (grounded == true && Input.GetKey(sprintKey))
         {
             state = MovementState.sprinting;
             moveSpeed = sprintSpeed;
 
         }
         // Mode - Walking
-        else if (grounded)
+        else if (grounded == true)
         {
             state = MovementState.walking;
             moveSpeed = walkSpeed;
