@@ -20,6 +20,8 @@ public class EnemyNavMeshFollow : MonoBehaviour
     
     void Update()
     {
+        MoveToFroggyPlayer();
+
         if (FroggyPlayer != null && NavMeshAgent != null)
         {
             MoveToFroggyPlayer();
