@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     [Header("Ground Check")]
-    public float playerHeight;
+    float playerHeight = 1f;
     public LayerMask whatIsGround;
     public float maxDistance = .5f;
    // public int layerMask = .2f;
@@ -101,7 +101,7 @@ public class PlayerMovement : MonoBehaviour
         verticalInput = Input.GetAxisRaw("Vertical");
 
         //When to Jump
-        if (Input.GetKey(jumpKey) && readyToJump && grounded)
+        if (Input.GetKeyDown(jumpKey) && readyToJump && grounded)
         {
             readyToJump = false;
 
@@ -109,6 +109,7 @@ public class PlayerMovement : MonoBehaviour
 
             Invoke(nameof(ResetJump), jumpCooldown);
             // Debug.Log("I jump");
+            grounded = false;
         }
 
 
