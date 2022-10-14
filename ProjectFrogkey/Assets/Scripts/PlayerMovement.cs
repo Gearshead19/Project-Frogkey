@@ -60,14 +60,18 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true;
+        rb.freezeRotation = true;    
         readyToJump = true;
     }
 
     private void Update()
     {
         //Ground Check
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * maxDistance + 0.2f, whatIsGround);
+        Debug.Log(grounded);
+        //grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * maxDistance + 0.2f, whatIsGround);
+        grounded = Physics.CheckSphere(orientation.position, maxDistance, whatIsGround);
+        Debug.Log(grounded);
+        
         
 
         MyInput();
@@ -222,6 +226,17 @@ public class PlayerMovement : MonoBehaviour
     {
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
     }
+
+    /* not 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("EditorOnly"))
+        {
+            grounded = true;
+        }
+        
+    }
+    */
 
 
 
