@@ -7,7 +7,7 @@ public class EnemyNavMeshFollow : MonoBehaviour
 {
 
     private Transform FroggyPlayer;
-
+    
     public NavMeshAgent NavMeshAgent;
 
     //Build in unity AI Path finding

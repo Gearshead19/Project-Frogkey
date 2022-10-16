@@ -8,6 +8,9 @@ public class BasicEnemyLook : MonoBehaviour
     private float speed = 1.0f;
     private float Speeding = 4.0f;
 
+    public int PlayerWithInDistance = 5;
+    private bool PlaySpotted = false;
+
     void Start()
     {
         PlayerFroggy = GameObject.FindGameObjectWithTag("Player").transform;
@@ -15,9 +18,23 @@ public class BasicEnemyLook : MonoBehaviour
 
     void Update()
     {
-        if (PlayerFroggy != null)
-        {
+        SeekPlayerBasic();
+
+        if (PlayerFroggy != null && PlaySpotted == true)
+        {                      
             LookAtPlayer();
+            MoveForward();
+        }
+    }
+
+    void SeekPlayerBasic() //box radius
+    {
+        if(PlayerFroggy.transform.position.z > this.transform.position.z && 
+            PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance*2)) &&
+            PlayerFroggy.transform.position.x > (this.transform.position.x - PlayerWithInDistance) &&
+            PlayerFroggy.transform.position.x < (this.transform.position.x + PlayerWithInDistance))
+        {
+            PlaySpotted = true;
         }
     }
 
