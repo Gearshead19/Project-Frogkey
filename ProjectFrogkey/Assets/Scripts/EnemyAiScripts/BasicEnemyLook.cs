@@ -18,7 +18,8 @@ public class BasicEnemyLook : MonoBehaviour
 
     void Update()
     {
-        SeekPlayerBasic();
+        //SeekPlayerBasic();
+        SeekPlyaerDimaond();
 
         if (PlayerFroggy != null && PlaySpotted == true)
         {                      
@@ -33,6 +34,22 @@ public class BasicEnemyLook : MonoBehaviour
             PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance*2)) &&
             PlayerFroggy.transform.position.x > (this.transform.position.x - PlayerWithInDistance) &&
             PlayerFroggy.transform.position.x < (this.transform.position.x + PlayerWithInDistance))
+        {
+            PlaySpotted = true;
+        }
+    }
+
+    void SeekPlyaerDimaond() // Dimanond Detction Radius
+    {
+        if (PlayerFroggy.transform.position.z > this.transform.position.z &&
+            PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance * 2)) &&
+            PlayerFroggy.transform.position.x > (this.transform.position.x - PlayerWithInDistance) &&
+            PlayerFroggy.transform.position.x < (this.transform.position.x + PlayerWithInDistance) &&
+            ((PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * 1.5)) && PlayerFroggy.transform.position.x > (this.transform.position.x + (PlayerWithInDistance * .5))) != true) &&
+            ((PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * 1.5)) && PlayerFroggy.transform.position.x < (this.transform.position.x - (PlayerWithInDistance * .5))) != true) &&
+            ((PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.x < (this.transform.position.x - (PlayerWithInDistance * .5))) != true) &&
+            ((PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.x > (this.transform.position.x + (PlayerWithInDistance * .5))) != true)
+            )
         {
             PlaySpotted = true;
         }
