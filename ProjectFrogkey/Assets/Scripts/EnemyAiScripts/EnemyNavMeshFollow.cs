@@ -15,6 +15,9 @@ public class EnemyNavMeshFollow : MonoBehaviour
     private bool PlaySpotted = false;
     public GameObject[] Markering;
 
+    private bool EnemyStopFollow = false;
+    public int StopFollowDistance = 20;
+
     //Build in unity AI Path finding
 
     void Start()
@@ -41,6 +44,19 @@ public class EnemyNavMeshFollow : MonoBehaviour
     void MoveToFroggyPlayer()
     {
         NavMeshAgent.destination = FroggyPlayer.transform.position;
+    }
+
+    void StopFollowing()
+    {
+        if (PlayerFroggy.transform.position.z < (this.transform.position.z - StopFollowDistance) ||
+            PlayerFroggy.transform.position.z > (this.transform.position.z + StopFollowDistance) ||
+            PlayerFroggy.transform.position.x < (this.transform.position.x - StopFollowDistance) ||
+            PlayerFroggy.transform.position.x > (this.transform.position.x + StopFollowDistance))
+        {
+            EnemyStopFollow = true;
+            Debug.Log(EnemyStopFollow);
+        }
+
     }
 
     void SeekPlayerBasic() //box radius
