@@ -28,14 +28,11 @@ public class EnemyNavMeshFollow : MonoBehaviour
     
     void Update()
     {
-        if (PlaySpotted == true)
-        {
-            MoveToFroggyPlayer();
-        }
+        
         SeekPlyaerDimaondWithThird();
         //MarkerRadius();
 
-        if (FroggyPlayer != null && NavMeshAgent != null)
+        if (FroggyPlayer != null && NavMeshAgent != null && PlaySpotted == true)
         {
             MoveToFroggyPlayer();
         }
