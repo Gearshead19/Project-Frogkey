@@ -11,6 +11,9 @@ public class BasicEnemyLook : MonoBehaviour
     public int PlayerWithInDistance = 5;
     private bool PlaySpotted = false;
 
+    private bool EnemyStopFollow = false;
+    public int StopFollowDistance = 20;
+
     public GameObject[] Markering;
 
 
@@ -23,16 +26,30 @@ public class BasicEnemyLook : MonoBehaviour
     {
         MarkerRadius();
 
-
         //SeekPlayerBasic();
         //SeekPlyaerDimaond();
         SeekPlyaerDimaondWithThird();
 
-        if (PlayerFroggy != null && PlaySpotted == true)
+        if (PlayerFroggy != null && PlaySpotted == true && EnemyStopFollow == false)
         {                      
             LookAtPlayer();
             MoveForward();
+
+            StopFollowing();
         }
+    }
+
+    void StopFollowing()
+    {
+        if (PlayerFroggy.transform.position.z < (this.transform.position.z - StopFollowDistance) ||
+            PlayerFroggy.transform.position.z > (this.transform.position.z + StopFollowDistance) ||
+            PlayerFroggy.transform.position.x < (this.transform.position.x - StopFollowDistance) ||
+            PlayerFroggy.transform.position.x > (this.transform.position.x + StopFollowDistance))
+        {
+            EnemyStopFollow = true;
+            Debug.Log(EnemyStopFollow);
+        }
+        
     }
 
     void SeekPlayerBasic() //box radius
@@ -43,6 +60,7 @@ public class BasicEnemyLook : MonoBehaviour
             PlayerFroggy.transform.position.x < (this.transform.position.x + PlayerWithInDistance))
         {
             PlaySpotted = true;
+            EnemyStopFollow = false;
         }
     }
 
@@ -59,6 +77,7 @@ public class BasicEnemyLook : MonoBehaviour
             )
         {
             PlaySpotted = true;
+            EnemyStopFollow = false;
         }
     }
 
@@ -75,6 +94,7 @@ public class BasicEnemyLook : MonoBehaviour
             )
         {
             PlaySpotted = true;
+            EnemyStopFollow = false;
         }
 
 
@@ -93,6 +113,7 @@ public class BasicEnemyLook : MonoBehaviour
             )
         {
             PlaySpotted = true;
+            EnemyStopFollow = false;
         }
         
 

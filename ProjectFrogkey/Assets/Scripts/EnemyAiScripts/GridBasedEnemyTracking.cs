@@ -12,6 +12,9 @@ public class GridBasedEnemyTracking : MonoBehaviour
     private bool PlaySpotted = false;
     public GameObject[] Markering;
 
+    private bool EnemyStopFollow = false;
+    public int StopFollowDistance = 20;
+
     private float Speed = 2.0f;
     private float Xing;
     private float Zing;
@@ -81,6 +84,19 @@ public class GridBasedEnemyTracking : MonoBehaviour
             {
                 transform.Translate(0, 0, -Speed * Time.deltaTime);
             }
+        }
+
+    }
+
+    void StopFollowing()
+    {
+        if (PlayerFroggy.transform.position.z < (this.transform.position.z - StopFollowDistance) ||
+            PlayerFroggy.transform.position.z > (this.transform.position.z + StopFollowDistance) ||
+            PlayerFroggy.transform.position.x < (this.transform.position.x - StopFollowDistance) ||
+            PlayerFroggy.transform.position.x > (this.transform.position.x + StopFollowDistance))
+        {
+            EnemyStopFollow = true;
+            Debug.Log(EnemyStopFollow);
         }
 
     }
