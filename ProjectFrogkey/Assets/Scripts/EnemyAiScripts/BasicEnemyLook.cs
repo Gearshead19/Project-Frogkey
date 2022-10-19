@@ -11,6 +11,9 @@ public class BasicEnemyLook : MonoBehaviour
     public int PlayerWithInDistance = 5;
     private bool PlaySpotted = false;
 
+    public GameObject[] Markering;
+
+
     void Start()
     {
         PlayerFroggy = GameObject.FindGameObjectWithTag("Player").transform;
@@ -18,8 +21,12 @@ public class BasicEnemyLook : MonoBehaviour
 
     void Update()
     {
+        MarkerRadius();
+
+
         //SeekPlayerBasic();
-        SeekPlyaerDimaond();
+        //SeekPlyaerDimaond();
+        SeekPlyaerDimaondWithThird();
 
         if (PlayerFroggy != null && PlaySpotted == true)
         {                      
@@ -53,6 +60,50 @@ public class BasicEnemyLook : MonoBehaviour
         {
             PlaySpotted = true;
         }
+    }
+
+    void SeekPlyaerDimaondWithHalf() // Dimanond with one cormer a Half of the size Detction Radius
+    {
+        if (PlayerFroggy.transform.position.z > this.transform.position.z &&
+            PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance * 1.5)) &&
+            PlayerFroggy.transform.position.x > (this.transform.position.x - PlayerWithInDistance) &&
+            PlayerFroggy.transform.position.x < (this.transform.position.x + PlayerWithInDistance) &&
+            ((PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * 1.25)) && PlayerFroggy.transform.position.x > (this.transform.position.x + (PlayerWithInDistance * .5))) != true) &&
+            ((PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * 1.25)) && PlayerFroggy.transform.position.x < (this.transform.position.x - (PlayerWithInDistance * .5))) != true) &&
+            ((PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.x < (this.transform.position.x - (PlayerWithInDistance * .5))) != true) &&
+            ((PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.x > (this.transform.position.x + (PlayerWithInDistance * .5))) != true)
+            )
+        {
+            PlaySpotted = true;
+        }
+
+
+    }
+
+    void SeekPlyaerDimaondWithThird() // Dimanond with one cormer a third of the size Detction Radius
+    {
+        if (PlayerFroggy.transform.position.z > this.transform.position.z &&
+            PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance * 1.25)) &&
+            PlayerFroggy.transform.position.x > (this.transform.position.x - PlayerWithInDistance) &&
+            PlayerFroggy.transform.position.x < (this.transform.position.x + PlayerWithInDistance) &&
+            ((PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * 1.125)) && PlayerFroggy.transform.position.x > (this.transform.position.x + (PlayerWithInDistance * .5))) != true) &&
+            ((PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * 1.125)) && PlayerFroggy.transform.position.x < (this.transform.position.x - (PlayerWithInDistance * .5))) != true) &&
+            ((PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.x < (this.transform.position.x - (PlayerWithInDistance * .5))) != true) &&
+            ((PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.x > (this.transform.position.x + (PlayerWithInDistance * .5))) != true)
+            )
+        {
+            PlaySpotted = true;
+        }
+        
+
+    }
+
+    void MarkerRadius()
+    {
+        Markering[0].transform.position = new Vector3(this.transform.position.x + PlayerWithInDistance, this.transform.position.y, this.transform.position.z + PlayerWithInDistance);
+        Markering[1].transform.position = new Vector3(this.transform.position.x - PlayerWithInDistance, this.transform.position.y, this.transform.position.z + PlayerWithInDistance);
+        Markering[2].transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + ((PlayerWithInDistance / 4) + PlayerWithInDistance));
+        Markering[3].transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
     }
 
     void LookAtPlayer()
