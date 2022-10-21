@@ -76,10 +76,10 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         //Ground Check
-        //Debug.Log(grounded);
+        Debug.Log(grounded);
         //grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * maxDistance + 0.2f, whatIsGround);
         grounded = Physics.CheckSphere(orientation.position, maxDistance, whatIsGround);
-        //Debug.Log(grounded);
+        Debug.Log(grounded);
         
         
 

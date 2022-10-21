@@ -31,14 +31,13 @@ public class EnemyNavMeshFollow : MonoBehaviour
     
     void Update()
     {
-
-        //SeekPlyaerDimaondWithThird();
-        AreaDetectPlayerDimaond();
+        
+        SeekPlyaerDimaondWithThird();
         //MarkerRadius();
+
         if (FroggyPlayer != null && NavMeshAgent != null && PlaySpotted == true)
         {
             MoveToFroggyPlayer();
-            StopFollowing();
         }
     }
 
@@ -55,6 +54,7 @@ public class EnemyNavMeshFollow : MonoBehaviour
             PlayerFroggy.transform.position.x > (this.transform.position.x + StopFollowDistance))
         {
             EnemyStopFollow = true;
+            Debug.Log(EnemyStopFollow);
         }
 
     }
@@ -67,7 +67,6 @@ public class EnemyNavMeshFollow : MonoBehaviour
             PlayerFroggy.transform.position.z < (this.transform.position.z + PlayerWithInDistance))
         {
             PlaySpotted = true;
-            EnemyStopFollow = false;
         }
     }
 
@@ -84,7 +83,6 @@ public class EnemyNavMeshFollow : MonoBehaviour
            )
         {
             PlaySpotted = true;
-            EnemyStopFollow = false;
         }
     }
 
@@ -101,7 +99,6 @@ public class EnemyNavMeshFollow : MonoBehaviour
             )
         {
             PlaySpotted = true;
-            EnemyStopFollow = false;
         }
 
 
@@ -120,38 +117,9 @@ public class EnemyNavMeshFollow : MonoBehaviour
             )
         {
             PlaySpotted = true;
-            EnemyStopFollow = false;
         }
-        
-    }
 
-    void AreaDetectPlayerBox() //Box detect that surounds the enmey
-    {
-        if (PlayerFroggy.transform.position.x > this.transform.position.x - PlayerWithInDistance &&
-            PlayerFroggy.transform.position.x < (this.transform.position.x + PlayerWithInDistance) &&
-            PlayerFroggy.transform.position.z > (this.transform.position.z - PlayerWithInDistance) &&
-            PlayerFroggy.transform.position.z < (this.transform.position.z + PlayerWithInDistance))
-        {
-            PlaySpotted = true;
-            EnemyStopFollow = false;
-        }
-    }
 
-    void AreaDetectPlayerDimaond() //diamond detect that surounds the enmey
-    {
-        if (PlayerFroggy.transform.position.x > this.transform.position.x - PlayerWithInDistance &&
-            PlayerFroggy.transform.position.x < (this.transform.position.x + PlayerWithInDistance) &&
-            PlayerFroggy.transform.position.z > (this.transform.position.z - PlayerWithInDistance) &&
-            PlayerFroggy.transform.position.z < (this.transform.position.z + PlayerWithInDistance) &&
-            ((PlayerFroggy.transform.position.x > (this.transform.position.x - (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.x > (this.transform.position.x - (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.z < (this.transform.position.z - (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.x < (this.transform.position.x + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.z < (this.transform.position.z - (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.x < (this.transform.position.x + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * .5))) != true)
-            )
-        {
-            PlaySpotted = true;
-            EnemyStopFollow = false;
-        }
     }
 
     void MarkerRadius()
