@@ -24,7 +24,7 @@ public class BasicEnemyLook : MonoBehaviour
 
     void Update()
     {
-        MarkerRadius();
+       // MarkerRadius();
 
         //SeekPlayerBasic();
         //SeekPlyaerDimaond();
