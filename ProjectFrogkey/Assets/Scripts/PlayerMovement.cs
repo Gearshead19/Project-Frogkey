@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private GameObject projectile;
     [Header("Movement")]
     private float moveSpeed;
     public float walkSpeed;
@@ -119,7 +120,12 @@ public class PlayerMovement : MonoBehaviour
             // Debug.Log("I jump");
             grounded = false;
         }
-
+        // Spawn Projectile
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+           projectile = 
+                 GameObject.CreatePrimitive(PrimitiveType.Cube);
+        }
 
     }
     private void StateHandler()
