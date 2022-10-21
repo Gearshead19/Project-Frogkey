@@ -2,43 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicEnemyLook : MonoBehaviour
+public class DectionZplane : MonoBehaviour
 {
+
     public Transform PlayerFroggy;
-    private float speed = 1.0f;
-    private float Speeding = 4.0f;
-
-    public int PlayerWithInDistance = 5;
     private bool PlaySpotted = false;
-
     private bool EnemyStopFollow = false;
     public int StopFollowDistance = 20;
-
-    public GameObject[] Markering;
-
-
+    public int PlayerWithInDistance = 10;
+    // Start is called before the first frame update
     void Start()
     {
         PlayerFroggy = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
+    // Update is called once per frame
     void Update()
     {
-        //MarkerRadius();
-
-        //SeekPlayerBasic();
-        //SeekPlyaerDimaond();
-        //SeekPlyaerDimaondWithThird();
-        AreaDetectPlayerDimaond();
-
-
-        if (PlayerFroggy != null && PlaySpotted == true && EnemyStopFollow == false)
-        {                      
-            LookAtPlayer();
-            MoveForward();
-
-            StopFollowing();
-        }
+        
     }
 
     void StopFollowing()
@@ -50,13 +31,13 @@ public class BasicEnemyLook : MonoBehaviour
         {
             EnemyStopFollow = true;
         }
-        
+
     }
 
     void SeekPlayerBasic() //box radius
     {
-        if(PlayerFroggy.transform.position.z > this.transform.position.z && 
-            PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance*2)) &&
+        if (PlayerFroggy.transform.position.z > this.transform.position.z &&
+            PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance * 2)) &&
             PlayerFroggy.transform.position.x > (this.transform.position.x - PlayerWithInDistance) &&
             PlayerFroggy.transform.position.x < (this.transform.position.x + PlayerWithInDistance))
         {
@@ -116,7 +97,7 @@ public class BasicEnemyLook : MonoBehaviour
             PlaySpotted = true;
             EnemyStopFollow = false;
         }
-        
+
     }
 
     void AreaDetectPlayerBox() //Box detect that surounds the enmey
@@ -146,25 +127,5 @@ public class BasicEnemyLook : MonoBehaviour
             PlaySpotted = true;
             EnemyStopFollow = false;
         }
-    }
-
-    void MarkerRadius()
-    {
-        Markering[0].transform.position = new Vector3(this.transform.position.x + PlayerWithInDistance, this.transform.position.y, this.transform.position.z + PlayerWithInDistance);
-        Markering[1].transform.position = new Vector3(this.transform.position.x - PlayerWithInDistance, this.transform.position.y, this.transform.position.z + PlayerWithInDistance);
-        Markering[2].transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z + ((PlayerWithInDistance / 4) + PlayerWithInDistance));
-        Markering[3].transform.position = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-    }
-
-    void LookAtPlayer()
-    {
-        Vector3 director = PlayerFroggy.position - transform.position; //This finds the distance from were it is to were it want to go
-        Quaternion rotator = Quaternion.LookRotation(director); // This uses the director to look to the direction its going
-        transform.rotation = Quaternion.Lerp(transform.rotation, rotator, speed * Time.deltaTime); //this rotate it 
-    }
-
-    void MoveForward()
-    {
-        this.transform.Translate(0, 0, Speeding * Time.deltaTime);
     }
 }
