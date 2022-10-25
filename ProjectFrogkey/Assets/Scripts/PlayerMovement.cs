@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField]
     private GameObject projectile;
+    public Transform shotPosition;
+
+
     [Header("Movement")]
     private float moveSpeed;
     public float walkSpeed;
@@ -22,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode sprintKey = KeyCode.LeftShift;
+    public KeyCode shootKey = KeyCode.L;
 
 
     [Header("Ground Check")]
@@ -123,8 +128,13 @@ public class PlayerMovement : MonoBehaviour
         // Spawn Projectile
         if(Input.GetKeyDown(KeyCode.L))
         {
-           projectile = 
-                 GameObject.CreatePrimitive(PrimitiveType.Cube);
+           // Instantiate(projectile, transform.parent);
+            projectile.transform.position = shotPosition.position;
+
+            if (projectile == null)
+            {
+                Debug.Log("Can't fire anymore");
+            }
         }
 
     }
