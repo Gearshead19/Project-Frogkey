@@ -10,7 +10,7 @@ public class ProjectileBeingShoot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("OutOfBoundsDestroySelf", DelayOutOfBoundProtical);
+        //Invoke("OutOfBoundsDestroySelf", DelayOutOfBoundProtical);
     }
 
     // Update is called once per frame
