@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpCooldown;
     public float airMultiplier;
     bool readyToJump;
-     
+
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
     public KeyCode sprintKey = KeyCode.LeftShift;
@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     float playerHeight = 1f;
     public LayerMask whatIsGround;
     public float maxDistance = .5f;
-   // public int layerMask = .2f;
+    // public int layerMask = .2f;
 
     bool grounded;
 
@@ -41,6 +41,14 @@ public class PlayerMovement : MonoBehaviour
     public float maxSlopeAngle;
     private RaycastHit slopeHit;
     private bool exitingSlope;
+
+    [Header("Disarming Tongue")]
+    public float tongueDistance;
+    public float retractionSpeed;
+    public float grabDuration;
+    public float disarmCooldown;
+    public float tongueSpeed;
+    public bool Disarming;
 
 
     public Transform orientation;
@@ -129,13 +137,20 @@ public class PlayerMovement : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.L))
         {
            // Instantiate(projectile, transform.parent);
-            projectile.transform.position = shotPosition.position;
+            projectile.transform.position = shotPosition.transform.position;
 
             if (projectile == null)
             {
                 Debug.Log("Can't fire anymore");
             }
         }
+        // DISARM FUNCTION
+       // RaycastHit hit;
+
+        //if (Input.GetKeyDown(KeyCode.M) && hit.collider.CompareTag("Shield"))
+        //{
+        //    Destroy(CompareTag("Shield"));
+        //}
 
     }
     private void StateHandler()

@@ -708,7 +708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2993840804014663881, guid: 12d35855c91ee454e818e3154134f355, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2993840804014663883, guid: 12d35855c91ee454e818e3154134f355, type: 3}
       propertyPath: m_Name
@@ -716,7 +716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2993840804014663883, guid: 12d35855c91ee454e818e3154134f355, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2993840804014663886, guid: 12d35855c91ee454e818e3154134f355, type: 3}
@@ -5226,14 +5226,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 269424950}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4, y: 1, z: 0.0028409958}
+  m_LocalRotation: {x: -0.104008056, y: -0, z: -0, w: 0.9945765}
+  m_LocalPosition: {x: 0, y: 1.1854885, z: 7.9262233}
   m_LocalScale: {x: 0.18683, y: 0.18683, z: 0.18683}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 929891519}
-  m_Father: {fileID: 1757923171}
-  m_RootOrder: 3
+  - {fileID: 1091191746}
+  m_Father: {fileID: 283539788}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &269424952
 LineRenderer:
@@ -5547,6 +5548,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 171423291}
+  - {fileID: 269424951}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5600,7 +5602,7 @@ MonoBehaviour:
   player: {fileID: 1757923171}
   playerObj: {fileID: 393057427}
   rb: {fileID: 1757923173}
-  rotationSpeed: 0.005
+  rotationSpeed: 25.09
   combatLookAt: {fileID: 1884911197}
   thirdPersonCam: {fileID: 115004314}
   combatCam: {fileID: 219721541}
@@ -7534,7 +7536,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384405964}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.07423222, y: 0.447, z: -0.3431592}
+  m_LocalPosition: {x: -4, y: 0.447, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17382,7 +17384,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -511.25, y: 263.75}
+  m_AnchoredPosition: {x: -489.75, y: 337.75}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &785222408
@@ -17405,8 +17407,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Controls\nMovement: \nW-  Foreward\nA-Left \nS- Back \nD -Right\nShoot:
-    L Key\nJump: Spacebar\n"
+  m_text: "Movement: \nW-Forward\nA-Left \nS-Back \nD-Right\nShoot: L Key\nJump:
+    Spacebar\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -31697,12 +31699,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1091191745}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5, y: 1.52, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 6.530007, y: 2.7832787, z: 1.001761}
+  m_LocalScale: {x: 5.3524594, y: 5.3524594, z: 5.3524594}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1757923171}
-  m_RootOrder: 4
+  m_Father: {fileID: 269424951}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1102110008 stripped
 Transform:
@@ -40316,17 +40318,9 @@ MonoBehaviour:
   m_Mesh: {fileID: 240227973}
   m_VersionIndex: 3414
   m_IsSelectable: 1
-  m_SelectedFaces: 00000000
-  m_SelectedEdges:
-  - a: 0
-    b: 1
-  - a: 2
-    b: 0
-  - a: 1
-    b: 3
-  - a: 3
-    b: 2
-  m_SelectedVertices: 00000000010000000200000003000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!43 &1455620695
 Mesh:
   m_ObjectHideFlags: 0
@@ -46044,8 +46038,6 @@ Transform:
   - {fileID: 393057427}
   - {fileID: 384405965}
   - {fileID: 1651522539}
-  - {fileID: 269424951}
-  - {fileID: 1091191746}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46082,7 +46074,7 @@ MonoBehaviour:
   walkSpeed: 8
   sprintSpeed: 16
   groundDrag: 5
-  jumpForce: 3
+  jumpForce: 9.75
   jumpCooldown: 0.8
   airMultiplier: 0.1
   jumpKey: 32
@@ -55837,7 +55829,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh25042
+  m_Name: pb_Mesh25112
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -56113,7 +56105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2993840804014663883, guid: 12d35855c91ee454e818e3154134f355, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2993840804014663886, guid: 12d35855c91ee454e818e3154134f355, type: 3}
@@ -56193,7 +56185,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3293051946842644149, guid: 2b1c46924ec9328499db9b182949a270, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b1c46924ec9328499db9b182949a270, type: 3}
@@ -56272,7 +56264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3693603727094676325, guid: bf90e60a89125a144b69fc86d543b183, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf90e60a89125a144b69fc86d543b183, type: 3}
