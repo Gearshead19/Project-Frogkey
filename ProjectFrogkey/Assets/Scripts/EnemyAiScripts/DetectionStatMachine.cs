@@ -16,15 +16,12 @@ public class DetectionStatMachine : MonoBehaviour
     //DectionTypes Selected = DectionTypes.Diamond;
     //DectionTypes current_state; // = DectionTypes.Diamond;
 
-    private float speed = 1.0f;//
-    private float Speeding = 4.0f;//
-
     public Transform PlayerFroggy;
 
     public int PlayerWithInDistance = 5;
-    private bool PlaySpotted = false;
+    protected bool PlaySpotted = false;
 
-    private bool EnemyStopFollow = false;
+    protected bool EnemyStopFollow = false;
     public int StopFollowDistance = 20;
 
     void Start()
@@ -34,29 +31,11 @@ public class DetectionStatMachine : MonoBehaviour
 
     private void Update()
     {
-        StateCheck();
-        if (PlayerFroggy != null && PlaySpotted == true && EnemyStopFollow == false)
-        {
-            LookAtPlayer();
-            MoveForward();
-
-            StopFollowing();
-        }
-    }
-    
-    void LookAtPlayer()//
-    {
-        Vector3 director = PlayerFroggy.position - transform.position; //This finds the distance from were it is to were it want to go
-        Quaternion rotator = Quaternion.LookRotation(director); // This uses the director to look to the direction its going
-        transform.rotation = Quaternion.Lerp(transform.rotation, rotator, speed * Time.deltaTime); //this rotate it 
+        
     }
 
-    void MoveForward()//
-    {
-        this.transform.Translate(0, 0, Speeding * Time.deltaTime);
-    }
 
-    void StopFollowing()
+    protected void StopFollowing()
     {
         if (PlayerFroggy.transform.position.z < (this.transform.position.z - StopFollowDistance) ||
             PlayerFroggy.transform.position.z > (this.transform.position.z + StopFollowDistance) ||
@@ -69,7 +48,7 @@ public class DetectionStatMachine : MonoBehaviour
     }
     
 
-    void StateCheck()
+    protected void DetectionStateCheck()
     {
         if (DropSelect == DectionTypes.ZBoxFrontD)
         {
