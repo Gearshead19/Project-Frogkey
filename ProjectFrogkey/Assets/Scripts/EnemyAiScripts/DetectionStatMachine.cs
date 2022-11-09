@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum DectionTypes
 {
-    ZBoxFrontD, ZDimanondFrontD, ZDimaondHalfFrontD, ZDimaondThirdFrontD, AreaBoxD, AreaDimaondD, XBoxFrontD, XDimanondFrontD, XDimaondHalfFrontD, XDimaondThirdFrontD
+    ZBoxFrontDetection, ZDimanondFrontDetection, ZDimaondHalfFrontDetection, ZDimaondThirdFrontDetection, AreaBoxDetection, AreaDimaondDetection, XBoxFrontDetection, XDimanondFrontDetection, XDimaondHalfFrontDetection, XDimaondThirdFrontDetection
 }
 
 
@@ -50,43 +50,43 @@ public class DetectionStatMachine : MonoBehaviour
 
     protected void DetectionStateCheck()
     {
-        if (DropSelect == DectionTypes.ZBoxFrontD)
+        if (DropSelect == DectionTypes.ZBoxFrontDetection)
         {
             ZBoxFront();
         }
-        else if (DropSelect == DectionTypes.ZDimanondFrontD)
+        else if (DropSelect == DectionTypes.ZDimanondFrontDetection)
         {
             ZDimanondFront();
         }
-        else if (DropSelect == DectionTypes.ZDimaondHalfFrontD)
+        else if (DropSelect == DectionTypes.ZDimaondHalfFrontDetection)
         {
             ZDimaondHalfFront();
         }
-        else if (DropSelect == DectionTypes.ZDimaondThirdFrontD)
+        else if (DropSelect == DectionTypes.ZDimaondThirdFrontDetection)
         {
             ZDimaondThirdFront();
         }
-        else if (DropSelect == DectionTypes.AreaBoxD)
+        else if (DropSelect == DectionTypes.AreaBoxDetection)
         {
             AreaBox();
         }
-        else if (DropSelect == DectionTypes.AreaDimaondD)
+        else if (DropSelect == DectionTypes.AreaDimaondDetection)
         {
             AreaDimaond();
         }
-        else if (DropSelect == DectionTypes.XBoxFrontD)
+        else if (DropSelect == DectionTypes.XBoxFrontDetection)
         {
             XBoxFront();
         }
-        else if (DropSelect == DectionTypes.XDimanondFrontD)
+        else if (DropSelect == DectionTypes.XDimanondFrontDetection)
         {
             XDimanondFront();
         }
-        else if (DropSelect == DectionTypes.XDimaondHalfFrontD)
+        else if (DropSelect == DectionTypes.XDimaondHalfFrontDetection)
         {
             XDimaondHalfFront();
         }
-        else if (DropSelect == DectionTypes.XDimaondThirdFrontD)
+        else if (DropSelect == DectionTypes.XDimaondThirdFrontDetection)
         {
             XDimaondThirdFront();
         }
