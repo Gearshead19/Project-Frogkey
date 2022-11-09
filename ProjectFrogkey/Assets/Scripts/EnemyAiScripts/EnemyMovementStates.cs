@@ -17,8 +17,8 @@ public class EnemyMovementStates : DetectionStatMachine
 
     public GameObject FroggyPlayer;
 
-    private float speed = 1.0f;
-    private float Speeding = 4.0f;
+    public float speed = 1.0f;
+    //private float Speeding = 4.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -93,7 +93,7 @@ public class EnemyMovementStates : DetectionStatMachine
 
     void MoveForward()//
     {
-        this.transform.Translate(0, 0, Speeding * Time.deltaTime);
+        this.transform.Translate(0, 0, speed * Time.deltaTime);
     }
 
     void NavmeshMoveToPlayer()
