@@ -6869,7 +6869,7 @@ GameObject:
   - component: {fileID: 384405965}
   m_Layer: 9
   m_Name: Orientation
-  m_TagString: Player
+  m_TagString: FindPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47138,7 +47138,7 @@ GameObject:
   - component: {fileID: 1757923180}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53845,7 +53845,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2043229586}
-  m_LocalRotation: {x: 0.069525346, y: -0.000000017693006, z: 0.0000000012330963, w: 0.99758023}
+  m_LocalRotation: {x: 0.06952535, y: 0.00000001769302, z: -0.0000000012330974, w: 0.99758023}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -56783,6 +56783,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6266854975666169227, guid: 3c0f9da7f89bf06488fa1da03060699d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266854975666169265, guid: 3c0f9da7f89bf06488fa1da03060699d, type: 3}
+      propertyPath: DropSelect
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6266854975666169265, guid: 3c0f9da7f89bf06488fa1da03060699d, type: 3}
+      propertyPath: FollowList
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

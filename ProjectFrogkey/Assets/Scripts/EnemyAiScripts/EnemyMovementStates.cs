@@ -23,9 +23,9 @@ public class EnemyMovementStates : DetectionStatMachine
     // Start is called before the first frame update
     void Start()
     {
-        FroggyPlayer = GameObject.FindGameObjectWithTag("Player");
+        FroggyPlayer = GameObject.FindGameObjectWithTag("FindPlayer");
         NavMeshAgent = GetComponent<NavMeshAgent>();
-        PlayerFroggy = GameObject.FindGameObjectWithTag("Player").transform;
+        PlayerFroggy = GameObject.FindGameObjectWithTag("FindPlayer").transform;
     }
 
     // Update is called once per frame
