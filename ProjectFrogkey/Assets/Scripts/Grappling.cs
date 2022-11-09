@@ -31,7 +31,7 @@ public class Grappling : MonoBehaviour
         pm = GetComponent<PlayerMovement>();
     }
 
-    void Uodate()
+    private void Update()
     {
         if (Input.GetKeyDown(grappleKey)) StartGrapple();
        
@@ -60,6 +60,7 @@ public class Grappling : MonoBehaviour
 
 
         RaycastHit hit;
+
         if(Physics.Raycast(cam.position, cam.forward, out hit, maxGrappleDistance, whatIsGrappleable))
         {
             grapplePoint = hit.point;

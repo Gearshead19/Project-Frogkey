@@ -11,7 +11,7 @@ public class HitScript : MonoBehaviour
 
     public float DelayOVerHeadTSHit = 1.0f;
     public float DelayPunchJabHit = 0.1f;
-    private float DelayDisappear = 0.1f;
+    public float DelayDisappear = 0.1f;
 
     void Start()
     {
