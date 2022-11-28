@@ -10,7 +10,7 @@ public class TurretLookAt : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        FroggyPlayer = GameObject.FindGameObjectWithTag("Player").transform;
+        FroggyPlayer = GameObject.FindGameObjectWithTag("FindPlayer").transform;
     }
 
     // Update is called once per frame

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+//this script is not in use, 
 public class BasicEnemyLook : MonoBehaviour
 {
     public Transform PlayerFroggy;
@@ -19,7 +22,7 @@ public class BasicEnemyLook : MonoBehaviour
 
     void Start()
     {
-        PlayerFroggy = GameObject.FindGameObjectWithTag("Player").transform;
+        PlayerFroggy = GameObject.FindGameObjectWithTag("FindPlayer").transform;
     }
 
     void Update()

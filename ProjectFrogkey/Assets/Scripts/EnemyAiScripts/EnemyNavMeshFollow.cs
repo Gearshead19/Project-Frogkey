@@ -22,10 +22,10 @@ public class EnemyNavMeshFollow : MonoBehaviour
 
     void Start()
     {
-        FroggyPlayer = GameObject.FindGameObjectWithTag("Player").transform;
+        FroggyPlayer = GameObject.FindGameObjectWithTag("FindPlayer").transform;
         NavMeshAgent = GetComponent<NavMeshAgent>();
 
-        PlayerFroggy = GameObject.FindGameObjectWithTag("Player").transform;
+        PlayerFroggy = GameObject.FindGameObjectWithTag("FindPlayer").transform;
 
     }
     

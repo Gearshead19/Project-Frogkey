@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//this script is not in use, 
 public class GridBasedEnemyTracking : MonoBehaviour
 {
     public GameObject FroggyPlayer;
@@ -23,8 +25,8 @@ public class GridBasedEnemyTracking : MonoBehaviour
 
     void Start()
     {
-        FroggyPlayer = GameObject.FindGameObjectWithTag("Player");
-        PlayerFroggy = GameObject.FindGameObjectWithTag("Player").transform;
+        FroggyPlayer = GameObject.FindGameObjectWithTag("FindPlayer");
+        PlayerFroggy = GameObject.FindGameObjectWithTag("FindPlayer").transform;
     }
 
 

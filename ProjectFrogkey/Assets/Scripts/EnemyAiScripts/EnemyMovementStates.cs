@@ -18,9 +18,8 @@ public class EnemyMovementStates : DetectionStatMachine
     public GameObject FroggyPlayer;
 
     public float speed = 1.0f;
-    //private float Speeding = 4.0f;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         FroggyPlayer = GameObject.FindGameObjectWithTag("FindPlayer");
@@ -28,11 +27,11 @@ public class EnemyMovementStates : DetectionStatMachine
         PlayerFroggy = GameObject.FindGameObjectWithTag("FindPlayer").transform;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         DetectionStateCheck();//DetecionState
-        if (PlayerFroggy != null && PlaySpotted == true && EnemyStopFollow == false)
+        if (PlayerFroggy != null && PlaySpotted == true)
         {
             CheckMovementType();
 

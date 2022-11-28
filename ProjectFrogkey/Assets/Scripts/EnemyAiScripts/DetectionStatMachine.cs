@@ -12,21 +12,18 @@ public class DetectionStatMachine : MonoBehaviour
 {
 
     public DectionTypes DropSelect = new DectionTypes();
-
-    //DectionTypes Selected = DectionTypes.Diamond;
-    //DectionTypes current_state; // = DectionTypes.Diamond;
-
+    
     public Transform PlayerFroggy;
 
     public int PlayerWithInDistance = 5;
-    protected bool PlaySpotted = false;
+    protected bool PlaySpotted = false; //boolean keep track if the player was spoted in the dection and when player leaves the reactable dection area
 
-    protected bool EnemyStopFollow = false;
+    
     public int StopFollowDistance = 20;
 
     void Start()
     {
-        PlayerFroggy = GameObject.FindGameObjectWithTag("Player").transform;
+        PlayerFroggy = GameObject.FindGameObjectWithTag("FindPlayer").transform;
     }
 
     private void Update()
@@ -42,8 +39,8 @@ public class DetectionStatMachine : MonoBehaviour
             PlayerFroggy.transform.position.x < (this.transform.position.x - StopFollowDistance) ||
             PlayerFroggy.transform.position.x > (this.transform.position.x + StopFollowDistance))
         {
-            EnemyStopFollow = true;
-        }
+            PlaySpotted = false;
+}
 
     }
     
@@ -100,7 +97,6 @@ public class DetectionStatMachine : MonoBehaviour
             PlayerFroggy.transform.position.x < (this.transform.position.x + PlayerWithInDistance))
         {
             PlaySpotted = true;
-            EnemyStopFollow = false;
         }
     }
 
@@ -118,7 +114,6 @@ public class DetectionStatMachine : MonoBehaviour
             )
         {
             PlaySpotted = true;
-            EnemyStopFollow = false;
         }
     }
 
@@ -135,7 +130,6 @@ public class DetectionStatMachine : MonoBehaviour
             )
         {
             PlaySpotted = true;
-            EnemyStopFollow = false;
         }
 
 
@@ -154,7 +148,6 @@ public class DetectionStatMachine : MonoBehaviour
             )
         {
             PlaySpotted = true;
-            EnemyStopFollow = false;
         }
 
 
@@ -168,7 +161,6 @@ public class DetectionStatMachine : MonoBehaviour
             PlayerFroggy.transform.position.z < (this.transform.position.z + PlayerWithInDistance))
         {
             PlaySpotted = true;
-            EnemyStopFollow = false;
         }
     }
 
@@ -185,7 +177,6 @@ public class DetectionStatMachine : MonoBehaviour
             )
         {
             PlaySpotted = true;
-            EnemyStopFollow = false;
         }
     }
 
@@ -198,7 +189,6 @@ public class DetectionStatMachine : MonoBehaviour
             PlayerFroggy.transform.position.z < (this.transform.position.z + PlayerWithInDistance))
         {
             PlaySpotted = true;
-            EnemyStopFollow = false;
         }
     }
 
@@ -215,7 +205,6 @@ public class DetectionStatMachine : MonoBehaviour
            )
         {
             PlaySpotted = true;
-            EnemyStopFollow = false;
         }
     }
 
@@ -232,7 +221,6 @@ public class DetectionStatMachine : MonoBehaviour
             )
         {
             PlaySpotted = true;
-            EnemyStopFollow = false;
         }
 
 
@@ -251,7 +239,6 @@ public class DetectionStatMachine : MonoBehaviour
             )
         {
             PlaySpotted = true;
-            EnemyStopFollow = false;
         }
 
     }
