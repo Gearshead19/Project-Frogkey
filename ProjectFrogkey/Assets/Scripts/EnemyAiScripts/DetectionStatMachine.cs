@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum DectionTypes
 {
-    ZBoxFrontDetection, ZDimanondFrontDetection, ZDimaondHalfFrontDetection, ZDimaondThirdFrontDetection, AreaBoxDetection, AreaDimaondDetection, XBoxFrontDetection, XDimanondFrontDetection, XDimaondHalfFrontDetection, XDimaondThirdFrontDetection
+    ZBoxFrontDetection, ZDimanondFrontDetection, AreaBoxDetection, AreaDimaondDetection, XBoxFrontDetection, XDimanondFrontDetection,
 }
 
 
@@ -18,7 +18,8 @@ public class DetectionStatMachine : MonoBehaviour
     public int PlayerWithInDistance = 5;
     protected bool PlaySpotted = false; //boolean keep track if the player was spoted in the dection and when player leaves the reactable dection area
 
-    
+    public int length = 2; //distance away from player that caluates the dimensions the diamons
+
     public int StopFollowDistance = 20;
 
     void Start()
@@ -34,10 +35,13 @@ public class DetectionStatMachine : MonoBehaviour
 
     protected void StopFollowing()
     {
-        if (PlayerFroggy.transform.position.z < (this.transform.position.z - StopFollowDistance) ||
-            PlayerFroggy.transform.position.z > (this.transform.position.z + StopFollowDistance) ||
-            PlayerFroggy.transform.position.x < (this.transform.position.x - StopFollowDistance) ||
-            PlayerFroggy.transform.position.x > (this.transform.position.x + StopFollowDistance))
+        Vector3 Player = PlayerFroggy.transform.position;
+        Vector3 Enemy = this.transform.position;
+
+        if (Player.z < (Enemy.z - StopFollowDistance) ||
+            Player.z > (Enemy.z + StopFollowDistance) ||
+            Player.x < (Enemy.x - StopFollowDistance) ||
+            Player.x > (Enemy.x + StopFollowDistance))
         {
             PlaySpotted = false;
 }
@@ -55,14 +59,6 @@ public class DetectionStatMachine : MonoBehaviour
         {
             ZDimanondFront();
         }
-        else if (DropSelect == DectionTypes.ZDimaondHalfFrontDetection)
-        {
-            ZDimaondHalfFront();
-        }
-        else if (DropSelect == DectionTypes.ZDimaondThirdFrontDetection)
-        {
-            ZDimaondThirdFront();
-        }
         else if (DropSelect == DectionTypes.AreaBoxDetection)
         {
             AreaBox();
@@ -79,22 +75,19 @@ public class DetectionStatMachine : MonoBehaviour
         {
             XDimanondFront();
         }
-        else if (DropSelect == DectionTypes.XDimaondHalfFrontDetection)
-        {
-            XDimaondHalfFront();
-        }
-        else if (DropSelect == DectionTypes.XDimaondThirdFrontDetection)
-        {
-            XDimaondThirdFront();
-        }
+       
     }
 
     void ZBoxFront() //box radius
     {
-        if (PlayerFroggy.transform.position.z > this.transform.position.z &&
-            PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance * 2)) &&
-            PlayerFroggy.transform.position.x > (this.transform.position.x - PlayerWithInDistance) &&
-            PlayerFroggy.transform.position.x < (this.transform.position.x + PlayerWithInDistance))
+
+        Vector3 Player = PlayerFroggy.transform.position;
+        Vector3 Enemy = this.transform.position;
+
+        if (Player.z > Enemy.z &&
+            Player.z < (Enemy.z + (PlayerWithInDistance * length)) &&
+            Player.x > (Enemy.x - PlayerWithInDistance) &&
+            Player.x < (Enemy.x + PlayerWithInDistance))
         {
             PlaySpotted = true;
         }
@@ -103,62 +96,34 @@ public class DetectionStatMachine : MonoBehaviour
 
     void ZDimanondFront() // Dimanond Detction Radius
     {
-        if (PlayerFroggy.transform.position.z > this.transform.position.z &&
-            PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance * 2)) &&
-            PlayerFroggy.transform.position.x > (this.transform.position.x - PlayerWithInDistance) &&
-            PlayerFroggy.transform.position.x < (this.transform.position.x + PlayerWithInDistance) &&
-            ((PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * 1.5)) && PlayerFroggy.transform.position.x > (this.transform.position.x + (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * 1.5)) && PlayerFroggy.transform.position.x < (this.transform.position.x - (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.x < (this.transform.position.x - (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.x > (this.transform.position.x + (PlayerWithInDistance * .5))) != true)
+        Vector3 Player = PlayerFroggy.transform.position;
+        Vector3 Enemy = this.transform.position;
+        int miniLength = ((length - 1) / 2) + 1;
+
+        if (Player.z > Enemy.z &&
+            Player.z < (Enemy.z + (PlayerWithInDistance * length)) &&
+            Player.x > (Enemy.x - PlayerWithInDistance) &&
+            Player.x < (Enemy.x + PlayerWithInDistance) &&
+            ((Player.z > (Enemy.z + (PlayerWithInDistance * miniLength)) && Player.x > (Enemy.x + (PlayerWithInDistance * .5))) != true) &&
+            ((Player.z > (Enemy.z + (PlayerWithInDistance * miniLength)) && Player.x < (Enemy.x - (PlayerWithInDistance * .5))) != true) &&
+            ((Player.z < (Enemy.z + (PlayerWithInDistance * .5)) && Player.x < (Enemy.x - (PlayerWithInDistance * .5))) != true) &&
+            ((Player.z < (Enemy.z + (PlayerWithInDistance * .5)) && Player.x > (Enemy.x + (PlayerWithInDistance * .5))) != true)
             )
         {
             PlaySpotted = true;
         }
     }
 
-    void ZDimaondHalfFront() // Dimanond with one cormer a Half of the size Detction Radius
-    {
-        if (PlayerFroggy.transform.position.z > this.transform.position.z &&
-            PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance * 1.5)) &&
-            PlayerFroggy.transform.position.x > (this.transform.position.x - PlayerWithInDistance) &&
-            PlayerFroggy.transform.position.x < (this.transform.position.x + PlayerWithInDistance) &&
-            ((PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * 1.25)) && PlayerFroggy.transform.position.x > (this.transform.position.x + (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * 1.25)) && PlayerFroggy.transform.position.x < (this.transform.position.x - (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.x < (this.transform.position.x - (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.x > (this.transform.position.x + (PlayerWithInDistance * .5))) != true)
-            )
-        {
-            PlaySpotted = true;
-        }
-
-
-    }
-
-    void ZDimaondThirdFront() // Dimanond with one cormer a third of the size Detction Radius
-    {
-        if (PlayerFroggy.transform.position.z > this.transform.position.z &&
-            PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance * 1.25)) &&
-            PlayerFroggy.transform.position.x > (this.transform.position.x - PlayerWithInDistance) &&
-            PlayerFroggy.transform.position.x < (this.transform.position.x + PlayerWithInDistance) &&
-            ((PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * 1.125)) && PlayerFroggy.transform.position.x > (this.transform.position.x + (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * 1.125)) && PlayerFroggy.transform.position.x < (this.transform.position.x - (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.x < (this.transform.position.x - (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.z < (this.transform.position.z + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.x > (this.transform.position.x + (PlayerWithInDistance * .5))) != true)
-            )
-        {
-            PlaySpotted = true;
-        }
-
-
-    }
-
+    
     void AreaBox() //Box detect that surounds the enmey
     {
-        if (PlayerFroggy.transform.position.x > this.transform.position.x - PlayerWithInDistance &&
-            PlayerFroggy.transform.position.x < (this.transform.position.x + PlayerWithInDistance) &&
-            PlayerFroggy.transform.position.z > (this.transform.position.z - PlayerWithInDistance) &&
-            PlayerFroggy.transform.position.z < (this.transform.position.z + PlayerWithInDistance))
+        Vector3 Player = PlayerFroggy.transform.position;
+        Vector3 Enemy = this.transform.position;
+
+        if (Player.x > Enemy.x - PlayerWithInDistance &&
+            Player.x < (Enemy.x + PlayerWithInDistance) &&
+            Player.z > (Enemy.z - PlayerWithInDistance) &&
+            Player.z < (Enemy.z + PlayerWithInDistance))
         {
             PlaySpotted = true;
         }
@@ -166,15 +131,17 @@ public class DetectionStatMachine : MonoBehaviour
 
     void AreaDimaond() //diamond detect that surounds the enmey
     {
-        if (PlayerFroggy.transform.position.x > this.transform.position.x - PlayerWithInDistance &&
-            PlayerFroggy.transform.position.x < (this.transform.position.x + PlayerWithInDistance) &&
-            PlayerFroggy.transform.position.z > (this.transform.position.z - PlayerWithInDistance) &&
-            PlayerFroggy.transform.position.z < (this.transform.position.z + PlayerWithInDistance) &&
-            ((PlayerFroggy.transform.position.x > (this.transform.position.x - (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.x > (this.transform.position.x - (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.z < (this.transform.position.z - (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.x < (this.transform.position.x + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.z < (this.transform.position.z - (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.x < (this.transform.position.x + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * .5))) != true)
-            )
+        Vector3 Player = PlayerFroggy.transform.position;
+        Vector3 Enemy = this.transform.position;
+
+        if (Player.x > Enemy.x - PlayerWithInDistance &&
+            Player.x < (Enemy.x + PlayerWithInDistance) &&
+            Player.z > (Enemy.z - PlayerWithInDistance) &&
+            Player.z < (Enemy.z + PlayerWithInDistance) &&
+            ((Player.x > (Enemy.x - (PlayerWithInDistance * .5)) && Player.z > (Enemy.z + (PlayerWithInDistance * .5))) != true) &&
+            ((Player.x > (Enemy.x - (PlayerWithInDistance * .5)) && Player.z < (Enemy.z - (PlayerWithInDistance * .5))) != true) &&
+            ((Player.x < (Enemy.x + (PlayerWithInDistance * .5)) && Player.z < (Enemy.z - (PlayerWithInDistance * .5))) != true) &&
+            ((Player.x < (Enemy.x + (PlayerWithInDistance * .5)) && Player.z > (Enemy.z + (PlayerWithInDistance * .5))) != true))
         {
             PlaySpotted = true;
         }
@@ -183,10 +150,13 @@ public class DetectionStatMachine : MonoBehaviour
 
     void XBoxFront() //box radius
     {
-        if (PlayerFroggy.transform.position.x > this.transform.position.x &&
-            PlayerFroggy.transform.position.x < (this.transform.position.x + (PlayerWithInDistance * 2)) &&
-            PlayerFroggy.transform.position.z > (this.transform.position.z - PlayerWithInDistance) &&
-            PlayerFroggy.transform.position.z < (this.transform.position.z + PlayerWithInDistance))
+        Vector3 Player = PlayerFroggy.transform.position;
+        Vector3 Enemy = this.transform.position;
+
+        if (Player.x > Enemy.x &&
+            Player.x < (Enemy.x + (PlayerWithInDistance * 2)) &&
+            Player.z > (Enemy.z - PlayerWithInDistance) &&
+            Player.z < (Enemy.z + PlayerWithInDistance))
         {
             PlaySpotted = true;
         }
@@ -194,53 +164,23 @@ public class DetectionStatMachine : MonoBehaviour
 
     void XDimanondFront() // Dimanond Detction Radius
     {
-        if (PlayerFroggy.transform.position.x > this.transform.position.x &&
-           PlayerFroggy.transform.position.x < (this.transform.position.x + (PlayerWithInDistance * 2)) &&
-           PlayerFroggy.transform.position.z > (this.transform.position.z - PlayerWithInDistance) &&
-           PlayerFroggy.transform.position.z < (this.transform.position.z + PlayerWithInDistance) &&
-           ((PlayerFroggy.transform.position.x > (this.transform.position.x + (PlayerWithInDistance * 1.5)) && PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * .5))) != true) &&
-           ((PlayerFroggy.transform.position.x > (this.transform.position.x + (PlayerWithInDistance * 1.5)) && PlayerFroggy.transform.position.z < (this.transform.position.z - (PlayerWithInDistance * .5))) != true) &&
-           ((PlayerFroggy.transform.position.x < (this.transform.position.x + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.z < (this.transform.position.z - (PlayerWithInDistance * .5))) != true) &&
-           ((PlayerFroggy.transform.position.x < (this.transform.position.x + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * .5))) != true)
+        Vector3 Player = PlayerFroggy.transform.position;
+        Vector3 Enemy = this.transform.position;
+        int miniLength = ((length - 1) / 2) + 1;
+
+        if (Player.x > Enemy.x &&
+           Player.x < (Enemy.x + (PlayerWithInDistance * length)) &&
+           Player.z > (Enemy.z - PlayerWithInDistance) &&
+           Player.z < (Enemy.z + PlayerWithInDistance) &&
+           ((Player.x > (Enemy.x + (PlayerWithInDistance * miniLength)) && Player.z > (Enemy.z + (PlayerWithInDistance * .5))) != true) &&
+           ((Player.x > (Enemy.x + (PlayerWithInDistance * miniLength)) && Player.z < (Enemy.z - (PlayerWithInDistance * .5))) != true) &&
+           ((Player.x < (Enemy.x + (PlayerWithInDistance * .5)) && Player.z < (Enemy.z - (PlayerWithInDistance * .5))) != true) &&
+           ((Player.x < (Enemy.x + (PlayerWithInDistance * .5)) && Player.z > (Enemy.z + (PlayerWithInDistance * .5))) != true)
            )
         {
             PlaySpotted = true;
         }
     }
-
-    void XDimaondHalfFront() // Dimanond with one cormer a Half of the size Detction Radius
-    {
-        if (PlayerFroggy.transform.position.x > this.transform.position.x &&
-            PlayerFroggy.transform.position.x < (this.transform.position.x + (PlayerWithInDistance * 1.5)) &&
-            PlayerFroggy.transform.position.z > (this.transform.position.z - PlayerWithInDistance) &&
-            PlayerFroggy.transform.position.z < (this.transform.position.z + PlayerWithInDistance) &&
-            ((PlayerFroggy.transform.position.x > (this.transform.position.x + (PlayerWithInDistance * 1.25)) && PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.x > (this.transform.position.x + (PlayerWithInDistance * 1.25)) && PlayerFroggy.transform.position.z < (this.transform.position.z - (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.x < (this.transform.position.x + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.z < (this.transform.position.z - (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.x < (this.transform.position.x + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * .5))) != true)
-            )
-        {
-            PlaySpotted = true;
-        }
-
-
-    }
-
-    void XDimaondThirdFront() // Dimanond with one cormer a third of the size Detction Radius
-    {
-        if (PlayerFroggy.transform.position.x > this.transform.position.x &&
-            PlayerFroggy.transform.position.x < (this.transform.position.x + (PlayerWithInDistance * 1.25)) &&
-            PlayerFroggy.transform.position.z > (this.transform.position.z - PlayerWithInDistance) &&
-            PlayerFroggy.transform.position.z < (this.transform.position.z + PlayerWithInDistance) &&
-            ((PlayerFroggy.transform.position.x > (this.transform.position.x + (PlayerWithInDistance * 1.125)) && PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.x > (this.transform.position.x + (PlayerWithInDistance * 1.125)) && PlayerFroggy.transform.position.z < (this.transform.position.z - (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.x < (this.transform.position.x + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.z < (this.transform.position.z - (PlayerWithInDistance * .5))) != true) &&
-            ((PlayerFroggy.transform.position.x < (this.transform.position.x + (PlayerWithInDistance * .5)) && PlayerFroggy.transform.position.z > (this.transform.position.z + (PlayerWithInDistance * .5))) != true)
-            )
-        {
-            PlaySpotted = true;
-        }
-
-    }
+    
 
 }
