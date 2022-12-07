@@ -22,6 +22,8 @@ public class DetectionStatMachine : MonoBehaviour
 
     public int StopFollowDistance = 20;
 
+    public GameObject[] Markers;
+
     void Start()
     {
         PlayerFroggy = GameObject.FindGameObjectWithTag("FindPlayer").transform;
@@ -48,9 +50,40 @@ public class DetectionStatMachine : MonoBehaviour
 
     }
     
+    protected void StartSetupMarkers()
+    {
+        Vector3 Player = PlayerFroggy.transform.position;
+        Vector3 Enemy = this.transform.position;
+
+        if (DropSelect == DectionTypes.ZBoxFrontDetection)
+        {
+            BoxMarker((Enemy.x - PlayerWithInDistance), (Enemy.x + PlayerWithInDistance),Enemy.z, (Enemy.z + (PlayerWithInDistance * length)) );
+        }
+        else if (DropSelect == DectionTypes.ZDimanondFrontDetection)
+        {
+
+        }
+        else if (DropSelect == DectionTypes.AreaBoxDetection)
+        {
+            BoxMarker(Enemy.x, (Enemy.x + PlayerWithInDistance), (Enemy.z - PlayerWithInDistance), (Enemy.z + PlayerWithInDistance));
+        }
+        else if (DropSelect == DectionTypes.AreaDimaondDetection)
+        {
+
+        }
+        else if (DropSelect == DectionTypes.XBoxFrontDetection)
+        {
+            BoxMarker(Enemy.x, (Enemy.x + (PlayerWithInDistance * 2)), (Enemy.z - PlayerWithInDistance), (Enemy.z + PlayerWithInDistance));
+        }
+        else if (DropSelect == DectionTypes.XDimanondFrontDetection)
+        {
+
+        }
+    }
 
     protected void DetectionStateCheck()
     {
+
         if (DropSelect == DectionTypes.ZBoxFrontDetection)
         {
             ZBoxFront();
@@ -182,5 +215,35 @@ public class DetectionStatMachine : MonoBehaviour
         }
     }
     
+    void BoxMarker(float PosX, float NegX, float PosZ, float NegZ)
+    {
 
+            if (Markers[0] != null)
+            {
+                Markers[0].transform.position = new Vector3(Markers[0].transform.position.x + PosX, Markers[0].transform.position.y, Markers[0].transform.position.z);
+            }
+
+            if (Markers[1] != null)
+            {
+                Markers[1].transform.position = new Vector3(Markers[1].transform.position.x + NegX, Markers[1].transform.position.y, Markers[1].transform.position.z);
+            }
+
+            if (Markers[2] != null)
+            {
+                Markers[2].transform.position = new Vector3(Markers[2].transform.position.x, Markers[2].transform.position.y, Markers[2].transform.position.z + PosZ);
+            }
+
+            if (Markers[3] != null)
+            {
+                Markers[3].transform.position = new Vector3(Markers[3].transform.position.x, Markers[3].transform.position.y, Markers[3].transform.position.z + NegX);
+            }
+        
+        
+        
+    }
+
+    void DimanondMarker()
+    {
+
+    }
 }

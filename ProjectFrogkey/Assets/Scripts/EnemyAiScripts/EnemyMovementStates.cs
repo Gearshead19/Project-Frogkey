@@ -25,13 +25,20 @@ public class EnemyMovementStates : DetectionStatMachine
         FroggyPlayer = GameObject.FindGameObjectWithTag("FindPlayer");
         NavMeshAgent = GetComponent<NavMeshAgent>();
         PlayerFroggy = GameObject.FindGameObjectWithTag("FindPlayer").transform;
+
+
+        StartSetupMarkers();//this is only for testing purpose to see the radius of the detection range
     }
 
 
     void Update()
     {
-        DetectionStateCheck();//DetecionState
-        if (PlayerFroggy != null && PlaySpotted == true)
+
+        if (PlayerFroggy != null && PlaySpotted == false)
+        {
+            DetectionStateCheck();//DetecionState
+        }
+        else if (PlayerFroggy != null && PlaySpotted == true)
         {
             CheckMovementType();
 
