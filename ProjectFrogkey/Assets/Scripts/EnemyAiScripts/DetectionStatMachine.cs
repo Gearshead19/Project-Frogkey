@@ -22,7 +22,8 @@ public class DetectionStatMachine : MonoBehaviour
 
     public int StopFollowDistance = 20;
 
-    public GameObject[] Markers;
+    public GameObject MarkerHolder;
+    public GameObject[] Markers= new GameObject[8] { null, null, null, null, null, null, null, null};
 
     void Start()
     {
@@ -52,8 +53,19 @@ public class DetectionStatMachine : MonoBehaviour
     
     protected void StartSetupMarkers()
     {
+        int Counter = 0;
         Vector3 Player = PlayerFroggy.transform.position;
         Vector3 Enemy = this.transform.position;
+
+        foreach (GameObject markPoint in Markers)
+        {
+            if (MarkerHolder != null)
+            {
+                Markers[Counter] = Instantiate(MarkerHolder, this.transform.position, this.transform.rotation);
+                Markers[Counter].transform.parent = this.gameObject.transform;
+                Counter = Counter + 1;
+            }
+        }
 
         if (DropSelect == DectionTypes.ZBoxFrontDetection)
         {
@@ -73,7 +85,7 @@ public class DetectionStatMachine : MonoBehaviour
         }
         else if (DropSelect == DectionTypes.XBoxFrontDetection)
         {
-            BoxMarker(Enemy.x, (Enemy.x + (PlayerWithInDistance * 2)), (Enemy.z - PlayerWithInDistance), (Enemy.z + PlayerWithInDistance));
+            BoxMarker(0, (PlayerWithInDistance * 2), -PlayerWithInDistance, PlayerWithInDistance);
         }
         else if (DropSelect == DectionTypes.XDimanondFrontDetection)
         {
@@ -242,8 +254,22 @@ public class DetectionStatMachine : MonoBehaviour
         
     }
 
-    void DimanondMarker()
+    void DimanondMarker(float one, float two, float three, float four) //Called for the second set for the diagonals
     {
+        if (Markers[4] != null)
+        {
+        }
 
+        if (Markers[5] != null)
+        {
+        }
+
+        if (Markers[6] != null)
+        {
+        }
+
+        if (Markers[7] != null)
+        {
+        }
     }
 }
