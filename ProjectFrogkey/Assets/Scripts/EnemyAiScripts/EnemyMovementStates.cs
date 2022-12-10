@@ -19,6 +19,8 @@ public class EnemyMovementStates : DetectionStatMachine
 
     public float speed = 1.0f;
 
+    public int shoot_range = 10;
+    public bool shooter = false;
 
     void Start()
     {
@@ -37,6 +39,10 @@ public class EnemyMovementStates : DetectionStatMachine
         if (PlayerFroggy != null && PlaySpotted == false)
         {
             DetectionStateCheck();//DetecionState
+        }
+        else if (shooter == true && Vector3.Distance(PlayerFroggy.position, this.transform.position) < (shoot_range - 2))
+        {
+            ShooterStop();
         }
         else if (PlayerFroggy != null && PlaySpotted == true)
         {
@@ -88,6 +94,12 @@ public class EnemyMovementStates : DetectionStatMachine
         {
             transform.Translate(0, 0, speed * Time.deltaTime);
         }
+    }
+
+    private void ShooterStop()
+    {
+            this.transform.Translate(0, 0, 0);
+        
     }
 
     void LookAtPlayer()//
