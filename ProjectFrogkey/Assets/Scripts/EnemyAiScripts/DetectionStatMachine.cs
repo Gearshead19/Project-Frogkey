@@ -69,7 +69,7 @@ public class DetectionStatMachine : MonoBehaviour
 
         if (DropSelect == DectionTypes.ZBoxFrontDetection)
         {
-            BoxMarker((Enemy.x - PlayerWithInDistance), (Enemy.x + PlayerWithInDistance),Enemy.z, (Enemy.z + (PlayerWithInDistance * length)) );
+            BoxMarker( -PlayerWithInDistance, PlayerWithInDistance,0, (PlayerWithInDistance * length) );
         }
         else if (DropSelect == DectionTypes.ZDimanondFrontDetection)
         {
@@ -77,7 +77,7 @@ public class DetectionStatMachine : MonoBehaviour
         }
         else if (DropSelect == DectionTypes.AreaBoxDetection)
         {
-            BoxMarker(Enemy.x, (Enemy.x + PlayerWithInDistance), (Enemy.z - PlayerWithInDistance), (Enemy.z + PlayerWithInDistance));
+            BoxMarker(-PlayerWithInDistance, PlayerWithInDistance, -PlayerWithInDistance, PlayerWithInDistance);
         }
         else if (DropSelect == DectionTypes.AreaDimaondDetection)
         {
@@ -85,7 +85,7 @@ public class DetectionStatMachine : MonoBehaviour
         }
         else if (DropSelect == DectionTypes.XBoxFrontDetection)
         {
-            BoxMarker(0, (PlayerWithInDistance * 2), -PlayerWithInDistance, PlayerWithInDistance);
+            BoxMarker(0, (PlayerWithInDistance * length), - PlayerWithInDistance, PlayerWithInDistance);
         }
         else if (DropSelect == DectionTypes.XDimanondFrontDetection)
         {
@@ -247,7 +247,7 @@ public class DetectionStatMachine : MonoBehaviour
 
             if (Markers[3] != null)
             {
-                Markers[3].transform.position = new Vector3(Markers[3].transform.position.x, Markers[3].transform.position.y, Markers[3].transform.position.z + NegX);
+                Markers[3].transform.position = new Vector3(Markers[3].transform.position.x, Markers[3].transform.position.y, Markers[3].transform.position.z + NegZ);
             }
         
         
