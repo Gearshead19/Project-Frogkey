@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour
     public int HealthPoints = 100;
     public int telescope_hit = 10;
     public int punch_jab = 1;
+    public bool set_to_disable = false;
 
     void Update()
     {
@@ -17,7 +18,14 @@ public class EnemyHealth : MonoBehaviour
     {
         if (this.HealthPoints < 0)
         {
-            Destroy(this.gameObject);
+            if (set_to_disable == true)
+            {
+                this.gameObject.SetActive(false);
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
         }
     }
 
