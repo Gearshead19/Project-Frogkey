@@ -31,6 +31,11 @@ public class OpenDoorClearRoom : MonoBehaviour
             Open_left_door();
             Open_right_door();
         }
+
+        if (RightDoor.transform.localRotation.y > 90)
+        {
+            StopOpening = true;
+        }
     }
 
     void See_if_enimes_gone()
@@ -56,11 +61,8 @@ public class OpenDoorClearRoom : MonoBehaviour
     {
         if(LeftDoor != null)
         {
-            LeftDoor.transform.Rotate(0, (speedRotate * Time.deltaTime), 0);
-            if (LeftDoor.transform.localRotation.y > 40)
-            {
-                StopOpening = true;
-            }
+            LeftDoor.transform.Rotate(0, -(speedRotate * Time.deltaTime), 0);
+            
         }
     }
 
@@ -69,10 +71,7 @@ public class OpenDoorClearRoom : MonoBehaviour
         if (RightDoor != null)
         {
             RightDoor.transform.Rotate(0, (speedRotate * Time.deltaTime), 0);
-            if (RightDoor.transform.localRotation.y > 40)
-            {
-                StopOpening = true;
-            }
+            
         }
     }
 }
