@@ -28,7 +28,7 @@ public class EnemyMovementStates : DetectionStatMachine
         NavMeshAgent = GetComponent<NavMeshAgent>();
         PlayerFroggy = GameObject.FindGameObjectWithTag("FindPlayer").transform;
 
-        if()
+        if(8 = 8)
         {
 
         }
