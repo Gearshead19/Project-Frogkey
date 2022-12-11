@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class Disabled_Objects_Trigger : MonoBehaviour
 {
@@ -10,6 +10,11 @@ public class Disabled_Objects_Trigger : MonoBehaviour
     public string ObjectsTagName = "to find them";
     public GameObject[] TagedEnimes;
     private bool check_if_all_gone = false;
+
+    [Tooltip("If everything in objects to check are either all active or all inactive, " +
+     "these events will be triggered")]
+    [SerializeField]
+    private UnityEvent onAllObjectsInactive;
 
     // Start is called before the first frame update
     void Start()

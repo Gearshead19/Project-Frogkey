@@ -25,6 +25,14 @@ public class ActivatedObjectTrigger : MonoBehaviour
     private bool hasOnAllObjectsActiveTriggered = false;
     private bool hasOnAllObjectsInactiveTriggered = false;
 
+    public string objectsTaggedBeingChecked;
+
+
+
+    private void Start()
+    {
+        objectsToCheck = GameObject.FindGameObjectsWithTag(objectsTaggedBeingChecked);
+    }
 
     private void FixedUpdate()
     {
