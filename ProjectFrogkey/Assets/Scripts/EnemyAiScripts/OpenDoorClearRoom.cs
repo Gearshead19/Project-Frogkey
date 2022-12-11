@@ -39,10 +39,10 @@ public class OpenDoorClearRoom : MonoBehaviour
 
     private void FixedUpdate()
     {
-        See_if_enimes_gone();
+        See_if_enemies_gone();
     }
 
-    void See_if_enimes_gone()
+    void See_if_enemies_gone()
     {
         bool Check_in_Scene = false;
 
