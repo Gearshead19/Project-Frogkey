@@ -31,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
         if(other.gameObject.CompareTag("Enemy"))
         {
             Debug.Log("I got harassed");
-            Destroy(other.gameObject);
+            //Destroy(other.gameObject);
             this.HealthPoints = this.HealthPoints - 1;
         }
     }

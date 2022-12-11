@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6266854975666169271}
   - component: {fileID: 6266854975666169268}
   - component: {fileID: 6266854975666169265}
+  - component: {fileID: 7110125530490013367}
   - component: {fileID: 6266854975666169226}
   m_Layer: 0
   m_Name: DetectionStateMachineTesting
@@ -115,10 +116,37 @@ MonoBehaviour:
   DropSelect: 0
   PlayerFroggy: {fileID: 0}
   PlayerWithInDistance: 5
+  length: 2
   StopFollowDistance: 20
+  MarkerHolder: {fileID: 0}
+  Markers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   FollowList: 0
   NavMeshAgent: {fileID: 0}
   FroggyPlayer: {fileID: 0}
+  speed: 1
+  shoot_range: 10
+  shooter: 0
+--- !u!114 &7110125530490013367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6266854975666169224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 212066b66d392694ba8438ff584b2b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthPoints: 30
 --- !u!54 &6266854975666169226
 Rigidbody:
   m_ObjectHideFlags: 0

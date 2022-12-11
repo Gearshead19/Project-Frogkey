@@ -5,7 +5,9 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int HealthPoints = 100;
-
+    public int telescope_hit = 10;
+    public int punch_jab = 1;
+    public bool set_to_disable = false;
 
     void Update()
     {
@@ -16,7 +18,15 @@ public class EnemyHealth : MonoBehaviour
     {
         if (this.HealthPoints < 0)
         {
-            Destroy(this.gameObject);
+            if (set_to_disable == true)
+            {
+                this.gameObject.SetActive(false);
+            }
+            else if (set_to_disable == false)
+            {
+                Destroy(this.gameObject);
+                
+            }
         }
     }
 
@@ -25,16 +35,16 @@ public class EnemyHealth : MonoBehaviour
         if (other.gameObject.CompareTag("overheadtelescope"))
         {
             Debug.Log("got hit by teloscop");
-            Destroy(other.gameObject);
-            this.HealthPoints = this.HealthPoints - 10;
+            this.HealthPoints = this.HealthPoints - telescope_hit;
 
         }
 
         if (other.gameObject.CompareTag("punchjab"))
         {
             Debug.Log("got hit by fist");
-            Destroy(other.gameObject);
-            this.HealthPoints = this.HealthPoints - 1;
+            this.HealthPoints = this.HealthPoints - punch_jab;
         }
+
+        
     }
 }
