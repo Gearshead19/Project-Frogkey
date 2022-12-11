@@ -26,7 +26,6 @@ public class EnemyHealth : MonoBehaviour
         if (other.gameObject.CompareTag("overheadtelescope"))
         {
             Debug.Log("got hit by teloscop");
-            Destroy(other.gameObject);
             this.HealthPoints = this.HealthPoints - telescope_hit;
 
         }
@@ -34,7 +33,6 @@ public class EnemyHealth : MonoBehaviour
         if (other.gameObject.CompareTag("punchjab"))
         {
             Debug.Log("got hit by fist");
-            Destroy(other.gameObject);
             this.HealthPoints = this.HealthPoints - punch_jab;
         }
 
