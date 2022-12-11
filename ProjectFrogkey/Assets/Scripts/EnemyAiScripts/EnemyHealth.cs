@@ -36,5 +36,7 @@ public class EnemyHealth : MonoBehaviour
             Destroy(other.gameObject);
             this.HealthPoints = this.HealthPoints - 1;
         }
+
+        
     }
 }
