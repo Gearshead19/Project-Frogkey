@@ -24,18 +24,22 @@ public class OpenDoorClearRoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        See_if_enimes_gone();
-
+        
         if (DoorOpen == true && StopOpening == false)
         {
             Open_left_door();
             Open_right_door();
         }
 
-        if (RightDoor.transform.localRotation.y > 90)
+        if (RightDoor.transform.localRotation.y > 0)
         {
             StopOpening = true;
         }
+    }
+
+    private void FixedUpdate()
+    {
+        See_if_enimes_gone();
     }
 
     void See_if_enimes_gone()
@@ -44,13 +48,13 @@ public class OpenDoorClearRoom : MonoBehaviour
 
         foreach (GameObject notwanted in TagedEnimes)
         {
-            if (notwanted != null || notwanted.activeSelf != false)
+            if (notwanted != null )//|| notwanted.activeSelf == false)
             {
                 Check_in_Scene = true;
             }
         }
 
-        if (Check_in_Scene != true)
+        if (Check_in_Scene == false)
         {
             DoorOpen = true;
         }
