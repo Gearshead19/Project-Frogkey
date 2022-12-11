@@ -25,6 +25,7 @@ public class EnemyHealth : MonoBehaviour
             else if (set_to_disable == false)
             {
                 Destroy(this.gameObject);
+                
             }
         }
     }
