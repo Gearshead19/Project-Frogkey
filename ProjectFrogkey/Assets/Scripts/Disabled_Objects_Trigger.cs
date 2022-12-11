@@ -22,7 +22,7 @@ public class Disabled_Objects_Trigger : MonoBehaviour
     {
         if (check_if_all_gone == true)
         {
-
+            //JOse specail script happnes here
         }
     }
 
