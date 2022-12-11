@@ -22,7 +22,7 @@ public class EnemyHealth : MonoBehaviour
             {
                 this.gameObject.SetActive(false);
             }
-            else
+            else if (set_to_disable == false)
             {
                 Destroy(this.gameObject);
             }
