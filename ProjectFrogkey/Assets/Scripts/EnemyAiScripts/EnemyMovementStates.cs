@@ -28,6 +28,10 @@ public class EnemyMovementStates : DetectionStatMachine
         NavMeshAgent = GetComponent<NavMeshAgent>();
         PlayerFroggy = GameObject.FindGameObjectWithTag("FindPlayer").transform;
 
+        if()
+        {
+
+        }
 
         StartSetupMarkers();//this is only for testing purpose to see the radius of the detection range
     }

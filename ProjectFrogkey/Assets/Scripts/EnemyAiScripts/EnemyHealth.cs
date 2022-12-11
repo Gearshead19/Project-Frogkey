@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int HealthPoints = 100;
-
+    public int telescope_hit = 10;
+    public int punch_jab = 1;
 
     void Update()
     {
@@ -26,7 +27,7 @@ public class EnemyHealth : MonoBehaviour
         {
             Debug.Log("got hit by teloscop");
             Destroy(other.gameObject);
-            this.HealthPoints = this.HealthPoints - 10;
+            this.HealthPoints = this.HealthPoints - telescope_hit;
 
         }
 
@@ -34,7 +35,7 @@ public class EnemyHealth : MonoBehaviour
         {
             Debug.Log("got hit by fist");
             Destroy(other.gameObject);
-            this.HealthPoints = this.HealthPoints - 1;
+            this.HealthPoints = this.HealthPoints - punch_jab;
         }
 
         
