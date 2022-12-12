@@ -48,7 +48,7 @@ public class ThirdPersonCam : MonoBehaviour
         orientation.forward = viewDir.normalized;
 
         //rotate the Player Object
-        if(currentStyle == CameraStyle.Basic || currentStyle == CameraStyle.Topdown || currentStyle == CameraStyle.Combat)
+        if(currentStyle == CameraStyle.Basic || currentStyle == CameraStyle.Topdown)
         {
             float horizontalInput = Input.GetAxis("Horizontal");
             float verticalInput = Input.GetAxis("Vertical");
@@ -59,14 +59,16 @@ public class ThirdPersonCam : MonoBehaviour
                 playerObj.forward = Vector3.Slerp(playerObj.forward, inputDir.normalized, Time.deltaTime * rotationSpeed);
             }
         }
-        //else if (currentStyle == CameraStyle.Combat)
-        //{
-        //    Vector3 dirToCombatLookAt = combatLookAt.position - new Vector3(transform.position.x, player.position.y, transform.position.z);
-        //    orientation.forward = dirToCombatLookAt.normalized;
+        else if (currentStyle == CameraStyle.Combat)
+        {
+         
+            Vector3 dirToCombatLookAt = combatLookAt.position - new Vector3(transform.position.x, combatLookAt.position.y, transform.position.z);
+            orientation.forward = dirToCombatLookAt.normalized;
 
-        //    playerObj.forward = dirToCombatLookAt.normalized;
-        //    playerObj.rotation = Quaternion.identity;
-        //}
+            playerObj.forward = dirToCombatLookAt.normalized;
+
+
+        }
         
     }
     private void SwitchCameraStyle(CameraStyle newStyle)
