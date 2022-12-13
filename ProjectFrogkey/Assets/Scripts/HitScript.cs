@@ -13,17 +13,28 @@ public class HitScript : MonoBehaviour
     public float DelayPunchJabHit = 0.1f;
     public float DelayDisappear = 0.1f;
 
+    private GameObject HoldPostion;
+
     void Start()
     {
         OverHeadTS = GameObject.FindGameObjectWithTag("overheadtelescope");
         PunchJab = GameObject.FindGameObjectWithTag("punchjab");
-
+        HoldPostion = GameObject.FindGameObjectWithTag("hit_and_jab_holder");
         OverHeadTS.SetActive(false);
         PunchJab.SetActive(false);
     }
 
+    void MoveWithPlayer()
+    {
+        OverHeadTS.transform.position = new Vector3(HoldPostion.transform.position.x, HoldPostion.transform.position.y, HoldPostion.transform.position.z);
+        OverHeadTS.transform.rotation = HoldPostion.transform.rotation;
+        PunchJab.transform.position = new Vector3(HoldPostion.transform.position.x, HoldPostion.transform.position.y, HoldPostion.transform.position.z);
+        PunchJab.transform.rotation = HoldPostion.transform.rotation;
+    }
+
     void Update()
     {
+        MoveWithPlayer();
         OverHeadTSHit();
         PunchJabHit();
     }
