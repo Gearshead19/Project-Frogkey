@@ -18,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     void Update()
     {
         QucikReset();
+        PlayerDead();
     }
 
     void QucikReset()
