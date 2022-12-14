@@ -6,16 +6,36 @@ public class PlayerHealth : MonoBehaviour
 {
     public int HealthPoints = 100;
 
+    public MenuEditQuick MenuQuick;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        //MenuQuick = gameObject.GetComponent<MenuEditQuick>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        QucikReset();
+        PlayerDead();
+    }
 
+    void QucikReset()
+    {
+        if(Input.GetKeyDown(KeyCode.Backspace))
+        {
+            MenuQuick.ReloadLevel();
+        }
+
+    }
+
+    void PlayerDead()
+    {
+        if(HealthPoints <= 0)
+        {
+            MenuQuick.ReloadLevel();
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
