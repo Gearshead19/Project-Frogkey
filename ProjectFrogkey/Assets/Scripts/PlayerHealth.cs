@@ -18,9 +18,28 @@ public class PlayerHealth : MonoBehaviour
 
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Projectile"))
+        {
+            Debug.Log("I got shot");
+            Destroy(collision.gameObject);
+            this.HealthPoints = this.HealthPoints - 1;
+
+        }
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("I got harassed");
+            //Destroy(other.gameObject);
+            this.HealthPoints = this.HealthPoints - 1;
+        }
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Projectile"))
+        /*if (other.gameObject.CompareTag("Projectile"))
         {
             Debug.Log("I got shot");
             Destroy(other.gameObject);
@@ -33,6 +52,6 @@ public class PlayerHealth : MonoBehaviour
             Debug.Log("I got harassed");
             //Destroy(other.gameObject);
             this.HealthPoints = this.HealthPoints - 1;
-        }
+        }*/
     }
 }
