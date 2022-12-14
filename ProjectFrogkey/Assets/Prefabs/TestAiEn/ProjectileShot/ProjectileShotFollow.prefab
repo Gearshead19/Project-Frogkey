@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4268507014046173027}
   - component: {fileID: 7101166063495325079}
   - component: {fileID: 7101166063495325072}
+  - component: {fileID: 2664474808177258571}
   m_Layer: 0
   m_Name: ProjectileShotFollow
   m_TagString: Projectile
@@ -148,3 +149,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2664474808177258571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587983743059127998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 212066b66d392694ba8438ff584b2b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthPoints: 1
+  telescope_hit: 10
+  punch_jab: 1
+  set_to_disable: 0
