@@ -17,6 +17,15 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        QucikReset();
+    }
+
+    void QucikReset()
+    {
+        if(Input.GetKeyDown(KeyCode.Backspace))
+        {
+            MenuQuick.ReloadLevel();
+        }
 
     }
 
