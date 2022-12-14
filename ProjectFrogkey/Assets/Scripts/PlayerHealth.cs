@@ -11,7 +11,7 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        MenuQuick = gameObject.GetComponent<MenuEditQuick>();
+        //MenuQuick = gameObject.GetComponent<MenuEditQuick>();
     }
 
     // Update is called once per frame
