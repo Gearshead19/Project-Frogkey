@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int HealthPoints = 100;
 
-    private MenuEditQuick MenuQuick;
+    public MenuEditQuick MenuQuick;
 
     // Start is called before the first frame update
     void Start()

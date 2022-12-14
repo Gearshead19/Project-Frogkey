@@ -14,7 +14,7 @@ public class BossEnmey : MonoBehaviour
     private int how_many_shoots = 1;
 
     public int projectile_spawn_range = 5;
-    public int High = 2; //height over boss
+    public float High = 2; //height over boss
 
     public int ZDirectionShoot = 3;
     public int XDirectionShoot = 0;
