@@ -36,7 +36,10 @@ public class ActivatedObjectTrigger : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(objectsToCheck != null && objectsTaggedBeingChecked == "")
+        {
             CheckObjectStatus();
+        }
     }
 
     public void CheckObjectStatus()
