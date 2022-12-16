@@ -1,10 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     public int HealthPoints = 100;
+    public int currentHealth;
+
+    public HealthBar healthBar;
 
     public MenuEditQuick MenuQuick;
 
@@ -12,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         //MenuQuick = gameObject.GetComponent<MenuEditQuick>();
+        currentHealth = HealthPoints;
+        healthBar.SetMaxHealth(HealthPoints);
     }
 
     // Update is called once per frame
@@ -32,9 +36,11 @@ public class PlayerHealth : MonoBehaviour
 
     void PlayerDead()
     {
-        if(HealthPoints <= 0)
+        if(currentHealth <= 0)
         {
-            MenuQuick.ReloadLevel();
+            //MenuQuick.ReloadLevel();
+            SceneManager.LoadScene("Thanks_For_Playing");
+           
         }
     }
 
@@ -44,7 +50,9 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log("I got shot");
             Destroy(collision.gameObject);
-            this.HealthPoints = this.HealthPoints - 1;
+            //this.HealthPoints = this.HealthPoints - 1;
+            currentHealth = currentHealth - 5;
+            healthBar.SetHealth(currentHealth);
 
         }
 
@@ -52,7 +60,9 @@ public class PlayerHealth : MonoBehaviour
         {
             Debug.Log("I got harassed");
             //Destroy(other.gameObject);
-            this.HealthPoints = this.HealthPoints - 1;
+            //this.HealthPoints = this.HealthPoints - 1;
+            currentHealth = currentHealth - 3;
+            healthBar.SetHealth(currentHealth);
         }
     }
 

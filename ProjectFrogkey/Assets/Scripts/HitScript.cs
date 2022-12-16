@@ -41,7 +41,7 @@ public class HitScript : MonoBehaviour
 
     private void PunchJabHit()
     {
-        if(Input.GetKeyDown(KeyCode.J) && ClearToHitStuff == true)
+        if(Input.GetKeyDown(KeyCode.E) && ClearToHitStuff == true)
         {
             PunchJab.SetActive(true);
             ClearToHitStuff = false;
@@ -52,7 +52,7 @@ public class HitScript : MonoBehaviour
 
     private void OverHeadTSHit()
     {
-        if (Input.GetKeyDown(KeyCode.H) && ClearToHitStuff == true)
+        if (Input.GetKeyDown(KeyCode.R) && ClearToHitStuff == true)
         {
             OverHeadTS.SetActive(true);
             ClearToHitStuff = false;
