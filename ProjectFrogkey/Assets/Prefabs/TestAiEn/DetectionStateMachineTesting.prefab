@@ -4895,7 +4895,7 @@ GameObject:
   - component: {fileID: 6266854975666169226}
   m_Layer: 0
   m_Name: DetectionStateMachineTesting
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4907,7 +4907,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6266854975666169224}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4992,7 +4992,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c19016234df9dd648a3b4655c7f07556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DropSelect: 0
+  DropSelect: 2
   PlayerFroggy: {fileID: 0}
   PlayerWithInDistance: 5
   length: 2
@@ -5007,10 +5007,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  FollowList: 0
+  FollowList: 2
   NavMeshAgent: {fileID: 0}
   FroggyPlayer: {fileID: 0}
-  speed: 1
+  speed: 5
   shoot_range: 10
   shooter: 0
 --- !u!114 &7110125530490013367
@@ -5025,9 +5025,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 212066b66d392694ba8438ff584b2b6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthPoints: 30
-  telescope_hit: 10
-  punch_jab: 1
+  HealthPoints: 100
+  telescope_hit: 40
+  punch_jab: 30
   set_to_disable: 0
   particial_trigger: {fileID: 2763376246111755419}
   hit_delay_vission_delay: 0.5
