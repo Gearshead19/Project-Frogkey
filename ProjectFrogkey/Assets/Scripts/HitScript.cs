@@ -35,13 +35,20 @@ public class HitScript : MonoBehaviour
     void Update()
     {
         MoveWithPlayer();
+       
+    }
+    public void OnAttack1()
+    {
         OverHeadTSHit();
+        
+    }
+    public void OnAttack2()
+    {
         PunchJabHit();
     }
-
     private void PunchJabHit()
     {
-        if(Input.GetKeyDown(KeyCode.E) && ClearToHitStuff == true)
+        if(ClearToHitStuff == true)
         {
             PunchJab.SetActive(true);
             ClearToHitStuff = false;
@@ -52,7 +59,7 @@ public class HitScript : MonoBehaviour
 
     private void OverHeadTSHit()
     {
-        if (Input.GetKeyDown(KeyCode.R) && ClearToHitStuff == true)
+        if (ClearToHitStuff == true)
         {
             OverHeadTS.SetActive(true);
             ClearToHitStuff = false;

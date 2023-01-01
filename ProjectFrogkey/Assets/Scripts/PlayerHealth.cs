@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
         //MenuQuick = gameObject.GetComponent<MenuEditQuick>();
         currentHealth = HealthPoints;
         healthBar.SetMaxHealth(HealthPoints);
+        
     }
 
     // Update is called once per frame

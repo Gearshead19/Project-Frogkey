@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,10 +15,12 @@ public class PlayerMovement : MonoBehaviour
     public float walkSpeed;
     public float sprintSpeed;
     public Transform orientation;
+    public float rotationSpeed;
     float horizontalInput;
     float verticalInput;
     Vector3 moveDirection;
     Rigidbody rb;
+    Vector2 inputVector;
 
     public float groundDrag;
 
@@ -69,10 +72,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
 
-
     private void Start()
     {
-
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;    
         readyToJump = true;
@@ -86,17 +87,15 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         //Ground Check
-        //Debug.Log(grounded);
+
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * maxDistance + 0.2f, whatIsGround);
         //grounded = Physics.CheckSphere(orientation.position, maxDistance, whatIsGround);
-        //Debug.Log(grounded);
-        
-        
 
-        MyInput();
+
+        MovePlayer();
         SpeedControl();
         StateHandler();
-
+        
         //This will Handle the Drag.
         if (grounded == true)
         {
@@ -108,48 +107,7 @@ public class PlayerMovement : MonoBehaviour
         }
         
     }
-    private void FixedUpdate()
-    {
-        MovePlayer();   
-        SpeedControl();
-    }
 
-    private void MyInput()
-    {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
-
-        //When to Jump
-        if (Input.GetKeyDown(jumpKey) && readyToJump && grounded)
-        {
-            readyToJump = false;
-
-            Jump();
-
-            Invoke(nameof(ResetJump), jumpCooldown);
-            // Debug.Log("I jump");
-            grounded = false;
-        }
-        // Spawn Projectile
-        if(Input.GetKeyDown(KeyCode.L))
-        {
-           // Instantiate(projectile, transform.parent);
-            projectile.transform.position = shotPosition.transform.position;
-
-            if (projectile == null)
-            {
-                Debug.Log("Can't fire anymore");
-            }
-        }
-        // DISARM FUNCTION
-       // RaycastHit hit;
-
-        //if (Input.GetKeyDown(KeyCode.M) && hit.collider.CompareTag("Shield"))
-        //{
-        //    Destroy(CompareTag("Shield"));
-        //}
-
-    }
     private void StateHandler()
     {
         //Mode - Sprinting
@@ -171,9 +129,33 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.air;
         }
 
+    }
+
+    #region Movement
 
 
+    /// <summary>
+    /// The whole OnMove method controls movement
+    /// </summary>
+    /// <param name="value"></param>
+    public void OnMove(InputValue value)
+    {
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
 
+        inputVector = value.Get<Vector2>();
+
+        inputVector.x = horizontalInput;
+        inputVector.y = verticalInput;
+    }
+    void RotateTowardsVector()
+    {
+        var xzDirection = new Vector2(inputVector.x, inputVector.y);
+        if(xzDirection.magnitude ==0) return;
+
+        var rotation = Quaternion.LookRotation(xzDirection);
+
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, rotation, rotationSpeed);
     }
 
     void MovePlayer()
@@ -196,19 +178,21 @@ public class PlayerMovement : MonoBehaviour
         //On Ground
         if(grounded)
         {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
+            rb.AddForce(10f * moveSpeed * moveDirection.normalized, ForceMode.Force);
 
         }
         //In Air
         else if (!grounded)
         {
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
+            rb.AddForce(10f * airMultiplier * moveSpeed * moveDirection.normalized, ForceMode.Force);
         }
 
         //Turn "Gravity" off while on "Slopes"
         rb.useGravity = !OnSlope();
 
     }
+
+   
     void SpeedControl()
     {
 
@@ -232,8 +216,31 @@ public class PlayerMovement : MonoBehaviour
             }
         }
     }
+    #endregion
 
-    void Jump()
+    #region JumpandJumpControl
+
+    /// <summary>
+    /// The whole OnJump method give the player its jump
+    /// </summary>
+    /// <param name="context"></param>
+    public void OnJump()
+    {
+      
+        if (readyToJump && grounded)
+        {
+            readyToJump = false;
+
+              Jump();
+
+            Invoke(nameof(ResetJump), jumpCooldown);
+            // Debug.Log("I jump");
+            grounded = false;
+        }
+    }
+
+
+    private void Jump()
     {
         exitingSlope = true;
 
@@ -262,6 +269,8 @@ public class PlayerMovement : MonoBehaviour
     {
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
     }
+
+    #endregion
 
     /* not 
     private void OnCollisionEnter(Collision collision)
@@ -391,6 +400,30 @@ public class PlayerMovement : MonoBehaviour
     }
 
 */
+
+    #region Mechanics
+
+
+
+    //// Spawn Projectile
+    //  if(Input.GetKeyDown(KeyCode.L))
+    //  {
+    //     // Instantiate(projectile, transform.parent);
+    //      projectile.transform.position = shotPosition.transform.position;
+
+    //      if (projectile == null)
+    //      {
+    //          Debug.Log("Can't fire anymore");
+    //      }
+    //  }
+    //  // DISARM FUNCTION
+    // // RaycastHit hit;
+
+    //  //if (Input.GetKeyDown(KeyCode.M) && hit.collider.CompareTag("Shield"))
+    //  //{
+    //  //    Destroy(CompareTag("Shield"));
+    //  //}
+    #endregion
 
 
 
