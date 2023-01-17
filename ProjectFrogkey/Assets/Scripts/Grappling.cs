@@ -8,12 +8,14 @@ public class Grappling : MonoBehaviour
     private PlayerMovement pm;
     public Transform cam;
     public Transform mouthTip;
-    public LayerMask whatIsGrappleable;
+    public LayerMask whatIsGrappleable; //rember to ask N. what this is for since it starts out as whatIsGround, then changes to what ever the objects the raycast hits
     public LineRenderer lr;
 
     [Header("Grappling")]
     public float maxGrappleDistance;
     public float grappleDelayTime;
+    public float grapple_speed; 
+    public LayerMask available_grapple_area; //Make sure this is set to whatIsGround, since the ground is assumed to be grapplable
 
     private Vector3 grapplePoint;
 
@@ -25,6 +27,8 @@ public class Grappling : MonoBehaviour
     public KeyCode grappleKey = KeyCode.Mouse1;
 
     private bool grappling;
+
+
 
     private void Start()
     {
@@ -64,7 +68,14 @@ public class Grappling : MonoBehaviour
         if(Physics.Raycast(cam.position, cam.forward, out hit, maxGrappleDistance, whatIsGrappleable))
         {
             grapplePoint = hit.point;
-            Invoke(nameof(ExcuteGrapple), grappleDelayTime);
+
+
+            //if(hit.transform.gameObject.layer ==  available_grapple_area)
+            //{
+                Invoke(nameof(ExcuteGrapple), grappleDelayTime);
+            //}
+            
+
         }
         else
         {
@@ -78,7 +89,8 @@ public class Grappling : MonoBehaviour
 
     private void ExcuteGrapple()
     {
-
+        //this.transform.localPosition = Vector3.Lerp(transform.localPosition, grapplePoint, Time.deltaTime * grapple_speed); //moves player to location of grapple
+        
     }
 
     private void StopGrapple()
