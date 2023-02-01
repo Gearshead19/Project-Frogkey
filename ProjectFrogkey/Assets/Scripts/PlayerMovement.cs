@@ -3,10 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+/// <summary>
+/// TODO: Bind the sprint Key into the new input system
+/// </summary>
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField]
     private GameObject projectile;
+
+    /// <summary>
+    /// Shot postion will be used as the attack point
+    /// </summary>
     public Transform shotPosition;
 
 
@@ -57,6 +64,22 @@ public class PlayerMovement : MonoBehaviour
     public float tongueSpeed;
     public bool Disarming;
 
+    [Header("Bulletforce and Gun Stats")]
+    //force
+    public float shootForce, upwardForce;
+
+    //stats
+    public float timeBetweenShooting, spread, reloadTime, timeBetweenShots;
+    public int magSize, bulletsPerTap;
+   // public bool allowButtonHold;
+
+    int bulletsLeft, bulletsShot;
+
+    bool shooting, reloading, readyToShoot;
+
+    //bug fixing
+    public bool allowInvoke = true;
+
 
 
 
@@ -66,11 +89,21 @@ public class PlayerMovement : MonoBehaviour
 
     public enum MovementState
     {
+        freeze,
         walking,
         sprinting,
         air
     }
 
+    public bool freeze;
+    public bool activeGrapple;
+
+    private void Awake()
+    {
+        // make sure mag is full
+        bulletsLeft = magSize;
+        readyToShoot = true;
+    }
 
     private void Start()
     {
@@ -97,7 +130,7 @@ public class PlayerMovement : MonoBehaviour
         StateHandler();
         
         //This will Handle the Drag.
-        if (grounded == true)
+        if (grounded == true && !activeGrapple)
         {
             rb.drag = groundDrag;
         }
@@ -127,6 +160,13 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             state = MovementState.air;
+        }
+        //Mode - Freeze
+        if (freeze)
+        {
+            state = MovementState.freeze;
+            moveSpeed = 0;
+            rb.velocity = Vector3.zero;
         }
 
     }
@@ -160,6 +200,7 @@ public class PlayerMovement : MonoBehaviour
 
     void MovePlayer()
     {
+        if (activeGrapple) return;
         //Calculates movement direction of the Player.
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
@@ -195,6 +236,7 @@ public class PlayerMovement : MonoBehaviour
    
     void SpeedControl()
     {
+        if (activeGrapple) return;
 
         //Limits speed on "Slopes"
         if (OnSlope() && !exitingSlope)
@@ -254,6 +296,35 @@ public class PlayerMovement : MonoBehaviour
 
         exitingSlope = false;
     }
+    private bool enableMovementOnNextTouch;
+    public void JumpToPosition(Vector3 targetPosition, float trajectoryHeight)
+    {
+        activeGrapple = true;
+        Invoke(nameof(SetVelocity), 0.1f);
+        Invoke(nameof(ResetRestrictions),3f);
+        velocityToSet = CalculateJumpVelocity(transform.position, targetPosition, trajectoryHeight);
+    }
+
+    private Vector3 velocityToSet;
+    private void SetVelocity()
+    {
+        rb.velocity = velocityToSet;
+        enableMovementOnNextTouch = true;
+    }
+    public void ResetRestrictions()
+    {
+        activeGrapple = false;
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (enableMovementOnNextTouch)
+        {
+            enableMovementOnNextTouch = false;
+            ResetRestrictions();
+
+            GetComponent<Grappling>().StopGrapple();
+        }
+    }
 
     private bool OnSlope()
     {
@@ -268,6 +339,18 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 GetSlopeMoveDirection()
     {
         return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
+    }
+
+    public Vector3 CalculateJumpVelocity(Vector3 startPoint, Vector3 endPoint, float trajectoryHeight)
+    {
+        float gravity = Physics.gravity.y;
+        float displacementY = endPoint.y - startPoint.y;
+        Vector3 displacementXZ = new Vector3(endPoint.x - startPoint.x, 0, endPoint.z - startPoint.z);
+
+        Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * trajectoryHeight);
+        Vector3 velocityXZ = displacementXZ / (Mathf.Sqrt(-2 * trajectoryHeight / gravity)+ Mathf.Sqrt(2*(displacementY - trajectoryHeight)/gravity));
+
+        return velocityXZ + velocityY;
     }
 
     #endregion
@@ -402,20 +485,44 @@ public class PlayerMovement : MonoBehaviour
 */
 
     #region Mechanics
+    /// <summary>
+    /// Shoot projectiles in one direction relative to the reticle(same rotation as the player's rotation
+    
+void OnFire()
+    {
+        GameObject bullet = ObjectPool.SharedInstance.GetPooledObject();
+        if (bullet!=null)
+        {
+            // bullet.transform.position = Turret.transform.position;
+            // bullet.transform.rotation = Turret.transform.position;
+            projectile.transform.position = shotPosition.transform.position;
+            bullet.SetActive(true);
+        }
+       //Instantiate(GameObject.CreatePrimitive.Sphere transform.parent);
+             
+        
+        //transform.Translate((Time.deltaTime * SpeedXDirection), 0, (Time.deltaTime * SpeedZdirection));
 
+        if (projectile == null)
+              {
+                  Debug.Log("Can't fire anymore");
+              }
 
+        //Shooting
+        if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
+        {
+            bulletsShot = 0;
+            Shoot();
+        }
+    }
 
-    //// Spawn Projectile
-    //  if(Input.GetKeyDown(KeyCode.L))
-    //  {
-    //     // Instantiate(projectile, transform.parent);
-    //      projectile.transform.position = shotPosition.transform.position;
+    void Shoot()
+    {
+        readyToShoot = false;
+        bulletsLeft--;
+        bulletsShot++;
+    }
 
-    //      if (projectile == null)
-    //      {
-    //          Debug.Log("Can't fire anymore");
-    //      }
-    //  }
     //  // DISARM FUNCTION
     // // RaycastHit hit;
 

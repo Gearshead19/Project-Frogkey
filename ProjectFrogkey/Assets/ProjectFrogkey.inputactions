@@ -42,7 +42,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Attack1",
+                    "name": "Attack1Heavy",
                     "type": "Button",
                     "id": "4dfab357-029d-4ab0-9327-0939413ec1a4",
                     "expectedControlType": "Button",
@@ -51,9 +51,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Attack2",
+                    "name": "Attack2Light",
                     "type": "Button",
                     "id": "d8ecfaa7-cbe8-4b13-b498-a3ec797cdae0",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Grapple",
+                    "type": "Button",
+                    "id": "d940aa8d-fe59-491a-9aff-1b57d3f12931",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -310,7 +319,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "Attack1",
+                    "action": "Attack1Heavy",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -321,7 +330,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack1",
+                    "action": "Attack1Heavy",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -332,7 +341,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack2",
+                    "action": "Attack2Light",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -343,7 +352,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Attack2",
+                    "action": "Attack2Light",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ace45a29-163b-4f16-b4ce-b6a92720a17b",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Grapple",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

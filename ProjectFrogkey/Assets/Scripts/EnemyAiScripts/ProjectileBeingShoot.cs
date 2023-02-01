@@ -21,7 +21,8 @@ public class ProjectileBeingShoot : MonoBehaviour
     
     void OutOfBoundsDestroySelf()
     {
-       Destroy(this.gameObject);
+        gameObject.SetActive(false);
+       //Destroy(this.gameObject);
     }
 
 }

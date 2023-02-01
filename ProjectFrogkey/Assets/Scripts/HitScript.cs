@@ -37,12 +37,12 @@ public class HitScript : MonoBehaviour
         MoveWithPlayer();
        
     }
-    public void OnAttack1()
+    public void OnAttack1Heavy()
     {
         OverHeadTSHit();
         
     }
-    public void OnAttack2()
+    public void OnAttack2Light()
     {
         PunchJabHit();
     }
