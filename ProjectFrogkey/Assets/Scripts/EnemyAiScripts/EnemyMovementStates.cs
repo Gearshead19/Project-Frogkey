@@ -19,7 +19,9 @@ public class EnemyMovementStates : DetectionStatMachine
 
     public float speed = 1.0f;
 
-    public int shoot_range = 10;
+    [SerializeField]
+    private IsOkayShootLookAhead check_shoot;
+    private int shoot_range = 10;
     public bool shooter = false;
 
     void Start()
@@ -28,9 +30,16 @@ public class EnemyMovementStates : DetectionStatMachine
         NavMeshAgent = GetComponent<NavMeshAgent>();
         PlayerFroggy = GameObject.FindGameObjectWithTag("FindPlayer").transform;
 
-        if(8 == 8)
+        if(this.gameObject.GetComponent("IsOkayShootLookAhead") != null)
         {
+            shooter = true;
+            check_shoot = FroggyPlayer.GetComponent<IsOkayShootLookAhead>();
+            shoot_range = check_shoot.ShootRange;
 
+        }
+        else
+        {
+            shooter = false;
         }
 
         StartSetupMarkers();//this is only for testing purpose to see the radius of the detection range
