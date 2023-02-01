@@ -15,9 +15,15 @@ public class Grappling : MonoBehaviour
     [Header("Grappling")]
     public float maxGrappleDistance;
     public float grappleDelayTime;
-    public float grapple_speed; 
-  //  public LayerMask available_grapple_area; //Make sure this is set to whatIsGround, since the ground is assumed to be grapplable
+    public float grapple_speed;
+    //  public LayerMask available_grapple_area; //Make sure this is set to whatIsGround, since the ground is assumed to be grapplable
 
+
+    //camera root
+    public ThirdPersonCam cameraRoot;
+
+
+    Vector3 mouseWorldPosition = Vector3.zero; // World Aim Target
     private Vector3 grapplePoint;
 
     [Header("Cooldown")]
@@ -68,6 +74,8 @@ public class Grappling : MonoBehaviour
 
         // What is the origin and direction relative to the player?
         //origin is on the player's position and direction is where they're facing.
+
+        // connect the raycast to the center of the screen
         if(Physics.Raycast(cam.position, cam.forward, out hit, maxGrappleDistance, whatIsGrappleable))
         {
             grapplePoint = hit.point;
