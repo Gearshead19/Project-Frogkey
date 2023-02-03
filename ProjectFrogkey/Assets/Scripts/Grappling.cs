@@ -17,7 +17,7 @@ public class Grappling : MonoBehaviour
     public float grappleDelayTime;
     public float grapple_speed;
     //  public LayerMask available_grapple_area; //Make sure this is set to whatIsGround, since the ground is assumed to be grapplable
-
+    // Vertex point is Hit Vertex
 
     //camera root
     public ThirdPersonCam cameraRoot;
@@ -79,6 +79,9 @@ public class Grappling : MonoBehaviour
         if(Physics.Raycast(cam.position, cam.forward, out hit, maxGrappleDistance, whatIsGrappleable))
         {
             grapplePoint = hit.point;
+
+            // grabbing a variable
+            var hitVertex = grapplePoint;
 
             if(hit.transform.gameObject.layer == whatIsGrappleable)
             {
