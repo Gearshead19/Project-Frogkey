@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public float walkSpeed;
     public float sprintSpeed;
     public Transform orientation;
+    public Transform playerModelLook;
     public float rotationSpeed;
     float horizontalInput;
     float verticalInput;
@@ -187,6 +188,7 @@ public class PlayerMovement : MonoBehaviour
 
         inputVector.x = horizontalInput;
         inputVector.y = verticalInput;
+        
     }
     void RotateTowardsVector()
     {
@@ -495,7 +497,9 @@ void OnFire()
         {
             // bullet.transform.position = Turret.transform.position;
             // bullet.transform.rotation = Turret.transform.position;
-            projectile.transform.position = shotPosition.transform.position;
+            bullet.transform.position = shotPosition.transform.position;
+            bullet.transform.rotation = playerModelLook.rotation;
+           
             bullet.SetActive(true);
         }
        //Instantiate(GameObject.CreatePrimitive.Sphere transform.parent);
@@ -503,25 +507,25 @@ void OnFire()
         
         //transform.Translate((Time.deltaTime * SpeedXDirection), 0, (Time.deltaTime * SpeedZdirection));
 
-        if (projectile == null)
-              {
-                  Debug.Log("Can't fire anymore");
-              }
+        //if (projectile == null)
+        //      {
+        //          Debug.Log("Can't fire anymore");
+        //      }
 
-        //Shooting
-        if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
-        {
-            bulletsShot = 0;
-            Shoot();
-        }
+        ////Shooting
+        //if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
+        //{
+        //    bulletsShot = 0;
+        //    Shoot();
+        //}
     }
 
-    void Shoot()
-    {
-        readyToShoot = false;
-        bulletsLeft--;
-        bulletsShot++;
-    }
+    //void Shoot()
+    //{
+    //    readyToShoot = false;
+    //    bulletsLeft--;
+    //    bulletsShot++;
+    //}
 
     //  // DISARM FUNCTION
     // // RaycastHit hit;
