@@ -35,6 +35,15 @@ public class PlayerHealth : MonoBehaviour
         QucikReset();
         PlayerDead();
     }
+void OnQuickReset()
+    {
+
+    }
+
+    void OnHeal()
+    {
+
+    }
 
     void QucikReset()
     {
