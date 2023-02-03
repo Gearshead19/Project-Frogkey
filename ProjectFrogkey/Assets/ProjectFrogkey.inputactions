@@ -69,9 +69,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "PlayerHealSelf",
+                    "name": "Heal",
                     "type": "Button",
-                    "id": "67f85744-20bf-4a72-9e99-7f93867f8cb9",
+                    "id": "f85a2b37-6280-41c2-9e99-77b6caefc92b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "QuickReset",
+                    "type": "Button",
+                    "id": "2b261275-6b78-418d-9b73-5f2343f4095f",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -389,23 +398,34 @@
                 },
                 {
                     "name": "",
-                    "id": "2093b1a0-0ede-48d5-bc05-312a143973f9",
-                    "path": "<Gamepad>/dpad/up",
+                    "id": "28a08e3c-2da1-42db-bc3c-f730124db1c5",
+                    "path": "<Keyboard>/f",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
-                    "action": "PlayerHealSelf",
+                    "groups": "",
+                    "action": "Heal",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "11113e09-bec2-4e47-8906-46cc64addea9",
-                    "path": "<Keyboard>/f",
+                    "id": "b296252b-3b24-4946-b380-0d08ded2aae2",
+                    "path": "<Gamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "PlayerHealSelf",
+                    "groups": "",
+                    "action": "Heal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "68b07a91-635a-418e-8311-26876f6ba08b",
+                    "path": "<Keyboard>/backspace",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "QuickReset",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
