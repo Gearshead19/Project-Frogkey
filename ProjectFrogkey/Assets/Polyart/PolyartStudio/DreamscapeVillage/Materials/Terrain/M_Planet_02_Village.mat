@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_Planet_02_Village
+  m_Shader: {fileID: 4800000, guid: 31140191d0629c242b9fdc6a9a5f29f0, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 0
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _PlanetClouds:
+        m_Texture: {fileID: 2800000, guid: c0b16f7891452094b9b13077083e210a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _PlanetTexture:
+        m_Texture: {fileID: 2800000, guid: b3ebfa381dae91740a3ee32e5ae0d98d, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Bias: 0.29
+    - _CloudSpeedX: 0.01
+    - _CloudVisibility: 2.45
+    - _EdgeStrength: 12
+    - _Float0: 1
+    - _FresnelBias: 0.17
+    - _FresnelPower: 4.36
+    - _FresnelScale: 2.9
+    - _GlowAmount: 1.03
+    - _PlanetSpeedX: 0.005
+    - _PlanetVisibility: 4.48
+    - _Power: 2.46
+    - _Scale: 1.46
+    - _Strength: 3.87
+    - __dirty: 0
+    m_Colors:
+    - _CloudColor: {r: 0.6509434, g: 0.6509434, b: 0.6509434, a: 1}
+    - _EdgeColor: {r: 0.28773582, g: 0.427914, b: 1, a: 1}
+    - _LightDirection: {r: 0.2216981, g: 1, b: 0.8783903, a: 0}
+    - _PlanetColor: {r: 0.6415094, g: 0.35547954, b: 0.13011748, a: 1}
+  m_BuildTextureStacks: []
