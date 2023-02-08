@@ -16,6 +16,13 @@ public class Grappling : MonoBehaviour
     public float maxGrappleDistance;
     public float grappleDelayTime;
     public float grapple_speed;
+    public float base_grapple_speed_up; //impulse
+    private float grapple_speed_up_add = 2; //is caluated in the Calculate_jump method
+    public int lob; // divid disance by this to get the grpple_spped_up_add
+    private float distance = 10; //distance betwean this and the intended location
+    private Vector3 GrappleVec; //saved vector for the targeted grapple location
+    public float distance_reset = 2; //when objects get distance_reset close to target location,
+    //private bool grappling = false;
     //  public LayerMask available_grapple_area; //Make sure this is set to whatIsGround, since the ground is assumed to be grapplable
     // Vertex point is Hit Vertex
 
@@ -39,6 +46,7 @@ public class Grappling : MonoBehaviour
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody>();
         pm = GetComponent<PlayerMovement>();
     }
 
@@ -50,6 +58,17 @@ public class Grappling : MonoBehaviour
         if (grapplingCdTimer > 0)
         {
             grapplingCdTimer -= Time.deltaTime;
+        }
+
+        if (grappling == false)
+        {
+            ExcuteGrapple();
+        }
+
+        if (grappling == true)
+        {
+            Grapple_action_go_to();
+            Reset_grapple();
         }
     }
     private void LateUpdate()
@@ -67,7 +86,7 @@ public class Grappling : MonoBehaviour
         if (grapplingCdTimer > 0) return;
         
 
-        grappling = true;
+        //grappling = true;
 
 
         RaycastHit hit;
@@ -83,9 +102,12 @@ public class Grappling : MonoBehaviour
             // grabbing a variable
             var hitVertex = grapplePoint;
 
-            if(hit.transform.gameObject.layer == whatIsGrappleable)
+            GrappleVec = hitVertex;//saves point that is grapple to
+
+            if (hit.transform.gameObject.layer == whatIsGrappleable)
             {
-                Invoke(nameof(ExcuteGrapple), grappleDelayTime);
+                //Invoke(nameof(ExcuteGrapple), grappleDelayTime);
+                grappling = true;
                 Debug.Log("Hit grapple thing");
             }
 
@@ -96,7 +118,7 @@ public class Grappling : MonoBehaviour
         {
             grapplePoint = cam.position + cam.forward * maxGrappleDistance;
 
-            Invoke(nameof(StopGrapple), grappleDelayTime);
+            //Invoke(nameof(StopGrapple), grappleDelayTime);
         }
         lr.enabled = true;
         lr.SetPosition(1, grapplePoint);
@@ -104,10 +126,8 @@ public class Grappling : MonoBehaviour
 
     private void ExcuteGrapple()
     {
-        this.transform.localPosition = Vector3.Lerp(transform.localPosition, grapplePoint, Time.deltaTime * grapple_speed); //moves player to location of grapple
-                                                                                                                            //  rb.AddForce(grapplePoint * grapple_speed * Time.deltaTime, ForceMode.Impulse);
-                                                                                                                            //rb.AddForce(grapplePoint * upwardForce, ForceMode.Impulse);
-        rb.AddForce(Vector3.up * grapple_speed, ForceMode.Impulse);
+        Caluate_jump();
+        Grapple_action_up_arc();
 
     }
 
@@ -119,6 +139,39 @@ public class Grappling : MonoBehaviour
 
         lr.enabled = false;
     }
+    //caluates how high the imulse force is expose to be for the jump depending on the distance
+    void Caluate_jump()
+    {
+        Find_distance_to_gapplepoint();
 
+        int result = (int)distance / lob;
+        grapple_speed_up_add = result;
+    }
 
+    //Move object towards gapple position
+    void Grapple_action_go_to()
+    {
+        this.transform.localPosition = Vector3.Lerp(transform.localPosition, GrappleVec, Time.deltaTime * grapple_speed); //moves player to location of grapple
+    }
+    //impact force to create an arc like effect
+    void Grapple_action_up_arc()
+    {
+        rb.AddForce(Vector3.up * (base_grapple_speed_up + grapple_speed_up_add), ForceMode.Impulse);
+    }
+    //finds the distance to the grapple point
+    void Find_distance_to_gapplepoint()
+    {
+
+        distance = Vector3.Distance(this.gameObject.transform.position, GrappleVec);
+    }
+    //Rests grapple when too close
+    void Reset_grapple()
+    {
+        Find_distance_to_gapplepoint();
+
+        if (distance < distance_reset)//how_far)
+        {
+            grappling = false;
+        }
+    }
 }
