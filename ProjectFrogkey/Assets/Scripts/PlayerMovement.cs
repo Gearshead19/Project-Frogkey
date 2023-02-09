@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveDirection;
     Rigidbody rb;
     Vector2 inputVector;
+    private float time_for_invincbility = .03f;
 
     public float groundDrag;
 
@@ -147,6 +148,7 @@ public class PlayerMovement : MonoBehaviour
         //Mode - Sprinting
         if (grounded == true && Input.GetKey(sprintKey))
         {
+            this.gameObject.GetComponent<PlayerHealth>().Player_Invincible(time_for_invincbility);
             state = MovementState.sprinting;
             moveSpeed = sprintSpeed;
 
