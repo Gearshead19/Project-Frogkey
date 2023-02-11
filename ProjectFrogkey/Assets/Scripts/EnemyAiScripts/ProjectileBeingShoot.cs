@@ -17,6 +17,8 @@ public class ProjectileBeingShoot : MonoBehaviour
     void Update()
     {
         transform.Translate((Time.deltaTime * SpeedXDirection), 0, (Time.deltaTime * SpeedZdirection));
+
+
     }
     
     void OutOfBoundsDestroySelf()

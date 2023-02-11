@@ -8,19 +8,21 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class PlayerMovement : MonoBehaviour
 {
+    ThirdPersonCam instance;
     [SerializeField]
     private GameObject projectile;
 
-    /// <summary>
-    /// Shot postion will be used as the attack point
-    /// </summary>
-    public Transform shotPosition;
 
+    // Shot postion will be used as the attack point
+    public Transform shotPosition;
+  //  public Transform debugTransform;
+    public LayerMask whatIsGrappleable;
 
     [Header("Movement")]
     public float moveSpeed;
     public float walkSpeed;
     public float sprintSpeed;
+    public float acceleration;
     public Transform orientation;
     public Transform playerModelLook;
     public float rotationSpeed;
@@ -30,8 +32,14 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody rb;
     Vector2 inputVector;
     private float time_for_invincbility = .03f;
+    public float smoothTime;
+    public float currentSpeed;
+    public float currentMoveVelocity;
 
     public float groundDrag;
+
+    Vector3 MouseWorldPosition = Vector3.zero;
+    Vector2 screenCenterPoint = new(Screen.width / 2f, Screen.height / 2f);
 
     [Header("Jumping")]
     public float jumpForce;
@@ -66,19 +74,6 @@ public class PlayerMovement : MonoBehaviour
     public float tongueSpeed;
     public bool Disarming;
 
-    [Header("Bulletforce and Gun Stats")]
-    //force
-    public float shootForce, upwardForce;
-
-    //stats
-    public float timeBetweenShooting, spread, reloadTime, timeBetweenShots;
-    public int magSize, bulletsPerTap;
-   // public bool allowButtonHold;
-
-    int bulletsLeft, bulletsShot;
-
-    bool shooting, reloading, readyToShoot;
-
     //bug fixing
     public bool allowInvoke = true;
 
@@ -94,24 +89,20 @@ public class PlayerMovement : MonoBehaviour
         freeze,
         walking,
         sprinting,
-        air
+        air,
+        dashing
     }
 
     public bool freeze;
     public bool activeGrapple;
 
-    private void Awake()
-    {
-        // make sure mag is full
-        bulletsLeft = magSize;
-        readyToShoot = true;
-    }
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;    
         readyToJump = true;
+
     }
 
     private void FixUpdate()
@@ -121,6 +112,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+
+        //// Creates a raycast to the center of the screen
+
+        Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
+        if (Physics.Raycast(ray, out RaycastHit hit, 999f, whatIsGrappleable))
+        {
+           // debugTransform.transform.position = hit.point;
+            MouseWorldPosition = hit.point;
+            
+        }
+
+
         //Ground Check
 
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * maxDistance + 0.2f, whatIsGround);
@@ -180,7 +183,7 @@ public class PlayerMovement : MonoBehaviour
     /// <summary>
     /// The whole OnMove method controls movement
     /// </summary>
-    /// <param name="value"></param>
+    /// 
     public void OnMove(InputValue value)
     {
         horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -192,6 +195,12 @@ public class PlayerMovement : MonoBehaviour
         inputVector.y = verticalInput;
         
     }
+
+
+
+    /// <summary>
+    /// Rotates player model by input directions
+    /// </summary>
     void RotateTowardsVector()
     {
         var xzDirection = new Vector2(inputVector.x, inputVector.y);
@@ -204,6 +213,9 @@ public class PlayerMovement : MonoBehaviour
 
     void MovePlayer()
     {
+        //0 speed to move speed's value
+         float moveCurve = Mathf.SmoothDamp(moveSpeed, sprintSpeed, ref currentMoveVelocity, smoothTime * Time.deltaTime);
+        currentSpeed = moveSpeed;
         if (activeGrapple) return;
         //Calculates movement direction of the Player.
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
@@ -223,8 +235,8 @@ public class PlayerMovement : MonoBehaviour
         //On Ground
         if(grounded)
         {
-            rb.AddForce(10f * moveSpeed * moveDirection.normalized, ForceMode.Force);
-
+            //rb.AddForce(10f *moveCurve * moveSpeed * moveDirection.normalized, ForceMode.Force);
+            rb.AddForce(10f* moveCurve * moveDirection.normalized, ForceMode.Force);
         }
         //In Air
         else if (!grounded)
@@ -236,8 +248,41 @@ public class PlayerMovement : MonoBehaviour
         rb.useGravity = !OnSlope();
 
     }
+    #region Sprint
+    /// <summary>
+    /// Gives player Sprint
+    /// </summary>
+    /// 
 
-   
+    //void OnSprint()
+    //{
+    //    if (grounded)
+    //    {
+    //        this.gameObject.GetComponent<PlayerHealth>().Player_Invincible(time_for_invincbility);
+    //        state = MovementState.sprinting;
+    //        moveSpeed = sprintSpeed;
+    //    }
+
+    //}
+    #endregion
+
+    #region Dash
+
+    void OnDash()
+    {
+        Debug.Log("I'm Dashing");
+        if (grounded && state != MovementState.dashing)
+        {
+            this.gameObject.GetComponent<PlayerHealth>().Player_Invincible(time_for_invincbility);
+            rb.AddForce(acceleration * rb.mass * moveDirection, ForceMode.Impulse);
+            state = MovementState.dashing;
+        }
+     
+        
+    }
+
+    #endregion
+
     void SpeedControl()
     {
         if (activeGrapple) return;
@@ -494,43 +539,23 @@ public class PlayerMovement : MonoBehaviour
     
 void OnFire()
     {
+        Vector3 aimDir = (MouseWorldPosition - shotPosition.position).normalized;
         GameObject bullet = ObjectPool.SharedInstance.GetPooledObject();
         if (bullet!=null)
         {
             // bullet.transform.position = Turret.transform.position;
             // bullet.transform.rotation = Turret.transform.position;
-            bullet.transform.position = shotPosition.transform.position;
-            bullet.transform.rotation = playerModelLook.rotation;
+            bullet.transform.SetPositionAndRotation(shotPosition.transform.position, playerModelLook.rotation);
+
+            if (ThirdPersonCam.instance.currentStyle == ThirdPersonCam.CameraStyle.Combat)
+            {
+                bullet.transform.SetPositionAndRotation(shotPosition.transform.position,Quaternion.LookRotation(aimDir,Vector3.up));
+            }
            
             bullet.SetActive(true);
         }
-       //Instantiate(GameObject.CreatePrimitive.Sphere transform.parent);
-             
         
-        //transform.Translate((Time.deltaTime * SpeedXDirection), 0, (Time.deltaTime * SpeedZdirection));
-
-        //if (projectile == null)
-        //      {
-        //          Debug.Log("Can't fire anymore");
-        //      }
-
-        ////Shooting
-        //if (readyToShoot && shooting && !reloading && bulletsLeft > 0)
-        //{
-        //    bulletsShot = 0;
-        //    Shoot();
-        //}
     }
-
-    //void Shoot()
-    //{
-    //    readyToShoot = false;
-    //    bulletsLeft--;
-    //    bulletsShot++;
-    //}
-
-    //  // DISARM FUNCTION
-    // // RaycastHit hit;
 
     //  //if (Input.GetKeyDown(KeyCode.M) && hit.collider.CompareTag("Shield"))
     //  //{
@@ -538,6 +563,22 @@ void OnFire()
     //  //}
     #endregion
 
+    void OnCombatCam()
+    {      
+        ThirdPersonCam.instance.SwitchCameraStyle(ThirdPersonCam.CameraStyle.Combat);
+        Debug.Log("COMBAT!");
+    }
+    void OnBasicCam()
+    {
+        ThirdPersonCam.instance.SwitchCameraStyle(ThirdPersonCam.CameraStyle.Basic);
+        Debug.Log("BASIC");
+
+    }
+    void OnTopDownCam()
+    {
+        ThirdPersonCam.instance.SwitchCameraStyle(ThirdPersonCam.CameraStyle.Topdown);
+        Debug.Log("TOPDOWN");
+    }
 
 
 }

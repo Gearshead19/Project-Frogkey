@@ -1,9 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading;
 
 public class ThirdPersonCam : MonoBehaviour
 {
+
+    public static ThirdPersonCam instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+
+
     [Header("References")]
     public Transform orientation;
     public Transform player;
@@ -33,11 +44,12 @@ public class ThirdPersonCam : MonoBehaviour
         //This will make the Cursor Disappear upon game starting.
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        
     }
 
 
 
-    void Update()
+    public void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1)) SwitchCameraStyle(CameraStyle.Basic);
         if (Input.GetKeyDown(KeyCode.Alpha2)) SwitchCameraStyle(CameraStyle.Combat);
@@ -71,7 +83,7 @@ public class ThirdPersonCam : MonoBehaviour
         }
         
     }
-    private void SwitchCameraStyle(CameraStyle newStyle)
+    public void SwitchCameraStyle(CameraStyle newStyle)
     {
         combatCam.SetActive(false);
         thirdPersonCam.SetActive(false);
@@ -83,4 +95,6 @@ public class ThirdPersonCam : MonoBehaviour
 
         currentStyle = newStyle;
     }
+
+   
 }
