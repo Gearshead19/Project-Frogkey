@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int HealthPoints = 100;
     public int currentHealth;
-    
+    public int invincible_factor = 1; //when turned to 0 it is invincible
 
     public HealthBar healthBar;
     
@@ -92,6 +92,18 @@ void OnQuickReset()
         }
     }
 
+    public void Player_Invincible(float time_for_invincible)
+    {
+        invincible_factor = 0;
+
+        Invoke("Player_Deactive_Invincible", time_for_invincible);
+    }
+
+    protected void Player_Deactive_Invincible()
+    {
+        invincible_factor = 1;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Projectile"))
@@ -99,7 +111,7 @@ void OnQuickReset()
             Debug.Log("I got shot");
             Destroy(collision.gameObject);
             //this.HealthPoints = this.HealthPoints - 1;
-            currentHealth = currentHealth - 5;
+            currentHealth = currentHealth - (5 * invincible_factor);
             healthBar.SetHealth(currentHealth);
 
         }
@@ -109,7 +121,7 @@ void OnQuickReset()
             Debug.Log("I got harassed");
             //Destroy(other.gameObject);
             //this.HealthPoints = this.HealthPoints - 1;
-            currentHealth = currentHealth - 3;
+            currentHealth = currentHealth - (3 * invincible_factor);
             healthBar.SetHealth(currentHealth);
         }
     }
