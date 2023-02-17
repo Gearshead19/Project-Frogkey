@@ -8,12 +8,12 @@ public class Grappling : MonoBehaviour
     private PlayerMovement pm;
     public Transform tonguePoint;
     public Transform mouthTip;
-    public LayerMask whatIsGrappleable; //rember to ask N. what this is for since it starts out as whatIsGround, then changes to what ever the objects the raycast hits
+    public LayerMask whatIsGrappleable;
     public LineRenderer lr;
     public Rigidbody rb;
     //public Transform debugTransform;
 
-    Vector3 mouseWorldPosition = Vector3.zero;
+   // Vector3 mouseWorldPosition = Vector3.zero;
 
     [Header("Grappling")]
     public float maxGrappleDistance;
@@ -32,15 +32,16 @@ public class Grappling : MonoBehaviour
       
 
     private Vector3 grapplePoint;
+    public float overshootYAxis;
 
-    RaycastHit hit;
+  
 
 
     [Header("Cooldown")]
     public float grapplingCd;
     private float grapplingCdTimer;
 
-    [Header("Input")]
+    [Header("Input")]//Won't need the input this way because of new input System
     public KeyCode grappleKey = KeyCode.Mouse1;
 
     private bool grappling;
@@ -59,7 +60,7 @@ public class Grappling : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown(grappleKey)) StartGrapple();
+        if (Input.GetKeyDown(grappleKey)) StartGrapple(); //Don't need this input because of Player Input
 
         if(Input.GetKeyDown(KeyCode.U))//this also part of the grapple test
             {
@@ -86,8 +87,8 @@ public class Grappling : MonoBehaviour
     }
     private void LateUpdate()
     {
-      //  if(grappling)
-         // lr.SetPosition(0, mouthTip.position);
+        if(grappling)
+          lr.SetPosition(0, mouthTip.position);
         
     }
 
@@ -101,17 +102,19 @@ public class Grappling : MonoBehaviour
 
         
 
-        //grappling = true;
+        grappling = true;
+        pm.freeze = true;
 
+        RaycastHit hit;
 
-            //Vector2 screenCenterPoint = new(Screen.width / 2f, Screen.height / 2f);
+        //Vector2 screenCenterPoint = new(Screen.width / 2f, Screen.height / 2f);
         //Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
         //always maxGrappleDistance
-        if (Physics.Raycast(tonguePoint.position, tonguePoint.forward, out hit, whatIsGrappleable))
+        if (Physics.Raycast(tonguePoint.position, tonguePoint.forward, out hit, maxGrappleDistance, whatIsGrappleable))
         {
-            mouseWorldPosition = hit.point;
+            //mouseWorldPosition = hit.point;
             grapplePoint = hit.point;
-
+            Invoke(nameof(ExcuteGrapple), grappleDelayTime);
             // grabbing a variable
             var hitVertex = grapplePoint;
 
@@ -120,7 +123,7 @@ public class Grappling : MonoBehaviour
             grappling = true;
             if (hit.transform.gameObject.layer == whatIsGrappleable)
             {
-                //Invoke(nameof(ExcuteGrapple), grappleDelayTime);//?
+                
                 //this is the toggle for invoke it
 
                 
@@ -132,9 +135,9 @@ public class Grappling : MonoBehaviour
         }
         else
         {
-           // grapplePoint = tonguePoint.position + tonguePoint.forward * maxGrappleDistance;
+            grapplePoint = tonguePoint.position + tonguePoint.forward * maxGrappleDistance;
 
-            //Invoke(nameof(StopGrapple), grappleDelayTime);//not needed
+            Invoke(nameof(StopGrapple), grappleDelayTime);  //not needed
         }
         lr.enabled = true;
         lr.SetPosition(1, grapplePoint);
@@ -147,16 +150,26 @@ public class Grappling : MonoBehaviour
        Grapple_action_up_arc();
 
     }
+    public bool IsGrappling()
+    {
+        return grappling;
+    }
 
+    public Vector3 GetGrapplePoint()
+    {
+        return grapplePoint;
+    }
     public void StopGrapple()
     {
-       
+        pm.freeze = false;
+
         grappling = false;
 
         grapplingCdTimer = grapplingCd;
 
         lr.enabled = false;
     }
+
 
     void OnGrapple()
     {
