@@ -23,7 +23,7 @@ public class Grappling : MonoBehaviour
     private float grapple_speed_up_add = 2; //is caluated in the Calculate_jump method
     public int lob; // divid disance by this to get the grpple_spped_up_add
     private float distance = 10; //distance betwean this and the intended location
-    private Vector3 GrappleVec; //saved vector for the targeted grapple location
+    public Vector3 GrappleVec; //saved vector for the targeted grapple location
     public float distance_reset = 2; //when objects get distance_reset close to target location,
     //private bool grappling = false;
     //  public LayerMask available_grapple_area; //Make sure this is set to whatIsGround, since the ground is assumed to be grapplable
@@ -49,7 +49,7 @@ public class Grappling : MonoBehaviour
 
     private void Start()
     {
-        GrappleVec = new Vector3(960, 15, -35);//just a text
+        //GrappleVec = new Vector3(20, 4, 9);//just a text
         rb = GetComponent<Rigidbody>();
         pm = GetComponent<PlayerMovement>();
     }
@@ -115,13 +115,15 @@ public class Grappling : MonoBehaviour
             // grabbing a variable
             var hitVertex = grapplePoint;
 
-            GrappleVec = hitVertex;//saves point that is grapple to
-
+            GrappleVec = grapplePoint;//saves point that is grapple to
+            ExcuteGrapple();
+            grappling = true;
             if (hit.transform.gameObject.layer == whatIsGrappleable)
             {
                 //Invoke(nameof(ExcuteGrapple), grappleDelayTime);//?
-                ExcuteGrapple();
-                grappling = true; //this is the toggle for invoke it
+                //this is the toggle for invoke it
+
+                
                 Debug.Log("Hit grapple thing");
             }
 
@@ -159,7 +161,8 @@ public class Grappling : MonoBehaviour
     void OnGrapple()
     {
         Debug.Log("I'm grappling thing");
-        Vector3 aimDir = (mouseWorldPosition - tonguePoint.position).normalized;
+        StartGrapple();
+        //Vector3 aimDir = (mouseWorldPosition - tonguePoint.position).normalized;
 
 
         //if (Physics.Raycast(tonguePoint.position, tonguePoint.forward, 999f, whatIsGrappleable))
