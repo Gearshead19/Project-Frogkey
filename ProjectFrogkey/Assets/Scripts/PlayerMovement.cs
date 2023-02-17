@@ -4,7 +4,11 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// TODO: Bind the sprint Key into the new input system
+/// TODO: 1.Manage move to sprint implementation
+/// Needs to be a gradual change based on "stick pressure" or
+/// "changing values to a number threshold"
+/// 
+/// 2. Refactor code to be organized. We have a lot of variables we're not even using
 /// </summary>
 public class PlayerMovement : MonoBehaviour
 {
@@ -86,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
 
     public enum MovementState
     {
-        freeze,
+        idle,
         walking,
         sprinting,
         air,
@@ -100,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.freezeRotation = true;    
+        rb.freezeRotation = true;   //freeze = Idle 
         readyToJump = true;
 
     }
@@ -149,9 +153,9 @@ public class PlayerMovement : MonoBehaviour
     private void StateHandler()
     {
         //Mode - Sprinting
-        if (grounded == true && Input.GetKey(sprintKey))
+        if (grounded == true && moveSpeed >= 5f)
         {
-            this.gameObject.GetComponent<PlayerHealth>().Player_Invincible(time_for_invincbility);
+            //this.gameObject.GetComponent<PlayerHealth>().Player_Invincible(time_for_invincbility);
             state = MovementState.sprinting;
             moveSpeed = sprintSpeed;
 
@@ -167,10 +171,10 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.air;
         }
-        //Mode - Freeze
+        //Mode - Idle(Freeze)
         if (freeze)
         {
-            state = MovementState.freeze;
+            state = MovementState.idle;
             moveSpeed = 0;
             rb.velocity = Vector3.zero;
         }
@@ -215,6 +219,12 @@ public class PlayerMovement : MonoBehaviour
     {
         //0 speed to move speed's value
          float moveCurve = Mathf.SmoothDamp(moveSpeed, sprintSpeed, ref currentMoveVelocity, smoothTime * Time.deltaTime);
+
+        //Cap the move speed to not exceed the sprint speed
+        //float moveCap = Mathf.Clamp( Value = moveSpeed, float min = Walk Speed, float max = Sprint Speed);
+        float moveCap = Mathf.Clamp(moveSpeed, walkSpeed, sprintSpeed);
+
+
         currentSpeed = moveSpeed;
         if (activeGrapple) return;
         //Calculates movement direction of the Player.
@@ -235,8 +245,10 @@ public class PlayerMovement : MonoBehaviour
         //On Ground
         if(grounded)
         {
+            //Add force
+
             //rb.AddForce(10f *moveCurve * moveSpeed * moveDirection.normalized, ForceMode.Force);
-            rb.AddForce(10f* moveCurve * moveDirection.normalized, ForceMode.Force);
+            rb.AddForce(10f * moveCurve * moveCap * moveDirection.normalized, ForceMode.Force); // Replace Move Cap to move curve
         }
         //In Air
         else if (!grounded)
