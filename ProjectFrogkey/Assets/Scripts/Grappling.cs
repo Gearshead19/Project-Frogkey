@@ -29,6 +29,8 @@ public class Grappling : MonoBehaviour
     //  public LayerMask available_grapple_area; //Make sure this is set to whatIsGround, since the ground is assumed to be grapplable
     // Vertex point is Hit Vertex
 
+      
+
     private Vector3 grapplePoint;
 
     RaycastHit hit;
@@ -47,6 +49,7 @@ public class Grappling : MonoBehaviour
 
     private void Start()
     {
+        GrappleVec = new Vector3(960, 15, -35);//just a text
         rb = GetComponent<Rigidbody>();
         pm = GetComponent<PlayerMovement>();
     }
@@ -58,19 +61,21 @@ public class Grappling : MonoBehaviour
 
         if (Input.GetKeyDown(grappleKey)) StartGrapple();
 
+        if(Input.GetKeyDown(KeyCode.U))//this also part of the grapple test
+            {
+            ExcuteGrapple();
+            grappling = true;
+        }
+
 
         if (grapplingCdTimer > 0)
         {
             grapplingCdTimer -= Time.deltaTime;
         }
-
-        if (grappling == false)
-        {
-            //ExecuteGrapple();
-        }
-
+        
         if (grappling == true)
         {
+            
             Grapple_action_go_to();
             Reset_grapple();
         }
@@ -99,8 +104,8 @@ public class Grappling : MonoBehaviour
         //grappling = true;
 
 
-            Vector2 screenCenterPoint = new(Screen.width / 2f, Screen.height / 2f);
-        Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
+            //Vector2 screenCenterPoint = new(Screen.width / 2f, Screen.height / 2f);
+        //Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
         //always maxGrappleDistance
         if (Physics.Raycast(tonguePoint.position, tonguePoint.forward, out hit, whatIsGrappleable))
         {
@@ -114,8 +119,9 @@ public class Grappling : MonoBehaviour
 
             if (hit.transform.gameObject.layer == whatIsGrappleable)
             {
-                Invoke(nameof(ExcuteGrapple), grappleDelayTime);
-                grappling = true;
+                //Invoke(nameof(ExcuteGrapple), grappleDelayTime);//?
+                ExcuteGrapple();
+                grappling = true; //this is the toggle for invoke it
                 Debug.Log("Hit grapple thing");
             }
 
@@ -126,7 +132,7 @@ public class Grappling : MonoBehaviour
         {
            // grapplePoint = tonguePoint.position + tonguePoint.forward * maxGrappleDistance;
 
-            Invoke(nameof(StopGrapple), grappleDelayTime);
+            //Invoke(nameof(StopGrapple), grappleDelayTime);//not needed
         }
         lr.enabled = true;
         lr.SetPosition(1, grapplePoint);
@@ -202,18 +208,16 @@ public class Grappling : MonoBehaviour
     //Move object towards gapple position
     void Grapple_action_go_to()
     {
-        this.transform.localPosition = Vector3.Lerp(transform.localPosition, GrappleVec, Time.deltaTime * grapple_speed); //moves player to location of grapple
+        this.transform.position = Vector3.Lerp(transform.position, GrappleVec, Time.deltaTime * grapple_speed); //moves player to location of grapple
     }
     //impact force to create an arc like effect
     void Grapple_action_up_arc()
     {
-        //rb.AddForce(Vector3.up * (base_grapple_speed_up + grapple_speed_up_add), ForceMode.Impulse);
-        this.gameObject.transform.Translate(0, (base_grapple_speed_up + grapple_speed_up_add) * Time.deltaTime, 0);
+        rb.AddForce(Vector3.up * (base_grapple_speed_up + grapple_speed_up_add), ForceMode.Impulse);
     }
     //finds the distance to the grapple point
     void Find_distance_to_gapplepoint()
     {
-
         distance = Vector3.Distance(this.gameObject.transform.position, GrappleVec);
     }
     //Rests grapple when too close
