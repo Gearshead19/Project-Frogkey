@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: T_Village_Cobblestone_01_C
+  m_Name: Water
   m_Shader: {fileID: 4800000, guid: 8352fe40c7dd2a44a835eae3e0a9b55c, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -20,19 +20,31 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _FlowMask:
+    - _Displacement:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlowMask:
+        m_Texture: {fileID: 2800000, guid: 09a92257ed7feff498bc46622ff091a7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FoamMask:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 1b7476c8f5d1e2d498e205b1f9b8803e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _HeightMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: ab4043534eb72a742941157d17f966f1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: ecea605a3a734ce479b1b744c36657d3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: 4ea058df3811fdf439d5bff6fbdb2316, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WaveNormal:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -42,7 +54,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _ColorDepthFade: 0
+    - _ColorDepthFade: 8
+    - _DisplaceStrength: 0
     - _EdgeFoamCutoff: 1
     - _EdgeFoamDepthFade: 0.19
     - _EdgeFoamIntensity: 1
@@ -50,28 +63,40 @@ Material:
     - _FlowIntensity: 1
     - _FlowPower: 1
     - _FlowRandomizeUV: 0.26
+    - _FoamCutoff: 0
+    - _FoamDepthFade: 0.19
     - _FoamIntensity: 1
     - _FoamPower: 1
     - _FoamRandomizeUV: 0.26
+    - _FoamScale: 2
+    - _FoamSpeed: 1
+    - _Glossiness: 0.5
     - _HeightIntensity: 1
     - _HeightPower: 1
     - _HeightRandomizeUV: 0.26
-    - _Metallic: 0.2
+    - _Metallic: 0
     - _NormalIntensity: 0.5
     - _NormalRandomizeUV: 0.26
     - _Opacity: 1
     - _RefractionDepth: 1
     - _RefractionStrength: 1
     - _Roughness: 0.05
+    - _Smoothness: 0
     - _WaterFoamColorIntensity: 1
+    - _WaveNormalIntensity: 1
+    - _WaveTiling01: 1
+    - _WaveTiling02: 1
+    - _WorldtoObjectPosition: 0
     - __dirty: 1
     - _useStepforFlow: 0
     m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorDeep: {r: 0.12130647, g: 0.34791896, b: 0.5471698, a: 0}
     - _ColorShallow: {r: 0.5990566, g: 0.9091429, b: 1, a: 0}
     - _EdgeFoamSpeed: {r: 0, g: 0, b: 0, a: 0}
     - _FlowSpeed: {r: 0, g: -0.2, b: 0, a: 0}
     - _FlowUVTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
     - _FoamSpeed: {r: 1, g: 1, b: 0, a: 0}
     - _FoamUVTiling: {r: 1, g: 1, b: 0, a: 0}
     - _HeightSpeed: {r: 1, g: 1, b: 0, a: 0}
