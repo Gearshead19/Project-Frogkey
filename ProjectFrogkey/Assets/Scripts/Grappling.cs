@@ -118,15 +118,18 @@ public class Grappling : MonoBehaviour
             // grabbing a variable
             var hitVertex = grapplePoint;
 
-            GrappleVec = grapplePoint;//saves point that is grapple to
-            ExcuteGrapple();
-            grappling = true;
+            GrappleVec = hit.point;// grapplePoint;//saves point that is grapple to
+            
+
             if (hit.transform.gameObject.layer == whatIsGrappleable)
             {
-                
+
+                ExcuteGrapple();
+                grappling = true;
+
                 //this is the toggle for invoke it
 
-                
+
                 Debug.Log("Hit grapple thing");
             }
 
