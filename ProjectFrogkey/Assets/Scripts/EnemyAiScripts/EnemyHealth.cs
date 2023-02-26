@@ -9,6 +9,8 @@ public class EnemyHealth : MonoBehaviour
     public int punch_jab = 1;
     public bool set_to_disable = false;
 
+    public float currentEnemyHealth;
+
     public GameObject particial_trigger;
     
     public float hit_delay_vission_delay = 0.5F;

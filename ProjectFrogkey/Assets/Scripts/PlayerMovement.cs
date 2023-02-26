@@ -26,20 +26,27 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
     public float walkSpeed;
     public float sprintSpeed;
-    public float acceleration;
+
+    public float acceleration = 1;
+
     public Transform orientation;
     public Transform playerModelLook;
+
     public float rotationSpeed;
     float horizontalInput;
     float verticalInput;
+
     Vector3 moveDirection;
+
     Rigidbody rb;
+
     Vector2 inputVector;
+
     private float time_for_invincbility = .03f;
     public float smoothTime;
     public float currentSpeed;
     public float currentMoveVelocity;
-
+    float playerMass = 10f;
     public float groundDrag;
 
     Vector3 MouseWorldPosition = Vector3.zero;
@@ -49,7 +56,17 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;
     public float jumpCooldown;
     public float airMultiplier;
+
     bool readyToJump;
+
+    [Header("Dashing")]
+    float dashForce;
+    float dashUpward;
+    float dashDuration;
+
+    [Header("Cooldown")]
+    float dashCD;
+    float dashCDTimer;
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
@@ -153,7 +170,7 @@ public class PlayerMovement : MonoBehaviour
     private void StateHandler()
     {
         //Mode - Sprinting
-        if (grounded == true && moveSpeed >= 5f)
+        if (grounded == true && horizontalInput >= .5 || verticalInput >= .5 || horizontalInput == -1 || verticalInput == -1)
         {
             //this.gameObject.GetComponent<PlayerHealth>().Player_Invincible(time_for_invincbility);
             state = MovementState.sprinting;
@@ -197,6 +214,8 @@ public class PlayerMovement : MonoBehaviour
 
         inputVector.x = horizontalInput;
         inputVector.y = verticalInput;
+
+        Debug.Log("H: " + horizontalInput + "V: " + verticalInput);
         
     }
 
@@ -208,7 +227,7 @@ public class PlayerMovement : MonoBehaviour
     void RotateTowardsVector()
     {
         var xzDirection = new Vector2(inputVector.x, inputVector.y);
-        if(xzDirection.magnitude ==0) return;
+        if(xzDirection.magnitude == 0) return;
 
         var rotation = Quaternion.LookRotation(xzDirection);
 
@@ -217,15 +236,57 @@ public class PlayerMovement : MonoBehaviour
 
     void MovePlayer()
     {
-        //0 speed to move speed's value
-         float moveCurve = Mathf.SmoothDamp(moveSpeed, sprintSpeed, ref currentMoveVelocity, smoothTime * Time.deltaTime);
+        //Sprint Calculation
 
-        //Cap the move speed to not exceed the sprint speed
-        //float moveCap = Mathf.Clamp( Value = moveSpeed, float min = Walk Speed, float max = Sprint Speed);
-        float moveCap = Mathf.Clamp(moveSpeed, walkSpeed, sprintSpeed);
+        if (horizontalInput >= .5 || horizontalInput <= -.5)
+        {
+            state = MovementState.sprinting;
+            acceleration *= Time.deltaTime;
+            
+        }
+
+        if (horizontalInput <= .5 || horizontalInput != 0)
+        {
+            state = MovementState.walking;
+            acceleration = 1;
+        }
+
+        if (verticalInput >= .5 || verticalInput <= -.5)
+        {
+            state = MovementState.sprinting;
+            acceleration *= Time.deltaTime;
+
+        }
+
+        if (verticalInput < .5 || verticalInput != 0)
+        {
+            state = MovementState.walking;
+            acceleration = 1;
+        }
 
 
-        currentSpeed = moveSpeed;
+
+        else
+        {
+            Debug.Log("Found an opening");
+        }
+        
+        ////For sprint speed
+        //currentMoveVelocity = moveSpeed * Time.deltaTime;
+
+        //// 0 speed to move speed's value
+        // float moveCurve = Mathf.SmoothDamp(moveSpeed, sprintSpeed, ref currentMoveVelocity, smoothTime); // velocity is rate while smooth time is how long it takes
+
+        ////Cap the move speed to not exceed the sprint speed
+        ////float moveCap = Mathf.Clamp( Value = moveSpeed, float min = Walk Speed, float max = Sprint Speed);
+        //float moveCap = Mathf.Clamp(moveSpeed, walkSpeed, sprintSpeed);
+        //currentSpeed = moveSpeed;
+        //if (moveCurve > moveCap)
+        //{
+        //    currentSpeed = sprintSpeed;
+        //    state = MovementState.sprinting;
+        //}
+        
         if (activeGrapple) return;
         //Calculates movement direction of the Player.
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
@@ -246,50 +307,38 @@ public class PlayerMovement : MonoBehaviour
         if(grounded)
         {
             //Add force
-
             //rb.AddForce(10f *moveCurve * moveSpeed * moveDirection.normalized, ForceMode.Force);
-            rb.AddForce(10f * moveCurve * moveCap * moveDirection.normalized, ForceMode.Force); // Replace Move Cap to move curve
+            rb.AddForce(playerMass * moveSpeed * acceleration * moveDirection.normalized, ForceMode.Force); // Replace Move Cap to move curve
         }
         //In Air
         else if (!grounded)
         {
-            rb.AddForce(10f * airMultiplier * moveSpeed * moveDirection.normalized, ForceMode.Force);
+            rb.AddForce(playerMass * airMultiplier * moveSpeed * moveDirection.normalized, ForceMode.Force);
         }
 
         //Turn "Gravity" off while on "Slopes"
         rb.useGravity = !OnSlope();
 
     }
-    #region Sprint
-    /// <summary>
-    /// Gives player Sprint
-    /// </summary>
-    /// 
-
-    //void OnSprint()
-    //{
-    //    if (grounded)
-    //    {
-    //        this.gameObject.GetComponent<PlayerHealth>().Player_Invincible(time_for_invincbility);
-    //        state = MovementState.sprinting;
-    //        moveSpeed = sprintSpeed;
-    //    }
-
-    //}
-    #endregion
 
     #region Dash
 
     void OnDash()
     {
+        float Force = rb.mass * acceleration;
         Debug.Log("I'm Dashing");
         if (grounded && state != MovementState.dashing)
         {
             this.gameObject.GetComponent<PlayerHealth>().Player_Invincible(time_for_invincbility);
-            rb.AddForce(acceleration * rb.mass * moveDirection, ForceMode.Impulse);
+            rb.AddForce(Force * moveDirection, ForceMode.Impulse);
             state = MovementState.dashing;
+            Invoke(nameof(ResetDash),dashDuration);
         }
      
+        
+    }
+    private void ResetDash()
+    {
         
     }
 
