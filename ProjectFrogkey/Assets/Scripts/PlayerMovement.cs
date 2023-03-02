@@ -20,7 +20,6 @@ public class PlayerMovement : MonoBehaviour
     // Shot postion will be used as the attack point
     public Transform shotPosition;
   //  public Transform debugTransform;
-    public LayerMask whatIsGrappleable;
 
     [Header("Movement")]
     public float moveSpeed;
@@ -134,15 +133,7 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
 
-        //// Creates a raycast to the center of the screen
-
-        Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
-        if (Physics.Raycast(ray, out RaycastHit hit, 999f, whatIsGrappleable))
-        {
-           // debugTransform.transform.position = hit.point;
-            MouseWorldPosition = hit.point;
-            
-        }
+        
 
 
         //Ground Check
