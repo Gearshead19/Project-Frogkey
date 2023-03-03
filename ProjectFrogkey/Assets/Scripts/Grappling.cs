@@ -105,21 +105,20 @@ public class Grappling : MonoBehaviour
         grappling = true;
         pm.freeze = true;
 
-        RaycastHit hit;
-
-        //Vector2 screenCenterPoint = new(Screen.width / 2f, Screen.height / 2f);
-        //Ray ray = Camera.main.ScreenPointToRay(screenCenterPoint);
         //always maxGrappleDistance
-        if (Physics.Raycast(tonguePoint.position, tonguePoint.forward, out hit, maxGrappleDistance, whatIsGrappleable))
+        //Start at camera position and the player's direction(camera's forward position) launch toward the max Grapple Distance and only apply to what is Grappleable
+        // Since it's third person.... What's going to change?
+        if (Physics.Raycast(tonguePoint.position, tonguePoint.forward, out RaycastHit hit, maxGrappleDistance, whatIsGrappleable))
         {
-            //mouseWorldPosition = hit.point;
+
+            //Hit something to store the hit point
             grapplePoint = hit.point;
+
+            //call Execute Grapple with a delay
             Invoke(nameof(ExcuteGrapple), grappleDelayTime);
-            // grabbing a variable
-           // var hitVertex = grapplePoint;
 
             GrappleVec = grapplePoint;// grapplePoint;//saves point that is grapple to
-            
+
 
             if (hit.transform.gameObject.layer == whatIsGrappleable)
             {
@@ -128,8 +127,6 @@ public class Grappling : MonoBehaviour
                 grappling = true;
 
                 //this is the toggle for invoke it
-
-
                 Debug.Log("Hit grapple thing");
             }
 
@@ -149,7 +146,7 @@ public class Grappling : MonoBehaviour
     private void ExcuteGrapple()
     {
         
-       Caluate_jump();
+       Calculate_jump();
        Grapple_action_up_arc();
 
     }
@@ -178,45 +175,12 @@ public class Grappling : MonoBehaviour
     {
         Debug.Log("I'm grappling thing");
         StartGrapple();
-        //Vector3 aimDir = (mouseWorldPosition - tonguePoint.position).normalized;
-
-
-        //if (Physics.Raycast(tonguePoint.position, tonguePoint.forward, 999f, whatIsGrappleable))
-        //{
-        //    //mouseWorldPosition = hit.point;
-        //    //grapplePoint = hit.point;
-
-        //    //// grabbing a variable
-        //    //var hitVertex = grapplePoint;
-
-        //    //GrappleVec = hitVertex;//saves point that is grapple to
-
-        //    //if (hit.transform.gameObject.layer == whatIsGrappleable)
-        //    //{
-        //    //    //Invoke(nameof(ExcuteGrapple), grappleDelayTime);
-        //    //    grappling = true;
-        //    //    Debug.Log("Hit grapple thing");
-        //    //}
-
-
-
-        //}
-
-        ////if (ThirdPersonCam.instance.currentStyle == ThirdPersonCam.CameraStyle.Combat)
-        ////{
-        ////    lr.transform.SetPositionAndRotation(tonguePoint.transform.position, Quaternion.LookRotation(aimDir, Vector3.up));
-        ////    StartGrapple();
-        ////}
-        ////else
-        ////{
-        ////    StartGrapple();
-        ////}
     }
 
 
     #region Grapple Physics
     //caluates how high the imulse force is expose to be for the jump depending on the distance
-    void Caluate_jump()
+    void Calculate_jump()
     {
         Find_distance_to_gapplepoint();
 

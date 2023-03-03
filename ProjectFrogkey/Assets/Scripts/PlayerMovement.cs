@@ -133,9 +133,6 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
 
-        
-
-
         //Ground Check
 
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * maxDistance + 0.2f, whatIsGround);
@@ -615,6 +612,7 @@ void OnFire()
     //  //}
     #endregion
 
+    #region Camera Shifts if we need them
     void OnCombatCam()
     {      
         ThirdPersonCam.instance.SwitchCameraStyle(ThirdPersonCam.CameraStyle.Combat);
@@ -632,5 +630,5 @@ void OnFire()
         Debug.Log("TOPDOWN");
     }
 
-
+    #endregion
 }
