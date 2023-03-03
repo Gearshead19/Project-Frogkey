@@ -13,6 +13,8 @@ public class temp_grapple : MonoBehaviour
 
     public GameObject test_collisoin;
 
+    public GameObject Player;
+
     public float base_grapple_speed_up; //impulse
     private float grapple_speed_up_add = 2; //is caluated in the Calculate_jump method
     public int lob; // divid disance by this to get the grpple_spped_up_add
@@ -26,16 +28,21 @@ public class temp_grapple : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rb = Player.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.U))//this also part of the grapple test
+        if (Input.GetKeyDown(KeyCode.K))//this also part of the grapple test
         {
             Make_detector_move();
+        }
+
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            set_grapple_on();
         }
 
         if (grappling == true)
@@ -50,6 +57,7 @@ public class temp_grapple : MonoBehaviour
     private void Make_detector_move()
     {
         //thing_able_to_grapple_on;
+        test_collisoin.transform.parent = null;
         this.test_collisoin.GetComponent<temp_collision_grapple>().activate(thing_able_to_grapple_on, this.gameObject);
     }
 
@@ -61,6 +69,7 @@ public class temp_grapple : MonoBehaviour
         {
             set_grapple_on();
         }
+        set_grapple_on();
     }
 
     private void set_grapple_on()
@@ -88,7 +97,7 @@ public class temp_grapple : MonoBehaviour
     //Move object towards gapple position
     void Grapple_action_go_to()
     {
-        this.transform.position = Vector3.Lerp(transform.position, GrappleVec, Time.deltaTime * grapple_speed); //moves player to location of grapple
+        Player.transform.position = Vector3.Lerp(Player.transform.position, GrappleVec, Time.deltaTime * grapple_speed); //moves player to location of grapple
     }
     //impact force to create an arc like effect
     void Grapple_action_up_arc()
@@ -98,7 +107,7 @@ public class temp_grapple : MonoBehaviour
     //finds the distance to the grapple point
     void Find_distance_to_gapplepoint()
     {
-        distance = Vector3.Distance(this.gameObject.transform.position, GrappleVec);
+        distance = Vector3.Distance(Player.gameObject.transform.position, GrappleVec);
     }
     //Rests grapple when too close
     void Reset_grapple()
