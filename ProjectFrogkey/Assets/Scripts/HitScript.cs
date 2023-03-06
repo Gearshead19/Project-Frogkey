@@ -15,6 +15,10 @@ public class HitScript : MonoBehaviour
 
     private GameObject HoldPostion;
 
+    //The lines below are to play audio implemented from Wwise
+    public AK.Wwise.Event BasicAttack;
+    public AK.Wwise.Event HeavyAttack;
+
     void Start()
     {
         OverHeadTS = GameObject.FindGameObjectWithTag("overheadtelescope");
@@ -54,6 +58,8 @@ public class HitScript : MonoBehaviour
             ClearToHitStuff = false;
             Invoke("setitinactive", DelayDisappear);
             Invoke("WaitToHit", DelayPunchJabHit);
+            //The line below plays the BasicAttack audio event
+            BasicAttack.Post(gameObject);
         }
     }
 
@@ -65,7 +71,7 @@ public class HitScript : MonoBehaviour
             ClearToHitStuff = false;
             Invoke("setitinactive", DelayDisappear);
             Invoke("WaitToHit", DelayOVerHeadTSHit);
-
+            HeavyAttack.Post(gameObject);
         }
     }
 

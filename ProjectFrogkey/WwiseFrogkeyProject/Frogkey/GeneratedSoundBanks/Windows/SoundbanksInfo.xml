@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="145">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="173969489" Type="User" Language="SFX" Hash="{A1CBE48E-1415-5073-6EFB-9C59A419D042}">
+			<ShortName>SFX_Key_Pickup</ShortName>
+			<Path>SFX_Key_Pickup.bnk</Path>
+			<Media>
+				<File Id="932846478" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Key_Pickup.wav</ShortName>
+					<CachePath>SFX/SFX_Key_Pickup_10C4C929.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2881789206" Name="Play_Key_Pickup" DurationType="OneShot" DurationMin="1.1076666" DurationMax="1.1076666">
+					<MediaRefs>
+						<MediaRef Id="932846478"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="973840868" Type="User" Language="SFX" Hash="{07E90B41-6860-2A51-9882-1F537A4ED7A1}">
+			<ShortName>MUS_ForestDungeon</ShortName>
+			<Path>MUS_ForestDungeon.bnk</Path>
+			<Media>
+				<File Id="118347245" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MUS_ForestDungeon.wav</ShortName>
+					<CachePath>SFX/MUS_ForestDungeon_D79FB2B7.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2194545525" Name="Play_DungeonMusic" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="118347245"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="1125626846" Type="User" Language="SFX" Hash="{D6FCB6F0-0077-F925-46A5-AE444DA20B10}">
+			<ShortName>SFX_Door_ForestDungeon_Open</ShortName>
+			<Path>SFX_Door_ForestDungeon_Open.bnk</Path>
+			<Media>
+				<File Id="696430479" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_BasicDoor_Open_01.wav</ShortName>
+					<CachePath>SFX/SFX_BasicDoor_Open_01_10C4C929.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="228997405" Name="Play_ForestDungeon_BasicDoor_Open" DurationType="OneShot" DurationMin="1.1047245" DurationMax="1.2595019">
+					<MediaRefs>
+						<MediaRef Id="696430479"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="2137158287" Name="ForestDungeonVerb"/>
+					</AuxBusRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{EB6F0DD8-BA7A-8D18-DD0C-51DF08F1CDD9}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="2791153688" Name="Hall_Small" LibName="Wwise RoomVerb" LibId="7733251"/>
+				</ShareSets>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="85412153" Name="Ambience"/>
+				<Bus Id="393239870" Name="SFX"/>
+				<Bus Id="1229948536" Name="Environment"/>
+				<Bus Id="2242381963" Name="Enemies"/>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+				<Bus Id="3991942870" Name="Music"/>
+				<Bus Id="4006243373" Name="Hopps"/>
+			</Busses>
+			<AuxBusses>
+				<AuxBus Id="2137158287" Name="ForestDungeonVerb">
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="2791153688"/>
+						</ShareSets>
+					</PluginRefs>
+				</AuxBus>
+			</AuxBusses>
+			<StateGroups>
+				<StateGroup Id="1606972574" Name="ForestDungeonStates">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="1017222595" Name="LowHealth"/>
+						<State Id="1823678183" Name="Exploring"/>
+						<State Id="2764240573" Name="Combat"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+		</SoundBank>
+		<SoundBank Id="1922392942" Type="User" Language="SFX" Hash="{76E941A0-51A3-3375-8997-50E56EF26669}">
+			<ShortName>MUS_MainTown</ShortName>
+			<Path>MUS_MainTown.bnk</Path>
+			<Media>
+				<File Id="421855728" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MUS_MainTown_Loop.wav</ShortName>
+					<CachePath>SFX/MUS_MainTown_Loop_D79FB2B7.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1134137730" Name="Play_MainTownMusic" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="421855728"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="2286727387" Type="User" Language="SFX" Hash="{746EBA40-03ED-313B-7260-CA75FE780856}">
+			<ShortName>MUS_UndergroundForest</ShortName>
+			<Path>MUS_UndergroundForest.bnk</Path>
+			<Media>
+				<File Id="937556372" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MUS_UndergroundForest_Loop.wav</ShortName>
+					<CachePath>SFX/MUS_UndergroundForest_Loop_D79FB2B7.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1277548847" Name="Play_UndergroundForestMusic" DurationType="OneShot" DurationMin="95.267166" DurationMax="95.267166">
+					<MediaRefs>
+						<MediaRef Id="937556372"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="2572880635" Type="User" Language="SFX" Hash="{A8308C36-B994-DD4B-9F3E-F7F2658B46AA}">
+			<ShortName>SFX_Potion_Drink</ShortName>
+			<Path>SFX_Potion_Drink.bnk</Path>
+			<Media>
+				<File Id="885180894" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Potion_Drink_01.wav</ShortName>
+					<CachePath>SFX/SFX_Potion_Drink_01_10C4C929.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3363411656" Name="Play_Drink_HealthPotion" DurationType="OneShot" DurationMin="1.6336666" DurationMax="1.6336666">
+					<MediaRefs>
+						<MediaRef Id="885180894"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="3253083610" Type="User" Language="SFX" Hash="{195A409E-199F-A3A7-857F-7CBA21EBE449}">
+			<ShortName>SFX_Door_ForestDungeon_Close</ShortName>
+			<Path>SFX_Door_ForestDungeon_Close.bnk</Path>
+			<Media>
+				<File Id="476682219" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_BasicDoor_Close_01.wav</ShortName>
+					<CachePath>SFX/SFX_BasicDoor_Close_01_10C4C929.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="3406344955" Name="Play_ForestDungeon_BasicDoor_Close" DurationType="OneShot" DurationMin="1.120793" DurationMax="1.2595019">
+					<MediaRefs>
+						<MediaRef Id="476682219"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="2137158287" Name="ForestDungeonVerb"/>
+					</AuxBusRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="3353912517" Type="User" Language="SFX" Hash="{A52DDB7E-1CCC-F2B8-85B1-FE696A5F9CDB}">
+			<ShortName>SFX_Hopps_HeavyAttack</ShortName>
+			<Path>SFX_Hopps_HeavyAttack.bnk</Path>
+			<Media>
+				<File Id="656144537" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Hopps_HeavyAttack_01.wav</ShortName>
+					<CachePath>SFX/SFX_Hopps_HeavyAttack_01_10C4C929.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="190067705" Name="Play_HoppsHeavyAttack" DurationType="OneShot" DurationMin="0.55182624" DurationMax="0.7718823">
+					<MediaRefs>
+						<MediaRef Id="656144537"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="2137158287" Name="ForestDungeonVerb"/>
+					</AuxBusRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="3591353126" Type="User" Language="SFX" Hash="{7B38BF03-0D7D-09D2-60C8-B454F82A7CA0}">
+			<ShortName>MUS_OverworldForest</ShortName>
+			<Path>MUS_OverworldForest.bnk</Path>
+			<Media>
+				<File Id="976256781" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MUS_OverworldForest.wav</ShortName>
+					<CachePath>SFX/MUS_OverworldForest_D79FB2B7.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="693146296" Name="Play_OverworldForestMusic" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="976256781"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+		<SoundBank Id="3968786574" Type="User" Language="SFX" Hash="{9CBCC0F7-11C1-31EA-074C-F2ED21AB2B09}">
+			<ShortName>SFX_Hopps_BasicAttack</ShortName>
+			<Path>SFX_Hopps_BasicAttack.bnk</Path>
+			<Media>
+				<File Id="905258165" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Hopps_BasicAttack_01.wav</ShortName>
+					<CachePath>SFX/SFX_Hopps_BasicAttack_01_10C4C929.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="536851419" Name="Play_Hopps_BasicAttack" DurationType="OneShot" DurationMin="0.6291399" DurationMax="0.8065222">
+					<MediaRefs>
+						<MediaRef Id="905258165"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="2137158287" Name="ForestDungeonVerb"/>
+					</AuxBusRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{8160B7E0-C0E8-C6DC-B839-798FFA58E1B8}</FileHash>
+</SoundBanksInfo>
