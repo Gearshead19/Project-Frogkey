@@ -30,7 +30,7 @@ public class EnemyMovementStates : DetectionStatMachine
         NavMeshAgent = GetComponent<NavMeshAgent>();
         PlayerFroggy = GameObject.FindGameObjectWithTag("FindPlayer").transform;
 
-        if(this.gameObject.GetComponent("IsOkayShootLookAhead") != null)
+        if(this.gameObject.GetComponent<IsOkayShootLookAhead>() != null)
         {
             shooter = true;
             check_shoot = FroggyPlayer.GetComponent<IsOkayShootLookAhead>();
