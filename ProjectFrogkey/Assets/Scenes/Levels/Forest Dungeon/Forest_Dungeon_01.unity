@@ -15347,15 +15347,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1139087082040123144, guid: 043e57a987d20474f8c348141544c5f2, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.16018222
+      value: 0.16018225
       objectReference: {fileID: 0}
     - target: {fileID: 1139087082040123144, guid: 043e57a987d20474f8c348141544c5f2, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000025470568
+      value: 0.000000023309845
       objectReference: {fileID: 0}
     - target: {fileID: 1139087082040123144, guid: 043e57a987d20474f8c348141544c5f2, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000041333035
+      value: -0.000000003782667
       objectReference: {fileID: 0}
     - target: {fileID: 2267871210468115282, guid: 043e57a987d20474f8c348141544c5f2, type: 3}
       propertyPath: data.WwiseObjectReference
@@ -41744,6 +41744,10 @@ PrefabInstance:
     - target: {fileID: 8572451089422821947, guid: 73655155accc4f94c8d60be3067912b2, type: 3}
       propertyPath: m_Name
       value: Test_Target_Static (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8572451089422821947, guid: 73655155accc4f94c8d60be3067912b2, type: 3}
+      propertyPath: m_TagString
+      value: Targets
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73655155accc4f94c8d60be3067912b2, type: 3}
@@ -83251,7 +83255,7 @@ GameObject:
   - component: {fileID: 1712441873}
   m_Layer: 0
   m_Name: Boss_Room
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83304,7 +83308,7 @@ MonoBehaviour:
           m_StringArgument: Thanks_For_Playing
           m_BoolArgument: 0
         m_CallState: 2
-  objectsTaggedBeingChecked: 
+  objectsTaggedBeingChecked: Enemy
 --- !u!1 &1715413596
 GameObject:
   m_ObjectHideFlags: 0
@@ -83316,7 +83320,7 @@ GameObject:
   - component: {fileID: 1715413597}
   m_Layer: 0
   m_Name: Room_04
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83408,7 +83412,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  objectsTaggedBeingChecked: 
+  objectsTaggedBeingChecked: Enemy
 --- !u!1001 &1725495813
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89253,6 +89257,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test_Target_Static
       objectReference: {fileID: 0}
+    - target: {fileID: 8572451089422821947, guid: 73655155accc4f94c8d60be3067912b2, type: 3}
+      propertyPath: m_TagString
+      value: Targets
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73655155accc4f94c8d60be3067912b2, type: 3}
 --- !u!4 &1852472915 stripped
@@ -90962,7 +90970,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  objectsTaggedBeingChecked: 
+  objectsTaggedBeingChecked: Targets
 --- !u!82 &1904590097
 AudioSource:
   m_ObjectHideFlags: 0
@@ -100904,6 +100912,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Test_Target_Mover_Horizontal
       objectReference: {fileID: 0}
+    - target: {fileID: 802808050152777184, guid: c3883557710b20749af8775889f37e1c, type: 3}
+      propertyPath: m_TagString
+      value: Targets
+      objectReference: {fileID: 0}
     - target: {fileID: 802808050152777185, guid: c3883557710b20749af8775889f37e1c, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -101540,6 +101552,10 @@ PrefabInstance:
     - target: {fileID: 8930677358927377275, guid: ab4d3cdb76be0d44a8aff61d26bcc542, type: 3}
       propertyPath: m_Name
       value: BossTest01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8930677358927377275, guid: ab4d3cdb76be0d44a8aff61d26bcc542, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab4d3cdb76be0d44a8aff61d26bcc542, type: 3}
