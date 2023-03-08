@@ -12,6 +12,7 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class PlayerMovement : MonoBehaviour
 {
+    private Dashing dash;
     ThirdPersonCam instance;
     [SerializeField]
     private GameObject projectile;
@@ -25,6 +26,10 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed;
     public float walkSpeed;
     public float sprintSpeed;
+    public float MaxYspeed;
+
+    public float dashSpeed;
+    public float dashSpeedChangeFactor;
 
     public float acceleration = 1;
 
@@ -35,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
     float horizontalInput;
     float verticalInput;
 
-    Vector3 moveDirection;
+    public Vector3 moveDirection;
 
     Rigidbody rb;
 
@@ -115,6 +120,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool freeze;
     public bool activeGrapple;
+    public bool dashing;
 
 
     private void Start()
@@ -122,6 +128,8 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;   //freeze = Idle 
         readyToJump = true;
+
+        dash = GetComponent<Dashing>();
 
     }
 
@@ -144,7 +152,7 @@ public class PlayerMovement : MonoBehaviour
         StateHandler();
         
         //This will Handle the Drag.
-        if (grounded == true && !activeGrapple)
+        if (grounded == true && !activeGrapple && state != MovementState.dashing)
         {
             rb.drag = groundDrag;
         }
@@ -155,35 +163,102 @@ public class PlayerMovement : MonoBehaviour
         
     }
 
+    private float desiredMoveSpeed;
+    private float lastDesiredMoveSpeed;
+    private MovementState lastState;
+    private bool keepMomentum;
+
     private void StateHandler()
     {
+        //Mode - Dashing
+        if (dashing)
+        {
+            state = MovementState.dashing;
+            desiredMoveSpeed = sprintSpeed;
+            speedChangeFactor = dashSpeedChangeFactor;
+
+        }
+
         //Mode - Sprinting
-        if (grounded == true && horizontalInput >= .5 || verticalInput >= .5 || horizontalInput == -1 || verticalInput == -1)
+        else if (grounded == true && horizontalInput >= .5 || verticalInput >= .5 || horizontalInput == -1 || verticalInput == -1)
         {
             //this.gameObject.GetComponent<PlayerHealth>().Player_Invincible(time_for_invincbility);
             state = MovementState.sprinting;
-            moveSpeed = sprintSpeed;
+            desiredMoveSpeed = sprintSpeed;
 
         }
         // Mode - Walking
         else if (grounded == true)
         {
             state = MovementState.walking;
-            moveSpeed = walkSpeed;
+            desiredMoveSpeed = walkSpeed;
+        }
+
+        //Mode - Idle(Freeze)
+        else if (freeze)
+        {
+            state = MovementState.idle;
+            desiredMoveSpeed = 0;
+            rb.velocity = Vector3.zero;
         }
         // Mode - Air
         else
         {
             state = MovementState.air;
-        }
-        //Mode - Idle(Freeze)
-        if (freeze)
-        {
-            state = MovementState.idle;
-            moveSpeed = 0;
-            rb.velocity = Vector3.zero;
+
+            if (desiredMoveSpeed < sprintSpeed)
+            {
+                desiredMoveSpeed = walkSpeed;
+            }
+            else
+            {
+                desiredMoveSpeed = sprintSpeed;
+            }
         }
 
+        bool desiredMoveSpeedChanged = desiredMoveSpeed != lastDesiredMoveSpeed;
+        if (lastState == MovementState.dashing) keepMomentum = true;
+
+        if (desiredMoveSpeedChanged)
+        {
+            if (keepMomentum)
+            {
+                StopAllCoroutines();
+                StartCoroutine(SmoothlyLerpMoveSpeed());
+            }
+            else
+            {
+                StopAllCoroutines();
+                moveSpeed = desiredMoveSpeed;
+            }
+        }
+
+        lastDesiredMoveSpeed = desiredMoveSpeed;
+        lastState = state;
+
+    }
+
+    private float speedChangeFactor;
+    private IEnumerator SmoothlyLerpMoveSpeed()
+    {
+        //smoothly lerp movement Speed to desired Value
+        float time = 0;
+        float difference = Mathf.Abs(desiredMoveSpeed - moveSpeed);
+        float startValue = moveSpeed;
+
+        float boostFactor = speedChangeFactor;
+
+        while (time<difference)
+        {
+            moveSpeed = Mathf.Lerp(startValue, desiredMoveSpeed, time / difference);
+
+            time += Time.deltaTime * boostFactor;
+
+            yield return null;
+        }
+        moveSpeed = desiredMoveSpeed;
+        speedChangeFactor = 1f;
+        keepMomentum = false;
     }
 
     #region Movement
@@ -224,6 +299,10 @@ public class PlayerMovement : MonoBehaviour
 
     void MovePlayer()
     {
+        if (state == MovementState.dashing)
+        {
+            return;
+        }
         //Sprint Calculation
 
         if (horizontalInput >= .5 || horizontalInput <= -.5)
@@ -313,15 +392,12 @@ public class PlayerMovement : MonoBehaviour
 
     void OnDash()
     {
-       
-     
-        
+        dash.Dash();
+        if (grounded && state != MovementState.dashing)
+        {
+            this.gameObject.GetComponent<PlayerHealth>().Player_Invincible(time_for_invincbility);
+        }
     }
-    private void ResetDash()
-    {
-        
-    }
-
     #endregion
 
     void SpeedControl()
@@ -346,6 +422,12 @@ public class PlayerMovement : MonoBehaviour
                 Vector3 limitedVel = flatVel.normalized * moveSpeed;
                 rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
             }
+        }
+
+        // limit yvel
+        if (MaxYspeed !=0 && rb.velocity.y> MaxYspeed)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, MaxYspeed, rb.velocity.z);
         }
     }
     #endregion
@@ -621,6 +703,9 @@ void OnFire()
         ThirdPersonCam.instance.SwitchCameraStyle(ThirdPersonCam.CameraStyle.Topdown);
         Debug.Log("TOPDOWN");
     }
-
+    //public void DoFOV(float endValue)
+    //{
+    //    GetComponent<Camera>().fieldOfView = endValue;
+    //}
     #endregion
 }
