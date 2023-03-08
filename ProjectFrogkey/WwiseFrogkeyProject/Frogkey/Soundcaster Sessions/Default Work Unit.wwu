@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{4D5B9FA9-A9FC-494F-87F5-31FD7B18777C}" SchemaVersion="110">
+	<SoundcasterSessions>
+		<WorkUnit Name="Default Work Unit" ID="{4D5B9FA9-A9FC-494F-87F5-31FD7B18777C}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="ForestDungeon_TestSession" ID="{C11B890E-E58D-49C9-86ED-7127FB2C0870}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_DungeonMusic" ID="{86668AE6-B878-42A3-B09C-D8653D483844}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Hopps_BasicAttack" ID="{AFBD02FB-C06C-4877-ACEF-257E5780015D}" WorkUnitID="{7D9ADE2E-3FD7-4E46-A295-7966F8B9AB70}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Hopps_HeavyAttack" ID="{29006F28-B6CF-438E-80C4-0AB295C58E47}" WorkUnitID="{7D9ADE2E-3FD7-4E46-A295-7966F8B9AB70}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_ForestDungeon_BasicDoor_Open" ID="{8816CC16-0EEC-4E17-B90B-4F5649635F24}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_ForestDungeon_BasicDoor_Close" ID="{B5CE9186-5593-400B-B939-CD7E5CAA4E17}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Target_Break" ID="{DDA359B4-B57A-40E0-9308-46383E9D3EDD}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}"/>
+							<Position X="4" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true">
+						<CurrentStateRef Name="None" ID="{6442E50F-77C3-43A3-817F-526E6009D66E}"/>
+					</CurrentStateList>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+				<SoundcasterSession Name="OverworldForest_Session" ID="{98171CD2-9B38-48B2-9DFE-594CB10AFDF3}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_OverworldForestMusic" ID="{6E94E361-90D9-4A44-B3D4-128FDE22A739}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_WaterfallEnter" ID="{4045B33F-D591-4B91-8B6F-CC1BED7F1BCF}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_WaterfallLoop" ID="{CA9BEBF1-E196-4397-A1D3-3FFFB3154854}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundcasterSessions>
+</WwiseDocument>

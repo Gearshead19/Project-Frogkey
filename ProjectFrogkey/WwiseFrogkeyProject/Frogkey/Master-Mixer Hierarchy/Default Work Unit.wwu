@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{5E3A434C-052D-4837-9CBB-179749B3B19C}" SchemaVersion="110">
+	<Busses>
+		<WorkUnit Name="Default Work Unit" ID="{5E3A434C-052D-4837-9CBB-179749B3B19C}" PersistMode="Standalone">
+			<ChildrenList>
+				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
+					<ReferenceList>
+						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+							<ObjectRef Name="System" ID="{74B97AD3-2509-40C0-A18D-225DCA993B5C}" WorkUnitID="{DC36FF9D-2620-480F-B6D8-B364F2F613CB}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="Hopps" ID="{EF37EE9E-7AF7-4E97-84AF-470E5C8433FC}">
+							<PropertyList>
+								<Property Name="MaxDuckVolume" Type="Real64" Value="-15.5"/>
+								<Property Name="RecoveryTime" Type="Real64" Value="0.2"/>
+							</PropertyList>
+							<DuckingList>
+								<DuckItem>
+									<BusRef Name="Music" ID="{29A45960-6289-43D3-B6F8-6070001E1468}"/>
+									<DuckingParam>
+										<Volume>-1</Volume>
+										<FadeInTime>0.100000001490116</FadeInTime>
+										<FadeOutTime>0.100000001490116</FadeOutTime>
+										<FadeCurve>FadeSCurve</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+							</DuckingList>
+						</Bus>
+						<Bus Name="Music" ID="{29A45960-6289-43D3-B6F8-6070001E1468}">
+							<Comment>Music should duck when SFX play</Comment>
+						</Bus>
+						<Bus Name="Enemies" ID="{160143D1-0E71-492C-88C6-DF6A2FAF20FD}"/>
+						<Bus Name="Ambience" ID="{012E5A15-A1E0-41EF-9303-D2A88672FC62}"/>
+						<Bus Name="SFX" ID="{4DB45DB5-1967-4614-BC7D-F48971A389AC}">
+							<PropertyList>
+								<Property Name="MaxDuckVolume" Type="Real64" Value="-6.5"/>
+							</PropertyList>
+							<DuckingList>
+								<DuckItem>
+									<BusRef Name="Music" ID="{29A45960-6289-43D3-B6F8-6070001E1468}"/>
+									<DuckingParam>
+										<Volume>-2</Volume>
+										<FadeInTime>0.200000002980232</FadeInTime>
+										<FadeOutTime>0.200000002980232</FadeOutTime>
+										<FadeCurve>FadeLinear</FadeCurve>
+									</DuckingParam>
+								</DuckItem>
+							</DuckingList>
+						</Bus>
+						<Bus Name="Environment" ID="{6A1C0C3C-D495-4636-B080-F0CC5557431F}">
+							<PropertyList>
+								<Property Name="MaxDuckVolume" Type="Real64" Value="-9"/>
+								<Property Name="RecoveryTime" Type="Real64" Value="0.2"/>
+							</PropertyList>
+							<DuckingList>
+								<DuckItem>
+									<BusRef Name="Music" ID="{29A45960-6289-43D3-B6F8-6070001E1468}"/>
+									<DuckingParam>
+										<Volume>-2</Volume>
+										<FadeInTime>0.200000002980232</FadeInTime>
+										<FadeOutTime>0</FadeOutTime>
+										<FadeCurve>FadeLinear</FadeCurve>
+										<TargetProp>BusVolume</TargetProp>
+									</DuckingParam>
+								</DuckItem>
+							</DuckingList>
+						</Bus>
+						<AuxBus Name="ForestDungeonVerb" ID="{445D04FF-12DE-4B74-B335-E5E5070CE16F}">
+							<PropertyList>
+								<Property Name="BusVolume" Type="Real64">
+									<ValueList>
+										<Value>-12</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+									<ObjectRef Name="Hall_Small" ID="{D65B5F04-B83B-412C-9434-34A13A477E24}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+								</Reference>
+							</ReferenceList>
+						</AuxBus>
+					</ChildrenList>
+				</Bus>
+			</ChildrenList>
+		</WorkUnit>
+	</Busses>
+</WwiseDocument>
