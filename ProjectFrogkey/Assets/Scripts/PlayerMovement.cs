@@ -313,15 +313,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnDash()
     {
-        float Force = rb.mass * acceleration;
-        Debug.Log("I'm Dashing");
-        if (grounded && state != MovementState.dashing)
-        {
-            this.gameObject.GetComponent<PlayerHealth>().Player_Invincible(time_for_invincbility);
-            rb.AddForce(Force * moveDirection, ForceMode.Impulse);
-            state = MovementState.dashing;
-            Invoke(nameof(ResetDash),dashDuration);
-        }
+       
      
         
     }
