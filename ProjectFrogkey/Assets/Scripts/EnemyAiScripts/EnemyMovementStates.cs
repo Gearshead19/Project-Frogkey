@@ -33,7 +33,7 @@ public class EnemyMovementStates : DetectionStatMachine
         if(this.gameObject.GetComponent<IsOkayShootLookAhead>() != null)
         {
             shooter = true;
-            check_shoot = FroggyPlayer.GetComponent<IsOkayShootLookAhead>();
+            check_shoot = this.gameObject.GetComponent<IsOkayShootLookAhead>();
             shoot_range = check_shoot.ShootRange;
 
         }
