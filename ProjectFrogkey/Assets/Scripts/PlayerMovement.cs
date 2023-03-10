@@ -12,8 +12,9 @@ using UnityEngine.InputSystem;
 /// </summary>
 public class PlayerMovement : MonoBehaviour
 {
+   
     private Dashing dash;
-    ThirdPersonCam instance;
+  
     [SerializeField]
     private GameObject projectile;
 
@@ -708,4 +709,6 @@ void OnFire()
     //    GetComponent<Camera>().fieldOfView = endValue;
     //}
     #endregion
+
+    
 }
