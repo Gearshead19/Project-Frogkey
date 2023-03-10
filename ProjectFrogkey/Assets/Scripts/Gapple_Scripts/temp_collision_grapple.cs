@@ -105,7 +105,7 @@ public class temp_collision_grapple : MonoBehaviour
             gameObject.transform.parent = from_object.transform;
         }
 
-        if (collision.gameObject.CompareTag("Respawn"))
+        if (collision.gameObject.CompareTag("Wall_temp_grapple"))
         {
             Debug.Log("touching");
             movein = false;
@@ -115,7 +115,7 @@ public class temp_collision_grapple : MonoBehaviour
             this.transform.rotation = from_object.transform.rotation;
             gameObject.transform.parent = from_object.transform;
         }
-        else if (!(collision.gameObject.CompareTag("Respawn")))
+        else if (!(collision.gameObject.CompareTag("Wall_temp_grapple")))
         {
             movein = false;
             hit_box.enabled = false;
