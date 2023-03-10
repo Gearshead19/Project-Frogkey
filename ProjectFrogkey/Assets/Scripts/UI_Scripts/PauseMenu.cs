@@ -5,6 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    
+    public static PauseMenu instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+
     public GameObject ui;
 
     public SceneFader sceneFader;
@@ -18,7 +27,6 @@ public class PauseMenu : MonoBehaviour
             Toggle();
         }
     }
-
     public void Toggle()
     {
         ui.SetActive(!ui.activeSelf);
@@ -34,6 +42,26 @@ public class PauseMenu : MonoBehaviour
         }
 
 
+    }
+
+    //Temporary Pause Button
+
+    private void OnPause()
+    {
+        Toggle();
+
+    }
+    public void Continue()
+    {
+        Toggle();
+        if (ui.activeSelf == false)
+        {
+            Debug.Log("UI is gone");
+        }
+        else
+        {
+            Debug.Log("Something's wrong.");
+        }
     }
     public void Retry ()
     {
