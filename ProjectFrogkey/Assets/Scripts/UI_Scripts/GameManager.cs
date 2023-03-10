@@ -9,11 +9,14 @@ public class GameManager : MonoBehaviour
 
     public GameObject gameOverUI;
 
-    PlayerHealth health; 
+    PlayerHealth health;
 
+    private GameObject get_player;
 
     private void Start()
     {
+        get_player = GameObject.FindGameObjectWithTag("Player");
+        health = get_player.GetComponent<PlayerHealth>();
         gameIsOver = false;
     }
 
