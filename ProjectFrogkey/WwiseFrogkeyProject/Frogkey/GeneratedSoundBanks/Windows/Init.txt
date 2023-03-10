@@ -1,11 +1,18 @@
 State Group	ID	Name			Wwise Object Path	Notes
-	1606972574	ForestDungeonStates			\Default Work Unit\InteractiveMusic\Dungeons\ForestDungeonStates	
+	671786287	GamePause			\Default Work Unit\Music\GamePause	
+	1606972574	ForestDungeonStates			\Default Work Unit\Music\Dungeons\ForestDungeonStates	
 
 State	ID	Name	State Group			Notes
+	748895195	None	GamePause			
+	2443794319	IsPaused	GamePause			
+	2779060518	NotPaused	GamePause			
 	748895195	None	ForestDungeonStates			
 	1017222595	LowHealth	ForestDungeonStates			
 	1823678183	Exploring	ForestDungeonStates			
 	2764240573	Combat	ForestDungeonStates			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	309601499	IsPaused	GamePause	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\Music		
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	85412153	Ambience			\Default Work Unit\Master Audio Bus\Ambience	

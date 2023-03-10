@@ -22,6 +22,7 @@ namespace AK
         static const AkUniqueID PLAY_KEY_PICKUP = 2881789206U;
         static const AkUniqueID PLAY_MAINTOWNMUSIC = 1134137730U;
         static const AkUniqueID PLAY_OVERWORLDFORESTMUSIC = 693146296U;
+        static const AkUniqueID PLAY_TITLESCREENMUSIC = 4182175493U;
         static const AkUniqueID PLAY_UNDERGROUNDFORESTMUSIC = 1277548847U;
     } // namespace EVENTS
 
@@ -40,14 +41,28 @@ namespace AK
             } // namespace STATE
         } // namespace FORESTDUNGEONSTATES
 
+        namespace GAMEPAUSE
+        {
+            static const AkUniqueID GROUP = 671786287U;
+
+            namespace STATE
+            {
+                static const AkUniqueID ISPAUSED = 2443794319U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID NOTPAUSED = 2779060518U;
+            } // namespace STATE
+        } // namespace GAMEPAUSE
+
     } // namespace STATES
 
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
+        static const AkUniqueID HOPPS_SOUNDBANK = 2197452935U;
         static const AkUniqueID MUS_FORESTDUNGEON = 973840868U;
         static const AkUniqueID MUS_MAINTOWN = 1922392942U;
         static const AkUniqueID MUS_OVERWORLDFOREST = 3591353126U;
+        static const AkUniqueID MUS_TITLESCREEN = 3413408933U;
         static const AkUniqueID MUS_UNDERGROUNDFOREST = 2286727387U;
         static const AkUniqueID SFX_DOOR_FORESTDUNGEON_CLOSE = 3253083610U;
         static const AkUniqueID SFX_DOOR_FORESTDUNGEON_OPEN = 1125626846U;

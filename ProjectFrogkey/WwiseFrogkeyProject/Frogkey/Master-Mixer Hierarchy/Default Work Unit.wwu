@@ -29,6 +29,27 @@
 						</Bus>
 						<Bus Name="Music" ID="{29A45960-6289-43D3-B6F8-6070001E1468}">
 							<Comment>Music should duck when SFX play</Comment>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="GamePause" ID="{898E35BD-FD34-41A4-9F33-673DD7684A49}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="NotPaused" ID="{158F93DE-0795-489D-8451-4C8B5160681B}"/>
+										<CustomState Name="" ID="{DC70F867-D278-45C4-AE06-EC3BEB71B6CC}" ShortID="700112958"/>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="IsPaused" ID="{4B02D34E-3E4C-4B9F-82DE-4963F54AF14B}"/>
+										<CustomState Name="" ID="{D754B5A7-E5B9-44B0-B032-8FFC57D7E3B3}" ShortID="309601499">
+											<PropertyList>
+												<Property Name="Lowpass" Type="int16" Value="50"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
 						</Bus>
 						<Bus Name="Enemies" ID="{160143D1-0E71-492C-88C6-DF6A2FAF20FD}"/>
 						<Bus Name="Ambience" ID="{012E5A15-A1E0-41EF-9303-D2A88672FC62}"/>

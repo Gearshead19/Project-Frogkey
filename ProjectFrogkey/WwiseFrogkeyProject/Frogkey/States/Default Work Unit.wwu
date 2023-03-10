@@ -3,7 +3,7 @@
 	<States>
 		<WorkUnit Name="Default Work Unit" ID="{EB015F87-2C6B-4FBD-A85E-4CA22BE2BE00}" PersistMode="Standalone">
 			<ChildrenList>
-				<Folder Name="InteractiveMusic" ID="{328BDEDF-38D7-477D-A761-DCEA8CD94E06}" ShortID="413675306">
+				<Folder Name="Music" ID="{328BDEDF-38D7-477D-A761-DCEA8CD94E06}" ShortID="413675306">
 					<ChildrenList>
 						<Folder Name="Dungeons" ID="{1E1A3437-1D9E-4CD5-9A98-9700995C7D23}" ShortID="1003301588">
 							<ChildrenList>
@@ -17,6 +17,16 @@
 								</StateGroup>
 							</ChildrenList>
 						</Folder>
+						<StateGroup Name="GamePause" ID="{898E35BD-FD34-41A4-9F33-673DD7684A49}">
+							<PropertyList>
+								<Property Name="DefaultTransitionTime" Type="Real64" Value="0.2"/>
+							</PropertyList>
+							<ChildrenList>
+								<State Name="None" ID="{CB38C6C0-DA68-4D19-918B-4626B8A9B88B}"/>
+								<State Name="IsPaused" ID="{4B02D34E-3E4C-4B9F-82DE-4963F54AF14B}"/>
+								<State Name="NotPaused" ID="{158F93DE-0795-489D-8451-4C8B5160681B}"/>
+							</ChildrenList>
+						</StateGroup>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="173969489" Type="User" Language="SFX" Hash="{A1CBE48E-1415-5073-6EFB-9C59A419D042}">
+		<SoundBank Id="173969489" Type="User" Language="SFX" Hash="{1EE00365-60AA-16F8-60E3-1472EA90E393}">
 			<ShortName>SFX_Key_Pickup</ShortName>
 			<Path>SFX_Key_Pickup.bnk</Path>
 			<Media>
@@ -63,7 +63,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{EB6F0DD8-BA7A-8D18-DD0C-51DF08F1CDD9}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{5917668F-6C4F-9A9F-003D-7059F99C6BEC}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -94,6 +94,13 @@
 				</AuxBus>
 			</AuxBusses>
 			<StateGroups>
+				<StateGroup Id="671786287" Name="GamePause">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="2443794319" Name="IsPaused"/>
+						<State Id="2779060518" Name="NotPaused"/>
+					</States>
+				</StateGroup>
 				<StateGroup Id="1606972574" Name="ForestDungeonStates">
 					<States>
 						<State Id="748895195" Name="None"/>
@@ -104,7 +111,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1922392942" Type="User" Language="SFX" Hash="{76E941A0-51A3-3375-8997-50E56EF26669}">
+		<SoundBank Id="1922392942" Type="User" Language="SFX" Hash="{7B5D3C02-67DC-3475-AB5F-D099612C121C}">
 			<ShortName>MUS_MainTown</ShortName>
 			<Path>MUS_MainTown.bnk</Path>
 			<Media>
@@ -120,6 +127,10 @@
 					</MediaRefs>
 				</Event>
 			</Events>
+		</SoundBank>
+		<SoundBank Id="2197452935" Type="User" Language="SFX" Hash="{1DA28036-1005-27BF-24D7-D4120ACD5034}">
+			<ShortName>Hopps_SoundBank</ShortName>
+			<Path>Hopps_SoundBank.bnk</Path>
 		</SoundBank>
 		<SoundBank Id="2286727387" Type="User" Language="SFX" Hash="{746EBA40-03ED-313B-7260-CA75FE780856}">
 			<ShortName>MUS_UndergroundForest</ShortName>
@@ -195,6 +206,23 @@
 				</Event>
 			</Events>
 		</SoundBank>
+		<SoundBank Id="3413408933" Type="User" Language="SFX" Hash="{3A76473D-2CDB-A210-CC4E-19E949AD1E00}">
+			<ShortName>MUS_TitleScreen</ShortName>
+			<Path>MUS_TitleScreen.bnk</Path>
+			<Media>
+				<File Id="146592704" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MUS_MainTheme.wav</ShortName>
+					<CachePath>SFX/MUS_MainTheme_D79FB2B7.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="4182175493" Name="Play_TitleScreenMusic" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="146592704"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
 		<SoundBank Id="3591353126" Type="User" Language="SFX" Hash="{7B38BF03-0D7D-09D2-60C8-B454F82A7CA0}">
 			<ShortName>MUS_OverworldForest</ShortName>
 			<Path>MUS_OverworldForest.bnk</Path>
@@ -233,5 +261,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8160B7E0-C0E8-C6DC-B839-798FFA58E1B8}</FileHash>
+	<FileHash>{EFF9F753-2F17-7528-A439-A19BDC6A4A85}</FileHash>
 </SoundBanksInfo>
