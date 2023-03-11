@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 4c433a5e2d0537489cbb179749b3b19c
     GuidInternal: 
-    m_lastTime: -8585234789185331656
+    m_lastTime: -8585230359477956490
     List:
     - name: Ambience
       guid: 155a2e01e0a1ef419303d2a88672fc62
@@ -185,7 +185,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 763069cdd6792f49a9b4f310db26f760
     GuidInternal: 
-    m_lastTime: -8585234789177993083
+    m_lastTime: -8585230359474635698
     List:
     - name: AMB
       guid: 287500ec3b303e4aad3974c7fcedc682
@@ -335,6 +335,26 @@ MonoBehaviour:
         ObjectType: 4
         guid: a7155c8910d754499634b62c46d599ec
       Path: SoundBanks\Default Work Unit\SFX\Hopps
+    - name: Hopps_SoundBank
+      guid: 132fce37d7bfea40a74160f825017820
+      id: 2197452935
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 763069cdd6792f49a9b4f310db26f760
+      - ElementName: SFX
+        ObjectType: 4
+        guid: 474db92f05e15f4aa41115c4b9c218e5
+      - ElementName: Hopps
+        ObjectType: 4
+        guid: a7155c8910d754499634b62c46d599ec
+      - ElementName: Hopps_SoundBank
+        ObjectType: 7
+        guid: 132fce37d7bfea40a74160f825017820
+      Path: SoundBanks\Default Work Unit\SFX\Hopps\Hopps_SoundBank
     - name: Items
       guid: 7d12fdbb05880044a1bfb1fba29618ad
       id: 2151963051
@@ -449,6 +469,26 @@ MonoBehaviour:
         ObjectType: 7
         guid: 4889b9307b15dd418c6bb7ff9a5ea0dc
       Path: SoundBanks\Default Work Unit\MUS\Overworld\ForestArea\MUS_OverworldForest
+    - name: MUS_TitleScreen
+      guid: 96da9907544df944bdeaf7c7104f2006
+      id: 3413408933
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 763069cdd6792f49a9b4f310db26f760
+      - ElementName: MUS
+        ObjectType: 4
+        guid: 20d4d4b21f78e44aba2140234fdacbd7
+      - ElementName: TitleScreen
+        ObjectType: 4
+        guid: 5f48fe871d2a2648b1b1f82fe00ceec7
+      - ElementName: MUS_TitleScreen
+        ObjectType: 7
+        guid: 96da9907544df944bdeaf7c7104f2006
+      Path: SoundBanks\Default Work Unit\MUS\TitleScreen\MUS_TitleScreen
     - name: MUS_UndergroundForest
       guid: b1769c6758bec342b8591e812f87b3f4
       id: 2286727387
@@ -704,6 +744,23 @@ MonoBehaviour:
         ObjectType: 7
         guid: 3ca4a08ec2ccfb40a2c78a0572fc98c0
       Path: SoundBanks\Default Work Unit\SFX\Items\Potions\SFX_Potion_Drink
+    - name: TitleScreen
+      guid: 5f48fe871d2a2648b1b1f82fe00ceec7
+      id: 152105657
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 763069cdd6792f49a9b4f310db26f760
+      - ElementName: MUS
+        ObjectType: 4
+        guid: 20d4d4b21f78e44aba2140234fdacbd7
+      - ElementName: TitleScreen
+        ObjectType: 4
+        guid: 5f48fe871d2a2648b1b1f82fe00ceec7
+      Path: SoundBanks\Default Work Unit\MUS\TitleScreen
     - name: Towns
       guid: ac780cabbb86804483fc8a2ba9931f65
       id: 1855370088
@@ -733,7 +790,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: dd6f88753b767c4cb0d871650ba3f9d8
     GuidInternal: 
-    m_lastTime: -8585234789190928833
+    m_lastTime: -8585230359482919965
     List:
     - name: Attacks
       guid: 558fe51d0a8a7d44aa2688eb0ee0be2f
@@ -1624,7 +1681,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 875f01eb6b2cbd4fa85e4ca22be2be00
     GuidInternal: 
-    m_lastTime: -8585234789177973074
+    m_lastTime: -8585230359474525768
     List:
     - name: Dungeons
       guid: 37341a1e9e1dd54c9a989700995c7d23
@@ -1636,13 +1693,13 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 875f01eb6b2cbd4fa85e4ca22be2be00
-      - ElementName: InteractiveMusic
+      - ElementName: Music
         ObjectType: 4
         guid: dfde8b32d7387d47a761dcea8cd94e06
       - ElementName: Dungeons
         ObjectType: 4
         guid: 37341a1e9e1dd54c9a989700995c7d23
-      Path: States\Default Work Unit\InteractiveMusic\Dungeons
+      Path: States\Default Work Unit\Music\Dungeons
       values: []
       ValueGuids: []
       ValueIcons: []
@@ -1657,7 +1714,7 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 875f01eb6b2cbd4fa85e4ca22be2be00
-      - ElementName: InteractiveMusic
+      - ElementName: Music
         ObjectType: 4
         guid: dfde8b32d7387d47a761dcea8cd94e06
       - ElementName: Dungeons
@@ -1666,7 +1723,7 @@ MonoBehaviour:
       - ElementName: ForestDungeonStates
         ObjectType: 9
         guid: 5211c9213b91854aa82133330efbedfa
-      Path: States\Default Work Unit\InteractiveMusic\Dungeons\ForestDungeonStates
+      Path: States\Default Work Unit\Music\Dungeons\ForestDungeonStates
       values:
       - name: Combat
         guid: 0ad0830a61423c408bcbf6f4a1ca1c98
@@ -1678,7 +1735,7 @@ MonoBehaviour:
         - ElementName: Default Work Unit
           ObjectType: 12
           guid: 875f01eb6b2cbd4fa85e4ca22be2be00
-        - ElementName: InteractiveMusic
+        - ElementName: Music
           ObjectType: 4
           guid: dfde8b32d7387d47a761dcea8cd94e06
         - ElementName: Dungeons
@@ -1700,7 +1757,7 @@ MonoBehaviour:
         - ElementName: Default Work Unit
           ObjectType: 12
           guid: 875f01eb6b2cbd4fa85e4ca22be2be00
-        - ElementName: InteractiveMusic
+        - ElementName: Music
           ObjectType: 4
           guid: dfde8b32d7387d47a761dcea8cd94e06
         - ElementName: Dungeons
@@ -1722,7 +1779,7 @@ MonoBehaviour:
         - ElementName: Default Work Unit
           ObjectType: 12
           guid: 875f01eb6b2cbd4fa85e4ca22be2be00
-        - ElementName: InteractiveMusic
+        - ElementName: Music
           ObjectType: 4
           guid: dfde8b32d7387d47a761dcea8cd94e06
         - ElementName: Dungeons
@@ -1744,7 +1801,7 @@ MonoBehaviour:
         - ElementName: Default Work Unit
           ObjectType: 12
           guid: 875f01eb6b2cbd4fa85e4ca22be2be00
-        - ElementName: InteractiveMusic
+        - ElementName: Music
           ObjectType: 4
           guid: dfde8b32d7387d47a761dcea8cd94e06
         - ElementName: Dungeons
@@ -1759,9 +1816,9 @@ MonoBehaviour:
       ValueGuids: []
       ValueIcons: []
       valuesInternal: []
-    - name: InteractiveMusic
-      guid: dfde8b32d7387d47a761dcea8cd94e06
-      id: 2279279248
+    - name: GamePause
+      guid: bd358e8934fda4419f33673dd7684a49
+      id: 671786287
       PathAndIcons:
       - ElementName: States
         ObjectType: 5
@@ -1769,10 +1826,88 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 875f01eb6b2cbd4fa85e4ca22be2be00
-      - ElementName: InteractiveMusic
+      - ElementName: Music
         ObjectType: 4
         guid: dfde8b32d7387d47a761dcea8cd94e06
-      Path: States\Default Work Unit\InteractiveMusic
+      - ElementName: GamePause
+        ObjectType: 9
+        guid: bd358e8934fda4419f33673dd7684a49
+      Path: States\Default Work Unit\Music\GamePause
+      values:
+      - name: IsPaused
+        guid: 4ed3024b4c3e9f4b82de4963f54af14b
+        id: 2443794319
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 875f01eb6b2cbd4fa85e4ca22be2be00
+        - ElementName: Music
+          ObjectType: 4
+          guid: dfde8b32d7387d47a761dcea8cd94e06
+        - ElementName: GamePause
+          ObjectType: 9
+          guid: bd358e8934fda4419f33673dd7684a49
+        - ElementName: IsPaused
+          ObjectType: 8
+          guid: 4ed3024b4c3e9f4b82de4963f54af14b
+      - name: None
+        guid: c0c638cb68da194d918b4626b8a9b88b
+        id: 748895195
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 875f01eb6b2cbd4fa85e4ca22be2be00
+        - ElementName: Music
+          ObjectType: 4
+          guid: dfde8b32d7387d47a761dcea8cd94e06
+        - ElementName: GamePause
+          ObjectType: 9
+          guid: bd358e8934fda4419f33673dd7684a49
+        - ElementName: None
+          ObjectType: 8
+          guid: c0c638cb68da194d918b4626b8a9b88b
+      - name: NotPaused
+        guid: de938f1595079d4884514c8b5160681b
+        id: 2779060518
+        PathAndIcons:
+        - ElementName: States
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 875f01eb6b2cbd4fa85e4ca22be2be00
+        - ElementName: Music
+          ObjectType: 4
+          guid: dfde8b32d7387d47a761dcea8cd94e06
+        - ElementName: GamePause
+          ObjectType: 9
+          guid: bd358e8934fda4419f33673dd7684a49
+        - ElementName: NotPaused
+          ObjectType: 8
+          guid: de938f1595079d4884514c8b5160681b
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Music
+      guid: dfde8b32d7387d47a761dcea8cd94e06
+      id: 3991942870
+      PathAndIcons:
+      - ElementName: States
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 875f01eb6b2cbd4fa85e4ca22be2be00
+      - ElementName: Music
+        ObjectType: 4
+        guid: dfde8b32d7387d47a761dcea8cd94e06
+      Path: States\Default Work Unit\Music
       values: []
       ValueGuids: []
       ValueIcons: []
