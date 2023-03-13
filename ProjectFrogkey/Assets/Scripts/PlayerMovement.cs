@@ -393,6 +393,7 @@ public class PlayerMovement : MonoBehaviour
 
     void OnDash()
     {
+        Debug.Log("Dashing");
         dash.Dash();
         if (grounded && state != MovementState.dashing)
         {

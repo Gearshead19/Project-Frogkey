@@ -1455,6 +1455,7 @@ GameObject:
   - component: {fileID: 200224781}
   - component: {fileID: 2267871210468115282}
   - component: {fileID: 5733812808469676379}
+  - component: {fileID: 237438805556601927}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -1841,6 +1842,30 @@ MonoBehaviour:
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
+--- !u!114 &237438805556601927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1139087080850294209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a959c0281acd7d7439a28c270ac80c9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  orientation: {fileID: 1139087081155318638}
+  playerCam: {fileID: 1139087081254960111}
+  dashForce: 20
+  dashDuration: 0.25
+  dashUpwardForce: 0
+  maxDashYSpeed: 50
+  dashCd: 1.5
+  useCameraForward: 1
+  allowAllDirections: 1
+  disableGravity: 0
+  resetVel: 1
+  dashKey: 118
 --- !u!1 &1139087080898656325
 GameObject:
   m_ObjectHideFlags: 3
@@ -5492,6 +5517,14 @@ PrefabInstance:
     - target: {fileID: 8032163781900147258, guid: c697b5c66eab8d54d9e75ce491c515bb, type: 3}
       propertyPath: m_Name
       value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032163782429735188, guid: c697b5c66eab8d54d9e75ce491c515bb, type: 3}
+      propertyPath: m_Color.g
+      value: 0.10980393
+      objectReference: {fileID: 0}
+    - target: {fileID: 8032163782429735188, guid: c697b5c66eab8d54d9e75ce491c515bb, type: 3}
+      propertyPath: m_Color.r
+      value: 0.77647066
       objectReference: {fileID: 0}
     - target: {fileID: 8032163782429735189, guid: c697b5c66eab8d54d9e75ce491c515bb, type: 3}
       propertyPath: m_AnchorMax.x
