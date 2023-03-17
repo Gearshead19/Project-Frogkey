@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6868615508257727344}
   m_Father: {fileID: 0}
@@ -102,25 +103,24 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: d40412909eef08b4087cf975cda9f75d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ee6e9fddda606334ea3d5ca49b8d7b4b, type: 2}
     - target: {fileID: 919132149155446097, guid: d40412909eef08b4087cf975cda9f75d, type: 3}
       propertyPath: m_Name
       value: SM_House_Foundation_5x4_Corner
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d40412909eef08b4087cf975cda9f75d, type: 3}
---- !u!1 &6060131807377013194 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d40412909eef08b4087cf975cda9f75d, type: 3}
-  m_PrefabInstance: {fileID: 6402007696694674587}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &6868615508257727344 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d40412909eef08b4087cf975cda9f75d, type: 3}
-  m_PrefabInstance: {fileID: 6402007696694674587}
-  m_PrefabAsset: {fileID: 0}
 --- !u!23 &5699610672165230623 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: d40412909eef08b4087cf975cda9f75d, type: 3}
+  m_PrefabInstance: {fileID: 6402007696694674587}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6060131807377013194 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d40412909eef08b4087cf975cda9f75d, type: 3}
   m_PrefabInstance: {fileID: 6402007696694674587}
   m_PrefabAsset: {fileID: 0}
 --- !u!65 &6402007696694674591
@@ -136,3 +136,8 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.6629963, y: 3.0547838, z: 0.7260003}
   m_Center: {x: 0.33149803, y: -0.97260827, z: -2.8000004}
+--- !u!4 &6868615508257727344 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d40412909eef08b4087cf975cda9f75d, type: 3}
+  m_PrefabInstance: {fileID: 6402007696694674587}
+  m_PrefabAsset: {fileID: 0}
