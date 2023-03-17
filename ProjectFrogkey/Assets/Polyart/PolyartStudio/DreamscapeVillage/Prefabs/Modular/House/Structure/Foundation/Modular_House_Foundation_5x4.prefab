@@ -27,6 +27,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1400392240613396626}
   m_Father: {fileID: 0}
@@ -102,15 +103,19 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: a2b58f434dc89f7409c37ff04d8c3553, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ee6e9fddda606334ea3d5ca49b8d7b4b, type: 2}
     - target: {fileID: 919132149155446097, guid: a2b58f434dc89f7409c37ff04d8c3553, type: 3}
       propertyPath: m_Name
       value: SM_House_Foundation_5x4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2b58f434dc89f7409c37ff04d8c3553, type: 3}
---- !u!1 &1739763837735389736 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a2b58f434dc89f7409c37ff04d8c3553, type: 3}
+--- !u!23 &226338377331796989 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: a2b58f434dc89f7409c37ff04d8c3553, type: 3}
   m_PrefabInstance: {fileID: 1505759389112661881}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1400392240613396626 stripped
@@ -118,9 +123,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2b58f434dc89f7409c37ff04d8c3553, type: 3}
   m_PrefabInstance: {fileID: 1505759389112661881}
   m_PrefabAsset: {fileID: 0}
---- !u!23 &226338377331796989 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: a2b58f434dc89f7409c37ff04d8c3553, type: 3}
+--- !u!1 &1739763837735389736 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a2b58f434dc89f7409c37ff04d8c3553, type: 3}
   m_PrefabInstance: {fileID: 1505759389112661881}
   m_PrefabAsset: {fileID: 0}
 --- !u!65 &1505759389112661765
