@@ -104,6 +104,12 @@ void OnQuickReset()
         invincible_factor = 1;
     }
 
+
+    public void Player_damaged_by_stationary(float damage_done_to_player)
+    {
+        currentHealth = currentHealth - (int)damage_done_to_player;
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Projectile"))
