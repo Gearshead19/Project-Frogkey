@@ -18,8 +18,17 @@ public class Drop_item_hold_array : MonoBehaviour
 
     }
 
-    void Upon_death_drop(int item_num, Transform location)
+    public void Upon_death_drop(int item_num, Transform location)
     {
-        Instantiate(items_drop_upon_death[item_num], location.transform.position, location.transform.rotation);
+        if(item_num < items_drop_upon_death.Length)
+        {
+
+            Instantiate(items_drop_upon_death[item_num], location.transform.position, location.transform.rotation);
+
+        }
+        else
+        {
+            Debug.Log("The array is the length of " + items_drop_upon_death.Length + " , and it turns out " + item_num + " is not included under that number...");
+        }
     }
 }

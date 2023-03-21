@@ -15,7 +15,9 @@ public class EnemyHealth : MonoBehaviour
     
     public float hit_delay_vission_delay = 0.5F;
 
+    private GameObject get_drop_object_holder;
     
+    public int  drop_item_number;
 
     void Start()
     {
@@ -23,6 +25,8 @@ public class EnemyHealth : MonoBehaviour
         {
             particial_trigger.SetActive(false);
         }
+
+        get_drop_object_holder = GameObject.FindGameObjectWithTag("get_drop_object_holder");
         
     }
 
@@ -54,6 +58,7 @@ public class EnemyHealth : MonoBehaviour
     {
         if (this.HealthPoints < 0)
         {
+
             if (set_to_disable == true)
             {
                 this.gameObject.SetActive(false);
@@ -62,6 +67,15 @@ public class EnemyHealth : MonoBehaviour
             {
                 Destroy(this.gameObject);
                 
+            }
+
+
+            if(get_drop_object_holder != false)
+            {
+                if(drop_item_number > 0)
+                {
+                    get_drop_object_holder.GetComponent<Drop_item_hold_array>().Upon_death_drop(drop_item_number, this.transform);
+                }
             }
         }
     }
