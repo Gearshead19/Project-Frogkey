@@ -70,7 +70,7 @@ public class EnemyHealth : MonoBehaviour
             }
 
 
-            if(get_drop_object_holder != false)
+            if(get_drop_object_holder != null)
             {
                 if(drop_item_number > 0)
                 {
