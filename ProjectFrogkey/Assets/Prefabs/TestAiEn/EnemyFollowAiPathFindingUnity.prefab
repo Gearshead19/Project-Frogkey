@@ -67,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5dd7166be4c91bd448276586906aa23f, type: 2}
+  - {fileID: 2100000, guid: 371ca41f04a74024e94f9b4c571db967, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -173,8 +173,10 @@ MonoBehaviour:
   telescope_hit: 60
   punch_jab: 40
   set_to_disable: 1
+  currentEnemyHealth: 0
   particial_trigger: {fileID: 5309141724545844361}
   hit_delay_vission_delay: 0.25
+  drop_item_number: 0
 --- !u!1 &5309141724545844361
 GameObject:
   m_ObjectHideFlags: 0

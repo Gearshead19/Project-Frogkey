@@ -4946,7 +4946,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6c6a2725c295ee44cacc6a8dbcaaa256, type: 2}
+  - {fileID: 2100000, guid: 0b3c0f7ff980e5340a54009190153b99, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4999,7 +4999,7 @@ MonoBehaviour:
   NavMeshAgent: {fileID: 0}
   FroggyPlayer: {fileID: 0}
   speed: 1
-  shoot_range: 10
+  check_shoot: {fileID: 0}
   shooter: 0
 --- !u!65 &6184881981473984075
 BoxCollider:
@@ -5068,8 +5068,10 @@ MonoBehaviour:
   telescope_hit: 60
   punch_jab: 40
   set_to_disable: 1
+  currentEnemyHealth: 0
   particial_trigger: {fileID: 3298187930788164916}
   hit_delay_vission_delay: 0.5
+  drop_item_number: 0
 --- !u!114 &6184881981473984067
 MonoBehaviour:
   m_ObjectHideFlags: 0
