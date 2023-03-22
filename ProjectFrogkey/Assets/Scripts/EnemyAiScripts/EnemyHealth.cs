@@ -72,7 +72,8 @@ public class EnemyHealth : MonoBehaviour
 
             if(get_drop_object_holder != null)
             {
-                if(drop_item_number > 0)
+                //0 to the highest in the  array for the prefab Drop_collection_script (Drop_item_hold_array)  it will spawn the object otherwise if it not with in those parameters nothing will happen
+                if (drop_item_number > -1)
                 {
                     get_drop_object_holder.GetComponent<Drop_item_hold_array>().Upon_death_drop(drop_item_number, this.transform);
                 }
