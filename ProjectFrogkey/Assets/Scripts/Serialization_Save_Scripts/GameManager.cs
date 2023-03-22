@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     PlayerHealth health;
 
+    PlayerMovement player;
+
     private GameObject get_player;
 
     private void Start()
@@ -45,8 +47,38 @@ public class GameManager : MonoBehaviour
     void EndGame()
     {
         gameIsOver = true;
-        
+
         gameOverUI.SetActive(true);
+
+    }
+
+    public void SavePlayer()
+    {
+        SaveSystem.SavePlayer(player);
+
+        // SaveData.SavePlayer()
+    }
+    public void LoadPlayer()
+    {
+        PlayerData data = SaveSystem.LoadPlayer();
+
+        // level = data.level
+        data.health = health.currentHealth;
+
+        data.position[0] = player.orientation.position.x;
+        data.position[1] = player.orientation.position.y;
+        data.position[2] = player.orientation.position.z;
+
+
+        Vector3 position;
+
+        position.x = data.position[0];
+        position.y = data.position[1];
+        position.z = data.position[2];
+
+
+
+        player.orientation.position = position;
 
     }
 }

@@ -8,6 +8,8 @@ public class SaveData
 {
     
     private static SaveData _current;
+
+    public int health = 5;
     public static SaveData current
     {
         get
@@ -20,6 +22,8 @@ public class SaveData
         }
     }
 
-    public PlayerProfile profile;
+   // public PlayerProfile profile;
+
+    //Put all of this in the game manager
 }
 
