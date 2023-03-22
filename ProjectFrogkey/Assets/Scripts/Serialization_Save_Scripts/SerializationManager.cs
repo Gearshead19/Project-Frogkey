@@ -4,7 +4,7 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 
-public class SerializationManager : MonoBehaviour
+public static class SerializationManager
 {
     #region Save Handler
     public static bool Save(string saveName, object saveData)
