@@ -18,7 +18,7 @@ public class PlayerData
     public PlayerData(PlayerMovement playerPos, PlayerHealth playerHealth)
         {
         //level = player.currentHealth;
-        health = playerHealth.currentHealth;
+       // health = playerHealth.currentHealth;
 
         position = new float[3];
 
