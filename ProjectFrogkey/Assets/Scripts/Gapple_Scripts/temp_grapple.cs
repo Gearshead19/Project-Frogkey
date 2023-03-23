@@ -24,7 +24,6 @@ public class temp_grapple : MonoBehaviour
 
     private bool grappling;
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -35,15 +34,20 @@ public class temp_grapple : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.K))//this also part of the grapple test
+        /*if (Input.GetKeyDown(KeyCode.K))//this also part of the grapple test
+        {
+            Make_detector_move();
+        }*/
+
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             Make_detector_move();
         }
 
-        if(Input.GetKeyDown(KeyCode.P))
+        /*if(Input.GetKeyDown(KeyCode.P))
         {
             set_grapple_on();
-        }
+        }*/
 
         if (grappling == true)
         {
