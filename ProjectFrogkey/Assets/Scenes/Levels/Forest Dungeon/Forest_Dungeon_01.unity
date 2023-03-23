@@ -774,6 +774,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: E1
       objectReference: {fileID: 0}
+    - target: {fileID: 5513915168236177876, guid: bf90e60a89125a144b69fc86d543b183, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 025572a3d89d369439ed6ec3e58270ee, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bf90e60a89125a144b69fc86d543b183, type: 3}
 --- !u!4 &33462855 stripped
@@ -45084,7 +45088,7 @@ PlayableDirector:
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 7410428970790287157, guid: f9522ba374836514b95a0c8bb5171c85, type: 2}
-    value: {fileID: 0}
+    value: {fileID: 663084867}
   - key: {fileID: 587287696408865607, guid: f9522ba374836514b95a0c8bb5171c85, type: 2}
     value: {fileID: 79034538}
   - key: {fileID: 0}
@@ -45138,17 +45142,17 @@ MonoBehaviour:
     m_Events:
     - m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2143967922}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: 
-          m_Mode: 1
+        - m_Target: {fileID: 2143967926}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
-            m_BoolArgument: 0
+            m_BoolArgument: 1
           m_CallState: 2
 --- !u!1001 &802808051459233344
 PrefabInstance:
