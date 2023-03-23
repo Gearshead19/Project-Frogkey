@@ -30,7 +30,7 @@ public class IsOkayShootLookAhead : MonoBehaviour
     void CheckIFShoot()
     {
         if (PlayerFroggy.transform.position.z > this.transform.position.z &&
-            PlayerFroggy.transform.position.z < (this.transform.position.z + ShootRange) &&
+            PlayerFroggy.transform.position.z < (this.transform.position.z + (ShootRange * 5)) &&
             PlayerFroggy.transform.position.x > (this.transform.position.x - 2) &&
             PlayerFroggy.transform.position.x < (this.transform.position.x + 2))
         {
