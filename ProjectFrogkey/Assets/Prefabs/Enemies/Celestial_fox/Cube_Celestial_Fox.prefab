@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2721254969569378261}
   - component: {fileID: 2814074157876285613}
   - component: {fileID: 2812677529849279597}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FX_Impact_Small_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4894,7 +4894,7 @@ GameObject:
   - component: {fileID: 2728409621048405323}
   - component: {fileID: 2814344327209687167}
   - component: {fileID: 2812978845735869427}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FX_Impact_Small_Dust_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9782,9 +9782,9 @@ GameObject:
   - component: {fileID: 4834151951815987770}
   - component: {fileID: 5182786290721721949}
   - component: {fileID: 80097390145543660}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube_Celestial_Fox
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9931,7 +9931,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 6
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -9954,7 +9954,7 @@ MonoBehaviour:
   HealthPoints: 100
   telescope_hit: 60
   punch_jab: 15
-  set_to_disable: 0
+  set_to_disable: 1
   currentEnemyHealth: 0
   particial_trigger: {fileID: 2722605938092454641}
   hit_delay_vission_delay: 0.5
@@ -9972,7 +9972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerFroggy: {fileID: 0}
-  ShootRange: 4
+  ShootRange: 6
   DelayShoot: 3
   DevideDelay: 1
   Projectile: {fileID: 632883866659746166, guid: 86d2a345de5f9014a94b8918ddf9f5b8, type: 3}
