@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8261096103376403350
+--- !u!1 &2866136242810662905
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,14 +8,14 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8786135362053169452}
-  - component: {fileID: 5638863090488602249}
-  - component: {fileID: 7612687915272018499}
-  - component: {fileID: 5872961358959292623}
-  - component: {fileID: 9107447171251177177}
-  - component: {fileID: 5638863090488602252}
-  - component: {fileID: 5638863090488602250}
-  - component: {fileID: 5638863090488602251}
+  - component: {fileID: 3210326660367414595}
+  - component: {fileID: 1955270890336123622}
+  - component: {fileID: 4379314999088483884}
+  - component: {fileID: 352181977007924384}
+  - component: {fileID: -8171081238523952986}
+  - component: {fileID: 871852869040164293}
+  - component: {fileID: 6115353766466568731}
+  - component: {fileID: 7992167513790062642}
   m_Layer: 6
   m_Name: Starmite
   m_TagString: Enemy
@@ -23,36 +23,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8786135362053169452
+--- !u!4 &3210326660367414595
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8261096103376403350}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 944.2442, y: 9.054161, z: -25.967932}
+  m_GameObject: {fileID: 2866136242810662905}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 150, y: 150, z: 150}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!33 &5638863090488602249
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &1955270890336123622
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8261096103376403350}
-  m_Mesh: {fileID: 1293403986315000355, guid: 86cac421d5076894fb88213402259830, type: 3}
---- !u!23 &7612687915272018499
+  m_GameObject: {fileID: 2866136242810662905}
+  m_Mesh: {fileID: -2155521463015659662, guid: 86cac421d5076894fb88213402259830, type: 3}
+--- !u!23 &4379314999088483884
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8261096103376403350}
+  m_GameObject: {fileID: 2866136242810662905}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -88,27 +88,43 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5872961358959292623
+--- !u!64 &352181977007924384
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8261096103376403350}
+  m_GameObject: {fileID: 2866136242810662905}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 1293403986315000355, guid: 86cac421d5076894fb88213402259830, type: 3}
---- !u!114 &9107447171251177177
+  m_Mesh: {fileID: -2155521463015659662, guid: 86cac421d5076894fb88213402259830, type: 3}
+--- !u!54 &-8171081238523952986
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2866136242810662905}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
+--- !u!114 &871852869040164293
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8261096103376403350}
+  m_GameObject: {fileID: 2866136242810662905}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 212066b66d392694ba8438ff584b2b6b, type: 3}
@@ -121,30 +137,14 @@ MonoBehaviour:
   currentEnemyHealth: 0
   particial_trigger: {fileID: 2842555647530101017, guid: bafab1abd05cfcd45982b3ce6edb9880, type: 3}
   hit_delay_vission_delay: 0.5
-  drop_item_number: 0
---- !u!54 &5638863090488602252
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8261096103376403350}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 116
-  m_CollisionDetection: 1
---- !u!114 &5638863090488602250
+  drop_item_number: -1
+--- !u!114 &6115353766466568731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8261096103376403350}
+  m_GameObject: {fileID: 2866136242810662905}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce246be9525086046bc865edf2d8606e, type: 3}
@@ -155,16 +155,16 @@ MonoBehaviour:
   PlayerWithInDistance: 5
   Markering: []
   StopFollowDistance: 20
---- !u!195 &5638863090488602251
+--- !u!195 &7992167513790062642
 NavMeshAgent:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8261096103376403350}
+  m_GameObject: {fileID: 2866136242810662905}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.0064520165
+  m_Radius: 0.004372324
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -173,7 +173,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 0.008352371
-  m_BaseOffset: 0.0041761855
+  m_Height: 0.0128835235
+  m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
