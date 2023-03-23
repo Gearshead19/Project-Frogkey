@@ -60,13 +60,14 @@ public class Grappling : MonoBehaviour
 
 
 
-        if (Input.GetKeyDown(grappleKey)) StartGrapple(); //Don't need this input because of Player Input
+        /*if (Input.GetKeyDown(grappleKey)) StartGrapple(); //Don't need this input because of Player Input
+        */
 
-        if(Input.GetKeyDown(KeyCode.U))//this also part of the grapple test
+        /*if(Input.GetKeyDown(KeyCode.U))//this also part of the grapple test
             {
             ExcuteGrapple();
             grappling = true;
-        }
+        }*/
 
 
         if (grapplingCdTimer > 0)
