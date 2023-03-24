@@ -128,9 +128,37 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="2197452935" Type="User" Language="SFX" Hash="{1DA28036-1005-27BF-24D7-D4120ACD5034}">
+		<SoundBank Id="2197452935" Type="User" Language="SFX" Hash="{095F8D74-146E-5E7D-BA87-CBF6F0E95BD3}">
 			<ShortName>Hopps_SoundBank</ShortName>
 			<Path>Hopps_SoundBank.bnk</Path>
+			<Media>
+				<File Id="656144537" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Hopps_HeavyAttack_01.wav</ShortName>
+					<CachePath>SFX/SFX_Hopps_HeavyAttack_01_10C4C929.wem</CachePath>
+				</File>
+				<File Id="905258165" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Hopps_BasicAttack_01.wav</ShortName>
+					<CachePath>SFX/SFX_Hopps_BasicAttack_01_10C4C929.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="536851419" Name="Play_Hopps_BasicAttack" DurationType="OneShot" DurationMin="0.6291399" DurationMax="0.8065222">
+					<MediaRefs>
+						<MediaRef Id="905258165"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="2137158287" Name="ForestDungeonVerb"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="190067705" Name="Play_HoppsHeavyAttack" DurationType="OneShot" DurationMin="0.55182624" DurationMax="0.7718823">
+					<MediaRefs>
+						<MediaRef Id="656144537"/>
+					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="2137158287" Name="ForestDungeonVerb"/>
+					</AuxBusRefs>
+				</Event>
+			</Events>
 		</SoundBank>
 		<SoundBank Id="2286727387" Type="User" Language="SFX" Hash="{746EBA40-03ED-313B-7260-CA75FE780856}">
 			<ShortName>MUS_UndergroundForest</ShortName>
@@ -186,26 +214,6 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3353912517" Type="User" Language="SFX" Hash="{A52DDB7E-1CCC-F2B8-85B1-FE696A5F9CDB}">
-			<ShortName>SFX_Hopps_HeavyAttack</ShortName>
-			<Path>SFX_Hopps_HeavyAttack.bnk</Path>
-			<Media>
-				<File Id="656144537" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>SFX_Hopps_HeavyAttack_01.wav</ShortName>
-					<CachePath>SFX/SFX_Hopps_HeavyAttack_01_10C4C929.wem</CachePath>
-				</File>
-			</Media>
-			<Events>
-				<Event Id="190067705" Name="Play_HoppsHeavyAttack" DurationType="OneShot" DurationMin="0.55182624" DurationMax="0.7718823">
-					<MediaRefs>
-						<MediaRef Id="656144537"/>
-					</MediaRefs>
-					<AuxBusRefs>
-						<AuxBusRef Id="2137158287" Name="ForestDungeonVerb"/>
-					</AuxBusRefs>
-				</Event>
-			</Events>
-		</SoundBank>
 		<SoundBank Id="3413408933" Type="User" Language="SFX" Hash="{3A76473D-2CDB-A210-CC4E-19E949AD1E00}">
 			<ShortName>MUS_TitleScreen</ShortName>
 			<Path>MUS_TitleScreen.bnk</Path>
@@ -240,26 +248,6 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3968786574" Type="User" Language="SFX" Hash="{9CBCC0F7-11C1-31EA-074C-F2ED21AB2B09}">
-			<ShortName>SFX_Hopps_BasicAttack</ShortName>
-			<Path>SFX_Hopps_BasicAttack.bnk</Path>
-			<Media>
-				<File Id="905258165" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>SFX_Hopps_BasicAttack_01.wav</ShortName>
-					<CachePath>SFX/SFX_Hopps_BasicAttack_01_10C4C929.wem</CachePath>
-				</File>
-			</Media>
-			<Events>
-				<Event Id="536851419" Name="Play_Hopps_BasicAttack" DurationType="OneShot" DurationMin="0.6291399" DurationMax="0.8065222">
-					<MediaRefs>
-						<MediaRef Id="905258165"/>
-					</MediaRefs>
-					<AuxBusRefs>
-						<AuxBusRef Id="2137158287" Name="ForestDungeonVerb"/>
-					</AuxBusRefs>
-				</Event>
-			</Events>
-		</SoundBank>
 	</SoundBanks>
-	<FileHash>{EFF9F753-2F17-7528-A439-A19BDC6A4A85}</FileHash>
+	<FileHash>{705559B4-0FE6-D3F0-F906-79D94DF1B8E1}</FileHash>
 </SoundBanksInfo>

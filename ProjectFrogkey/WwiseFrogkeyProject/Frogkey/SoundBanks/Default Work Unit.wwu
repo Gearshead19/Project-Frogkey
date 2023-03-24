@@ -66,26 +66,12 @@
 					<ChildrenList>
 						<Folder Name="Hopps" ID="{895C15A7-D710-4954-9634-B62C46D599EC}" ShortID="355933518">
 							<ChildrenList>
-								<Folder Name="Attacks" ID="{6F5DE53F-F1E2-4F71-974C-44306A69CEE6}" ShortID="1049496069">
-									<ChildrenList>
-										<SoundBank Name="SFX_Hopps_BasicAttack" ID="{6426FAD3-4FCC-48C6-B9AC-41B9D69A6C2B}">
-											<ObjectInclusionList>
-												<ObjectRef Name="Play_Hopps_BasicAttack" ID="{2BE884DC-8377-44AC-B6D9-0162A531315E}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
-											</ObjectInclusionList>
-											<ObjectExclusionList/>
-											<GameSyncExclusionList/>
-										</SoundBank>
-										<SoundBank Name="SFX_Hopps_HeavyAttack" ID="{9CB65CD5-751F-4ED3-A39F-471D25821272}">
-											<ObjectInclusionList>
-												<ObjectRef Name="Play_HoppsHeavyAttack" ID="{89C9BAB7-FB94-48D6-9BA4-F67EC114F02E}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
-											</ObjectInclusionList>
-											<ObjectExclusionList/>
-											<GameSyncExclusionList/>
-										</SoundBank>
-									</ChildrenList>
-								</Folder>
+								<Folder Name="Attacks" ID="{6F5DE53F-F1E2-4F71-974C-44306A69CEE6}" ShortID="1049496069"/>
 								<SoundBank Name="Hopps_SoundBank" ID="{37CE2F13-BFD7-40EA-A741-60F825017820}">
-									<ObjectInclusionList/>
+									<ObjectInclusionList>
+										<ObjectRef Name="Play_Hopps_BasicAttack" ID="{2BE884DC-8377-44AC-B6D9-0162A531315E}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
+										<ObjectRef Name="Play_HoppsHeavyAttack" ID="{89C9BAB7-FB94-48D6-9BA4-F67EC114F02E}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
+									</ObjectInclusionList>
 									<ObjectExclusionList/>
 									<GameSyncExclusionList/>
 								</SoundBank>

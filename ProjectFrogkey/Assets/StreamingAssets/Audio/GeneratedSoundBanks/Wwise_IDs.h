@@ -66,8 +66,6 @@ namespace AK
         static const AkUniqueID MUS_UNDERGROUNDFOREST = 2286727387U;
         static const AkUniqueID SFX_DOOR_FORESTDUNGEON_CLOSE = 3253083610U;
         static const AkUniqueID SFX_DOOR_FORESTDUNGEON_OPEN = 1125626846U;
-        static const AkUniqueID SFX_HOPPS_BASICATTACK = 3968786574U;
-        static const AkUniqueID SFX_HOPPS_HEAVYATTACK = 3353912517U;
         static const AkUniqueID SFX_KEY_PICKUP = 173969489U;
         static const AkUniqueID SFX_POTION_DRINK = 2572880635U;
     } // namespace BANKS
