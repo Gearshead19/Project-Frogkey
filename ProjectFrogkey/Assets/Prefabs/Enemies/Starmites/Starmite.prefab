@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -8171081238523952986}
   - component: {fileID: 871852869040164293}
   - component: {fileID: 7992167513790062642}
-  - component: {fileID: 2971345446609810605}
+  - component: {fileID: 3056472511880437742}
   m_Layer: 6
   m_Name: Starmite
   m_TagString: Enemy
@@ -161,7 +161,7 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2971345446609810605
+--- !u!114 &3056472511880437742
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,30 +170,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2866136242810662905}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c19016234df9dd648a3b4655c7f07556, type: 3}
+  m_Script: {fileID: 11500000, guid: ce246be9525086046bc865edf2d8606e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DropSelect: 0
-  PlayerFroggy: {fileID: 0}
-  PlayerWithInDistance: 5
-  length: 2
-  StopFollowDistance: 20
-  MarkerHolder: {fileID: 0}
-  Markers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  FollowList: 0
   NavMeshAgent: {fileID: 0}
-  FroggyPlayer: {fileID: 0}
-  speed: 1
-  check_shoot: {fileID: 0}
-  shooter: 0
+  PlayerFroggy: {fileID: 0}
+  PlayerWithInDistance: 10
+  Markering: []
+  StopFollowDistance: 20
 --- !u!1001 &4164071663084456441
 PrefabInstance:
   m_ObjectHideFlags: 0
