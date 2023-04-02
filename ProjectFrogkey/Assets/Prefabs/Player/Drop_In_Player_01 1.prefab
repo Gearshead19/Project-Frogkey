@@ -2250,7 +2250,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7623609067343729957}
-  m_LocalRotation: {x: 0.09484805, y: 0.000000017655976, z: -0.0000000016822185, w: 0.9954918}
+  m_LocalRotation: {x: 0.09484805, y: -0.000000017655973, z: 0.0000000016822184, w: 0.9954918}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5270,7 +5270,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7623609067841076910}
-  m_LocalRotation: {x: 0.049595553, y: -0.000000034370412, z: 0.0000000017067198, w: 0.9987694}
+  m_LocalRotation: {x: 0.049595553, y: 0.000000034370412, z: -0.00000000170672, w: 0.9987694}
   m_LocalPosition: {x: 3.7605775e-16, y: 1.6936138, z: -4.061682}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7739,7 +7739,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7623609068498089359}
-  m_LocalRotation: {x: 0.049595557, y: -0.000000017185204, z: 8.5336005e-10, w: 0.9987694}
+  m_LocalRotation: {x: 0.049595557, y: 0.000000017185208, z: -8.5336005e-10, w: 0.9987694}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -10014,18 +10014,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &221891296
-Animation:
+--- !u!114 &221891296
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132149376705365}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 9472ed2b9c1bb6d4b9b773b8a2ba19ef, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0da13ee5664d26e48b6e3cd6b70139c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeTime: 2
+  meshRefreshRate: 0.1
+  spawnPosition: {fileID: 543450653378034159}
+  meshDestroyDelay: 3
+  mat: {fileID: 2100000, guid: 1f55cba8fa071434eab27737f245b45e, type: 2}
+  shaderVarRef: _Alpha
+  shaderVarRate: 0.1
+  shaderVarRefreshRate: 0.05
