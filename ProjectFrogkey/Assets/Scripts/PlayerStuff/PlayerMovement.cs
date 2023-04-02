@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// TODO: 1.Manage move to sprint implementation
-/// Needs to be a gradual change based on "stick pressure" or
-/// "changing values to a number threshold"
+/// 
 /// 
 /// 2. Refactor code to be organized. We have a lot of variables we're not even using
 /// </summary>
@@ -14,6 +12,8 @@ public class PlayerMovement : MonoBehaviour
 {
    
     private Dashing dash;
+
+    private Animator animator;
   
     [SerializeField]
     private GameObject projectile;
@@ -126,6 +126,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        animator = GetComponentInChildren<Animator>();
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;   //freeze = Idle 
         readyToJump = true;
@@ -141,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-
+        AnimationHandler();
         //Ground Check
 
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * maxDistance + 0.2f, whatIsGround);
@@ -169,6 +170,30 @@ public class PlayerMovement : MonoBehaviour
     private MovementState lastState;
     private bool keepMomentum;
 
+    public void AnimationHandler()
+    {
+        // get parameter values from animator
+        bool isWalking = animator.GetBool("isWalking");
+        bool isRunning = animator.GetBool("isRunning");
+
+        if (state == MovementState.walking)
+        {
+            animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            animator.SetBool("isWalking", false);
+        }
+
+        if (state == MovementState.sprinting)
+        {
+            animator.SetBool("isRunning", true);
+        }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
+    }
     private void StateHandler()
     {
         //Mode - Dashing
@@ -177,15 +202,19 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.dashing;
             desiredMoveSpeed = sprintSpeed;
             speedChangeFactor = dashSpeedChangeFactor;
+            
 
         }
 
         //Mode - Sprinting
         else if (grounded == true && horizontalInput >= .5 || verticalInput >= .5 || horizontalInput == -1 || verticalInput == -1)
         {
+            
+
             //this.gameObject.GetComponent<PlayerHealth>().Player_Invincible(time_for_invincbility);
             state = MovementState.sprinting;
             desiredMoveSpeed = sprintSpeed;
+           
 
         }
         // Mode - Walking
@@ -193,6 +222,8 @@ public class PlayerMovement : MonoBehaviour
         {
             state = MovementState.walking;
             desiredMoveSpeed = walkSpeed;
+
+            
         }
 
         //Mode - Idle(Freeze)
@@ -201,6 +232,7 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.idle;
             desiredMoveSpeed = 0;
             rb.velocity = Vector3.zero;
+           
         }
         // Mode - Air
         else
@@ -710,6 +742,7 @@ void OnFire()
     //    GetComponent<Camera>().fieldOfView = endValue;
     //}
     #endregion
+
 
     
 }
