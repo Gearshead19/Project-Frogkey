@@ -175,6 +175,7 @@ public class PlayerMovement : MonoBehaviour
         // get parameter values from animator
         bool isWalking = animator.GetBool("isWalking");
         bool isRunning = animator.GetBool("isRunning");
+        //bool isIdle = animator.GetBool("isIdle");
 
         if (state == MovementState.walking)
         {
@@ -218,17 +219,24 @@ public class PlayerMovement : MonoBehaviour
 
         }
         // Mode - Walking
-        else if (grounded == true)
+        else if (grounded == true && horizontalInput !=0 || verticalInput !=0)
         {
+           
             state = MovementState.walking;
             desiredMoveSpeed = walkSpeed;
+            //if (horizontalInput == 0 && verticalInput == 0)
+            //{
+            //    Debug.Log("Freezing");
+            //    freeze = true;
+            //}
 
-            
+
         }
 
         //Mode - Idle(Freeze)
-        else if (freeze)
+        else if (grounded == true && horizontalInput == 0 || verticalInput == 0)
         {
+
             state = MovementState.idle;
             desiredMoveSpeed = 0;
             rb.velocity = Vector3.zero;
