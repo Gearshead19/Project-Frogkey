@@ -8,6 +8,7 @@ public class Dashing : MonoBehaviour
     public Transform orientation, playerCam;
     private Rigidbody rb;
     private PlayerMovement pm;
+    private MeshTrail dashTrail;
 
     [Header("Dashing")]
     public float dashForce;
@@ -29,6 +30,7 @@ public class Dashing : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         pm = GetComponent<PlayerMovement>();
+        dashTrail = GetComponentInChildren<MeshTrail>();
     }
 
 
@@ -40,6 +42,7 @@ public class Dashing : MonoBehaviour
         if (Input.GetKeyDown(dashKey))
         {
             Dash();
+            
         }
         if (dashCdTimer > 0)
             dashCdTimer -= Time.deltaTime;
@@ -68,7 +71,7 @@ public class Dashing : MonoBehaviour
         {
             rb.useGravity = false;
         }
-
+        //dashTrail.Update();
 
         delayedForceToApply = forcetoApply;
         Invoke(nameof(DelayedDashForce),0.025f);
@@ -132,4 +135,13 @@ public class Dashing : MonoBehaviour
     //rb.AddForce(Force* moveDirection, ForceMode.Impulse);
     //        state = MovementState.dashing;
     //        Invoke(nameof(ResetDash), dashDuration);
+
+    //public void Trailin()
+    //{
+    //    if (!isTrailActive)
+    //    {
+    //        isTrailActive = true;
+    //        StartCoroutine(ActivateTrail(activeTime));
+    //    }
+    //}
 }
