@@ -6,6 +6,8 @@ public class HitScript : MonoBehaviour
 {
     public GameObject OverHeadTS;
     public GameObject PunchJab;
+    Animator animator;
+   
 
     private bool ClearToHitStuff = true;
 
@@ -21,6 +23,7 @@ public class HitScript : MonoBehaviour
 
     void Start()
     {
+        animator = GetComponentInChildren<Animator>();
         OverHeadTS = GameObject.FindGameObjectWithTag("overheadtelescope");
         PunchJab = GameObject.FindGameObjectWithTag("punchjab");
         HoldPostion = GameObject.FindGameObjectWithTag("hit_and_jab_holder");
@@ -39,13 +42,14 @@ public class HitScript : MonoBehaviour
     void Update()
     {
         MoveWithPlayer();
-       
+
     }
     public void OnAttack1Heavy()
     {
         OverHeadTSHit();
         
     }
+
     public void OnAttack2Light()
     {
         PunchJabHit();
@@ -54,6 +58,7 @@ public class HitScript : MonoBehaviour
     {
         if(ClearToHitStuff == true)
         {
+            animator.SetTrigger("LightAttack");
             PunchJab.SetActive(true);
             ClearToHitStuff = false;
             Invoke("setitinactive", DelayDisappear);
@@ -67,6 +72,7 @@ public class HitScript : MonoBehaviour
     {
         if (ClearToHitStuff == true)
         {
+            animator.SetTrigger("HeavyAttack");
             OverHeadTS.SetActive(true);
             ClearToHitStuff = false;
             Invoke("setitinactive", DelayDisappear);

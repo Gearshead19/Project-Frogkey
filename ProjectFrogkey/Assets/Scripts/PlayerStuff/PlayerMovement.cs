@@ -178,8 +178,6 @@ public class PlayerMovement : MonoBehaviour
         // get parameter values from animator
         bool isWalking = animator.GetBool("isWalking");
         bool isRunning = animator.GetBool("isRunning");
-        bool isJumping = animator.GetBool("isJumping");
-        //bool isIdle = animator.GetBool("isIdle");
 
         if (state == MovementState.walking)
         {
@@ -193,19 +191,10 @@ public class PlayerMovement : MonoBehaviour
         if (state == MovementState.sprinting)
         {
             animator.SetBool("isRunning", true);
-        }
-      
+        }    
         else
         {
             animator.SetBool("isRunning", false);
-        }
-        if (state == MovementState.air)
-        {
-            animator.SetBool("isJumping", true);
-        }
-        else
-        {
-            animator.SetBool("isJumping", false);
         }
     }
     private void StateHandler()
@@ -237,11 +226,6 @@ public class PlayerMovement : MonoBehaviour
            
             state = MovementState.walking;
             desiredMoveSpeed = walkSpeed;
-            //if (horizontalInput == 0 && verticalInput == 0)
-            //{
-            //    Debug.Log("Freezing");
-            //    freeze = true;
-            //}
 
 
         }
@@ -251,8 +235,6 @@ public class PlayerMovement : MonoBehaviour
         {
 
             state = MovementState.idle;
-          // desiredMoveSpeed = 0;
-            //rb.velocity = Vector3.zero;
            
         }
         // Mode - Air
@@ -499,6 +481,7 @@ public class PlayerMovement : MonoBehaviour
       
         if (readyToJump && grounded)
         {
+            animator.SetTrigger("Jump");
             readyToJump = false;
 
               Jump();
