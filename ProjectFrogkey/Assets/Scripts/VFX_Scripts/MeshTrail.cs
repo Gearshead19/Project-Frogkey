@@ -30,13 +30,25 @@ public class MeshTrail : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Keypad
         if (Input.GetKeyDown(KeyCode.T) && !isTrailActive)
         {
             isTrailActive = true;
             StartCoroutine(ActivateTrail(activeTime));
         }
-    }
 
+      
+
+    }
+    public void CheckTrail()
+    {
+        //Controller
+        if (!isTrailActive)
+        {
+            isTrailActive = true;
+            StartCoroutine(ActivateTrail(activeTime));
+        }
+    }
     IEnumerator ActivateTrail(float timeActive)
     {
 while(timeActive >0)
@@ -62,8 +74,9 @@ while(timeActive >0)
 
                 StartCoroutine(AnimateMaterialFloat(mR.material,0,shaderVarRate,shaderVarRefreshRate));
 
+                //game.SetActive(false);
                 Destroy(game, meshDestroyDelay); // replace this with an object pool to conserve memory
-
+                
             }
             yield return new WaitForSeconds(meshRefreshRate);
         }
