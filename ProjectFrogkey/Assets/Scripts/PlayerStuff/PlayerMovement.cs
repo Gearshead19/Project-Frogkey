@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private Dashing dash;
 
     private Animator animator;
+
+    private MeshTrail dashTrail;
   
     [SerializeField]
     private GameObject projectile;
@@ -132,6 +134,7 @@ public class PlayerMovement : MonoBehaviour
         readyToJump = true;
 
         dash = GetComponent<Dashing>();
+        dashTrail = GetComponentInChildren<MeshTrail>();
 
     }
 
@@ -175,6 +178,7 @@ public class PlayerMovement : MonoBehaviour
         // get parameter values from animator
         bool isWalking = animator.GetBool("isWalking");
         bool isRunning = animator.GetBool("isRunning");
+        bool isJumping = animator.GetBool("isJumping");
         //bool isIdle = animator.GetBool("isIdle");
 
         if (state == MovementState.walking)
@@ -190,9 +194,18 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("isRunning", true);
         }
+      
         else
         {
             animator.SetBool("isRunning", false);
+        }
+        if (state == MovementState.air)
+        {
+            animator.SetBool("isJumping", true);
+        }
+        else
+        {
+            animator.SetBool("isJumping", false);
         }
     }
     private void StateHandler()
@@ -238,8 +251,8 @@ public class PlayerMovement : MonoBehaviour
         {
 
             state = MovementState.idle;
-            desiredMoveSpeed = 0;
-            rb.velocity = Vector3.zero;
+          // desiredMoveSpeed = 0;
+            //rb.velocity = Vector3.zero;
            
         }
         // Mode - Air
@@ -435,6 +448,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("Dashing");
         dash.Dash();
+        dashTrail.CheckTrail();
         if (grounded && state != MovementState.dashing)
         {
             this.gameObject.GetComponent<PlayerHealth>().Player_Invincible(time_for_invincbility);
