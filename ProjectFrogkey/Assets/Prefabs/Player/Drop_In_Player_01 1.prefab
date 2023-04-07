@@ -748,6 +748,7 @@ Transform:
   - {fileID: 7623609067273023600}
   - {fileID: 7623609067220437944}
   - {fileID: 543450653378034159}
+  - {fileID: 7623609067413203846}
   m_Father: {fileID: 7623609068605966516}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2250,7 +2251,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7623609067343729957}
-  m_LocalRotation: {x: 0.09484805, y: -0.000000017655973, z: 0.0000000016822184, w: 0.9954918}
+  m_LocalRotation: {x: 0.09484805, y: 0.000000017655976, z: -0.0000000016822185, w: 0.9954918}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2591,15 +2592,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7623609067413203849}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.08, y: 0.98, z: 0.3}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.105, y: 1.864, z: 0.856}
   m_LocalScale: {x: 0.18683, y: 0.18682997, z: 0.18682997}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7623609068966027845}
   - {fileID: 7623609067494419881}
-  m_Father: {fileID: 7623609068605966516}
-  m_RootOrder: 3
+  m_Father: {fileID: 7623609066962571056}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7623609067413203845
 MeshFilter:
@@ -2616,7 +2617,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7623609067413203849}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -7901,7 +7902,6 @@ Transform:
   - {fileID: 7623609066962571056}
   - {fileID: 7623609068800961311}
   - {fileID: 7623609068542082594}
-  - {fileID: 7623609067413203846}
   m_Father: {fileID: 7623609068563415453}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9978,9 +9978,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8244643754338024572, guid: ed34525269ba4314e906a4c8f784139d, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5923069032910807894, guid: ed34525269ba4314e906a4c8f784139d, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5217217862018416488, guid: ed34525269ba4314e906a4c8f784139d, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4072019144351927463, guid: ed34525269ba4314e906a4c8f784139d, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1908479379864268719, guid: ed34525269ba4314e906a4c8f784139d, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 705560378334020845, guid: ed34525269ba4314e906a4c8f784139d, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ed34525269ba4314e906a4c8f784139d, type: 3}
       propertyPath: m_Name
       value: Hopps_fbx
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307289499940353253, guid: ed34525269ba4314e906a4c8f784139d, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6280764707913834641, guid: ed34525269ba4314e906a4c8f784139d, type: 3}
+      propertyPath: m_CastShadows
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed34525269ba4314e906a4c8f784139d, type: 3}
@@ -10026,10 +10058,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0da13ee5664d26e48b6e3cd6b70139c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activeTime: 2
+  activeTime: 0.25
   meshRefreshRate: 0.1
   spawnPosition: {fileID: 543450653378034159}
-  meshDestroyDelay: 3
+  meshDestroyDelay: 1.5
   mat: {fileID: 2100000, guid: 1f55cba8fa071434eab27737f245b45e, type: 2}
   shaderVarRef: _Alpha
   shaderVarRate: 0.1

@@ -20,7 +20,7 @@ public class MeshTrail : MonoBehaviour
 
     private bool isTrailActive;
     private SkinnedMeshRenderer[] skinnedMeshRenderers;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -62,15 +62,17 @@ while(timeActive >0)
             {
                 GameObject game = new GameObject();
                 game.transform.SetPositionAndRotation(spawnPosition.position, spawnPosition.rotation);
-
+               
                MeshRenderer mR =  game.AddComponent<MeshRenderer>();
                 MeshFilter mF = game.AddComponent<MeshFilter>();
-
+                
                 Mesh mesh = new Mesh();
                 skinnedMeshRenderers[i].BakeMesh(mesh);
+           
 
                 mF.mesh = mesh;
                 mR.material = mat;
+                mR.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
 
                 StartCoroutine(AnimateMaterialFloat(mR.material,0,shaderVarRate,shaderVarRefreshRate));
 
@@ -80,7 +82,6 @@ while(timeActive >0)
             }
             yield return new WaitForSeconds(meshRefreshRate);
         }
-
         isTrailActive = false;
     }
     IEnumerator AnimateMaterialFloat( Material mat, float goal, float rate, float refreshRate)
