@@ -31,7 +31,10 @@ public class ActivatedObjectTrigger : MonoBehaviour
 
     private void Start()
     {
-        objectsToCheck = GameObject.FindGameObjectsWithTag(objectsTaggedBeingChecked);
+        if(objectsTaggedBeingChecked != null)
+        {
+            objectsToCheck = GameObject.FindGameObjectsWithTag(objectsTaggedBeingChecked);
+        }
     }
 
     private void FixedUpdate()
