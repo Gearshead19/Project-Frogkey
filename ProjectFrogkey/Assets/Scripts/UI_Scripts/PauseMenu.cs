@@ -35,10 +35,15 @@ public class PauseMenu : MonoBehaviour
         {
             Time.timeScale = 0f;
 
+            //Muffles music when paused
+            AkSoundEngine.SetState("GamePause", "IsPaused");
         }
         else
         {
             Time.timeScale = 1f;
+
+            //Un-muffles music when un-paused
+            AkSoundEngine.SetState("GamePause", "NotPaused");
         }
 
 
@@ -49,7 +54,6 @@ public class PauseMenu : MonoBehaviour
     private void OnPause()
     {
         Toggle();
-
     }
     public void Continue()
     {

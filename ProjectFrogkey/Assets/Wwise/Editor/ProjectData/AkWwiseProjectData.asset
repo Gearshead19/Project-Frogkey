@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 83d6a45337cf824f976196e88faaa74f
     GuidInternal: 
-    m_lastTime: -8585234789177950297
+    m_lastTime: -8585221051506897972
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 4c433a5e2d0537489cbb179749b3b19c
     GuidInternal: 
-    m_lastTime: -8585230359477956490
+    m_lastTime: -8585221051516440323
     List:
     - name: Ambience
       guid: 155a2e01e0a1ef419303d2a88672fc62
@@ -185,7 +185,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 763069cdd6792f49a9b4f310db26f760
     GuidInternal: 
-    m_lastTime: -8585219799582372488
+    m_lastTime: -8585219807475610028
     List:
     - name: AMB
       guid: 287500ec3b303e4aad3974c7fcedc682
@@ -744,7 +744,7 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: dd6f88753b767c4cb0d871650ba3f9d8
     GuidInternal: 
-    m_lastTime: -8585201240510021210
+    m_lastTime: -8585199105069159830
     List:
     - name: Attacks
       guid: 558fe51d0a8a7d44aa2688eb0ee0be2f
@@ -770,6 +770,26 @@ MonoBehaviour:
       maxDuration: -1
       minDuration: -1
     - name: Dungeons
+      guid: a7280c8cc1ce6f4bb7287bc7feee094c
+      id: 3945285144
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd6f88753b767c4cb0d871650ba3f9d8
+      - ElementName: SFX
+        ObjectType: 4
+        guid: f018b76cfd44f140bffaf8d6973d567f
+      - ElementName: Dungeons
+        ObjectType: 4
+        guid: a7280c8cc1ce6f4bb7287bc7feee094c
+      Path: Events\Default Work Unit\SFX\Dungeons
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Dungeons
       guid: a69bd43fbf7714479a91899263d58513
       id: 3945285144
       PathAndIcons:
@@ -789,9 +809,9 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Dungeons
-      guid: a7280c8cc1ce6f4bb7287bc7feee094c
-      id: 3945285144
+    - name: Footsteps
+      guid: 8b17058ea0927b4aa817a7db38c05a72
+      id: 2385628198
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -802,10 +822,13 @@ MonoBehaviour:
       - ElementName: SFX
         ObjectType: 4
         guid: f018b76cfd44f140bffaf8d6973d567f
-      - ElementName: Dungeons
+      - ElementName: Hopps
         ObjectType: 4
-        guid: a7280c8cc1ce6f4bb7287bc7feee094c
-      Path: Events\Default Work Unit\SFX\Dungeons
+        guid: 16629dbeaf92d941844222d0dfd189bb
+      - ElementName: Footsteps
+        ObjectType: 4
+        guid: 8b17058ea0927b4aa817a7db38c05a72
+      Path: Events\Default Work Unit\SFX\Hopps\Footsteps
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1621,7 +1644,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: fb02d53ee8322348b935d3c8acb167fa
     GuidInternal: 
-    m_lastTime: -8585234789190893661
+    m_lastTime: -8585221051524622479
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -1635,7 +1658,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 875f01eb6b2cbd4fa85e4ca22be2be00
     GuidInternal: 
-    m_lastTime: -8585230359474525768
+    m_lastTime: -8585221051506917273
     List:
     - name: Dungeons
       guid: 37341a1e9e1dd54c9a989700995c7d23
@@ -1878,8 +1901,93 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 963a883f390ccd47ae9528f5c2f8392e
     GuidInternal: 
-    m_lastTime: -8585234789177963036
-    List: []
+    m_lastTime: -8585199103645253162
+    List:
+    - name: Footstep_SwitchGroup
+      guid: 6126d554a5b4e445849c2040dba3ccdf
+      id: 2116499235
+      PathAndIcons:
+      - ElementName: Switches
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 963a883f390ccd47ae9528f5c2f8392e
+      - ElementName: Hopps
+        ObjectType: 4
+        guid: 4a96f9026ed4d74b87b4ce85738117d2
+      - ElementName: Footsteps
+        ObjectType: 4
+        guid: 320446cc0cd9eb4e83e2fde40031ecf8
+      - ElementName: Footstep_SwitchGroup
+        ObjectType: 11
+        guid: 6126d554a5b4e445849c2040dba3ccdf
+      Path: Switches\Default Work Unit\Hopps\Footsteps\Footstep_SwitchGroup
+      values:
+      - name: Stone
+        guid: d0b9a2d4e681e84987d7b9017fd87571
+        id: 1216965916
+        PathAndIcons:
+        - ElementName: Switches
+          ObjectType: 5
+          guid: 00000000000000000000000000000000
+        - ElementName: Default Work Unit
+          ObjectType: 12
+          guid: 963a883f390ccd47ae9528f5c2f8392e
+        - ElementName: Hopps
+          ObjectType: 4
+          guid: 4a96f9026ed4d74b87b4ce85738117d2
+        - ElementName: Footsteps
+          ObjectType: 4
+          guid: 320446cc0cd9eb4e83e2fde40031ecf8
+        - ElementName: Footstep_SwitchGroup
+          ObjectType: 11
+          guid: 6126d554a5b4e445849c2040dba3ccdf
+        - ElementName: Stone
+          ObjectType: 10
+          guid: d0b9a2d4e681e84987d7b9017fd87571
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Footsteps
+      guid: 320446cc0cd9eb4e83e2fde40031ecf8
+      id: 2385628198
+      PathAndIcons:
+      - ElementName: Switches
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 963a883f390ccd47ae9528f5c2f8392e
+      - ElementName: Hopps
+        ObjectType: 4
+        guid: 4a96f9026ed4d74b87b4ce85738117d2
+      - ElementName: Footsteps
+        ObjectType: 4
+        guid: 320446cc0cd9eb4e83e2fde40031ecf8
+      Path: Switches\Default Work Unit\Hopps\Footsteps
+      values: []
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
+    - name: Hopps
+      guid: 4a96f9026ed4d74b87b4ce85738117d2
+      id: 4006243373
+      PathAndIcons:
+      - ElementName: Switches
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 963a883f390ccd47ae9528f5c2f8392e
+      - ElementName: Hopps
+        ObjectType: 4
+        guid: 4a96f9026ed4d74b87b4ce85738117d2
+      Path: Switches\Default Work Unit\Hopps
+      values: []
+      ValueGuids: []
+      ValueIcons: []
+      valuesInternal: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
     PathAndIcons:
@@ -1892,7 +2000,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: aa80e8f35d92ee409a34c23e596a3250
     GuidInternal: 
-    m_lastTime: -8585234789177963036
+    m_lastTime: -8585221051506904324
     List: []
   ExpandedFileSystemItemIds: 
   ExpandedWaapiItemIds: 
