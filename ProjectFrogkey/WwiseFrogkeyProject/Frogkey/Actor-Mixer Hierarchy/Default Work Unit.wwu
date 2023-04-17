@@ -116,7 +116,180 @@
 						</Folder>
 						<Folder Name="Hopps" ID="{DC83FC1D-DBC9-42C0-A484-3208ACFF27A5}" ShortID="134968819">
 							<ChildrenList>
-								<Folder Name="Footsteps" ID="{E0204B9E-05C4-477D-93BF-75845F8EDCD5}" ShortID="880575387"/>
+								<Folder Name="Footsteps" ID="{E0204B9E-05C4-477D-93BF-75845F8EDCD5}" ShortID="880575387">
+									<ChildrenList>
+										<SwitchContainer Name="Footsteps_Switch" ID="{CCCAB5DD-8D28-4F14-82B3-171018E7628F}" ShortID="1045646940">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
+												</Reference>
+												<Reference Name="DefaultSwitchOrState">
+													<ObjectRef Name="Stone" ID="{D4A2B9D0-81E6-49E8-87D7-B9017FD87571}" WorkUnitID="{3F883A96-0C39-47CD-AE95-28F5C2F8392E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+												</Reference>
+												<Reference Name="SwitchGroupOrStateGroup">
+													<ObjectRef Name="Footstep_SwitchGroup" ID="{54D52661-B4A5-45E4-849C-2040DBA3CCDF}" WorkUnitID="{3F883A96-0C39-47CD-AE95-28F5C2F8392E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<RandomSequenceContainer Name="Footsteps_Stone" ID="{76A0F99A-F987-4D7D-9929-85B24BCBB888}" ShortID="1061395070">
+													<PropertyList>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{0E69F6D1-A91A-4F50-9983-0A9535E4B7DE}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Min" Type="Real64" Value="-51"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="SFX_Footstep_Stone_01" ID="{90F5BF50-43DC-488F-9426-BAE6261947B2}" ShortID="315743807">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="SFX_Footstep_Stone_01" ID="{80248DD1-841D-4058-B3E4-58FE4069D160}">
+																	<Language>SFX</Language>
+																	<AudioFile>SFX_Footstep_Stone_01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="954843541"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="SFX_Footstep_Stone_01" ID="{80248DD1-841D-4058-B3E4-58FE4069D160}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="SFX_Footstep_Stone_02" ID="{66830C1C-6658-4EC5-ADD1-362F786608F8}" ShortID="581557490">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="SFX_Footstep_Stone_02" ID="{CEEC2CD4-24FA-4BD7-8D03-3634D0C587D6}">
+																	<Language>SFX</Language>
+																	<AudioFile>SFX_Footstep_Stone_02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="212019886"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="SFX_Footstep_Stone_02" ID="{CEEC2CD4-24FA-4BD7-8D03-3634D0C587D6}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="SFX_Footstep_Stone_03" ID="{2E568E24-C423-4742-90DB-E553644D2EA1}" ShortID="988134708">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="SFX_Footstep_Stone_03" ID="{27011336-11BD-4480-9E8A-B75FD44595FB}">
+																	<Language>SFX</Language>
+																	<AudioFile>SFX_Footstep_Stone_03.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="186922672"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="SFX_Footstep_Stone_03" ID="{27011336-11BD-4480-9E8A-B75FD44595FB}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="SFX_Footstep_Stone_04" ID="{38738563-068D-481D-BA41-83C87A558702}" ShortID="341809540">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="SFX_Footstep_Stone_04" ID="{ED6ABEC1-5D35-4429-9623-E05F5E4264FD}">
+																	<Language>SFX</Language>
+																	<AudioFile>SFX_Footstep_Stone_04.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="316000514"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="SFX_Footstep_Stone_04" ID="{ED6ABEC1-5D35-4429-9623-E05F5E4264FD}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="SFX_Footstep_Stone_05" ID="{4F7F3442-65AD-4757-AA5C-03DCA6E701DA}" ShortID="827696261">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="SFX_Footstep_Stone_05" ID="{3C53DD36-2C0F-4F5D-ACB4-BDA47677813F}">
+																	<Language>SFX</Language>
+																	<AudioFile>SFX_Footstep_Stone_05.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="73418470"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="SFX_Footstep_Stone_05" ID="{3C53DD36-2C0F-4F5D-ACB4-BDA47677813F}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+											</ChildrenList>
+											<GroupingInfo>
+												<GroupingBehaviorList>
+													<GroupingBehavior>
+														<ItemRef Name="Footsteps_Stone" ID="{76A0F99A-F987-4D7D-9929-85B24BCBB888}"/>
+													</GroupingBehavior>
+												</GroupingBehaviorList>
+												<GroupingList>
+													<Grouping>
+														<SwitchRef Name="Stone" ID="{D4A2B9D0-81E6-49E8-87D7-B9017FD87571}"/>
+														<ItemList>
+															<ItemRef Name="Footsteps_Stone" ID="{76A0F99A-F987-4D7D-9929-85B24BCBB888}"/>
+														</ItemList>
+													</Grouping>
+												</GroupingList>
+											</GroupingInfo>
+										</SwitchContainer>
+									</ChildrenList>
+								</Folder>
 								<Folder Name="Jumps" ID="{01DD5532-A6A9-4BC6-81A8-3F8BEB322AEE}" ShortID="200433627">
 									<ChildrenList>
 										<SwitchContainer Name="Hopps_JumpSwitch" ID="{0C2FB636-DE50-4FE3-B7A2-DC26F638083D}" ShortID="789369596">
