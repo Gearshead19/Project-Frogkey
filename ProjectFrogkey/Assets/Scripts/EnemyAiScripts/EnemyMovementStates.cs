@@ -40,6 +40,7 @@ public class EnemyMovementStates : DetectionStatMachine
         else
         {
             shooter = false;
+            Debug.Log("There is no IsOkayShootLookAhead script added");
         }
 
         StartSetupMarkers();//this is only for testing purpose to see the radius of the detection range
