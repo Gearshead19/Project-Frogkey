@@ -36,7 +36,10 @@ public class Hazard_damage : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-            repeat_damage();
+            if (Player == null)
+            {
+                repeat_damage();
+            }
         }
     }
 }
