@@ -175,7 +175,7 @@ public class Grappling : MonoBehaviour
     void OnGrapple()
     {
         Debug.Log("I'm grappling thing");
-        StartGrapple();
+        //StartGrapple();
     }
 
 
