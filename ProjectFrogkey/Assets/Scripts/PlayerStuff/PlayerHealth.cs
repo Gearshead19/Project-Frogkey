@@ -4,12 +4,14 @@ using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
+    int maxHealth = 100;
     public int HealthPoints = 100;
     public int currentHealth;
     public int invincible_factor = 1; //when turned to 0 it is invincible
 
     public HealthBar healthBar;
-    
+
+    ParticleSystem particle;
     
     public MenuEditQuick MenuQuick;
 
@@ -20,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
         //MenuQuick = gameObject.GetComponent<MenuEditQuick>();
         currentHealth = HealthPoints;
         healthBar.SetMaxHealth(HealthPoints);
+        particle = GetComponentInChildren<ParticleSystem>();
          
     }
 
@@ -42,7 +45,22 @@ void OnQuickReset()
 
     void OnHeal()
     {
-
+        PlayerHealSelf();
+     
+        
+        if (!particle.isPlaying)
+        {
+            particle.Play();
+            
+        }
+        else
+        {
+            particle.Stop();
+        }
+        //if (currentHealth == maxHealth)
+        //{
+        //    particle.Stop();
+        //}
     }
 
     void QucikReset()
