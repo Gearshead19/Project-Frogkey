@@ -15,6 +15,8 @@ public class PlayerHealth : MonoBehaviour
     
     public MenuEditQuick MenuQuick;
 
+
+    private bool blink_knock_back = false;
     
     // Start is called before the first frame update
     void Start()
@@ -114,8 +116,35 @@ void OnQuickReset()
     {
         invincible_factor = 0;
 
+        Player_knock_back();
+
         Invoke("Player_Deactive_Invincible", time_for_invincible);
     }
+
+    private void Player_knock_back()
+    {
+        if(invincible_factor != 0)
+        {
+            if(blink_knock_back == true)
+            {
+                this.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+                blink_knock_back = false;
+
+            }
+            else
+            {
+                this.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1f);
+                blink_knock_back = true;
+            }
+            Invoke("Player_knock_back", 0.10f);
+        }
+        else
+        {
+            this.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1f);
+        }
+    }
+
+
 
     protected void Player_Deactive_Invincible()
     {
