@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = HealthPoints;
         healthBar.SetMaxHealth(HealthPoints);
         particle = GetComponentInChildren<ParticleSystem>();
-         
+        Player_Invincible(5);
     }
 
     // Update is called once per frame
@@ -115,10 +115,10 @@ void OnQuickReset()
     public void Player_Invincible(float time_for_invincible)
     {
         invincible_factor = 0;
-
-        Player_knock_back();
-
+        
         Invoke("Player_Deactive_Invincible", time_for_invincible);
+        
+        Player_knock_back();
     }
 
     private void Player_knock_back()
@@ -127,20 +127,21 @@ void OnQuickReset()
         {
             if(blink_knock_back == true)
             {
-                this.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
+                //this.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 0.5f);
                 blink_knock_back = false;
 
             }
             else
             {
-                this.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1f);
+                
+                //this.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1f);
                 blink_knock_back = true;
             }
-            Invoke("Player_knock_back", 0.10f);
+            Player_knock_back();
         }
         else
         {
-            this.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1f);
+            //this.GetComponent<MeshRenderer>().material.color = new Color(1.0f, 1.0f, 1.0f, 1f);
         }
     }
 
