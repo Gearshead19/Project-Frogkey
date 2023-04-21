@@ -25,7 +25,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = HealthPoints;
         healthBar.SetMaxHealth(HealthPoints);
         particle = GetComponentInChildren<ParticleSystem>();
-        Player_Invincible(5);
+        //Player_Invincible(5);
     }
 
     // Update is called once per frame

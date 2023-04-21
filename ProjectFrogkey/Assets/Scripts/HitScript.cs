@@ -17,18 +17,22 @@ public class HitScript : MonoBehaviour
 
     private GameObject HoldPostion;
 
+    private GameObject sword;
+
     //The lines below are to play audio implemented from Wwise
     public AK.Wwise.Event BasicAttack;
     public AK.Wwise.Event HeavyAttack;
 
     void Start()
     {
+        sword = GameObject.FindGameObjectWithTag("Sword");
         animator = GetComponentInChildren<Animator>();
         OverHeadTS = GameObject.FindGameObjectWithTag("overheadtelescope");
         PunchJab = GameObject.FindGameObjectWithTag("punchjab");
         HoldPostion = GameObject.FindGameObjectWithTag("hit_and_jab_holder");
         OverHeadTS.SetActive(false);
         PunchJab.SetActive(false);
+        sword.SetActive(false);
     }
 
     void MoveWithPlayer()
@@ -58,6 +62,7 @@ public class HitScript : MonoBehaviour
     {
         if(ClearToHitStuff == true)
         {
+            sword.SetActive(true);
             animator.SetTrigger("LightAttack");
             PunchJab.SetActive(true);
             ClearToHitStuff = false;
@@ -83,6 +88,7 @@ public class HitScript : MonoBehaviour
 
     private void setitinactive()
     {
+        sword.SetActive(false);
         OverHeadTS.SetActive(false);
         PunchJab.SetActive(false);
     }
