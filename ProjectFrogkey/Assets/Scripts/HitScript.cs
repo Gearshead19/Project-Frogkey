@@ -14,6 +14,7 @@ public class HitScript : MonoBehaviour
     public float DelayOVerHeadTSHit = 1.0f;
     public float DelayPunchJabHit = 0.1f;
     public float DelayDisappear = 0.1f;
+    public float HeavyDelayDisappear; // Heavy attack's time to disappear.
 
     private GameObject HoldPostion;
 
@@ -58,15 +59,16 @@ public class HitScript : MonoBehaviour
     {
         PunchJabHit();
         //If it's in a chest's collider range, it plays a different animation.
-        if (true)
-        {
-            animator.SetTrigger("OpenChest");
-        }
+        //if (true)
+        //{
+        //    animator.SetTrigger("OpenChest");
+        //}
     }
     private void PunchJabHit()
     {
         if(ClearToHitStuff == true)
         {
+           
             sword.SetActive(true);
             animator.SetTrigger("LightAttack");
             PunchJab.SetActive(true);
@@ -82,10 +84,11 @@ public class HitScript : MonoBehaviour
     {
         if (ClearToHitStuff == true)
         {
+            sword.SetActive(true);
             animator.SetTrigger("HeavyAttack");
             OverHeadTS.SetActive(true);
             ClearToHitStuff = false;
-            Invoke("setitinactive", DelayDisappear);
+            Invoke("setitinactive", HeavyDelayDisappear);
             Invoke("WaitToHit", DelayOVerHeadTSHit);
             HeavyAttack.Post(gameObject);
         }
