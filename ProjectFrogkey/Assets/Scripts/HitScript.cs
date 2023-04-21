@@ -57,6 +57,11 @@ public class HitScript : MonoBehaviour
     public void OnAttack2Light()
     {
         PunchJabHit();
+        //If it's in a chest's collider range, it plays a different animation.
+        if (true)
+        {
+            animator.SetTrigger("OpenChest");
+        }
     }
     private void PunchJabHit()
     {

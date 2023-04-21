@@ -60,7 +60,7 @@ while(timeActive >0)
             }
             for (int i = 0; i < skinnedMeshRenderers.Length; i++)
             {
-                GameObject game = new GameObject();
+                GameObject game = new GameObject("CharacterTrail"+i);
                 game.transform.SetPositionAndRotation(spawnPosition.position, spawnPosition.rotation);
                
                MeshRenderer mR =  game.AddComponent<MeshRenderer>();

@@ -220,6 +220,7 @@ public class PlayerMovement : MonoBehaviour
            
 
         }
+
         // Mode - Walking
         else if (grounded == true && horizontalInput !=0 || verticalInput !=0)
         {
@@ -237,6 +238,7 @@ public class PlayerMovement : MonoBehaviour
             state = MovementState.idle;
            
         }
+
         // Mode - Air
         else
         {
@@ -316,6 +318,12 @@ public class PlayerMovement : MonoBehaviour
 
         Debug.Log("H: " + horizontalInput + "V: " + verticalInput);
         
+    }
+
+    public void OnLift()
+    {
+        animator.SetTrigger("OpenChest");
+        Debug.Log("CHEST!!");
     }
 
 
@@ -492,7 +500,6 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-
     private void Jump()
     {
         exitingSlope = true;
@@ -534,6 +541,11 @@ public class PlayerMovement : MonoBehaviour
             ResetRestrictions();
 
             GetComponent<Grappling>().StopGrapple();
+        }
+        if (collision.gameObject.CompareTag("Chest"))
+        {
+            Debug.Log("Chest!");
+            //animator.SetTrigger("OpenChest");
         }
     }
 
@@ -748,6 +760,4 @@ void OnFire()
     //}
     #endregion
 
-
-    
 }
