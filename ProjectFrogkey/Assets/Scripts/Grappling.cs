@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Grappling : MonoBehaviour
 {
+    //TODO: FOllow Tutorial Verbatim
     [Header("References")]
     private PlayerMovement pm;
-    public Transform tonguePoint;
-    public Transform mouthTip;
+    public Transform cm; // camera variable
+    public Transform tonguePoint; //where the player is looking
+    public Transform mouthTip; 
     public LayerMask whatIsGrappleable;
     public LineRenderer lr;
     public Rigidbody rb;
@@ -23,7 +25,7 @@ public class Grappling : MonoBehaviour
     private float grapple_speed_up_add = 2; //is caluated in the Calculate_jump method
     public int lob; // divid disance by this to get the grpple_spped_up_add
     private float distance = 10; //distance betwean this and the intended location
-    public Vector3 GrappleVec; //saved vector for the targeted grapple location
+ /// It wasn't reading the hit.point (It always caught it as the origin point 0,0,0)   public Vector3 GrappleVec; //saved vector for the targeted grapple location
     public float distance_reset = 2; //when objects get distance_reset close to target location,
     //private bool grappling = false;
     //  public LayerMask available_grapple_area; //Make sure this is set to whatIsGround, since the ground is assumed to be grapplable
@@ -41,8 +43,8 @@ public class Grappling : MonoBehaviour
     public float grapplingCd;
     private float grapplingCdTimer;
 
-    [Header("Input")]//Won't need the input this way because of new input System
-    public KeyCode grappleKey = KeyCode.Mouse1;
+    //[Header("Input")]//Won't need the input this way because of new input System
+    //public KeyCode grappleKey = KeyCode.Mouse1;
 
     private bool grappling;
 
@@ -77,9 +79,8 @@ public class Grappling : MonoBehaviour
         
         if (grappling == true)
         {
-            
-            Grapple_action_go_to();
-            Reset_grapple();
+
+           
         }
 
 
@@ -106,10 +107,8 @@ public class Grappling : MonoBehaviour
         grappling = true;
         pm.freeze = true;
 
-        //always maxGrappleDistance
-        //Start at camera position and the player's direction(camera's forward position) launch toward the max Grapple Distance and only apply to what is Grappleable
-        // Since it's third person.... What's going to change?
-        if (Physics.Raycast(tonguePoint.position, tonguePoint.forward, out RaycastHit hit, maxGrappleDistance, whatIsGrappleable))
+        RaycastHit hit;
+        if (Physics.Raycast(cm.position, tonguePoint.forward, out hit, maxGrappleDistance, whatIsGrappleable))
         {
 
             //Hit something to store the hit point
@@ -118,7 +117,7 @@ public class Grappling : MonoBehaviour
             //call Execute Grapple with a delay
             Invoke(nameof(ExcuteGrapple), grappleDelayTime);
 
-            GrappleVec = grapplePoint;// grapplePoint;//saves point that is grapple to
+           
 
 
             if (hit.transform.gameObject.layer == whatIsGrappleable)
@@ -133,7 +132,7 @@ public class Grappling : MonoBehaviour
 
 
 
-        }
+        } //camera position and  .forward
         else
         {
             grapplePoint = tonguePoint.position + tonguePoint.forward * maxGrappleDistance;
@@ -146,7 +145,8 @@ public class Grappling : MonoBehaviour
 
     private void ExcuteGrapple()
     {
-        
+       Grapple_action_go_to();
+       Reset_grapple();
        Calculate_jump();
        Grapple_action_up_arc();
 
@@ -175,7 +175,8 @@ public class Grappling : MonoBehaviour
     void OnGrapple()
     {
         Debug.Log("I'm grappling thing");
-        //StartGrapple();
+        StartGrapple();
+      
     }
 
 
@@ -192,7 +193,7 @@ public class Grappling : MonoBehaviour
     //Move object towards gapple position
     void Grapple_action_go_to()
     {
-        this.transform.position = Vector3.Lerp(transform.position, GrappleVec, Time.deltaTime * grapple_speed); //moves player to location of grapple
+        this.transform.position = Vector3.Lerp(transform.position, grapplePoint, Time.deltaTime * grapple_speed); //moves player to location of grapple
     }
     //impact force to create an arc like effect
     void Grapple_action_up_arc()
@@ -202,7 +203,7 @@ public class Grappling : MonoBehaviour
     //finds the distance to the grapple point
     void Find_distance_to_gapplepoint()
     {
-        distance = Vector3.Distance(this.gameObject.transform.position, GrappleVec);
+        distance = Vector3.Distance(this.gameObject.transform.position, grapplePoint);
     }
     //Rests grapple when too close
     void Reset_grapple()

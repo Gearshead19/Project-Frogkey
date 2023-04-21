@@ -881,7 +881,6 @@ Transform:
   - {fileID: 7623609067273023600}
   - {fileID: 7623609067220437944}
   - {fileID: 543450653378034159}
-  - {fileID: 7623609067413203846}
   m_Father: {fileID: 7623609068605966516}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2726,14 +2725,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7623609067413203849}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.105, y: 1.864, z: 0.856}
-  m_LocalScale: {x: 0.18683, y: 0.18682997, z: 0.18682997}
+  m_LocalPosition: {x: 0.0015918304, y: 0.03341342, z: 0.012977266}
+  m_LocalScale: {x: 0.0028324092, y: 0.0028324088, z: 0.0028324088}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7623609068966027845}
   - {fileID: 7623609067494419881}
-  m_Father: {fileID: 7623609066962571056}
-  m_RootOrder: 8
+  m_Father: {fileID: 543450653378034159}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7623609067413203845
 MeshFilter:
@@ -5404,7 +5403,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7623609067841076910}
-  m_LocalRotation: {x: 0.049595553, y: 0.000000034370412, z: -0.00000000170672, w: 0.9987694}
+  m_LocalRotation: {x: 0.049595553, y: -0.000000034370412, z: 0.0000000017067198, w: 0.9987694}
   m_LocalPosition: {x: 3.7605775e-16, y: 1.6936138, z: -4.061682}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7873,7 +7872,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7623609068498089359}
-  m_LocalRotation: {x: 0.049595557, y: 0.000000017185208, z: -8.5336005e-10, w: 0.9987694}
+  m_LocalRotation: {x: 0.049595557, y: -0.000000017185204, z: 8.5336005e-10, w: 0.9987694}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8134,6 +8133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2aa6fd27f061a45adbc04fb259024e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cm: {fileID: 0}
   tonguePoint: {fileID: 7623609067987941951}
   mouthTip: {fileID: 7623609068966027845}
   whatIsGrappleable:
@@ -8150,7 +8150,6 @@ MonoBehaviour:
   distance_reset: 2
   overshootYAxis: 0
   grapplingCd: 1
-  grappleKey: 324
 --- !u!114 &7623609068605966508
 MonoBehaviour:
   m_ObjectHideFlags: 0

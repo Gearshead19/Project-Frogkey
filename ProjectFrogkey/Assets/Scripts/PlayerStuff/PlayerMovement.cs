@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private MeshTrail dashTrail;
   
     [SerializeField]
+    //[Tooltip("What it do?")]
     private GameObject projectile;
 
 
@@ -316,7 +317,7 @@ public class PlayerMovement : MonoBehaviour
         inputVector.x = horizontalInput;
         inputVector.y = verticalInput;
 
-        Debug.Log("H: " + horizontalInput + "V: " + verticalInput);
+       // Debug.Log("H: " + horizontalInput + "V: " + verticalInput);
         
     }
 
@@ -545,7 +546,7 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Chest"))
         {
             Debug.Log("Chest!");
-            //animator.SetTrigger("OpenChest");
+            animator.SetTrigger("OpenChest");
         }
     }
 
