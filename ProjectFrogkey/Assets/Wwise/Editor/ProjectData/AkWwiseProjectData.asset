@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: 83d6a45337cf824f976196e88faaa74f
     GuidInternal: 
-    m_lastTime: -8585233241242760586
+    m_lastTime: -8585221051506897972
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: 4c433a5e2d0537489cbb179749b3b19c
     GuidInternal: 
-    m_lastTime: -8585229214241280390
+    m_lastTime: -8585221051516440323
     List:
     - name: Ambience
       guid: 155a2e01e0a1ef419303d2a88672fc62
@@ -185,7 +185,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 763069cdd6792f49a9b4f310db26f760
     GuidInternal: 
-    m_lastTime: -8585219429407150453
+    m_lastTime: -8585193241148320545
     List:
     - name: AMB
       guid: 287500ec3b303e4aad3974c7fcedc682
@@ -201,6 +201,29 @@ MonoBehaviour:
         ObjectType: 4
         guid: 287500ec3b303e4aad3974c7fcedc682
       Path: SoundBanks\Default Work Unit\AMB
+    - name: AMB_ForestDungeon
+      guid: d6101fdec3a33d4099f12d558bb06f28
+      id: 2826179121
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 763069cdd6792f49a9b4f310db26f760
+      - ElementName: AMB
+        ObjectType: 4
+        guid: 287500ec3b303e4aad3974c7fcedc682
+      - ElementName: Dungeons
+        ObjectType: 4
+        guid: aa36956f6113f34d8b54c2e8289624d4
+      - ElementName: ForestDungeon
+        ObjectType: 4
+        guid: f915c2da0e513c44a1c609eba2a101fd
+      - ElementName: AMB_ForestDungeon
+        ObjectType: 7
+        guid: d6101fdec3a33d4099f12d558bb06f28
+      Path: SoundBanks\Default Work Unit\AMB\Dungeons\ForestDungeon\AMB_ForestDungeon
     - name: Attacks
       guid: 3fe55d6fe2f1714f974c44306a69cee6
       id: 3768541028
@@ -244,6 +267,23 @@ MonoBehaviour:
         ObjectType: 4
         guid: 049c77a7ceb1a1499ad4544fd7f7b41e
       Path: SoundBanks\Default Work Unit\SFX\Dungeons\ForestDungeon\Doors
+    - name: Dungeons
+      guid: aa36956f6113f34d8b54c2e8289624d4
+      id: 3945285144
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 763069cdd6792f49a9b4f310db26f760
+      - ElementName: AMB
+        ObjectType: 4
+        guid: 287500ec3b303e4aad3974c7fcedc682
+      - ElementName: Dungeons
+        ObjectType: 4
+        guid: aa36956f6113f34d8b54c2e8289624d4
+      Path: SoundBanks\Default Work Unit\AMB\Dungeons
     - name: Dungeons
       guid: 2e6fd00199417f4cab944ddfd9ec9a54
       id: 3945285144
@@ -318,6 +358,26 @@ MonoBehaviour:
         ObjectType: 4
         guid: bf8515f56f79614998a95376e294bc2e
       Path: SoundBanks\Default Work Unit\SFX\Dungeons\ForestDungeon
+    - name: ForestDungeon
+      guid: f915c2da0e513c44a1c609eba2a101fd
+      id: 2016883320
+      PathAndIcons:
+      - ElementName: SoundBanks
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 763069cdd6792f49a9b4f310db26f760
+      - ElementName: AMB
+        ObjectType: 4
+        guid: 287500ec3b303e4aad3974c7fcedc682
+      - ElementName: Dungeons
+        ObjectType: 4
+        guid: aa36956f6113f34d8b54c2e8289624d4
+      - ElementName: ForestDungeon
+        ObjectType: 4
+        guid: f915c2da0e513c44a1c609eba2a101fd
+      Path: SoundBanks\Default Work Unit\AMB\Dungeons\ForestDungeon
     - name: Hopps
       guid: a7155c8910d754499634b62c46d599ec
       id: 4006243373
@@ -744,8 +804,25 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: dd6f88753b767c4cb0d871650ba3f9d8
     GuidInternal: 
-    m_lastTime: -8585198533774798776
+    m_lastTime: -8585193237381774329
     List:
+    - name: AMB
+      guid: 100055fc24fc9b4b885d319ebcd8ad40
+      id: 1117531639
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd6f88753b767c4cb0d871650ba3f9d8
+      - ElementName: AMB
+        ObjectType: 4
+        guid: 100055fc24fc9b4b885d319ebcd8ad40
+      Path: Events\Default Work Unit\AMB
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Attacks
       guid: 558fe51d0a8a7d44aa2688eb0ee0be2f
       id: 3768541028
@@ -766,6 +843,26 @@ MonoBehaviour:
         ObjectType: 4
         guid: 558fe51d0a8a7d44aa2688eb0ee0be2f
       Path: Events\Default Work Unit\SFX\Hopps\Attacks
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Dungeons
+      guid: 0620847e84a1864f99cbc8c7830c9ecb
+      id: 3945285144
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd6f88753b767c4cb0d871650ba3f9d8
+      - ElementName: AMB
+        ObjectType: 4
+        guid: 100055fc24fc9b4b885d319ebcd8ad40
+      - ElementName: Dungeons
+        ObjectType: 4
+        guid: 0620847e84a1864f99cbc8c7830c9ecb
+      Path: Events\Default Work Unit\AMB\Dungeons
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -809,9 +906,9 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: Footsteps
-      guid: 8b17058ea0927b4aa817a7db38c05a72
-      id: 2385628198
+    - name: ForestArea
+      guid: 98553234d5be0c4ea18ef5cb7f87eaaa
+      id: 3336434501
       PathAndIcons:
       - ElementName: Events
         ObjectType: 5
@@ -819,16 +916,16 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: dd6f88753b767c4cb0d871650ba3f9d8
-      - ElementName: SFX
+      - ElementName: AMB
         ObjectType: 4
-        guid: f018b76cfd44f140bffaf8d6973d567f
-      - ElementName: Hopps
+        guid: 100055fc24fc9b4b885d319ebcd8ad40
+      - ElementName: Overworld
         ObjectType: 4
-        guid: 16629dbeaf92d941844222d0dfd189bb
-      - ElementName: Footsteps
+        guid: 2e0492a0d7394945bffeb8fb68254b39
+      - ElementName: ForestArea
         ObjectType: 4
-        guid: 8b17058ea0927b4aa817a7db38c05a72
-      Path: Events\Default Work Unit\SFX\Hopps\Footsteps
+        guid: 98553234d5be0c4ea18ef5cb7f87eaaa
+      Path: Events\Default Work Unit\AMB\Overworld\ForestArea
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -875,6 +972,29 @@ MonoBehaviour:
         ObjectType: 4
         guid: 78a7e13af8673c4e83586558a464321e
       Path: Events\Default Work Unit\Music\Overworld\ForestArea
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: ForestDungeon
+      guid: 68388930a0a4904c873267855e123345
+      id: 2016883320
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd6f88753b767c4cb0d871650ba3f9d8
+      - ElementName: AMB
+        ObjectType: 4
+        guid: 100055fc24fc9b4b885d319ebcd8ad40
+      - ElementName: Dungeons
+        ObjectType: 4
+        guid: 0620847e84a1864f99cbc8c7830c9ecb
+      - ElementName: ForestDungeon
+        ObjectType: 4
+        guid: 68388930a0a4904c873267855e123345
+      Path: Events\Default Work Unit\AMB\Dungeons\ForestDungeon
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -987,6 +1107,29 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Movement
+      guid: 8b17058ea0927b4aa817a7db38c05a72
+      id: 2129636626
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd6f88753b767c4cb0d871650ba3f9d8
+      - ElementName: SFX
+        ObjectType: 4
+        guid: f018b76cfd44f140bffaf8d6973d567f
+      - ElementName: Hopps
+        ObjectType: 4
+        guid: 16629dbeaf92d941844222d0dfd189bb
+      - ElementName: Movement
+        ObjectType: 4
+        guid: 8b17058ea0927b4aa817a7db38c05a72
+      Path: Events\Default Work Unit\SFX\Hopps\Movement
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Music
       guid: 5f4cdc0a820c7542be7d35ae922837b8
       id: 3991942870
@@ -1041,6 +1184,26 @@ MonoBehaviour:
         ObjectType: 4
         guid: e2bff178d2f88349b974b1013d41b127
       Path: Events\Default Work Unit\SFX\Overworld
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Overworld
+      guid: 2e0492a0d7394945bffeb8fb68254b39
+      id: 1562068129
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd6f88753b767c4cb0d871650ba3f9d8
+      - ElementName: AMB
+        ObjectType: 4
+        guid: 100055fc24fc9b4b885d319ebcd8ad40
+      - ElementName: Overworld
+        ObjectType: 4
+        guid: 2e0492a0d7394945bffeb8fb68254b39
+      Path: Events\Default Work Unit\AMB\Overworld
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1142,6 +1305,32 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: Play_ForestDungeon_AMB
+      guid: fbfc1ccac064f8448958d29b45230e12
+      id: 1858014972
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd6f88753b767c4cb0d871650ba3f9d8
+      - ElementName: AMB
+        ObjectType: 4
+        guid: 100055fc24fc9b4b885d319ebcd8ad40
+      - ElementName: Dungeons
+        ObjectType: 4
+        guid: 0620847e84a1864f99cbc8c7830c9ecb
+      - ElementName: ForestDungeon
+        ObjectType: 4
+        guid: 68388930a0a4904c873267855e123345
+      - ElementName: Play_ForestDungeon_AMB
+        ObjectType: 3
+        guid: fbfc1ccac064f8448958d29b45230e12
+      Path: Events\Default Work Unit\AMB\Dungeons\ForestDungeon\Play_ForestDungeon_AMB
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: Play_ForestDungeon_BasicDoor_Close
       guid: 8691ceb593550b40b939cd7e5caa4e17
       id: 3406344955
@@ -1217,6 +1406,58 @@ MonoBehaviour:
         ObjectType: 3
         guid: dc84e82b7783ac44b6d90162a531315e
       Path: Events\Default Work Unit\SFX\Hopps\Attacks\Play_Hopps_BasicAttack
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hopps_Jump
+      guid: e0d95182f0f54341917ba94e11c69e45
+      id: 109051115
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd6f88753b767c4cb0d871650ba3f9d8
+      - ElementName: SFX
+        ObjectType: 4
+        guid: f018b76cfd44f140bffaf8d6973d567f
+      - ElementName: Hopps
+        ObjectType: 4
+        guid: 16629dbeaf92d941844222d0dfd189bb
+      - ElementName: Movement
+        ObjectType: 4
+        guid: 8b17058ea0927b4aa817a7db38c05a72
+      - ElementName: Play_Hopps_Jump
+        ObjectType: 3
+        guid: e0d95182f0f54341917ba94e11c69e45
+      Path: Events\Default Work Unit\SFX\Hopps\Movement\Play_Hopps_Jump
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_Hopps_Walk
+      guid: 1a3a54e0ef9205479d71e28a9830acce
+      id: 3862148652
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd6f88753b767c4cb0d871650ba3f9d8
+      - ElementName: SFX
+        ObjectType: 4
+        guid: f018b76cfd44f140bffaf8d6973d567f
+      - ElementName: Hopps
+        ObjectType: 4
+        guid: 16629dbeaf92d941844222d0dfd189bb
+      - ElementName: Movement
+        ObjectType: 4
+        guid: 8b17058ea0927b4aa817a7db38c05a72
+      - ElementName: Play_Hopps_Walk
+        ObjectType: 3
+        guid: 1a3a54e0ef9205479d71e28a9830acce
+      Path: Events\Default Work Unit\SFX\Hopps\Movement\Play_Hopps_Walk
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1422,6 +1663,35 @@ MonoBehaviour:
         ObjectType: 3
         guid: 0bed74089231f4429807419124f622f7
       Path: Events\Default Work Unit\Music\TitleScreen\Play_TitleScreenMusic
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_UndergroundForest_AMB
+      guid: 18b48b1996c28c49a995604784b5c0d9
+      id: 2352500859
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd6f88753b767c4cb0d871650ba3f9d8
+      - ElementName: AMB
+        ObjectType: 4
+        guid: 100055fc24fc9b4b885d319ebcd8ad40
+      - ElementName: Overworld
+        ObjectType: 4
+        guid: 2e0492a0d7394945bffeb8fb68254b39
+      - ElementName: ForestArea
+        ObjectType: 4
+        guid: 98553234d5be0c4ea18ef5cb7f87eaaa
+      - ElementName: UndergroundForest
+        ObjectType: 4
+        guid: 67c8315eaaf4d14d84db7120227f8ede
+      - ElementName: Play_UndergroundForest_AMB
+        ObjectType: 3
+        guid: 18b48b1996c28c49a995604784b5c0d9
+      Path: Events\Default Work Unit\AMB\Overworld\ForestArea\UndergroundForest\Play_UndergroundForest_AMB
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
@@ -1632,6 +1902,32 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
+    - name: UndergroundForest
+      guid: 67c8315eaaf4d14d84db7120227f8ede
+      id: 2907562767
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: dd6f88753b767c4cb0d871650ba3f9d8
+      - ElementName: AMB
+        ObjectType: 4
+        guid: 100055fc24fc9b4b885d319ebcd8ad40
+      - ElementName: Overworld
+        ObjectType: 4
+        guid: 2e0492a0d7394945bffeb8fb68254b39
+      - ElementName: ForestArea
+        ObjectType: 4
+        guid: 98553234d5be0c4ea18ef5cb7f87eaaa
+      - ElementName: UndergroundForest
+        ObjectType: 4
+        guid: 67c8315eaaf4d14d84db7120227f8ede
+      Path: Events\Default Work Unit\AMB\Overworld\ForestArea\UndergroundForest
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -1644,7 +1940,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: fb02d53ee8322348b935d3c8acb167fa
     GuidInternal: 
-    m_lastTime: -8585233241273724094
+    m_lastTime: -8585221051524622479
     List: []
   StateWwu:
   - PhysicalPath: States\Default Work Unit.wwu
@@ -1658,7 +1954,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 875f01eb6b2cbd4fa85e4ca22be2be00
     GuidInternal: 
-    m_lastTime: -8585229214235577634
+    m_lastTime: -8585221051506917273
     List:
     - name: Dungeons
       guid: 37341a1e9e1dd54c9a989700995c7d23
@@ -1901,7 +2197,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 963a883f390ccd47ae9528f5c2f8392e
     GuidInternal: 
-    m_lastTime: -8585198533774564973
+    m_lastTime: -8585199103645253162
     List:
     - name: Footstep_SwitchGroup
       guid: 6126d554a5b4e445849c2040dba3ccdf
@@ -2000,10 +2296,10 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: aa80e8f35d92ee409a34c23e596a3250
     GuidInternal: 
-    m_lastTime: -8585233241242783938
+    m_lastTime: -8585221051506904324
     List: []
   ExpandedFileSystemItemIds: 
-  ExpandedWaapiItemIds: 
+  ExpandedWaapiItemIds: 050000000600000007000000090000000d0000000e0000000f000000110000001b0000002700000030000000340000004800000053000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
   currentDataSource: 0

@@ -9,6 +9,12 @@
 							<ChildrenList>
 								<Event Name="Play_TitleScreenMusic" ID="{0874ED0B-3192-42F4-9807-419124F622F7}">
 									<ChildrenList>
+										<Action Name="" ID="{84D78A41-2C48-43B7-AF99-AE6F388D7310}" ShortID="824479282">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="3"/>
+											</PropertyList>
+											<ReferenceList/>
+										</Action>
 										<Action Name="" ID="{8BD1B325-3037-407C-A9B4-264923E3EEF7}" ShortID="86829934">
 											<ReferenceList>
 												<Reference Name="Target">
@@ -20,6 +26,12 @@
 								</Event>
 								<Event Name="Play_EndMusic" ID="{AD959D68-F2D6-43FC-8645-D2DBEF09A037}">
 									<ChildrenList>
+										<Action Name="" ID="{4E160315-9573-4437-B900-54DF089D79D8}" ShortID="73842264">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="3"/>
+											</PropertyList>
+											<ReferenceList/>
+										</Action>
 										<Action Name="" ID="{5E2FE5AE-95B3-46E4-8F35-D113567694CE}" ShortID="29298889">
 											<ReferenceList>
 												<Reference Name="Target">
@@ -64,6 +76,12 @@
 									<ChildrenList>
 										<Event Name="Play_OverworldForestMusic" ID="{6E94E361-90D9-4A44-B3D4-128FDE22A739}">
 											<ChildrenList>
+												<Action Name="" ID="{44C97154-B11F-4236-8685-D91AB047A6D7}" ShortID="455413219">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="3"/>
+													</PropertyList>
+													<ReferenceList/>
+												</Action>
 												<Action Name="" ID="{4B31A87B-D408-4419-86C6-30ED4C1DBF4B}" ShortID="975489017">
 													<ReferenceList>
 														<Reference Name="Target">
@@ -97,6 +115,12 @@
 									<ChildrenList>
 										<Event Name="Play_MainTownMusic" ID="{2142567C-5B48-48A0-A97E-FD188F044EE9}">
 											<ChildrenList>
+												<Action Name="" ID="{F8CC4484-C60D-4460-84C2-5FF894B0EBD5}" ShortID="641330203">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="3"/>
+													</PropertyList>
+													<ReferenceList/>
+												</Action>
 												<Action Name="" ID="{52F474F6-EDCE-4D7B-836A-AB5246163A79}" ShortID="574019367">
 													<ReferenceList>
 														<Reference Name="Target">
@@ -142,7 +166,32 @@
 										</Event>
 									</ChildrenList>
 								</Folder>
-								<Folder Name="Footsteps" ID="{8E05178B-92A0-4A7B-A817-A7DB38C05A72}" ShortID="1039729982"/>
+								<Folder Name="Movement" ID="{8E05178B-92A0-4A7B-A817-A7DB38C05A72}" ShortID="1039729982">
+									<ChildrenList>
+										<Event Name="Play_Hopps_Walk" ID="{E0543A1A-92EF-4705-9D71-E28A9830ACCE}">
+											<ChildrenList>
+												<Action Name="" ID="{C068745B-5995-47A2-AC80-14FA86592A2D}" ShortID="769736745">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Footsteps_Switch" ID="{CCCAB5DD-8D28-4F14-82B3-171018E7628F}" WorkUnitID="{7D9ADE2E-3FD7-4E46-A295-7966F8B9AB70}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_Hopps_Jump" ID="{8251D9E0-F5F0-4143-917B-A94E11C69E45}">
+											<ChildrenList>
+												<Action Name="" ID="{C118765C-C4AF-48E6-A5F0-7BAC33812A67}" ShortID="394386333">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Hopps_JumpSwitch" ID="{0C2FB636-DE50-4FE3-B7A2-DC26F638083D}" WorkUnitID="{7D9ADE2E-3FD7-4E46-A295-7966F8B9AB70}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+									</ChildrenList>
+								</Folder>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Dungeons" ID="{8C0C28A7-CEC1-4B6F-B728-7BC7FEEE094C}" ShortID="211306154">
@@ -273,6 +322,52 @@
 													<ReferenceList>
 														<Reference Name="Target">
 															<ObjectRef Name="Pot_Break" ID="{D97C1AFB-201E-4CD4-A46C-C75EFB65EA80}" WorkUnitID="{7D9ADE2E-3FD7-4E46-A295-7966F8B9AB70}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="AMB" ID="{FC550010-FC24-4B9B-885D-319EBCD8AD40}" ShortID="1051653272">
+					<ChildrenList>
+						<Folder Name="Overworld" ID="{A092042E-39D7-4549-BFFE-B8FB68254B39}" ShortID="299370908">
+							<ChildrenList>
+								<Folder Name="ForestArea" ID="{34325598-BED5-4E0C-A18E-F5CB7F87EAAA}" ShortID="772774454">
+									<ChildrenList>
+										<Folder Name="UndergroundForest" ID="{5E31C867-F4AA-4DD1-84DB-7120227F8EDE}" ShortID="960681845">
+											<ChildrenList>
+												<Event Name="Play_UndergroundForest_AMB" ID="{198BB418-C296-498C-A995-604784B5C0D9}">
+													<ChildrenList>
+														<Action Name="" ID="{9DDE6DAA-74DF-47A1-AC50-964D9DCB6E8A}" ShortID="868156185">
+															<ReferenceList>
+																<Reference Name="Target">
+																	<ObjectRef Name="AMB_UndergroundForest" ID="{5F7335EB-1792-4B2E-B581-9E46A019219F}" WorkUnitID="{7D9ADE2E-3FD7-4E46-A295-7966F8B9AB70}"/>
+																</Reference>
+															</ReferenceList>
+														</Action>
+													</ChildrenList>
+												</Event>
+											</ChildrenList>
+										</Folder>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Dungeons" ID="{7E842006-A184-4F86-99CB-C8C7830C9ECB}" ShortID="174894238">
+							<ChildrenList>
+								<Folder Name="ForestDungeon" ID="{30893868-A4A0-4C90-8732-67855E123345}" ShortID="648788955">
+									<ChildrenList>
+										<Event Name="Play_ForestDungeon_AMB" ID="{CA1CFCFB-64C0-44F8-8958-D29B45230E12}">
+											<ChildrenList>
+												<Action Name="" ID="{CFC820B4-EAEC-4A08-BDAD-5199ED710F12}" ShortID="426601707">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="AMB_ForestDungeon" ID="{891FDF36-1801-4D64-9C2E-7C870A88EE83}" WorkUnitID="{7D9ADE2E-3FD7-4E46-A295-7966F8B9AB70}"/>
 														</Reference>
 													</ReferenceList>
 												</Action>

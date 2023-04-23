@@ -15,9 +15,12 @@ namespace AK
     {
         static const AkUniqueID PLAY_DRINK_HEALTHPOTION = 3363411656U;
         static const AkUniqueID PLAY_DUNGEONMUSIC = 2194545525U;
+        static const AkUniqueID PLAY_FORESTDUNGEON_AMB = 1858014972U;
         static const AkUniqueID PLAY_FORESTDUNGEON_BASICDOOR_CLOSE = 3406344955U;
         static const AkUniqueID PLAY_FORESTDUNGEON_BASICDOOR_OPEN = 228997405U;
         static const AkUniqueID PLAY_HOPPS_BASICATTACK = 536851419U;
+        static const AkUniqueID PLAY_HOPPS_JUMP = 109051115U;
+        static const AkUniqueID PLAY_HOPPS_WALK = 3862148652U;
         static const AkUniqueID PLAY_HOPPSHEAVYATTACK = 190067705U;
         static const AkUniqueID PLAY_KEY_PICKUP = 2881789206U;
         static const AkUniqueID PLAY_MAINTOWNMUSIC = 1134137730U;
@@ -55,9 +58,24 @@ namespace AK
 
     } // namespace STATES
 
+    namespace SWITCHES
+    {
+        namespace FOOTSTEP_SWITCHGROUP
+        {
+            static const AkUniqueID GROUP = 2116499235U;
+
+            namespace SWITCH
+            {
+                static const AkUniqueID STONE = 1216965916U;
+            } // namespace SWITCH
+        } // namespace FOOTSTEP_SWITCHGROUP
+
+    } // namespace SWITCHES
+
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
+        static const AkUniqueID AMB_FORESTDUNGEON = 2826179121U;
         static const AkUniqueID HOPPS_SOUNDBANK = 2197452935U;
         static const AkUniqueID MUS_FORESTDUNGEON = 973840868U;
         static const AkUniqueID MUS_MAINTOWN = 1922392942U;

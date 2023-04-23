@@ -111,8 +111,15 @@
 					</States>
 				</StateGroup>
 			</StateGroups>
+			<SwitchGroups>
+				<SwitchGroup Id="2116499235" Name="Footstep_SwitchGroup">
+					<Switches>
+						<Switch Id="1216965916" Name="Stone"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="1922392942" Type="User" Language="SFX" Hash="{C1821A18-FD50-04E2-E77B-6340EE03B56D}">
+		<SoundBank Id="1922392942" Type="User" Language="SFX" Hash="{DE0BCFA9-DBB8-6B7A-7FC3-3EE6D1A43867}">
 			<ShortName>MUS_MainTown</ShortName>
 			<Path>MUS_MainTown.bnk</Path>
 			<Media>
@@ -130,10 +137,30 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="2197452935" Type="User" Language="SFX" Hash="{095F8D74-146E-5E7D-BA87-CBF6F0E95BD3}">
+		<SoundBank Id="2197452935" Type="User" Language="SFX" Hash="{089D3EF2-158D-ABDB-06F6-507D86C6CB32}">
 			<ShortName>Hopps_SoundBank</ShortName>
 			<Path>Hopps_SoundBank.bnk</Path>
 			<Media>
+				<File Id="73418470" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Footstep_Stone_05.wav</ShortName>
+					<CachePath>SFX/SFX_Footstep_Stone_05_10C4C929.wem</CachePath>
+				</File>
+				<File Id="186922672" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Footstep_Stone_03.wav</ShortName>
+					<CachePath>SFX/SFX_Footstep_Stone_03_10C4C929.wem</CachePath>
+				</File>
+				<File Id="212019886" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Footstep_Stone_02.wav</ShortName>
+					<CachePath>SFX/SFX_Footstep_Stone_02_10C4C929.wem</CachePath>
+				</File>
+				<File Id="316000514" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Footstep_Stone_04.wav</ShortName>
+					<CachePath>SFX/SFX_Footstep_Stone_04_10C4C929.wem</CachePath>
+				</File>
+				<File Id="623794331" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Jump_Stone_02.wav</ShortName>
+					<CachePath>SFX/SFX_Jump_Stone_02_10C4C929.wem</CachePath>
+				</File>
 				<File Id="656144537" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Hopps_HeavyAttack_01.wav</ShortName>
 					<CachePath>SFX/SFX_Hopps_HeavyAttack_01_10C4C929.wem</CachePath>
@@ -141,6 +168,14 @@
 				<File Id="905258165" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Hopps_BasicAttack_01.wav</ShortName>
 					<CachePath>SFX/SFX_Hopps_BasicAttack_01_10C4C929.wem</CachePath>
+				</File>
+				<File Id="911667991" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Jump_Stone_01.wav</ShortName>
+					<CachePath>SFX/SFX_Jump_Stone_01_10C4C929.wem</CachePath>
+				</File>
+				<File Id="954843541" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Footstep_Stone_01.wav</ShortName>
+					<CachePath>SFX/SFX_Footstep_Stone_01_10C4C929.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -152,6 +187,31 @@
 						<AuxBusRef Id="2137158287" Name="ForestDungeonVerb"/>
 					</AuxBusRefs>
 				</Event>
+				<Event Id="109051115" Name="Play_Hopps_Jump" DurationType="OneShot" DurationMin="0.44312614" DurationMax="0.56960493">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2116499235" Id="1216965916" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="623794331"/>
+								<MediaRef Id="911667991"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="3862148652" Name="Play_Hopps_Walk" DurationType="OneShot" DurationMin="0.054727584" DurationMax="0.12220977">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="2116499235" Id="1216965916" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="73418470"/>
+								<MediaRef Id="186922672"/>
+								<MediaRef Id="212019886"/>
+								<MediaRef Id="316000514"/>
+								<MediaRef Id="954843541"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
 				<Event Id="190067705" Name="Play_HoppsHeavyAttack" DurationType="OneShot" DurationMin="0.55182624" DurationMax="0.7718823">
 					<MediaRefs>
 						<MediaRef Id="656144537"/>
@@ -161,6 +221,13 @@
 					</AuxBusRefs>
 				</Event>
 			</Events>
+			<SwitchGroups>
+				<SwitchGroup Id="2116499235" Name="Footstep_SwitchGroup">
+					<Switches>
+						<Switch Id="1216965916" Name="Stone"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 		<SoundBank Id="2286727387" Type="User" Language="SFX" Hash="{14BFB7E5-6E51-58E5-1F2B-5A86A70191BC}">
 			<ShortName>MUS_UndergroundForest</ShortName>
@@ -197,6 +264,23 @@
 				</Event>
 			</Events>
 		</SoundBank>
+		<SoundBank Id="2826179121" Type="User" Language="SFX" Hash="{9FE568A4-9DF5-C148-C7E3-EAE65D05BC53}">
+			<ShortName>AMB_ForestDungeon</ShortName>
+			<Path>AMB_ForestDungeon.bnk</Path>
+			<Media>
+				<File Id="733202127" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>AMB_ForestDungeon.wav</ShortName>
+					<CachePath>SFX/AMB_ForestDungeon_54789494.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1858014972" Name="Play_ForestDungeon_AMB" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="733202127"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
 		<SoundBank Id="3253083610" Type="User" Language="SFX" Hash="{195A409E-199F-A3A7-857F-7CBA21EBE449}">
 			<ShortName>SFX_Door_ForestDungeon_Close</ShortName>
 			<Path>SFX_Door_ForestDungeon_Close.bnk</Path>
@@ -217,7 +301,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3413408933" Type="User" Language="SFX" Hash="{F854B471-3DFE-5B57-DB9A-0D6518DDB825}">
+		<SoundBank Id="3413408933" Type="User" Language="SFX" Hash="{B541EB70-C3F5-50C0-C237-6EC634EE9732}">
 			<ShortName>MUS_TitleScreen</ShortName>
 			<Path>MUS_TitleScreen.bnk</Path>
 			<Media>
@@ -235,7 +319,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3591353126" Type="User" Language="SFX" Hash="{089E5590-C20A-4078-0345-3F74E544D2B5}">
+		<SoundBank Id="3591353126" Type="User" Language="SFX" Hash="{23D88CC0-B4CC-031D-7EE1-07D0A74E4620}">
 			<ShortName>MUS_OverworldForest</ShortName>
 			<Path>MUS_OverworldForest.bnk</Path>
 			<Media>
@@ -254,5 +338,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{09DDF24A-C243-7C2D-C5A6-8CCF5E39A8F7}</FileHash>
+	<FileHash>{A7ADBBC0-91AC-E981-9D1B-4ECABEBF567E}</FileHash>
 </SoundBanksInfo>

@@ -103,6 +103,9 @@ public class PlayerMovement : MonoBehaviour
     public float tongueSpeed;
     public bool Disarming;
 
+    [Header("Audio")]
+    public AK.Wwise.Event HoppsJump;
+
     //bug fixing
     public bool allowInvoke = true;
 
@@ -508,6 +511,9 @@ public class PlayerMovement : MonoBehaviour
         //resets the Y velocity
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
         rb.AddForce(transform.up * jumpForce, ForceMode.Impulse);
+
+        //plays jump audio
+        HoppsJump.Post(gameObject);
     }
     void ResetJump()
     {

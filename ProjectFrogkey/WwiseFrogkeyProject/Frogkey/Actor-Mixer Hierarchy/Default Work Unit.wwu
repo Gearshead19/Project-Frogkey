@@ -142,6 +142,7 @@
 																	<Modifier Name="" ID="{0E69F6D1-A91A-4F50-9983-0A9535E4B7DE}">
 																		<PropertyList>
 																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="100"/>
 																			<Property Name="Min" Type="Real64" Value="-51"/>
 																		</PropertyList>
 																	</Modifier>
@@ -293,16 +294,37 @@
 								<Folder Name="Jumps" ID="{01DD5532-A6A9-4BC6-81A8-3F8BEB322AEE}" ShortID="200433627">
 									<ChildrenList>
 										<SwitchContainer Name="Hopps_JumpSwitch" ID="{0C2FB636-DE50-4FE3-B7A2-DC26F638083D}" ShortID="789369596">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{28E88B65-BFC1-48E0-AB59-62C97E91C88C}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="200"/>
+																	<Property Name="Min" Type="Real64" Value="-200"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
 												</Reference>
+												<Reference Name="DefaultSwitchOrState">
+													<ObjectRef Name="Stone" ID="{D4A2B9D0-81E6-49E8-87D7-B9017FD87571}" WorkUnitID="{3F883A96-0C39-47CD-AE95-28F5C2F8392E}"/>
+												</Reference>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
 												</Reference>
+												<Reference Name="SwitchGroupOrStateGroup">
+													<ObjectRef Name="Footstep_SwitchGroup" ID="{54D52661-B4A5-45E4-849C-2040DBA3CCDF}" WorkUnitID="{3F883A96-0C39-47CD-AE95-28F5C2F8392E}"/>
+												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<RandomSequenceContainer Name="Hopps_JumpRandom" ID="{693CA07D-7C6E-41C9-976C-22AFDAB2D2B3}" ShortID="227421569">
+												<RandomSequenceContainer Name="Jump_Stone" ID="{693CA07D-7C6E-41C9-976C-22AFDAB2D2B3}" ShortID="227421569">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
@@ -311,14 +333,68 @@
 															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
 														</Reference>
 													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="SFX_Jump_Stone_01" ID="{828C8D52-85B4-4524-BC54-E912EA21EA52}" ShortID="113932032">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="SFX_Jump_Stone_01" ID="{D861CF98-8146-4996-811D-32BE2DB08D2A}">
+																	<Language>SFX</Language>
+																	<AudioFile>SFX_Jump_Stone_01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="911667991"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="SFX_Jump_Stone_01" ID="{D861CF98-8146-4996-811D-32BE2DB08D2A}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="SFX_Jump_Stone_02" ID="{0BFA80E1-7DFE-42DB-857A-CD708510CE84}" ShortID="958915068">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="SFX_Jump_Stone_02" ID="{A293BC8D-CF6A-4C1F-8517-18F84D4402DF}">
+																	<Language>SFX</Language>
+																	<AudioFile>SFX_Jump_Stone_02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="623794331"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="SFX_Jump_Stone_02" ID="{A293BC8D-CF6A-4C1F-8517-18F84D4402DF}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
 												</RandomSequenceContainer>
 											</ChildrenList>
 											<GroupingInfo>
 												<GroupingBehaviorList>
 													<GroupingBehavior>
-														<ItemRef Name="Hopps_JumpRandom" ID="{693CA07D-7C6E-41C9-976C-22AFDAB2D2B3}"/>
+														<ItemRef Name="Jump_Stone" ID="{693CA07D-7C6E-41C9-976C-22AFDAB2D2B3}"/>
 													</GroupingBehavior>
 												</GroupingBehaviorList>
+												<GroupingList>
+													<Grouping>
+														<SwitchRef Name="Stone" ID="{D4A2B9D0-81E6-49E8-87D7-B9017FD87571}"/>
+														<ItemList>
+															<ItemRef Name="Jump_Stone" ID="{693CA07D-7C6E-41C9-976C-22AFDAB2D2B3}"/>
+														</ItemList>
+													</Grouping>
+												</GroupingList>
 											</GroupingInfo>
 										</SwitchContainer>
 									</ChildrenList>
@@ -873,7 +949,95 @@
 						</Folder>
 					</ChildrenList>
 				</Folder>
-				<Folder Name="AMB" ID="{C7CB3318-E75F-4636-97C4-A42DE6318A0F}" ShortID="542754072"/>
+				<Folder Name="AMB" ID="{C7CB3318-E75F-4636-97C4-A42DE6318A0F}" ShortID="542754072">
+					<ChildrenList>
+						<Folder Name="Dungeons" ID="{2D4325E5-7FA1-4346-8B22-9891257EFCD4}" ShortID="782719791">
+							<ChildrenList>
+								<Folder Name="ForestDungeon" ID="{A084F3EC-2ACB-4B74-82D0-1BF76291C2DF}" ShortID="1058640300">
+									<ChildrenList>
+										<Sound Name="AMB_ForestDungeon" ID="{891FDF36-1801-4D64-9C2E-7C870A88EE83}" ShortID="482550820">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_ForestDungeon" ID="{33E429D0-9B87-495B-A306-37D97CD5FA40}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="975.509"/>
+														<Property Name="CrossfadeShape" Type="int16" Value="2"/>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.161131054396423"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.138112332339791"/>
+														<Property Name="LoopBegin" Type="Real64" Value="1.0128237704918"/>
+														<Property Name="LoopEnd" Type="Real64" Value="13.9493455663189"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>AMB_ForestDungeon.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="733202127"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_ForestDungeon" ID="{33E429D0-9B87-495B-A306-37D97CD5FA40}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Overworld" ID="{D4AA8652-BBAF-4EBA-9EC3-A279A02C64A6}" ShortID="590962335">
+							<ChildrenList>
+								<Folder Name="ForestArea" ID="{5BA3A0AC-B55C-4202-A503-A5BE229848CF}" ShortID="302352348">
+									<ChildrenList>
+										<Folder Name="UndergroundForest" ID="{236A87E2-F42B-4393-AE2C-463EA9E0F78B}" ShortID="624699667">
+											<ChildrenList>
+												<Sound Name="AMB_UndergroundForest" ID="{5F7335EB-1792-4B2E-B581-9E46A019219F}" ShortID="565863403">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_UndergroundForest" ID="{8BEDBEBB-F121-4EA6-80D5-C9D2FCFE8742}">
+															<PropertyList>
+																<Property Name="CrossfadeDuration" Type="Real64" Value="615.789"/>
+																<Property Name="LoopBegin" Type="Real64" Value="0.429210134128167"/>
+																<Property Name="LoopEnd" Type="Real64" Value="17.6244411326379"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>AMB_UndergroundForest.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="33574240"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_UndergroundForest" ID="{8BEDBEBB-F121-4EA6-80D5-C9D2FCFE8742}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</Folder>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

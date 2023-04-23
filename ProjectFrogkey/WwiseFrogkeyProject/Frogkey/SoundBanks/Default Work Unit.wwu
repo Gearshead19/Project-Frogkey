@@ -69,7 +69,9 @@
 								<Folder Name="Attacks" ID="{6F5DE53F-F1E2-4F71-974C-44306A69CEE6}" ShortID="1049496069"/>
 								<SoundBank Name="Hopps_SoundBank" ID="{37CE2F13-BFD7-40EA-A741-60F825017820}">
 									<ObjectInclusionList>
+										<ObjectRef Name="Play_Hopps_Jump" ID="{8251D9E0-F5F0-4143-917B-A94E11C69E45}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
 										<ObjectRef Name="Play_Hopps_BasicAttack" ID="{2BE884DC-8377-44AC-B6D9-0162A531315E}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
+										<ObjectRef Name="Play_Hopps_Walk" ID="{E0543A1A-92EF-4705-9D71-E28A9830ACCE}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
 										<ObjectRef Name="Play_HoppsHeavyAttack" ID="{89C9BAB7-FB94-48D6-9BA4-F67EC114F02E}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
 									</ObjectInclusionList>
 									<ObjectExclusionList/>
@@ -136,7 +138,25 @@
 						</Folder>
 					</ChildrenList>
 				</Folder>
-				<Folder Name="AMB" ID="{EC007528-303B-4A3E-AD39-74C7FCEDC682}" ShortID="829743461"/>
+				<Folder Name="AMB" ID="{EC007528-303B-4A3E-AD39-74C7FCEDC682}" ShortID="829743461">
+					<ChildrenList>
+						<Folder Name="Dungeons" ID="{6F9536AA-1361-4DF3-8B54-C2E8289624D4}" ShortID="729620465">
+							<ChildrenList>
+								<Folder Name="ForestDungeon" ID="{DAC215F9-510E-443C-A1C6-09EBA2A101FD}" ShortID="768693562">
+									<ChildrenList>
+										<SoundBank Name="AMB_ForestDungeon" ID="{DE1F10D6-A3C3-403D-99F1-2D558BB06F28}">
+											<ObjectInclusionList>
+												<ObjectRef Name="Play_ForestDungeon_AMB" ID="{CA1CFCFB-64C0-44F8-8958-D29B45230E12}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
+											</ObjectInclusionList>
+											<ObjectExclusionList/>
+											<GameSyncExclusionList/>
+										</SoundBank>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundBanks>
