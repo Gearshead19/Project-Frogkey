@@ -10,24 +10,22 @@ public class Hazard_damage : MonoBehaviour
 
     private GameObject Player = null;
 
-    private GameObject player_acutal;
-
     private void Start()
     {
-        player_acutal = GameObject.FindGameObjectWithTag("PLayer");
     }
 
     private void Damage_player()
     {
-        player_acutal.GetComponent<PlayerHealth>().Player_damaged_by_stationary(damage_amount);
+        Player.GetComponent<PlayerHealth>().Player_damaged_by_stationary(damage_amount);
     }
 
-    private void repeat_damage()
+    public void repeat_damage(GameObject play)
     {
+        Player = play;
         if (Player != null)
         {
             
-            if(Vector3.Distance(player_acutal.gameObject.transform.position, this.gameObject.transform.position) < relift_distance)
+            if(Vector3.Distance(Player.gameObject.transform.position, this.gameObject.transform.position) < relift_distance)
             {
                 Damage_player();
                 Invoke("Damage_player", time_betwean);
@@ -39,7 +37,7 @@ public class Hazard_damage : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("Player"))
         {
@@ -47,6 +45,11 @@ public class Hazard_damage : MonoBehaviour
             {
                 repeat_damage();
             }
+            else
+            {
+                repeat_damage();
+                Debug.Log("The happs");
+            }
         }
-    }
+    }*/
 }

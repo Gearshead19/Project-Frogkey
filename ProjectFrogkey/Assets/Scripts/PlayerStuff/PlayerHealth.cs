@@ -156,6 +156,8 @@ void OnQuickReset()
     public void Player_damaged_by_stationary(float damage_done_to_player)
     {
         currentHealth = currentHealth - (int)damage_done_to_player;
+
+        healthBar.SetHealth(currentHealth);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -178,7 +180,14 @@ void OnQuickReset()
             currentHealth = currentHealth - (3 * invincible_factor);
             healthBar.SetHealth(currentHealth);
         }
+
+        if (collision.gameObject.CompareTag("Hazard"))
+        {
+            collision.gameObject.GetComponent<Hazard_damage>().repeat_damage(this.gameObject);
+            //Debug.Log("hazarding");
+        }
     }
+    
 
 
     private void OnTriggerEnter(Collider other)
