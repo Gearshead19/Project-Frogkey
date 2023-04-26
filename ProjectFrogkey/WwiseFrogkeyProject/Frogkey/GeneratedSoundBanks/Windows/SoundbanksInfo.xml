@@ -247,6 +247,24 @@
 				</Event>
 			</Events>
 		</SoundBank>
+		<SoundBank Id="2546705169" Type="User" Language="SFX" Hash="{2385B498-B001-1233-5E48-69AE124D318C}">
+			<ShortName>MUS_CastleEsterra</ShortName>
+			<Path>MUS_CastleEsterra.bnk</Path>
+			<Media>
+				<File Id="919072691" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_CastleEsterra.wav</ShortName>
+					<Path>Media/919072691.wem</Path>
+					<CachePath>SFX/MUS_CastleEsterra_D79FB2B7.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="706813533" Name="Play_CastleEsterraMusic" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="919072691"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
 		<SoundBank Id="2572880635" Type="User" Language="SFX" Hash="{A8308C36-B994-DD4B-9F3E-F7F2658B46AA}">
 			<ShortName>SFX_Potion_Drink</ShortName>
 			<Path>SFX_Potion_Drink.bnk</Path>
@@ -264,13 +282,13 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="2826179121" Type="User" Language="SFX" Hash="{9FE568A4-9DF5-C148-C7E3-EAE65D05BC53}">
+		<SoundBank Id="2826179121" Type="User" Language="SFX" Hash="{EBC3D008-84A6-F215-D831-B998848A1667}">
 			<ShortName>AMB_ForestDungeon</ShortName>
 			<Path>AMB_ForestDungeon.bnk</Path>
 			<Media>
 				<File Id="733202127" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_ForestDungeon.wav</ShortName>
-					<CachePath>SFX/AMB_ForestDungeon_54789494.wem</CachePath>
+					<CachePath>SFX/AMB_ForestDungeon_F9BF8FE5.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -338,5 +356,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A7ADBBC0-91AC-E981-9D1B-4ECABEBF567E}</FileHash>
+	<FileHash>{E22CD832-8EC2-DEA7-52B2-0BE086CFC72A}</FileHash>
 </SoundBanksInfo>

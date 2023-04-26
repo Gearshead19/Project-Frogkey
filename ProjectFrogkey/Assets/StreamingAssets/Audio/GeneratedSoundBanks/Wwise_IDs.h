@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAY_CASTLEESTERRAMUSIC = 706813533U;
         static const AkUniqueID PLAY_DRINK_HEALTHPOTION = 3363411656U;
         static const AkUniqueID PLAY_DUNGEONMUSIC = 2194545525U;
         static const AkUniqueID PLAY_FORESTDUNGEON_AMB = 1858014972U;
@@ -77,6 +78,7 @@ namespace AK
         static const AkUniqueID INIT = 1355168291U;
         static const AkUniqueID AMB_FORESTDUNGEON = 2826179121U;
         static const AkUniqueID HOPPS_SOUNDBANK = 2197452935U;
+        static const AkUniqueID MUS_CASTLEESTERRA = 2546705169U;
         static const AkUniqueID MUS_FORESTDUNGEON = 973840868U;
         static const AkUniqueID MUS_MAINTOWN = 1922392942U;
         static const AkUniqueID MUS_OVERWORLDFOREST = 3591353126U;

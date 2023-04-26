@@ -130,6 +130,27 @@
 												</Action>
 											</ChildrenList>
 										</Event>
+										<Folder Name="Esterra" ID="{0A0E425E-2228-4DEB-A550-22951AFD1BC9}" ShortID="1038942230">
+											<ChildrenList>
+												<Event Name="Play_CastleEsterraMusic" ID="{6F0DEED7-E3EF-4712-9050-91C8B3CD23DE}">
+													<ChildrenList>
+														<Action Name="" ID="{101ED55E-738D-4AAA-B3A3-B5319D1DBAC8}" ShortID="54527616">
+															<PropertyList>
+																<Property Name="ActionType" Type="int16" Value="3"/>
+															</PropertyList>
+															<ReferenceList/>
+														</Action>
+														<Action Name="" ID="{D27A9118-D0D2-4D8C-B27E-1380B76D7DF1}" ShortID="176716178">
+															<ReferenceList>
+																<Reference Name="Target">
+																	<ObjectRef Name="MUS_CastleEsterra_Loop" ID="{C86ABC4F-D657-472B-91A5-8BEB2C786FAD}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+																</Reference>
+															</ReferenceList>
+														</Action>
+													</ChildrenList>
+												</Event>
+											</ChildrenList>
+										</Folder>
 									</ChildrenList>
 								</Folder>
 							</ChildrenList>
