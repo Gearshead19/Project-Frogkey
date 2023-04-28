@@ -4,8 +4,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// 
-/// 
 /// 2. Refactor code to be organized. We have a lot of variables we're not even using
 /// </summary>
 public class PlayerMovement : MonoBehaviour
@@ -18,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     private MeshTrail dashTrail;
   
     [SerializeField]
-    //[Tooltip("What it do?")]
     private GameObject projectile;
 
 
@@ -31,7 +28,7 @@ public class PlayerMovement : MonoBehaviour
     public float walkSpeed;
     public float sprintSpeed;
     public float MaxYspeed;
-
+    private float sprintThreshold = .5f; 
     public float dashSpeed;
     public float dashSpeedChangeFactor;
 
@@ -43,6 +40,8 @@ public class PlayerMovement : MonoBehaviour
     public float rotationSpeed;
     float horizontalInput;
     float verticalInput;
+
+    private bool canMove = true;
 
     public Vector3 moveDirection;
 
@@ -61,20 +60,23 @@ public class PlayerMovement : MonoBehaviour
     Vector2 screenCenterPoint = new(Screen.width / 2f, Screen.height / 2f);
 
     [Header("Jumping")]
-    public float jumpForce;
+    [Tooltip("Variables to manipulate the jump")]
+    public float jumpForce; // force of the jump
     public float jumpCooldown;
     public float airMultiplier;
 
-    bool readyToJump;
+    bool readyToJump; // determines if the character is ready to jump or not
 
     [Header("Dashing")]
-    float dashForce;
-    float dashUpward;
-    float dashDuration;
+    [Tooltip("Variable to manipulate for the dash")]
+    float dashForce; // force of the dash movement
+    float dashUpward; // upward force of dash movement
+    float dashDuration; // How long the dash happens
 
     [Header("Cooldown")]
-    float dashCD;
-    float dashCDTimer;
+    [Tooltip("These are the cooldown elements for the dash, Dash Cooldown and the Dash Cooldown Timer")]
+    float dashCD; // dash cooldown
+    float dashCDTimer; // dash cooldown timer
 
     [Header("Keybinds")]
     public KeyCode jumpKey = KeyCode.Space;
@@ -214,14 +216,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Mode - Sprinting
-        else if (grounded == true && horizontalInput >= .5 || verticalInput >= .5 || horizontalInput == -1 || verticalInput == -1)
+        else if (grounded == true && horizontalInput >= sprintThreshold || verticalInput >= sprintThreshold || horizontalInput <= -sprintThreshold || verticalInput <= -sprintThreshold )
         {
-            
+          
 
             //this.gameObject.GetComponent<PlayerHealth>().Player_Invincible(time_for_invincbility);
             state = MovementState.sprinting;
             desiredMoveSpeed = sprintSpeed;
-           
+          
 
         }
 
@@ -236,7 +238,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         //Mode - Idle(Freeze)
-        else if (grounded == true && horizontalInput == 0 || verticalInput == 0)
+        else if (grounded == true && horizontalInput == 0 && verticalInput == 0)
         {
 
             state = MovementState.idle;
@@ -320,14 +322,23 @@ public class PlayerMovement : MonoBehaviour
         inputVector.x = horizontalInput;
         inputVector.y = verticalInput;
 
-       // Debug.Log("H: " + horizontalInput + "V: " + verticalInput);
+      //  Debug.Log("H: " + horizontalInput + "V: " + verticalInput);
         
     }
-
+    /// <summary>
+    /// While having an animation run such as lifting a chest, the player cannot move until the animation is over.
+    /// </summary>
+    private void StopMoving()
+    {
+    }
     public void OnLift()
     {
+     
         animator.SetTrigger("OpenChest");
+        canMove = false;
         Debug.Log("CHEST!!");
+        StopMoving();
+        
     }
 
 
