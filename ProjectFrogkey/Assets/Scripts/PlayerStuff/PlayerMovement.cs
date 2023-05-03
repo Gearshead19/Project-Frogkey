@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
+/// Effectively manages different types of player movement and inputs for it.
 /// 2. Refactor code to be organized. We have a lot of variables we're not even using
 /// </summary>
 public class PlayerMovement : MonoBehaviour
