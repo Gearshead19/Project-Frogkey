@@ -22,7 +22,7 @@ public class Healing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        text = GetComponent<Text>();
+        text = GetComponentInChildren<Text>();
         healLimit = healSupply;
     }
 
@@ -30,5 +30,6 @@ public class Healing : MonoBehaviour
     void Update()
     {
         text.text = healLimit.ToString();
+        Debug.Log(text.text);
     }
 }
