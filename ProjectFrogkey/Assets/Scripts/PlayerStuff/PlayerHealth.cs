@@ -107,7 +107,7 @@ void OnQuickReset()
         if(currentHealth <= 0)
         {
             //MenuQuick.ReloadLevel();
-            SceneManager.LoadScene("Thanks_For_Playing");
+            SceneManager.LoadScene("GameOver");
            
         }
     }
