@@ -67,6 +67,24 @@
 								</SoundBank>
 							</ChildrenList>
 						</Folder>
+						<SoundBank Name="Music_Soundbank" ID="{9BBC5EE6-DC2E-4E3C-B061-13EC68A103B9}">
+							<ObjectInclusionList>
+								<ObjectRef Name="Play_Music" ID="{062CFC40-6966-4860-A77C-331DD16AF2D3}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
+							</ObjectInclusionList>
+							<ObjectExclusionList/>
+							<GameSyncExclusionList/>
+						</SoundBank>
+						<Folder Name="GameOver" ID="{6F4C468E-B0B8-4823-B517-EB658ED0AA12}" ShortID="250828382">
+							<ChildrenList>
+								<SoundBank Name="GameOver_Soundbank" ID="{E98B0A59-14D1-430B-B248-1A1063774DBC}">
+									<ObjectInclusionList>
+										<ObjectRef Name="Play_GameOverJingle" ID="{457620FB-06BA-4084-B496-0CE8720D97CF}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
+									</ObjectInclusionList>
+									<ObjectExclusionList/>
+									<GameSyncExclusionList/>
+								</SoundBank>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="SFX" ID="{2FB94D47-E105-4A5F-A411-15C4B9C218E5}" ShortID="1046539743">
@@ -154,6 +172,21 @@
 										<SoundBank Name="AMB_ForestDungeon" ID="{DE1F10D6-A3C3-403D-99F1-2D558BB06F28}">
 											<ObjectInclusionList>
 												<ObjectRef Name="Play_ForestDungeon_AMB" ID="{CA1CFCFB-64C0-44F8-8958-D29B45230E12}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
+											</ObjectInclusionList>
+											<ObjectExclusionList/>
+											<GameSyncExclusionList/>
+										</SoundBank>
+									</ChildrenList>
+								</Folder>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Overworld" ID="{45EEFE29-426B-492D-992D-DD125866AC89}" ShortID="957004789">
+							<ChildrenList>
+								<Folder Name="ForestArea" ID="{D339A1A9-B9FC-4464-9A13-23405FD49932}" ShortID="126063059">
+									<ChildrenList>
+										<SoundBank Name="AMB_UndergroundForest" ID="{5AA3DC5A-79F5-42EB-ABC0-D5E1D4A0D94A}">
+											<ObjectInclusionList>
+												<ObjectRef Name="Play_UndergroundForest_AMB" ID="{198BB418-C296-498C-A995-604784B5C0D9}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
 											</ObjectInclusionList>
 											<ObjectExclusionList/>
 											<GameSyncExclusionList/>

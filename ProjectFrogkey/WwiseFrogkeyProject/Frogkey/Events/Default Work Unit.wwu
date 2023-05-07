@@ -9,16 +9,13 @@
 							<ChildrenList>
 								<Event Name="Play_TitleScreenMusic" ID="{0874ED0B-3192-42F4-9807-419124F622F7}">
 									<ChildrenList>
-										<Action Name="" ID="{84D78A41-2C48-43B7-AF99-AE6F388D7310}" ShortID="824479282">
+										<Action Name="" ID="{59BA2891-68CB-449C-9B85-41F9D5F2AC09}" ShortID="289485871">
 											<PropertyList>
-												<Property Name="ActionType" Type="int16" Value="3"/>
+												<Property Name="ActionType" Type="int16" Value="22"/>
 											</PropertyList>
-											<ReferenceList/>
-										</Action>
-										<Action Name="" ID="{8BD1B325-3037-407C-A9B4-264923E3EEF7}" ShortID="86829934">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="MUS_TitleScreen_Loop" ID="{8D787BD4-98F0-4E8E-B0F6-4A37E67FF8A2}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+													<ObjectRef Name="Music_MainTheme" ID="{C815D18D-0C96-46DD-BF6C-245A9E303E64}" WorkUnitID="{EB015F87-2C6B-4FBD-A85E-4CA22BE2BE00}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -26,16 +23,13 @@
 								</Event>
 								<Event Name="Play_EndMusic" ID="{AD959D68-F2D6-43FC-8645-D2DBEF09A037}">
 									<ChildrenList>
-										<Action Name="" ID="{4E160315-9573-4437-B900-54DF089D79D8}" ShortID="73842264">
+										<Action Name="" ID="{5840D647-1469-4F81-8C14-480325E09860}" ShortID="814171628">
 											<PropertyList>
-												<Property Name="ActionType" Type="int16" Value="3"/>
+												<Property Name="ActionType" Type="int16" Value="22"/>
 											</PropertyList>
-											<ReferenceList/>
-										</Action>
-										<Action Name="" ID="{5E2FE5AE-95B3-46E4-8F35-D113567694CE}" ShortID="29298889">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="MUS_MainTown_Loop" ID="{5533FB28-D122-4050-8D09-FF12D1E254F8}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+													<ObjectRef Name="Music_MainTown" ID="{7A1D4A1C-A6C2-4B8E-8475-8463C3250B33}" WorkUnitID="{EB015F87-2C6B-4FBD-A85E-4CA22BE2BE00}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -50,19 +44,13 @@
 										<Property Name="Color" Type="int16" Value="13"/>
 									</PropertyList>
 									<ChildrenList>
-										<Action Name="" ID="{072049D1-2019-4398-8DA6-F85D62C6E4AB}" ShortID="757923407">
+										<Action Name="" ID="{38D3C7CB-35B6-433C-BEBB-AF9781D52F7D}" ShortID="400938455">
 											<PropertyList>
-												<Property Name="ActionType" Type="int16" Value="3"/>
-												<Property Name="FadeOutCurve" Type="int16" Value="6"/>
-												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
-												<Property Name="Scope" Type="int16" Value="1"/>
+												<Property Name="ActionType" Type="int16" Value="22"/>
 											</PropertyList>
-											<ReferenceList/>
-										</Action>
-										<Action Name="" ID="{BB184814-DA76-4A8E-BDEE-552C4A9E0991}" ShortID="1056676557">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Exploring" ID="{B4AF8358-21C3-4305-9095-B8244F0E5225}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+													<ObjectRef Name="Music_ForestDungeon" ID="{C420D941-B2A1-4F04-A903-8710AAA9455F}" WorkUnitID="{EB015F87-2C6B-4FBD-A85E-4CA22BE2BE00}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -74,36 +62,16 @@
 							<ChildrenList>
 								<Folder Name="ForestArea" ID="{3AE1A778-67F8-4E3C-8358-6558A464321E}" ShortID="118956873">
 									<ChildrenList>
-										<Event Name="Play_OverworldForestMusic" ID="{6E94E361-90D9-4A44-B3D4-128FDE22A739}">
-											<ChildrenList>
-												<Action Name="" ID="{44C97154-B11F-4236-8685-D91AB047A6D7}" ShortID="455413219">
-													<PropertyList>
-														<Property Name="ActionType" Type="int16" Value="3"/>
-													</PropertyList>
-													<ReferenceList/>
-												</Action>
-												<Action Name="" ID="{4B31A87B-D408-4419-86C6-30ED4C1DBF4B}" ShortID="975489017">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="MUS_OverworldForest_Loop" ID="{6C9BE3C8-D4D0-4B5C-8EDC-028960CE81E1}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
+										<Event Name="Play_OverworldForestMusic" ID="{6E94E361-90D9-4A44-B3D4-128FDE22A739}"/>
 										<Event Name="Play_UndergroundForestMusic" ID="{A06A4216-9D9C-4788-8C07-89A33A608432}">
 											<ChildrenList>
-												<Action Name="" ID="{A32AA053-363D-4D44-A52D-9741BC1B0835}" ShortID="452143259">
-													<PropertyList>
-														<Property Name="ActionType" Type="int16" Value="3"/>
-														<Property Name="FadeTime" Type="Real64" Value="0.5"/>
-													</PropertyList>
-													<ReferenceList/>
-												</Action>
 												<Action Name="" ID="{B4FBA20C-90D9-4EF9-8009-2324A292A6FD}" ShortID="984706819">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="22"/>
+													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Target">
-															<ObjectRef Name="MUS_UndergroundForest_Loop" ID="{5BFF60DA-031B-4BEC-A9AB-589D4F94825E}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+															<ObjectRef Name="Music_UndergroundForest" ID="{9B1E7D87-75ED-4589-898D-250DDFB20201}" WorkUnitID="{EB015F87-2C6B-4FBD-A85E-4CA22BE2BE00}"/>
 														</Reference>
 													</ReferenceList>
 												</Action>
@@ -115,16 +83,13 @@
 									<ChildrenList>
 										<Event Name="Play_MainTownMusic" ID="{2142567C-5B48-48A0-A97E-FD188F044EE9}">
 											<ChildrenList>
-												<Action Name="" ID="{F8CC4484-C60D-4460-84C2-5FF894B0EBD5}" ShortID="641330203">
+												<Action Name="" ID="{B461FFB8-0F39-4856-A3D5-28266A442D42}" ShortID="557190328">
 													<PropertyList>
-														<Property Name="ActionType" Type="int16" Value="3"/>
+														<Property Name="ActionType" Type="int16" Value="22"/>
 													</PropertyList>
-													<ReferenceList/>
-												</Action>
-												<Action Name="" ID="{52F474F6-EDCE-4D7B-836A-AB5246163A79}" ShortID="574019367">
 													<ReferenceList>
 														<Reference Name="Target">
-															<ObjectRef Name="MUS_MainTown_Loop" ID="{5533FB28-D122-4050-8D09-FF12D1E254F8}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+															<ObjectRef Name="Music_MainTown" ID="{7A1D4A1C-A6C2-4B8E-8475-8463C3250B33}" WorkUnitID="{EB015F87-2C6B-4FBD-A85E-4CA22BE2BE00}"/>
 														</Reference>
 													</ReferenceList>
 												</Action>
@@ -134,16 +99,13 @@
 											<ChildrenList>
 												<Event Name="Play_CastleEsterraMusic" ID="{6F0DEED7-E3EF-4712-9050-91C8B3CD23DE}">
 													<ChildrenList>
-														<Action Name="" ID="{101ED55E-738D-4AAA-B3A3-B5319D1DBAC8}" ShortID="54527616">
+														<Action Name="" ID="{E9478DA3-5249-448D-A27D-C9AEB879C463}" ShortID="332251108">
 															<PropertyList>
-																<Property Name="ActionType" Type="int16" Value="3"/>
+																<Property Name="ActionType" Type="int16" Value="22"/>
 															</PropertyList>
-															<ReferenceList/>
-														</Action>
-														<Action Name="" ID="{D27A9118-D0D2-4D8C-B27E-1380B76D7DF1}" ShortID="176716178">
 															<ReferenceList>
 																<Reference Name="Target">
-																	<ObjectRef Name="MUS_CastleEsterra_Loop" ID="{C86ABC4F-D657-472B-91A5-8BEB2C786FAD}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+																	<ObjectRef Name="Music_CastleEsterra" ID="{8618C099-00E1-4EE3-BA08-D6CCBCFFCF89}" WorkUnitID="{EB015F87-2C6B-4FBD-A85E-4CA22BE2BE00}"/>
 																</Reference>
 															</ReferenceList>
 														</Action>
@@ -153,6 +115,35 @@
 										</Folder>
 									</ChildrenList>
 								</Folder>
+							</ChildrenList>
+						</Folder>
+						<Event Name="Play_Music" ID="{062CFC40-6966-4860-A77C-331DD16AF2D3}">
+							<ChildrenList>
+								<Action Name="" ID="{C9232E2E-0943-4C5E-9F44-E51B3000C1B3}" ShortID="580861389">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MusicSwitch" ID="{237E6D12-ED74-474B-9041-CBF85080182F}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Folder Name="GameOver" ID="{BE117742-A485-4D1E-9581-CB2C6E31F89A}" ShortID="163996789">
+							<ChildrenList>
+								<Event Name="Play_GameOverJingle" ID="{457620FB-06BA-4084-B496-0CE8720D97CF}">
+									<ChildrenList>
+										<Action Name="" ID="{B5E91F3D-780B-44EB-9ED0-6F5B4C7F2B7B}" ShortID="226948309">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Music_GameOver" ID="{8ECA5144-B2A7-47CA-A78C-8E8209EC62E0}" WorkUnitID="{EB015F87-2C6B-4FBD-A85E-4CA22BE2BE00}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
@@ -365,6 +356,9 @@
 												<Event Name="Play_UndergroundForest_AMB" ID="{198BB418-C296-498C-A995-604784B5C0D9}">
 													<ChildrenList>
 														<Action Name="" ID="{9DDE6DAA-74DF-47A1-AC50-964D9DCB6E8A}" ShortID="868156185">
+															<PropertyList>
+																<Property Name="FadeTime" Type="Real64" Value="1"/>
+															</PropertyList>
 															<ReferenceList>
 																<Reference Name="Target">
 																	<ObjectRef Name="AMB_UndergroundForest" ID="{5F7335EB-1792-4B2E-B581-9E46A019219F}" WorkUnitID="{7D9ADE2E-3FD7-4E46-A295-7966F8B9AB70}"/>
@@ -386,6 +380,9 @@
 										<Event Name="Play_ForestDungeon_AMB" ID="{CA1CFCFB-64C0-44F8-8958-D29B45230E12}">
 											<ChildrenList>
 												<Action Name="" ID="{CFC820B4-EAEC-4A08-BDAD-5199ED710F12}" ShortID="426601707">
+													<PropertyList>
+														<Property Name="FadeTime" Type="Real64" Value="1"/>
+													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Target">
 															<ObjectRef Name="AMB_ForestDungeon" ID="{891FDF36-1801-4D64-9C2E-7C870A88EE83}" WorkUnitID="{7D9ADE2E-3FD7-4E46-A295-7966F8B9AB70}"/>

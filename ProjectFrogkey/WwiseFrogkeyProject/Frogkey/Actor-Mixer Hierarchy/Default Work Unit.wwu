@@ -325,6 +325,13 @@
 											</ReferenceList>
 											<ChildrenList>
 												<RandomSequenceContainer Name="Jump_Stone" ID="{693CA07D-7C6E-41C9-976C-22AFDAB2D2B3}" ShortID="227421569">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>5</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
@@ -958,13 +965,18 @@
 										<Sound Name="AMB_ForestDungeon" ID="{891FDF36-1801-4D64-9C2E-7C870A88EE83}" ShortID="482550820">
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-3</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+													<ObjectRef Name="Ambience" ID="{012E5A15-A1E0-41EF-9303-D2A88672FC62}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
@@ -1008,7 +1020,7 @@
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
 														</Reference>
 														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+															<ObjectRef Name="Ambience" ID="{012E5A15-A1E0-41EF-9303-D2A88672FC62}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
 														</Reference>
 													</ReferenceList>
 													<ChildrenList>
