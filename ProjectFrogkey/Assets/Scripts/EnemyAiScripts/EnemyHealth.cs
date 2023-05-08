@@ -9,6 +9,8 @@ public class EnemyHealth : MonoBehaviour
     public int punch_jab = 1;
     public bool set_to_disable = false;
 
+    public int heal = 1;
+
     public float currentEnemyHealth;
 
     public GameObject particial_trigger;
@@ -18,10 +20,15 @@ public class EnemyHealth : MonoBehaviour
     private GameObject get_drop_object_holder;
     
     public int  drop_item_number;
+    //gets the starting heath
+    private int start_health;
+    //makes inviible when 0  and 1 is normal
+    private int touchable = 1;
 
     void Start()
     {
-        if(particial_trigger != null)
+        start_health = this.HealthPoints;
+        if (particial_trigger != null)
         {
             particial_trigger.SetActive(false);
         }
@@ -30,7 +37,45 @@ public class EnemyHealth : MonoBehaviour
         
     }
 
-    
+    public void Untouchable()
+    {
+        touchable = 0;
+    }
+
+    public void Touchable()
+    {
+        touchable = 1;
+    }
+
+
+    public bool Half_health_check()
+    {
+        if(HealthPoints < (start_health/2))
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool Max_health_check()
+    {
+        if(HealthPoints >= start_health - 5)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void Healing()
+    {
+        this.HealthPoints = this.HealthPoints + heal;
+    }
 
     void Show_hit()
     {
@@ -87,7 +132,7 @@ public class EnemyHealth : MonoBehaviour
         {
             Debug.Log("got hit by teloscop");
             Show_hit();
-            this.HealthPoints = this.HealthPoints - telescope_hit;
+            this.HealthPoints = this.HealthPoints - (telescope_hit * touchable);
 
         }
 
@@ -95,7 +140,7 @@ public class EnemyHealth : MonoBehaviour
         {
             Debug.Log("got hit by fist");
             Show_hit();
-            this.HealthPoints = this.HealthPoints - punch_jab;
+            this.HealthPoints = this.HealthPoints - (punch_jab * touchable);
         }
 
         
