@@ -30,6 +30,6 @@ public class Healing : MonoBehaviour
     void Update()
     {
         text.text = healLimit.ToString();
-        Debug.Log(text.text);
+        //Debug.Log(text.text);
     }
 }

@@ -98,6 +98,8 @@ void OnQuickReset()
             else
             {
                 Debug.Log("Your at MAX health!");
+            return;
+
             }
         
         
