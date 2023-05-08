@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//unity form referenced https://forum.unity.com/threads/reset-transform-rotate-0-0-0.63900/
+
+
 public enum Boss_States
 {
     MOVE_TO, MOVE_AWAY, IDLE, REJUVENATE, REJUVENATEGOTO
@@ -22,7 +25,7 @@ public class Boss_AI_script : MonoBehaviour
 
     private GameObject froggy_player;
 
-    public float speed = 6;
+    public float speed = 3;
 
     private float dis = 0;
 
@@ -42,6 +45,12 @@ public class Boss_AI_script : MonoBehaviour
 
     private float timer = 0;
 
+    private bool[] affact_range = { true, false, false, true, true, false, true, false };
+
+    private int atk_count = 0;
+
+    public float turn_speed = 60;
+
     void Start()
     {
         start_pos = this.transform.position;
@@ -54,7 +63,7 @@ public class Boss_AI_script : MonoBehaviour
     {
         dis = Vector3.Distance(this.gameObject.transform.position, froggy_player.gameObject.transform.position);
 
-        if (heal != null || heal.activeSelf == true)
+        if (heal != null && heal.activeSelf == true)
         {
             heal_dis = Vector3.Distance(this.gameObject.transform.position, heal.gameObject.transform.position);
         }
@@ -63,11 +72,13 @@ public class Boss_AI_script : MonoBehaviour
         Boss_attack_event();
         Face_player();
         timer_count();
+        Face_player();
+        
     }
 
     void FixedUpdate()
     {
-        if (heal != null || heal.activeSelf == true)
+        if (heal != null && heal.activeSelf == true)
         {
             if (boss_body.GetComponent<EnemyHealth>().Half_health_check() == true)
             {
@@ -78,7 +89,7 @@ public class Boss_AI_script : MonoBehaviour
 
     private void timer_count()
     {
-        timer = timer + 1;
+        timer = timer + .01f;
     }
 
     void Boss_state_machine()
@@ -102,9 +113,13 @@ public class Boss_AI_script : MonoBehaviour
             case Boss_States.MOVE_TO:
                 Move_to_player(froggy_player);
 
-                if(dis < med_dis)
+                if (dis < med_dis)
                 {
                     Boss_state = Boss_States.MOVE_AWAY;
+                }
+                else if (dis > (far_dis * 2))
+                {
+                    Boss_state = Boss_States.IDLE;
                 }
                 break;
 
@@ -112,11 +127,15 @@ public class Boss_AI_script : MonoBehaviour
             case Boss_States.MOVE_AWAY:
                 Move_from_player(froggy_player);
 
-                if(dis > far_dis)
+                if (dis > far_dis)
                 {
                     Boss_state = Boss_States.MOVE_TO;
                 }
-                else if(dis < (close_dis))
+                else if (dis < (close_dis))
+                {
+                    Boss_state = Boss_States.IDLE;
+                }
+                else if (dis > (far_dis * 2))
                 {
                     Boss_state = Boss_States.IDLE;
                 }
@@ -128,7 +147,7 @@ public class Boss_AI_script : MonoBehaviour
                     Move_to_player(heal);
                 }
 
-                if(heal_dis < 1)
+                if (heal_dis < 1)
                 {
 
                     boss_body.GetComponent<EnemyHealth>().Untouchable();
@@ -147,7 +166,7 @@ public class Boss_AI_script : MonoBehaviour
                     boss_body.GetComponent<EnemyHealth>().Touchable();
                     Boss_state = Boss_States.IDLE;
                 }
-                else if(boss_body.GetComponent<EnemyHealth>().Max_health_check() == true)
+                else if (boss_body.GetComponent<EnemyHealth>().Max_health_check() == true)
                 {
 
                     boss_body.GetComponent<EnemyHealth>().Touchable();
@@ -164,6 +183,7 @@ public class Boss_AI_script : MonoBehaviour
         {
             case Boss_Attacks.CLOSE_ATTACK:
 
+
                 break;
 
             case Boss_Attacks.RANGE_FOLLOW_ATTACK:
@@ -176,15 +196,22 @@ public class Boss_AI_script : MonoBehaviour
 
             case Boss_Attacks.IDLE_ATTACK:
 
-                if(timer > 5)
+                if (timer > 5)
                 {
+                    timer = 0;
+                    if (atk_count > affact_range.Length)
+                    {
+                        atk_count = 0;
+                    }
+
                     if (dis < close_dis * 2)
                     {
                         Boss_Attack = Boss_Attacks.CLOSE_ATTACK;
                     }
-                    else if( 2 == 2 )
+                    else if (affact_range[atk_count] == true)
                     {
                         Boss_Attack = Boss_Attacks.RANGE_SPREAD_ATTACK;
+
                     }
                     else
                     {
@@ -192,7 +219,7 @@ public class Boss_AI_script : MonoBehaviour
                     }
 
                 }
-               
+
 
 
                 break;
@@ -250,12 +277,17 @@ public class Boss_AI_script : MonoBehaviour
 
     void Face_player()
     {
-
+        Vector3 director = froggy_player.transform.position - boss_body.transform.position;
+        Quaternion rotator = Quaternion.LookRotation(director);
+        boss_body.transform.rotation = Quaternion.Lerp(boss_body.transform.rotation, rotator, turn_speed * Time.deltaTime);
     }
 
     void telepot_to_start()
     {
         this.transform.position = start_pos;
+        this.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 0));
     }
+
+    
 
 }
