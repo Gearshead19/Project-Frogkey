@@ -88,7 +88,9 @@ void OnQuickReset()
                 healthBar.SetHealth(currentHealth);
             Debug.Log("You've Healed 30 HP!");
 
-                if (currentHealth >= 100)
+            //Plays audio
+            AkSoundEngine.PostEvent("Play_Drink_HealthPotion", this.gameObject);
+            if (currentHealth >= 100)
                 {
                     currentHealth = 100;
 
