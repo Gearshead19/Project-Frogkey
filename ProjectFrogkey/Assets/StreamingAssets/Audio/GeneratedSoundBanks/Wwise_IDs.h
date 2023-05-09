@@ -71,6 +71,7 @@ namespace AK
                 static const AkUniqueID MUSIC_GAMEOVER = 2897915005U;
                 static const AkUniqueID MUSIC_MAINTHEME = 1485340549U;
                 static const AkUniqueID MUSIC_MAINTOWN = 387028970U;
+                static const AkUniqueID MUSIC_OVERWORLDFOREST = 1906288962U;
                 static const AkUniqueID MUSIC_UNDERGROUNDFOREST = 1984596375U;
                 static const AkUniqueID NONE = 748895195U;
             } // namespace STATE

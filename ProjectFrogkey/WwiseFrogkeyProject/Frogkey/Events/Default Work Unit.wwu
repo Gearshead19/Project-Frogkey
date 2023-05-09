@@ -9,6 +9,27 @@
 							<ChildrenList>
 								<Event Name="Play_TitleScreenMusic" ID="{0874ED0B-3192-42F4-9807-419124F622F7}">
 									<ChildrenList>
+										<Action Name="" ID="{B7063F0D-0E41-410F-BD56-A1D9D22F87FD}" ShortID="228096409">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MusicSwitch" ID="{237E6D12-ED74-474B-9041-CBF85080182F}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{D17563CF-D624-45A7-8C3A-33513C8C5AFC}" ShortID="753320257">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MusicSwitch" ID="{237E6D12-ED74-474B-9041-CBF85080182F}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 										<Action Name="" ID="{59BA2891-68CB-449C-9B85-41F9D5F2AC09}" ShortID="289485871">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="22"/>
@@ -23,6 +44,27 @@
 								</Event>
 								<Event Name="Play_EndMusic" ID="{AD959D68-F2D6-43FC-8645-D2DBEF09A037}">
 									<ChildrenList>
+										<Action Name="" ID="{038F9999-4AD9-446E-B1CA-4F26C88705B6}" ShortID="93265014">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MusicSwitch" ID="{237E6D12-ED74-474B-9041-CBF85080182F}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{D9A4F066-536C-4636-A2C3-D5911F62CDA5}" ShortID="240569003">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MusicSwitch" ID="{237E6D12-ED74-474B-9041-CBF85080182F}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 										<Action Name="" ID="{5840D647-1469-4F81-8C14-480325E09860}" ShortID="814171628">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="22"/>
@@ -44,6 +86,27 @@
 										<Property Name="Color" Type="int16" Value="13"/>
 									</PropertyList>
 									<ChildrenList>
+										<Action Name="" ID="{3394E8F1-6101-4051-AA30-DC582E260553}" ShortID="946598550">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MusicSwitch" ID="{237E6D12-ED74-474B-9041-CBF85080182F}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{4B96EA52-6C96-4B77-81E0-3BD3DEA51665}" ShortID="721065854">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MusicSwitch" ID="{237E6D12-ED74-474B-9041-CBF85080182F}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 										<Action Name="" ID="{38D3C7CB-35B6-433C-BEBB-AF9781D52F7D}" ShortID="400938455">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="22"/>
@@ -62,9 +125,64 @@
 							<ChildrenList>
 								<Folder Name="ForestArea" ID="{3AE1A778-67F8-4E3C-8358-6558A464321E}" ShortID="118956873">
 									<ChildrenList>
-										<Event Name="Play_OverworldForestMusic" ID="{6E94E361-90D9-4A44-B3D4-128FDE22A739}"/>
+										<Event Name="Play_OverworldForestMusic" ID="{6E94E361-90D9-4A44-B3D4-128FDE22A739}">
+											<ChildrenList>
+												<Action Name="" ID="{4AE5C5AB-DA5A-4DBE-92A9-3E60DB2E5A51}" ShortID="997888056">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="2"/>
+														<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="MusicSwitch" ID="{237E6D12-ED74-474B-9041-CBF85080182F}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+												<Action Name="" ID="{C5DD064E-E698-41D3-9B77-ABCD67FF1713}" ShortID="974130472">
+													<PropertyList>
+														<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="MusicSwitch" ID="{237E6D12-ED74-474B-9041-CBF85080182F}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+												<Action Name="" ID="{86D1DE5A-E039-4D30-8885-F55A88A08283}" ShortID="721818530">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="22"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Music_OverworldForest" ID="{F17E09DC-E071-49BB-89ED-CBD3C10F9A05}" WorkUnitID="{EB015F87-2C6B-4FBD-A85E-4CA22BE2BE00}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 										<Event Name="Play_UndergroundForestMusic" ID="{A06A4216-9D9C-4788-8C07-89A33A608432}">
 											<ChildrenList>
+												<Action Name="" ID="{2A2003F2-1868-42B1-8EC8-83751466FE29}" ShortID="649100262">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="2"/>
+														<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="MusicSwitch" ID="{237E6D12-ED74-474B-9041-CBF85080182F}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+												<Action Name="" ID="{154ECCC3-0C98-4E51-9BE3-945011A1D379}" ShortID="10285154">
+													<PropertyList>
+														<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="MusicSwitch" ID="{237E6D12-ED74-474B-9041-CBF85080182F}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
 												<Action Name="" ID="{B4FBA20C-90D9-4EF9-8009-2324A292A6FD}" ShortID="984706819">
 													<PropertyList>
 														<Property Name="ActionType" Type="int16" Value="22"/>
@@ -83,6 +201,27 @@
 									<ChildrenList>
 										<Event Name="Play_MainTownMusic" ID="{2142567C-5B48-48A0-A97E-FD188F044EE9}">
 											<ChildrenList>
+												<Action Name="" ID="{35D9F706-CC7E-43B7-BCF1-9BAA022ED24A}" ShortID="922345934">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="2"/>
+														<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="MusicSwitch" ID="{237E6D12-ED74-474B-9041-CBF85080182F}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+												<Action Name="" ID="{D13C4245-CD30-4E36-B490-DD731D66A70A}" ShortID="958011094">
+													<PropertyList>
+														<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="MusicSwitch" ID="{237E6D12-ED74-474B-9041-CBF85080182F}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
 												<Action Name="" ID="{B461FFB8-0F39-4856-A3D5-28266A442D42}" ShortID="557190328">
 													<PropertyList>
 														<Property Name="ActionType" Type="int16" Value="22"/>
@@ -99,6 +238,27 @@
 											<ChildrenList>
 												<Event Name="Play_CastleEsterraMusic" ID="{6F0DEED7-E3EF-4712-9050-91C8B3CD23DE}">
 													<ChildrenList>
+														<Action Name="" ID="{E067DBEE-5B1D-4A64-B685-934C8FDB19D0}" ShortID="1035022747">
+															<PropertyList>
+																<Property Name="ActionType" Type="int16" Value="2"/>
+																<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Target">
+																	<ObjectRef Name="MusicSwitch" ID="{237E6D12-ED74-474B-9041-CBF85080182F}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+																</Reference>
+															</ReferenceList>
+														</Action>
+														<Action Name="" ID="{19C4946E-D943-4D04-88D2-34953D3DCB9B}" ShortID="35854585">
+															<PropertyList>
+																<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Target">
+																	<ObjectRef Name="MusicSwitch" ID="{237E6D12-ED74-474B-9041-CBF85080182F}" WorkUnitID="{78F7F000-662A-4537-BDC1-B9B6C0B35ABA}"/>
+																</Reference>
+															</ReferenceList>
+														</Action>
 														<Action Name="" ID="{E9478DA3-5249-448D-A27D-C9AEB879C463}" ShortID="332251108">
 															<PropertyList>
 																<Property Name="ActionType" Type="int16" Value="22"/>
