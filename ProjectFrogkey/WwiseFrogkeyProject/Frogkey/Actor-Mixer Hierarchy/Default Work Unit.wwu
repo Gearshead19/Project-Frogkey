@@ -119,6 +119,13 @@
 								<Folder Name="Footsteps" ID="{E0204B9E-05C4-477D-93BF-75845F8EDCD5}" ShortID="880575387">
 									<ChildrenList>
 										<SwitchContainer Name="Footsteps_Switch" ID="{CCCAB5DD-8D28-4F14-82B3-171018E7628F}" ShortID="1045646940">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>4</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
@@ -127,7 +134,7 @@
 													<ObjectRef Name="Stone" ID="{D4A2B9D0-81E6-49E8-87D7-B9017FD87571}" WorkUnitID="{3F883A96-0C39-47CD-AE95-28F5C2F8392E}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+													<ObjectRef Name="Hopps" ID="{EF37EE9E-7AF7-4E97-84AF-470E5C8433FC}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
 												</Reference>
 												<Reference Name="SwitchGroupOrStateGroup">
 													<ObjectRef Name="Footstep_SwitchGroup" ID="{54D52661-B4A5-45E4-849C-2040DBA3CCDF}" WorkUnitID="{3F883A96-0C39-47CD-AE95-28F5C2F8392E}"/>
@@ -308,6 +315,11 @@
 														</ModifierInfo>
 													</ModifierList>
 												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>3</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -317,7 +329,7 @@
 													<ObjectRef Name="Stone" ID="{D4A2B9D0-81E6-49E8-87D7-B9017FD87571}" WorkUnitID="{3F883A96-0C39-47CD-AE95-28F5C2F8392E}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+													<ObjectRef Name="Hopps" ID="{EF37EE9E-7AF7-4E97-84AF-470E5C8433FC}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
 												</Reference>
 												<Reference Name="SwitchGroupOrStateGroup">
 													<ObjectRef Name="Footstep_SwitchGroup" ID="{54D52661-B4A5-45E4-849C-2040DBA3CCDF}" WorkUnitID="{3F883A96-0C39-47CD-AE95-28F5C2F8392E}"/>
@@ -555,6 +567,151 @@
 								<Folder Name="Abilities" ID="{77390C2E-AB43-4860-A3D0-9F3DAB6771D1}" ShortID="762196126">
 									<ChildrenList>
 										<Folder Name="GrappleAbility" ID="{54366854-91E1-4F51-AEFC-FF8ACEBAC152}" ShortID="677952272"/>
+										<Folder Name="Dash" ID="{06697D57-A8BE-486D-84F2-CBC78B484E67}" ShortID="200601701">
+											<ChildrenList>
+												<Sound Name="SFX_Hopps_Dash_Start" ID="{A8820AF9-E74C-4F8D-9F80-F9B29B6BEAB3}" ShortID="37509750">
+													<PropertyList>
+														<Property Name="MaxSoundPerInstance" Type="int16">
+															<ValueList>
+																<Value>2</Value>
+															</ValueList>
+														</Property>
+														<Property Name="UseMaxSoundPerInstance" Type="bool">
+															<ValueList>
+																<Value>True</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>3</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Hopps" ID="{EF37EE9E-7AF7-4E97-84AF-470E5C8433FC}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SFX_Hopps_Dash_Start" ID="{B58AA351-B17D-4952-8923-7FD1F8A7D72D}">
+															<PropertyList>
+																<Property Name="FadeInDuration" Type="Real64" Value="0.357711397058823"/>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.257647058823529"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>SFX_Hopps_Dash_Start.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="104382167"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SFX_Hopps_Dash_Start" ID="{B58AA351-B17D-4952-8923-7FD1F8A7D72D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</Folder>
+									</ChildrenList>
+								</Folder>
+								<Folder Name="DamageTaken" ID="{F2B38B3A-B90F-47AE-8A03-B136C48C505B}" ShortID="771914524">
+									<ChildrenList>
+										<RandomSequenceContainer Name="SFX_Hopps_DamageTaken" ID="{36EB0283-A97F-4A91-8955-32E67F4095E6}" ShortID="539146017">
+											<PropertyList>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{89689C2A-55BC-4A71-BF28-95881732B8E0}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="100"/>
+																	<Property Name="Min" Type="Real64" Value="-100"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Hopps" ID="{EF37EE9E-7AF7-4E97-84AF-470E5C8433FC}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="SFX_Hopps_DamageTaken_01" ID="{E2EB2EA9-46DD-40D1-99AC-223E1BB3B12B}" ShortID="531473334">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SFX_Hopps_DamageTaken_01" ID="{182F47B0-CCA8-49B1-A036-774986569A91}">
+															<Language>SFX</Language>
+															<AudioFile>SFX_Hopps_DamageTaken_01.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="991292264"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SFX_Hopps_DamageTaken_01" ID="{182F47B0-CCA8-49B1-A036-774986569A91}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="SFX_Hopps_DamageTaken_02" ID="{DFF56437-C218-4B09-ADCE-87DE29DAAF88}" ShortID="89645205">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SFX_Hopps_DamageTaken_02" ID="{5628694A-5995-4403-9203-D459101AFA53}">
+															<Language>SFX</Language>
+															<AudioFile>SFX_Hopps_DamageTaken_02.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1006607113"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SFX_Hopps_DamageTaken_02" ID="{5628694A-5995-4403-9203-D459101AFA53}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="SFX_Hopps_DamageTaken_03" ID="{D55A529F-E0BA-4071-BDDE-78EF9F2F894F}" ShortID="894468349">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SFX_Hopps_DamageTaken_03" ID="{EBB0F655-AD81-40E2-8B8D-8E8DB5CFB9A6}">
+															<Language>SFX</Language>
+															<AudioFile>SFX_Hopps_DamageTaken_03.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="551114336"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SFX_Hopps_DamageTaken_03" ID="{EBB0F655-AD81-40E2-8B8D-8E8DB5CFB9A6}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
 									</ChildrenList>
 								</Folder>
 							</ChildrenList>
@@ -800,6 +957,54 @@
 										</RandomSequenceContainer>
 									</ChildrenList>
 								</Folder>
+								<Folder Name="ButtonsAndSwitches" ID="{9AD4CBA6-1432-4247-BFB3-A84CEA436C3D}" ShortID="65022447">
+									<ChildrenList>
+										<Sound Name="SFX_Button_Activate" ID="{13898FDB-9E61-4B3C-ADF6-D8DADA0D958E}" ShortID="862188392">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{4DB45DB5-1967-4614-BC7D-F48971A389AC}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_Button_Activate" ID="{528AC3EF-D1E2-4146-BA55-BD429246ACC8}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_Button_Activate.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="378808529"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_Button_Activate" ID="{528AC3EF-D1E2-4146-BA55-BD429246ACC8}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_Crystal_Activate" ID="{0813C205-6DF1-40E7-A7AF-9A13E3C3E063}" ShortID="943374606">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX" ID="{4DB45DB5-1967-4614-BC7D-F48971A389AC}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_Crystal_Activate" ID="{569EB9FE-80F2-4B57-BE56-508C654369C9}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_Crystal_Activate.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="836849017"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_Crystal_Activate" ID="{569EB9FE-80F2-4B57-BE56-508C654369C9}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</Folder>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Pots" ID="{4A483226-83AD-4F1B-9642-36A5A67F6E71}" ShortID="917560097">
@@ -877,7 +1082,7 @@
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{515F3954-0E5D-49C3-AC27-4390318A770E}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
+													<ObjectRef Name="Hopps" ID="{EF37EE9E-7AF7-4E97-84AF-470E5C8433FC}" WorkUnitID="{5E3A434C-052D-4837-9CBB-179749B3B19C}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
