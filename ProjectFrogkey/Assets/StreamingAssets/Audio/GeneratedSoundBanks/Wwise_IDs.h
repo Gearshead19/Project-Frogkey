@@ -13,14 +13,19 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID PLAY_BUTTON_ACTIVATE = 2972650802U;
         static const AkUniqueID PLAY_CASTLEESTERRAMUSIC = 706813533U;
+        static const AkUniqueID PLAY_CRYSTAL_ACTIVATE = 4074254608U;
         static const AkUniqueID PLAY_DRINK_HEALTHPOTION = 3363411656U;
         static const AkUniqueID PLAY_DUNGEONMUSIC = 2194545525U;
         static const AkUniqueID PLAY_FORESTDUNGEON_AMB = 1858014972U;
         static const AkUniqueID PLAY_FORESTDUNGEON_BASICDOOR_CLOSE = 3406344955U;
         static const AkUniqueID PLAY_FORESTDUNGEON_BASICDOOR_OPEN = 228997405U;
+        static const AkUniqueID PLAY_FORESTDUNGEONBOSS = 1007642718U;
         static const AkUniqueID PLAY_GAMEOVERJINGLE = 3458381909U;
         static const AkUniqueID PLAY_HOPPS_BASICATTACK = 536851419U;
+        static const AkUniqueID PLAY_HOPPS_DAMAGETAKEN = 3376665689U;
+        static const AkUniqueID PLAY_HOPPS_DASH = 739488027U;
         static const AkUniqueID PLAY_HOPPS_JUMP = 109051115U;
         static const AkUniqueID PLAY_HOPPS_WALK = 3862148652U;
         static const AkUniqueID PLAY_HOPPSHEAVYATTACK = 190067705U;
@@ -68,9 +73,11 @@ namespace AK
             {
                 static const AkUniqueID MUSIC_CASTLEESTERRA = 380412565U;
                 static const AkUniqueID MUSIC_FORESTDUNGEON = 4293875712U;
+                static const AkUniqueID MUSIC_FORESTDUNGEONBOSS = 949372955U;
                 static const AkUniqueID MUSIC_GAMEOVER = 2897915005U;
                 static const AkUniqueID MUSIC_MAINTHEME = 1485340549U;
                 static const AkUniqueID MUSIC_MAINTOWN = 387028970U;
+                static const AkUniqueID MUSIC_OVERWORLDFOREST = 1906288962U;
                 static const AkUniqueID MUSIC_UNDERGROUNDFOREST = 1984596375U;
                 static const AkUniqueID NONE = 748895195U;
             } // namespace STATE
@@ -101,15 +108,17 @@ namespace AK
         static const AkUniqueID HOPPS_SOUNDBANK = 2197452935U;
         static const AkUniqueID MUS_CASTLEESTERRA = 2546705169U;
         static const AkUniqueID MUS_FORESTDUNGEON = 973840868U;
+        static const AkUniqueID MUS_FORESTDUNGEONBOSS = 3254244503U;
         static const AkUniqueID MUS_MAINTOWN = 1922392942U;
         static const AkUniqueID MUS_OVERWORLDFOREST = 3591353126U;
         static const AkUniqueID MUS_TITLESCREEN = 3413408933U;
         static const AkUniqueID MUS_UNDERGROUNDFOREST = 2286727387U;
         static const AkUniqueID MUSIC_SOUNDBANK = 3589812408U;
+        static const AkUniqueID SFX_BUTTON = 125802325U;
+        static const AkUniqueID SFX_CRYSTAL = 3825749273U;
         static const AkUniqueID SFX_DOOR_FORESTDUNGEON_CLOSE = 3253083610U;
         static const AkUniqueID SFX_DOOR_FORESTDUNGEON_OPEN = 1125626846U;
         static const AkUniqueID SFX_KEY_PICKUP = 173969489U;
-        static const AkUniqueID SFX_POTION_DRINK = 2572880635U;
     } // namespace BANKS
 
     namespace BUSSES

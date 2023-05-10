@@ -9,6 +9,23 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
+		<SoundBank Id="125802325" Type="User" Language="SFX" Hash="{E84B66D1-CCF3-F099-5D65-F954F548A190}">
+			<ShortName>SFX_Button</ShortName>
+			<Path>SFX_Button.bnk</Path>
+			<Media>
+				<File Id="378808529" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Button_Activate.wav</ShortName>
+					<CachePath>SFX/SFX_Button_Activate_10C4C929.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="2972650802" Name="Play_Button_Activate" DurationType="OneShot" DurationMin="0.74258333" DurationMax="0.74258333">
+					<MediaRefs>
+						<MediaRef Id="378808529"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
 		<SoundBank Id="173969489" Type="User" Language="SFX" Hash="{1EE00365-60AA-16F8-60E3-1472EA90E393}">
 			<ShortName>SFX_Key_Pickup</ShortName>
 			<Path>SFX_Key_Pickup.bnk</Path>
@@ -26,11 +43,108 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="973840868" Type="User" Language="SFX" Hash="{4C68681D-6AEC-C36B-6377-970B7CE1CE63}">
+		<SoundBank Id="973840868" Type="User" Language="SFX" Hash="{3EF22455-A768-7B45-0AC7-F63F0CBDD6D9}">
 			<ShortName>MUS_ForestDungeon</ShortName>
 			<Path>MUS_ForestDungeon.bnk</Path>
+			<Media>
+				<File Id="118347245" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestDungeon.wav</ShortName>
+					<Path>Media/118347245.wem</Path>
+					<CachePath>SFX/MUS_ForestDungeon_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="146592704" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_MainTheme.wav</ShortName>
+					<Path>Media/146592704.wem</Path>
+					<CachePath>SFX/MUS_MainTheme_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="374556251" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MUS_GameOver_Jingle.wav</ShortName>
+					<CachePath>SFX/MUS_GameOver_Jingle_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="421855728" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_MainTown_Loop.wav</ShortName>
+					<Path>Media/421855728.wem</Path>
+					<CachePath>SFX/MUS_MainTown_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="440516985" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestBoss_Intro.wav</ShortName>
+					<Path>Media/440516985.wem</Path>
+					<CachePath>SFX/MUS_ForestBoss_Intro_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="728702870" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestBoss_Loop.wav</ShortName>
+					<Path>Media/728702870.wem</Path>
+					<CachePath>SFX/MUS_ForestBoss_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="919072691" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_CastleEsterra.wav</ShortName>
+					<Path>Media/919072691.wem</Path>
+					<CachePath>SFX/MUS_CastleEsterra_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="937556372" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_UndergroundForest_Loop.wav</ShortName>
+					<Path>Media/937556372.wem</Path>
+					<CachePath>SFX/MUS_UndergroundForest_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="976256781" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_OverworldForest.wav</ShortName>
+					<Path>Media/976256781.wem</Path>
+					<CachePath>SFX/MUS_OverworldForest_D79FB2B7.wem</CachePath>
+				</File>
+			</Media>
 			<Events>
-				<Event Id="2194545525" Name="Play_DungeonMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+				<Event Id="2194545525" Name="Play_DungeonMusic" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="4293875712"/>
+							<MediaRefs>
+								<MediaRef Id="118347245"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="387028970"/>
+							<MediaRefs>
+								<MediaRef Id="421855728"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1485340549"/>
+							<MediaRefs>
+								<MediaRef Id="146592704"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="380412565"/>
+							<MediaRefs>
+								<MediaRef Id="919072691"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1984596375"/>
+							<MediaRefs>
+								<MediaRef Id="937556372"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="2897915005"/>
+							<MediaRefs>
+								<MediaRef Id="374556251"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1906288962"/>
+							<MediaRefs>
+								<MediaRef Id="976256781"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="949372955"/>
+							<MediaRefs>
+								<MediaRef Id="440516985"/>
+								<MediaRef Id="728702870"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
 					<ActionSetState>
 						<ActionSetStateEntry GroupId="1106389198" Id="4293875712" Name="Music_ForestDungeon"/>
 					</ActionSetState>
@@ -42,7 +156,9 @@
 						<State Id="380412565" Name="Music_CastleEsterra"/>
 						<State Id="387028970" Name="Music_MainTown"/>
 						<State Id="748895195" Name="None"/>
+						<State Id="949372955" Name="Music_ForestDungeonBoss"/>
 						<State Id="1485340549" Name="Music_MainTheme"/>
+						<State Id="1906288962" Name="Music_OverworldForest"/>
 						<State Id="1984596375" Name="Music_UndergroundForest"/>
 						<State Id="2897915005" Name="Music_GameOver"/>
 						<State Id="4293875712" Name="Music_ForestDungeon"/>
@@ -113,7 +229,9 @@
 						<State Id="380412565" Name="Music_CastleEsterra"/>
 						<State Id="387028970" Name="Music_MainTown"/>
 						<State Id="748895195" Name="None"/>
+						<State Id="949372955" Name="Music_ForestDungeonBoss"/>
 						<State Id="1485340549" Name="Music_MainTheme"/>
+						<State Id="1906288962" Name="Music_OverworldForest"/>
 						<State Id="1984596375" Name="Music_UndergroundForest"/>
 						<State Id="2897915005" Name="Music_GameOver"/>
 						<State Id="4293875712" Name="Music_ForestDungeon"/>
@@ -152,7 +270,9 @@
 						<State Id="380412565" Name="Music_CastleEsterra"/>
 						<State Id="387028970" Name="Music_MainTown"/>
 						<State Id="748895195" Name="None"/>
+						<State Id="949372955" Name="Music_ForestDungeonBoss"/>
 						<State Id="1485340549" Name="Music_MainTheme"/>
+						<State Id="1906288962" Name="Music_OverworldForest"/>
 						<State Id="1984596375" Name="Music_UndergroundForest"/>
 						<State Id="2897915005" Name="Music_GameOver"/>
 						<State Id="4293875712" Name="Music_ForestDungeon"/>
@@ -160,11 +280,108 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1922392942" Type="User" Language="SFX" Hash="{B8FB77D1-5A68-AB78-4B68-D1043431101E}">
+		<SoundBank Id="1922392942" Type="User" Language="SFX" Hash="{25B8B25A-84A2-7607-125F-A3CE2635938C}">
 			<ShortName>MUS_MainTown</ShortName>
 			<Path>MUS_MainTown.bnk</Path>
+			<Media>
+				<File Id="118347245" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestDungeon.wav</ShortName>
+					<Path>Media/118347245.wem</Path>
+					<CachePath>SFX/MUS_ForestDungeon_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="146592704" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_MainTheme.wav</ShortName>
+					<Path>Media/146592704.wem</Path>
+					<CachePath>SFX/MUS_MainTheme_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="374556251" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MUS_GameOver_Jingle.wav</ShortName>
+					<CachePath>SFX/MUS_GameOver_Jingle_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="421855728" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_MainTown_Loop.wav</ShortName>
+					<Path>Media/421855728.wem</Path>
+					<CachePath>SFX/MUS_MainTown_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="440516985" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestBoss_Intro.wav</ShortName>
+					<Path>Media/440516985.wem</Path>
+					<CachePath>SFX/MUS_ForestBoss_Intro_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="728702870" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestBoss_Loop.wav</ShortName>
+					<Path>Media/728702870.wem</Path>
+					<CachePath>SFX/MUS_ForestBoss_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="919072691" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_CastleEsterra.wav</ShortName>
+					<Path>Media/919072691.wem</Path>
+					<CachePath>SFX/MUS_CastleEsterra_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="937556372" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_UndergroundForest_Loop.wav</ShortName>
+					<Path>Media/937556372.wem</Path>
+					<CachePath>SFX/MUS_UndergroundForest_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="976256781" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_OverworldForest.wav</ShortName>
+					<Path>Media/976256781.wem</Path>
+					<CachePath>SFX/MUS_OverworldForest_D79FB2B7.wem</CachePath>
+				</File>
+			</Media>
 			<Events>
-				<Event Id="1134137730" Name="Play_MainTownMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+				<Event Id="1134137730" Name="Play_MainTownMusic" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="4293875712"/>
+							<MediaRefs>
+								<MediaRef Id="118347245"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="387028970"/>
+							<MediaRefs>
+								<MediaRef Id="421855728"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1485340549"/>
+							<MediaRefs>
+								<MediaRef Id="146592704"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="380412565"/>
+							<MediaRefs>
+								<MediaRef Id="919072691"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1984596375"/>
+							<MediaRefs>
+								<MediaRef Id="937556372"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="2897915005"/>
+							<MediaRefs>
+								<MediaRef Id="374556251"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1906288962"/>
+							<MediaRefs>
+								<MediaRef Id="976256781"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="949372955"/>
+							<MediaRefs>
+								<MediaRef Id="440516985"/>
+								<MediaRef Id="728702870"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
 					<ActionSetState>
 						<ActionSetStateEntry GroupId="1106389198" Id="387028970" Name="Music_MainTown"/>
 					</ActionSetState>
@@ -176,7 +393,9 @@
 						<State Id="380412565" Name="Music_CastleEsterra"/>
 						<State Id="387028970" Name="Music_MainTown"/>
 						<State Id="748895195" Name="None"/>
+						<State Id="949372955" Name="Music_ForestDungeonBoss"/>
 						<State Id="1485340549" Name="Music_MainTheme"/>
+						<State Id="1906288962" Name="Music_OverworldForest"/>
 						<State Id="1984596375" Name="Music_UndergroundForest"/>
 						<State Id="2897915005" Name="Music_GameOver"/>
 						<State Id="4293875712" Name="Music_ForestDungeon"/>
@@ -201,13 +420,17 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="2197452935" Type="User" Language="SFX" Hash="{0990817D-036A-020A-877C-97FE6ABA081A}">
+		<SoundBank Id="2197452935" Type="User" Language="SFX" Hash="{A42DFAD5-FC35-E5A4-BC67-2B741770F7F5}">
 			<ShortName>Hopps_SoundBank</ShortName>
 			<Path>Hopps_SoundBank.bnk</Path>
 			<Media>
 				<File Id="73418470" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Footstep_Stone_05.wav</ShortName>
 					<CachePath>SFX/SFX_Footstep_Stone_05_10C4C929.wem</CachePath>
+				</File>
+				<File Id="104382167" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Hopps_Dash_Start.wav</ShortName>
+					<CachePath>SFX/SFX_Hopps_Dash_Start_5DB7E025.wem</CachePath>
 				</File>
 				<File Id="186922672" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Footstep_Stone_03.wav</ShortName>
@@ -221,6 +444,10 @@
 					<ShortName>SFX_Footstep_Stone_04.wav</ShortName>
 					<CachePath>SFX/SFX_Footstep_Stone_04_10C4C929.wem</CachePath>
 				</File>
+				<File Id="551114336" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Hopps_DamageTaken_03.wav</ShortName>
+					<CachePath>SFX/SFX_Hopps_DamageTaken_03_10C4C929.wem</CachePath>
+				</File>
 				<File Id="623794331" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Jump_Stone_02.wav</ShortName>
 					<CachePath>SFX/SFX_Jump_Stone_02_10C4C929.wem</CachePath>
@@ -228,6 +455,10 @@
 				<File Id="656144537" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Hopps_HeavyAttack_01.wav</ShortName>
 					<CachePath>SFX/SFX_Hopps_HeavyAttack_01_10C4C929.wem</CachePath>
+				</File>
+				<File Id="885180894" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Potion_Drink_01.wav</ShortName>
+					<CachePath>SFX/SFX_Potion_Drink_01_10C4C929.wem</CachePath>
 				</File>
 				<File Id="905258165" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Hopps_BasicAttack_01.wav</ShortName>
@@ -241,8 +472,21 @@
 					<ShortName>SFX_Footstep_Stone_01.wav</ShortName>
 					<CachePath>SFX/SFX_Footstep_Stone_01_10C4C929.wem</CachePath>
 				</File>
+				<File Id="991292264" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Hopps_DamageTaken_01.wav</ShortName>
+					<CachePath>SFX/SFX_Hopps_DamageTaken_01_10C4C929.wem</CachePath>
+				</File>
+				<File Id="1006607113" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Hopps_DamageTaken_02.wav</ShortName>
+					<CachePath>SFX/SFX_Hopps_DamageTaken_02_10C4C929.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
+				<Event Id="3363411656" Name="Play_Drink_HealthPotion" DurationType="OneShot" DurationMin="1.6336666" DurationMax="1.6336666">
+					<MediaRefs>
+						<MediaRef Id="885180894"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="536851419" Name="Play_Hopps_BasicAttack" DurationType="OneShot" DurationMin="0.6291399" DurationMax="0.8065222">
 					<MediaRefs>
 						<MediaRef Id="905258165"/>
@@ -250,6 +494,18 @@
 					<AuxBusRefs>
 						<AuxBusRef Id="2137158287" Name="ForestDungeonVerb"/>
 					</AuxBusRefs>
+				</Event>
+				<Event Id="3376665689" Name="Play_Hopps_DamageTaken" DurationType="OneShot" DurationMin="0.70090526" DurationMax="0.78673965">
+					<MediaRefs>
+						<MediaRef Id="551114336"/>
+						<MediaRef Id="991292264"/>
+						<MediaRef Id="1006607113"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="739488027" Name="Play_Hopps_Dash" DurationType="OneShot" DurationMin="1.621625" DurationMax="1.621625">
+					<MediaRefs>
+						<MediaRef Id="104382167"/>
+					</MediaRefs>
 				</Event>
 				<Event Id="109051115" Name="Play_Hopps_Jump" DurationType="OneShot" DurationMin="0.44312614" DurationMax="0.56960493">
 					<SwitchContainers>
@@ -293,11 +549,108 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2286727387" Type="User" Language="SFX" Hash="{890E695A-02DB-03B7-524C-DB5FA95CB721}">
+		<SoundBank Id="2286727387" Type="User" Language="SFX" Hash="{ADEA8024-BF22-F0FB-56FD-1194EE19A76E}">
 			<ShortName>MUS_UndergroundForest</ShortName>
 			<Path>MUS_UndergroundForest.bnk</Path>
+			<Media>
+				<File Id="118347245" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestDungeon.wav</ShortName>
+					<Path>Media/118347245.wem</Path>
+					<CachePath>SFX/MUS_ForestDungeon_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="146592704" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_MainTheme.wav</ShortName>
+					<Path>Media/146592704.wem</Path>
+					<CachePath>SFX/MUS_MainTheme_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="374556251" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MUS_GameOver_Jingle.wav</ShortName>
+					<CachePath>SFX/MUS_GameOver_Jingle_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="421855728" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_MainTown_Loop.wav</ShortName>
+					<Path>Media/421855728.wem</Path>
+					<CachePath>SFX/MUS_MainTown_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="440516985" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestBoss_Intro.wav</ShortName>
+					<Path>Media/440516985.wem</Path>
+					<CachePath>SFX/MUS_ForestBoss_Intro_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="728702870" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestBoss_Loop.wav</ShortName>
+					<Path>Media/728702870.wem</Path>
+					<CachePath>SFX/MUS_ForestBoss_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="919072691" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_CastleEsterra.wav</ShortName>
+					<Path>Media/919072691.wem</Path>
+					<CachePath>SFX/MUS_CastleEsterra_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="937556372" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_UndergroundForest_Loop.wav</ShortName>
+					<Path>Media/937556372.wem</Path>
+					<CachePath>SFX/MUS_UndergroundForest_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="976256781" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_OverworldForest.wav</ShortName>
+					<Path>Media/976256781.wem</Path>
+					<CachePath>SFX/MUS_OverworldForest_D79FB2B7.wem</CachePath>
+				</File>
+			</Media>
 			<Events>
-				<Event Id="1277548847" Name="Play_UndergroundForestMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+				<Event Id="1277548847" Name="Play_UndergroundForestMusic" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="4293875712"/>
+							<MediaRefs>
+								<MediaRef Id="118347245"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="387028970"/>
+							<MediaRefs>
+								<MediaRef Id="421855728"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1485340549"/>
+							<MediaRefs>
+								<MediaRef Id="146592704"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="380412565"/>
+							<MediaRefs>
+								<MediaRef Id="919072691"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1984596375"/>
+							<MediaRefs>
+								<MediaRef Id="937556372"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="2897915005"/>
+							<MediaRefs>
+								<MediaRef Id="374556251"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1906288962"/>
+							<MediaRefs>
+								<MediaRef Id="976256781"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="949372955"/>
+							<MediaRefs>
+								<MediaRef Id="440516985"/>
+								<MediaRef Id="728702870"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
 					<ActionSetState>
 						<ActionSetStateEntry GroupId="1106389198" Id="1984596375" Name="Music_UndergroundForest"/>
 					</ActionSetState>
@@ -309,7 +662,9 @@
 						<State Id="380412565" Name="Music_CastleEsterra"/>
 						<State Id="387028970" Name="Music_MainTown"/>
 						<State Id="748895195" Name="None"/>
+						<State Id="949372955" Name="Music_ForestDungeonBoss"/>
 						<State Id="1485340549" Name="Music_MainTheme"/>
+						<State Id="1906288962" Name="Music_OverworldForest"/>
 						<State Id="1984596375" Name="Music_UndergroundForest"/>
 						<State Id="2897915005" Name="Music_GameOver"/>
 						<State Id="4293875712" Name="Music_ForestDungeon"/>
@@ -317,11 +672,108 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="2546705169" Type="User" Language="SFX" Hash="{5229A8DB-CAFF-F293-D4C2-AD70F1C0B2BC}">
+		<SoundBank Id="2546705169" Type="User" Language="SFX" Hash="{3C6A7663-FE4D-2265-5C3B-6BE54FF784F4}">
 			<ShortName>MUS_CastleEsterra</ShortName>
 			<Path>MUS_CastleEsterra.bnk</Path>
+			<Media>
+				<File Id="118347245" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestDungeon.wav</ShortName>
+					<Path>Media/118347245.wem</Path>
+					<CachePath>SFX/MUS_ForestDungeon_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="146592704" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_MainTheme.wav</ShortName>
+					<Path>Media/146592704.wem</Path>
+					<CachePath>SFX/MUS_MainTheme_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="374556251" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MUS_GameOver_Jingle.wav</ShortName>
+					<CachePath>SFX/MUS_GameOver_Jingle_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="421855728" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_MainTown_Loop.wav</ShortName>
+					<Path>Media/421855728.wem</Path>
+					<CachePath>SFX/MUS_MainTown_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="440516985" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestBoss_Intro.wav</ShortName>
+					<Path>Media/440516985.wem</Path>
+					<CachePath>SFX/MUS_ForestBoss_Intro_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="728702870" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestBoss_Loop.wav</ShortName>
+					<Path>Media/728702870.wem</Path>
+					<CachePath>SFX/MUS_ForestBoss_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="919072691" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_CastleEsterra.wav</ShortName>
+					<Path>Media/919072691.wem</Path>
+					<CachePath>SFX/MUS_CastleEsterra_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="937556372" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_UndergroundForest_Loop.wav</ShortName>
+					<Path>Media/937556372.wem</Path>
+					<CachePath>SFX/MUS_UndergroundForest_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="976256781" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_OverworldForest.wav</ShortName>
+					<Path>Media/976256781.wem</Path>
+					<CachePath>SFX/MUS_OverworldForest_D79FB2B7.wem</CachePath>
+				</File>
+			</Media>
 			<Events>
-				<Event Id="706813533" Name="Play_CastleEsterraMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+				<Event Id="706813533" Name="Play_CastleEsterraMusic" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="4293875712"/>
+							<MediaRefs>
+								<MediaRef Id="118347245"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="387028970"/>
+							<MediaRefs>
+								<MediaRef Id="421855728"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1485340549"/>
+							<MediaRefs>
+								<MediaRef Id="146592704"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="380412565"/>
+							<MediaRefs>
+								<MediaRef Id="919072691"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1984596375"/>
+							<MediaRefs>
+								<MediaRef Id="937556372"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="2897915005"/>
+							<MediaRefs>
+								<MediaRef Id="374556251"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1906288962"/>
+							<MediaRefs>
+								<MediaRef Id="976256781"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="949372955"/>
+							<MediaRefs>
+								<MediaRef Id="440516985"/>
+								<MediaRef Id="728702870"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
 					<ActionSetState>
 						<ActionSetStateEntry GroupId="1106389198" Id="380412565" Name="Music_CastleEsterra"/>
 					</ActionSetState>
@@ -333,30 +785,15 @@
 						<State Id="380412565" Name="Music_CastleEsterra"/>
 						<State Id="387028970" Name="Music_MainTown"/>
 						<State Id="748895195" Name="None"/>
+						<State Id="949372955" Name="Music_ForestDungeonBoss"/>
 						<State Id="1485340549" Name="Music_MainTheme"/>
+						<State Id="1906288962" Name="Music_OverworldForest"/>
 						<State Id="1984596375" Name="Music_UndergroundForest"/>
 						<State Id="2897915005" Name="Music_GameOver"/>
 						<State Id="4293875712" Name="Music_ForestDungeon"/>
 					</States>
 				</StateGroup>
 			</StateGroups>
-		</SoundBank>
-		<SoundBank Id="2572880635" Type="User" Language="SFX" Hash="{A8308C36-B994-DD4B-9F3E-F7F2658B46AA}">
-			<ShortName>SFX_Potion_Drink</ShortName>
-			<Path>SFX_Potion_Drink.bnk</Path>
-			<Media>
-				<File Id="885180894" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>SFX_Potion_Drink_01.wav</ShortName>
-					<CachePath>SFX/SFX_Potion_Drink_01_10C4C929.wem</CachePath>
-				</File>
-			</Media>
-			<Events>
-				<Event Id="3363411656" Name="Play_Drink_HealthPotion" DurationType="OneShot" DurationMin="1.6336666" DurationMax="1.6336666">
-					<MediaRefs>
-						<MediaRef Id="885180894"/>
-					</MediaRefs>
-				</Event>
-			</Events>
 		</SoundBank>
 		<SoundBank Id="2826179121" Type="User" Language="SFX" Hash="{811F3578-AF86-D040-B31B-FA4606C15EDE}">
 			<ShortName>AMB_ForestDungeon</ShortName>
@@ -395,11 +832,231 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="3413408933" Type="User" Language="SFX" Hash="{54D3D0A4-5A24-A65F-7FB9-2E0FE4F0FCB3}">
+		<SoundBank Id="3254244503" Type="User" Language="SFX" Hash="{ACB30A78-C781-4008-F306-28D3E47DAE8C}">
+			<ShortName>MUS_ForestDungeonBoss</ShortName>
+			<Path>MUS_ForestDungeonBoss.bnk</Path>
+			<Media>
+				<File Id="118347245" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestDungeon.wav</ShortName>
+					<Path>Media/118347245.wem</Path>
+					<CachePath>SFX/MUS_ForestDungeon_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="146592704" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_MainTheme.wav</ShortName>
+					<Path>Media/146592704.wem</Path>
+					<CachePath>SFX/MUS_MainTheme_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="374556251" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MUS_GameOver_Jingle.wav</ShortName>
+					<CachePath>SFX/MUS_GameOver_Jingle_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="421855728" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_MainTown_Loop.wav</ShortName>
+					<Path>Media/421855728.wem</Path>
+					<CachePath>SFX/MUS_MainTown_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="440516985" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestBoss_Intro.wav</ShortName>
+					<Path>Media/440516985.wem</Path>
+					<CachePath>SFX/MUS_ForestBoss_Intro_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="728702870" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestBoss_Loop.wav</ShortName>
+					<Path>Media/728702870.wem</Path>
+					<CachePath>SFX/MUS_ForestBoss_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="919072691" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_CastleEsterra.wav</ShortName>
+					<Path>Media/919072691.wem</Path>
+					<CachePath>SFX/MUS_CastleEsterra_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="937556372" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_UndergroundForest_Loop.wav</ShortName>
+					<Path>Media/937556372.wem</Path>
+					<CachePath>SFX/MUS_UndergroundForest_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="976256781" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_OverworldForest.wav</ShortName>
+					<Path>Media/976256781.wem</Path>
+					<CachePath>SFX/MUS_OverworldForest_D79FB2B7.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1007642718" Name="Play_ForestDungeonBoss" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="4293875712"/>
+							<MediaRefs>
+								<MediaRef Id="118347245"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="387028970"/>
+							<MediaRefs>
+								<MediaRef Id="421855728"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1485340549"/>
+							<MediaRefs>
+								<MediaRef Id="146592704"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="380412565"/>
+							<MediaRefs>
+								<MediaRef Id="919072691"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1984596375"/>
+							<MediaRefs>
+								<MediaRef Id="937556372"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="2897915005"/>
+							<MediaRefs>
+								<MediaRef Id="374556251"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1906288962"/>
+							<MediaRefs>
+								<MediaRef Id="976256781"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="949372955"/>
+							<MediaRefs>
+								<MediaRef Id="440516985"/>
+								<MediaRef Id="728702870"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="1106389198" Id="949372955" Name="Music_ForestDungeonBoss"/>
+					</ActionSetState>
+				</Event>
+			</Events>
+			<StateGroups>
+				<StateGroup Id="1106389198" Name="PlayingSong">
+					<States>
+						<State Id="380412565" Name="Music_CastleEsterra"/>
+						<State Id="387028970" Name="Music_MainTown"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="949372955" Name="Music_ForestDungeonBoss"/>
+						<State Id="1485340549" Name="Music_MainTheme"/>
+						<State Id="1906288962" Name="Music_OverworldForest"/>
+						<State Id="1984596375" Name="Music_UndergroundForest"/>
+						<State Id="2897915005" Name="Music_GameOver"/>
+						<State Id="4293875712" Name="Music_ForestDungeon"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+		</SoundBank>
+		<SoundBank Id="3413408933" Type="User" Language="SFX" Hash="{CA0C17F4-3419-2285-A665-08724F760C67}">
 			<ShortName>MUS_TitleScreen</ShortName>
 			<Path>MUS_TitleScreen.bnk</Path>
+			<Media>
+				<File Id="118347245" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestDungeon.wav</ShortName>
+					<Path>Media/118347245.wem</Path>
+					<CachePath>SFX/MUS_ForestDungeon_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="146592704" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_MainTheme.wav</ShortName>
+					<Path>Media/146592704.wem</Path>
+					<CachePath>SFX/MUS_MainTheme_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="374556251" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MUS_GameOver_Jingle.wav</ShortName>
+					<CachePath>SFX/MUS_GameOver_Jingle_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="421855728" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_MainTown_Loop.wav</ShortName>
+					<Path>Media/421855728.wem</Path>
+					<CachePath>SFX/MUS_MainTown_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="440516985" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestBoss_Intro.wav</ShortName>
+					<Path>Media/440516985.wem</Path>
+					<CachePath>SFX/MUS_ForestBoss_Intro_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="728702870" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestBoss_Loop.wav</ShortName>
+					<Path>Media/728702870.wem</Path>
+					<CachePath>SFX/MUS_ForestBoss_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="919072691" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_CastleEsterra.wav</ShortName>
+					<Path>Media/919072691.wem</Path>
+					<CachePath>SFX/MUS_CastleEsterra_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="937556372" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_UndergroundForest_Loop.wav</ShortName>
+					<Path>Media/937556372.wem</Path>
+					<CachePath>SFX/MUS_UndergroundForest_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="976256781" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_OverworldForest.wav</ShortName>
+					<Path>Media/976256781.wem</Path>
+					<CachePath>SFX/MUS_OverworldForest_D79FB2B7.wem</CachePath>
+				</File>
+			</Media>
 			<Events>
-				<Event Id="4182175493" Name="Play_TitleScreenMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+				<Event Id="4182175493" Name="Play_TitleScreenMusic" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="4293875712"/>
+							<MediaRefs>
+								<MediaRef Id="118347245"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="387028970"/>
+							<MediaRefs>
+								<MediaRef Id="421855728"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1485340549"/>
+							<MediaRefs>
+								<MediaRef Id="146592704"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="380412565"/>
+							<MediaRefs>
+								<MediaRef Id="919072691"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1984596375"/>
+							<MediaRefs>
+								<MediaRef Id="937556372"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="2897915005"/>
+							<MediaRefs>
+								<MediaRef Id="374556251"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1906288962"/>
+							<MediaRefs>
+								<MediaRef Id="976256781"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="949372955"/>
+							<MediaRefs>
+								<MediaRef Id="440516985"/>
+								<MediaRef Id="728702870"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
 					<ActionSetState>
 						<ActionSetStateEntry GroupId="1106389198" Id="1485340549" Name="Music_MainTheme"/>
 					</ActionSetState>
@@ -411,7 +1068,9 @@
 						<State Id="380412565" Name="Music_CastleEsterra"/>
 						<State Id="387028970" Name="Music_MainTown"/>
 						<State Id="748895195" Name="None"/>
+						<State Id="949372955" Name="Music_ForestDungeonBoss"/>
 						<State Id="1485340549" Name="Music_MainTheme"/>
+						<State Id="1906288962" Name="Music_OverworldForest"/>
 						<State Id="1984596375" Name="Music_UndergroundForest"/>
 						<State Id="2897915005" Name="Music_GameOver"/>
 						<State Id="4293875712" Name="Music_ForestDungeon"/>
@@ -419,7 +1078,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3589812408" Type="User" Language="SFX" Hash="{4373E503-F199-FFD0-75D3-E90C852B1986}">
+		<SoundBank Id="3589812408" Type="User" Language="SFX" Hash="{42893206-FEAF-A9B1-0203-5C5D8BA5B373}">
 			<ShortName>Music_Soundbank</ShortName>
 			<Path>Music_Soundbank.bnk</Path>
 			<Media>
@@ -442,6 +1101,16 @@
 					<Path>Media/421855728.wem</Path>
 					<CachePath>SFX/MUS_MainTown_Loop_D79FB2B7.wem</CachePath>
 				</File>
+				<File Id="440516985" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestBoss_Intro.wav</ShortName>
+					<Path>Media/440516985.wem</Path>
+					<CachePath>SFX/MUS_ForestBoss_Intro_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="728702870" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestBoss_Loop.wav</ShortName>
+					<Path>Media/728702870.wem</Path>
+					<CachePath>SFX/MUS_ForestBoss_Loop_D79FB2B7.wem</CachePath>
+				</File>
 				<File Id="919072691" Language="SFX" Streaming="true" Location="Loose">
 					<ShortName>MUS_CastleEsterra.wav</ShortName>
 					<Path>Media/919072691.wem</Path>
@@ -451,6 +1120,11 @@
 					<ShortName>MUS_UndergroundForest_Loop.wav</ShortName>
 					<Path>Media/937556372.wem</Path>
 					<CachePath>SFX/MUS_UndergroundForest_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="976256781" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_OverworldForest.wav</ShortName>
+					<Path>Media/976256781.wem</Path>
+					<CachePath>SFX/MUS_OverworldForest_D79FB2B7.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -492,6 +1166,19 @@
 								<MediaRef Id="374556251"/>
 							</MediaRefs>
 						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1906288962"/>
+							<MediaRefs>
+								<MediaRef Id="976256781"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="949372955"/>
+							<MediaRefs>
+								<MediaRef Id="440516985"/>
+								<MediaRef Id="728702870"/>
+							</MediaRefs>
+						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
 			</Events>
@@ -501,7 +1188,9 @@
 						<State Id="380412565" Name="Music_CastleEsterra"/>
 						<State Id="387028970" Name="Music_MainTown"/>
 						<State Id="748895195" Name="None"/>
+						<State Id="949372955" Name="Music_ForestDungeonBoss"/>
 						<State Id="1485340549" Name="Music_MainTheme"/>
+						<State Id="1906288962" Name="Music_OverworldForest"/>
 						<State Id="1984596375" Name="Music_UndergroundForest"/>
 						<State Id="2897915005" Name="Music_GameOver"/>
 						<State Id="4293875712" Name="Music_ForestDungeon"/>
@@ -509,13 +1198,146 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3591353126" Type="User" Language="SFX" Hash="{058455AF-1A17-114D-1622-32BAF6D771E5}">
+		<SoundBank Id="3591353126" Type="User" Language="SFX" Hash="{507677C0-9363-636E-E554-455DCC581DD9}">
 			<ShortName>MUS_OverworldForest</ShortName>
 			<Path>MUS_OverworldForest.bnk</Path>
+			<Media>
+				<File Id="118347245" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestDungeon.wav</ShortName>
+					<Path>Media/118347245.wem</Path>
+					<CachePath>SFX/MUS_ForestDungeon_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="146592704" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_MainTheme.wav</ShortName>
+					<Path>Media/146592704.wem</Path>
+					<CachePath>SFX/MUS_MainTheme_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="374556251" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MUS_GameOver_Jingle.wav</ShortName>
+					<CachePath>SFX/MUS_GameOver_Jingle_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="421855728" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_MainTown_Loop.wav</ShortName>
+					<Path>Media/421855728.wem</Path>
+					<CachePath>SFX/MUS_MainTown_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="440516985" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestBoss_Intro.wav</ShortName>
+					<Path>Media/440516985.wem</Path>
+					<CachePath>SFX/MUS_ForestBoss_Intro_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="728702870" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_ForestBoss_Loop.wav</ShortName>
+					<Path>Media/728702870.wem</Path>
+					<CachePath>SFX/MUS_ForestBoss_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="919072691" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_CastleEsterra.wav</ShortName>
+					<Path>Media/919072691.wem</Path>
+					<CachePath>SFX/MUS_CastleEsterra_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="937556372" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_UndergroundForest_Loop.wav</ShortName>
+					<Path>Media/937556372.wem</Path>
+					<CachePath>SFX/MUS_UndergroundForest_Loop_D79FB2B7.wem</CachePath>
+				</File>
+				<File Id="976256781" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>MUS_OverworldForest.wav</ShortName>
+					<Path>Media/976256781.wem</Path>
+					<CachePath>SFX/MUS_OverworldForest_D79FB2B7.wem</CachePath>
+				</File>
+			</Media>
 			<Events>
-				<Event Id="693146296" Name="Play_OverworldForestMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="693146296" Name="Play_OverworldForestMusic" DurationType="Infinite">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="4293875712"/>
+							<MediaRefs>
+								<MediaRef Id="118347245"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="387028970"/>
+							<MediaRefs>
+								<MediaRef Id="421855728"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1485340549"/>
+							<MediaRefs>
+								<MediaRef Id="146592704"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="380412565"/>
+							<MediaRefs>
+								<MediaRef Id="919072691"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1984596375"/>
+							<MediaRefs>
+								<MediaRef Id="937556372"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="2897915005"/>
+							<MediaRefs>
+								<MediaRef Id="374556251"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="1906288962"/>
+							<MediaRefs>
+								<MediaRef Id="976256781"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1106389198" Id="949372955"/>
+							<MediaRefs>
+								<MediaRef Id="440516985"/>
+								<MediaRef Id="728702870"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="1106389198" Id="1906288962" Name="Music_OverworldForest"/>
+					</ActionSetState>
+				</Event>
+			</Events>
+			<StateGroups>
+				<StateGroup Id="1106389198" Name="PlayingSong">
+					<States>
+						<State Id="380412565" Name="Music_CastleEsterra"/>
+						<State Id="387028970" Name="Music_MainTown"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="949372955" Name="Music_ForestDungeonBoss"/>
+						<State Id="1485340549" Name="Music_MainTheme"/>
+						<State Id="1906288962" Name="Music_OverworldForest"/>
+						<State Id="1984596375" Name="Music_UndergroundForest"/>
+						<State Id="2897915005" Name="Music_GameOver"/>
+						<State Id="4293875712" Name="Music_ForestDungeon"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+		</SoundBank>
+		<SoundBank Id="3825749273" Type="User" Language="SFX" Hash="{BBD7BC5B-2ED7-F4DB-8ABF-2437140034A4}">
+			<ShortName>SFX_Crystal</ShortName>
+			<Path>SFX_Crystal.bnk</Path>
+			<Media>
+				<File Id="836849017" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Crystal_Activate.wav</ShortName>
+					<CachePath>SFX/SFX_Crystal_Activate_10C4C929.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="4074254608" Name="Play_Crystal_Activate" DurationType="OneShot" DurationMin="1.5222708" DurationMax="1.5222708">
+					<MediaRefs>
+						<MediaRef Id="836849017"/>
+					</MediaRefs>
+				</Event>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{6DB741DB-02B2-A402-2BD0-F8D2A8511679}</FileHash>
+	<FileHash>{1F0E2EAD-1B74-22DC-5E44-B7648C9CFC55}</FileHash>
 </SoundBanksInfo>

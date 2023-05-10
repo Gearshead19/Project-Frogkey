@@ -14,6 +14,13 @@
 									<ObjectExclusionList/>
 									<GameSyncExclusionList/>
 								</SoundBank>
+								<SoundBank Name="MUS_ForestDungeonBoss" ID="{FABFACB3-AC1B-42A1-AA35-339B707481A6}">
+									<ObjectInclusionList>
+										<ObjectRef Name="Play_ForestDungeonBoss" ID="{06B0F118-8BE0-4D8E-B8D1-C44D11CB9BD9}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
+									</ObjectInclusionList>
+									<ObjectExclusionList/>
+									<GameSyncExclusionList/>
+								</SoundBank>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Towns" ID="{AB0C78AC-86BB-4480-83FC-8A2BA9931F65}" ShortID="197353327">
@@ -95,9 +102,12 @@
 								<SoundBank Name="Hopps_SoundBank" ID="{37CE2F13-BFD7-40EA-A741-60F825017820}">
 									<ObjectInclusionList>
 										<ObjectRef Name="Play_Hopps_Jump" ID="{8251D9E0-F5F0-4143-917B-A94E11C69E45}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
+										<ObjectRef Name="Play_Hopps_Dash" ID="{F1B9904D-88ED-428A-940B-58996D0E3B2F}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
 										<ObjectRef Name="Play_Hopps_BasicAttack" ID="{2BE884DC-8377-44AC-B6D9-0162A531315E}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
 										<ObjectRef Name="Play_Hopps_Walk" ID="{E0543A1A-92EF-4705-9D71-E28A9830ACCE}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
+										<ObjectRef Name="Play_Drink_HealthPotion" ID="{AC9B8F1B-348F-4811-9662-6D3CBE4EE7B2}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
 										<ObjectRef Name="Play_HoppsHeavyAttack" ID="{89C9BAB7-FB94-48D6-9BA4-F67EC114F02E}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
+										<ObjectRef Name="Play_Hopps_DamageTaken" ID="{A444670F-CE17-4DCB-866B-7DB2DAC5F4D7}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
 									</ObjectInclusionList>
 									<ObjectExclusionList/>
 									<GameSyncExclusionList/>
@@ -128,21 +138,28 @@
 										</Folder>
 									</ChildrenList>
 								</Folder>
-							</ChildrenList>
-						</Folder>
-						<Folder Name="Items" ID="{BBFD127D-8805-4400-A1BF-B1FBA29618AD}" ShortID="600220060">
-							<ChildrenList>
-								<Folder Name="Potions" ID="{FB42366C-3DFD-4945-AF3D-627A66210286}" ShortID="175756291">
+								<Folder Name="ButtonsAndSwitches" ID="{02C7647B-917F-4EA1-B799-652B2CF25C89}" ShortID="138329211">
 									<ChildrenList>
-										<SoundBank Name="SFX_Potion_Drink" ID="{8EA0A43C-CCC2-40FB-A2C7-8A0572FC98C0}">
+										<SoundBank Name="SFX_Button" ID="{50B89286-1436-4ACB-B618-8BAEE6D47F14}">
 											<ObjectInclusionList>
-												<ObjectRef Name="Play_Drink_HealthPotion" ID="{AC9B8F1B-348F-4811-9662-6D3CBE4EE7B2}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
+												<ObjectRef Name="Play_Button_Activate" ID="{C142166C-CA0E-4E6B-92CB-3684DFF114E1}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
+											</ObjectInclusionList>
+											<ObjectExclusionList/>
+											<GameSyncExclusionList/>
+										</SoundBank>
+										<SoundBank Name="SFX_Crystal" ID="{4CB04AFE-2FF5-433B-847C-45E0707AC8D9}">
+											<ObjectInclusionList>
+												<ObjectRef Name="Play_Crystal_Activate" ID="{C2104F66-5B9F-4FE4-8D34-C6EDDD2AEA5F}" WorkUnitID="{75886FDD-763B-4C7C-B0D8-71650BA3F9D8}" Origin="Manual" Filter="7"/>
 											</ObjectInclusionList>
 											<ObjectExclusionList/>
 											<GameSyncExclusionList/>
 										</SoundBank>
 									</ChildrenList>
 								</Folder>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Items" ID="{BBFD127D-8805-4400-A1BF-B1FBA29618AD}" ShortID="600220060">
+							<ChildrenList>
 								<Folder Name="Keys" ID="{A090A01D-EC46-49CD-8931-1F5880512DF4}" ShortID="622141845">
 									<ChildrenList>
 										<SoundBank Name="SFX_Key_Pickup" ID="{2768FE56-4A55-4B6A-AA35-C65472F52E83}">
