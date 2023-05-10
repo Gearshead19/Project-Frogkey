@@ -323,7 +323,8 @@ public class PlayerMovement : MonoBehaviour
         inputVector.x = horizontalInput;
         inputVector.y = verticalInput;
 
-      //  Debug.Log("H: " + horizontalInput + "V: " + verticalInput);
+        //  Debug.Log("H: " + horizontalInput + "V: " + verticalInput);
+        Debug.Log(desiredMoveSpeed);
         
     }
     /// <summary>

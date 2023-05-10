@@ -9,6 +9,7 @@ public class Dashing : MonoBehaviour
     private Rigidbody rb;
     private PlayerMovement pm;
     private MeshTrail dashTrail;
+    private ParticleSystem particle;
 
     [Header("Dashing")]
     public float dashForce;
@@ -126,6 +127,20 @@ public class Dashing : MonoBehaviour
             direction = pm.playerModelLook.forward;
         }
         return direction.normalized;
+    }
+    void DashVFX()
+    {
+
+
+        if (!particle.isPlaying)
+        {
+            particle.Play();
+
+        }
+        else
+        {
+            particle.Stop();
+        }
     }
     //float Force = rb.mass * acceleration;
     //Debug.Log("I'm Dashing");
