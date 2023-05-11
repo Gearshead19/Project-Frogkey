@@ -33,7 +33,7 @@ public class Boss_AI_script : MonoBehaviour
     public float speed = 3;
 
     private float dis = 0;
-
+    
 
     //ditance for swichting type of attack states
     public float close_dis = 1;
@@ -214,6 +214,7 @@ public class Boss_AI_script : MonoBehaviour
             case Boss_Attacks.RANGE_FOLLOW_ATTACK:
 
                 Range_follow_attack();
+                Debug.Log("shoot");
                 Boss_Attack =  Boss_Attacks.IDLE_ATTACK;
 
                 break;
@@ -221,6 +222,7 @@ public class Boss_AI_script : MonoBehaviour
             case Boss_Attacks.RANGE_SPREAD_ATTACK:
 
                 Range_spread_attack();
+                Debug.Log("shoot");
                 Boss_Attack = Boss_Attacks.IDLE_ATTACK;
                 
                 break;
@@ -241,11 +243,15 @@ public class Boss_AI_script : MonoBehaviour
                     }
                     else if (affact_range[atk_count] == true)
                     {
+                        //Range_follow_attack();
+                        atk_count = atk_count + 1;
                         Boss_Attack = Boss_Attacks.RANGE_SPREAD_ATTACK;
 
                     }
                     else
                     {
+                        //Range_follow_attack();
+                        atk_count = atk_count + 1;
                         Boss_Attack = Boss_Attacks.RANGE_FOLLOW_ATTACK;
                     }
 
@@ -268,7 +274,7 @@ public class Boss_AI_script : MonoBehaviour
 
     void Range_follow_attack()
     {
-
+        Instantiate(follow_attack, this.transform.TransformPoint(0, 4, 0), this.gameObject.transform.rotation);
     }
 
 
