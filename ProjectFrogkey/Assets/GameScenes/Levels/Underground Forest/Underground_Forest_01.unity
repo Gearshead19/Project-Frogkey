@@ -8218,11 +8218,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7623609067343729955, guid: 4425d61c4364542499b3b17f03105c38, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000017134711
+      value: 0.0000000171347
       objectReference: {fileID: 0}
     - target: {fileID: 7623609067343729955, guid: 4425d61c4364542499b3b17f03105c38, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000000015688807
+      value: -0.0000000015688794
       objectReference: {fileID: 0}
     - target: {fileID: 7623609067366365256, guid: 4425d61c4364542499b3b17f03105c38, type: 3}
       propertyPath: m_IsActive
@@ -8234,15 +8234,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7623609067480495896, guid: 4425d61c4364542499b3b17f03105c38, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.16018225
+      value: 0.16018222
       objectReference: {fileID: 0}
     - target: {fileID: 7623609067480495896, guid: 4425d61c4364542499b3b17f03105c38, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000023309845
+      value: -0.000000025470568
       objectReference: {fileID: 0}
     - target: {fileID: 7623609067480495896, guid: 4425d61c4364542499b3b17f03105c38, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000003782667
+      value: 0.0000000041333035
       objectReference: {fileID: 0}
     - target: {fileID: 7623609067676737094, guid: 4425d61c4364542499b3b17f03105c38, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8312,7 +8312,8 @@ PrefabInstance:
       propertyPath: sprintSpeed
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 141006963, guid: 4425d61c4364542499b3b17f03105c38, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4425d61c4364542499b3b17f03105c38, type: 3}
 --- !u!1 &539651881
 GameObject:
@@ -34007,6 +34008,17 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &1035361745 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9031161556039516351, guid: e428766009439f245a9df86e0626b992, type: 3}
+  m_PrefabInstance: {fileID: 1655396875}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def886564adb2cf49a42e907bd7ee5cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1040619184
 Mesh:
   m_ObjectHideFlags: 0
@@ -49434,7 +49446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ui: {fileID: 1041267562}
-  sceneFader: {fileID: 0}
+  sceneFader: {fileID: 1035361745}
   menuSceneName: TitleScreen
 --- !u!1 &2081107591
 GameObject:
