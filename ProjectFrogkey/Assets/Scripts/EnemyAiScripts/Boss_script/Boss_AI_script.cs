@@ -20,7 +20,7 @@ public enum Boss_Attacks
 public class Boss_AI_script : MonoBehaviour
 {
 
-    public GameObject spread_attack;
+    public GameObject[] spread_attack = { null, null, null, null, null};
 
     public GameObject follow_attack;
 
@@ -123,7 +123,6 @@ public class Boss_AI_script : MonoBehaviour
 
 
             case Boss_States.MOVE_TO:
-                Move_to_player(froggy_player);
 
                 if (dis < med_dis)
                 {
@@ -133,11 +132,14 @@ public class Boss_AI_script : MonoBehaviour
                 {
                     Boss_state = Boss_States.IDLE;
                 }
+
+
+                Move_to_player(froggy_player);
+
                 break;
 
 
             case Boss_States.MOVE_AWAY:
-                Move_from_player(froggy_player);
 
                 if (dis > far_dis)
                 {
@@ -151,6 +153,10 @@ public class Boss_AI_script : MonoBehaviour
                 {
                     Boss_state = Boss_States.IDLE;
                 }
+
+
+                Move_from_player(froggy_player);
+
                 break;
 
             case Boss_States.REJUVENATEGOTO:
@@ -269,12 +275,26 @@ public class Boss_AI_script : MonoBehaviour
 
     void Range_spread_attack()
     {
-
+        if (spread_attack[4] != null)
+        {
+            for(int s = 0; s < spread_attack.Length; s++)
+            {
+                Instantiate(spread_attack[0], boss_body.transform.TransformPoint(s, 0, 2), boss_body.gameObject.transform.rotation);
+                Instantiate(spread_attack[1], boss_body.transform.TransformPoint(s, 0, 2), boss_body.gameObject.transform.rotation);
+                Instantiate(spread_attack[2], boss_body.transform.TransformPoint(s, 0, 2), boss_body.gameObject.transform.rotation);
+                Instantiate(spread_attack[3], boss_body.transform.TransformPoint(s, 0, 2), boss_body.gameObject.transform.rotation);
+                Instantiate(spread_attack[4], boss_body.transform.TransformPoint(s, 0, 2), boss_body.gameObject.transform.rotation);
+            }
+            
+        }
     }
 
     void Range_follow_attack()
     {
-        Instantiate(follow_attack, this.transform.TransformPoint(0, 4, 0), this.gameObject.transform.rotation);
+        if (follow_attack != null)
+        {
+            Instantiate(follow_attack, this.transform.TransformPoint(0, 4, 0), this.gameObject.transform.rotation);
+        }
     }
 
 
@@ -329,7 +349,7 @@ public class Boss_AI_script : MonoBehaviour
     void Face_player()
     {
         Vector3 director = froggy_player.transform.position - boss_body.transform.position;
-        Quaternion rotator = Quaternion.LookRotation(director);
+        Quaternion rotator = Quaternion.LookRotation(new Vector3(director.x, 0, director.z));
         boss_body.transform.rotation = Quaternion.Lerp(boss_body.transform.rotation, rotator, turn_speed * Time.deltaTime);
     }
 

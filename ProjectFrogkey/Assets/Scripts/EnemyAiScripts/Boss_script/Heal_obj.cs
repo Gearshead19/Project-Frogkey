@@ -20,7 +20,7 @@ public class Heal_obj : MonoBehaviour
 
     private bool already_spawn_boss = false;
 
-
+    public GameObject[] badie_backup;
 
     // Start is called before the first frame update
     void Start()
@@ -31,14 +31,14 @@ public class Heal_obj : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (spawn_boss != null && already_spawn_boss == false)
+        if (already_spawn_boss == false)
         {
 
         
             if (Vector3.Distance(this.transform.position, froggy_player.transform.position) < dis_for_actiavtion)
             {
                 already_spawn_boss = true;
-                Instantiate(spawn_boss, this.transform);
+                Instantiate(spawn_boss, this.transform.TransformPoint(0, 2, 0), this.transform.rotation);
             }
         }
 
@@ -55,6 +55,10 @@ public class Heal_obj : MonoBehaviour
 
     public void Half_time_spawns()
     {
+        for (int i = 0; i < badie_backup.Length; i++)
+        {
+            Instantiate(badie_backup[i], this.transform.TransformPoint(i, 2, 2), this.transform.rotation);
+        }
         Instantiate(heal_life_pod, this.transform);
         track_heal_life_pod = GameObject.FindGameObjectWithTag("heal_life_pod_boss");
         spawned_heal_pod = true;

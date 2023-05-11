@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6119736933875623021}
   - component: {fileID: 107754152776729008}
   - component: {fileID: 6297696363005134284}
+  - component: {fileID: 8008610486161518145}
   m_Layer: 0
   m_Name: Big_bullet
   m_TagString: Projectile
@@ -148,3 +149,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8008610486161518145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2725785661317062447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 212066b66d392694ba8438ff584b2b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HealthPoints: 1
+  telescope_hit: 1
+  punch_jab: 1
+  set_to_disable: 0
+  heal: 1
+  currentEnemyHealth: 0
+  particial_trigger: {fileID: 0}
+  hit_delay_vission_delay: 0.5
+  drop_item_number: 0

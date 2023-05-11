@@ -8,9 +8,14 @@ public class ProjectileBeingShoot : MonoBehaviour
     public float SpeedZdirection = 30.0f; //Y axis direction of the force being added when shot
     public float DelayOutOfBoundProtical = 10.0f; // Time until this project after being shot will be destoryed.
 
+    public bool toggle_self_destroy_off = false;
     void Start()
     {
-        Invoke("OutOfBoundsDestroySelf", DelayOutOfBoundProtical);
+        if(toggle_self_destroy_off == false)
+        {
+
+            Invoke("OutOfBoundsDestroySelf", DelayOutOfBoundProtical);
+        }
     }
 
 
