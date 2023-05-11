@@ -44,7 +44,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1587983743059127998}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 796fd1b9bc60bbc4fa8f9cb6dccbb7c2, type: 3}
 --- !u!23 &2162254572537564818
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ad2b2676ca4b2c1469122f1a24b959ee, type: 2}
+  - {fileID: 8329212627317441512, guid: 8ce48313f9880b547b56e6d961844681, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -114,9 +114,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DropSelect: 3
   PlayerFroggy: {fileID: 0}
-  PlayerWithInDistance: 40
+  PlayerWithInDistance: 10
   length: 2
-  StopFollowDistance: 60
+  StopFollowDistance: 20
   MarkerHolder: {fileID: 0}
   Markers:
   - {fileID: 0}
@@ -131,7 +131,7 @@ MonoBehaviour:
   NavMeshAgent: {fileID: 0}
   FroggyPlayer: {fileID: 0}
   speed: 6
-  shoot_range: 10
+  check_shoot: {fileID: 0}
   shooter: 0
 --- !u!54 &7101166063495325072
 Rigidbody:
@@ -165,3 +165,7 @@ MonoBehaviour:
   telescope_hit: 10
   punch_jab: 10
   set_to_disable: 0
+  currentEnemyHealth: 0
+  particial_trigger: {fileID: 0}
+  hit_delay_vission_delay: 0.5
+  drop_item_number: 0
