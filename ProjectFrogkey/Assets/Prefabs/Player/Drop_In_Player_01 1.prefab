@@ -31777,7 +31777,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7623609067253519094
 RectTransform:
   m_ObjectHideFlags: 0
@@ -32286,7 +32286,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7623609067343729957}
-  m_LocalRotation: {x: 0.091180116, y: -0.0000000171347, z: 0.0000000015688796, w: 0.9958344}
+  m_LocalRotation: {x: 0.091180116, y: 0.000000017134711, z: -0.0000000015688805, w: 0.9958344}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -33352,7 +33352,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7623609067480495898}
-  m_LocalRotation: {x: 0.16018224, y: 0.000000004252742, z: -6.9012523e-10, w: 0.9870875}
+  m_LocalRotation: {x: 0.16018225, y: 0.000000023309845, z: -0.000000003782667, w: 0.9870875}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -44870,6 +44870,10 @@ PrefabInstance:
       value: Hopps_fbx
       objectReference: {fileID: 0}
     - target: {fileID: 5307289499940353253, guid: ed34525269ba4314e906a4c8f784139d, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5307289499940353253, guid: ed34525269ba4314e906a4c8f784139d, type: 3}
       propertyPath: m_CastShadows
       value: 1
       objectReference: {fileID: 0}
@@ -44877,8 +44881,16 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4ff996e3a0a5743a3987ab6231160665, type: 2}
+    - target: {fileID: 5375584370676921550, guid: ed34525269ba4314e906a4c8f784139d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6280764707913834641, guid: ed34525269ba4314e906a4c8f784139d, type: 3}
       propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6280764707913834641, guid: ed34525269ba4314e906a4c8f784139d, type: 3}
+      propertyPath: m_SkinnedMotionVectors
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6280764707913834641, guid: ed34525269ba4314e906a4c8f784139d, type: 3}
@@ -44960,7 +44972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da36845d536d7534eb58797cbd14956a, type: 3}
       propertyPath: m_LocalScale.x
-      value: -0.00031036243
+      value: 0.0003103624
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da36845d536d7534eb58797cbd14956a, type: 3}
       propertyPath: m_LocalScale.y
@@ -44972,15 +44984,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da36845d536d7534eb58797cbd14956a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: -0.02403
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da36845d536d7534eb58797cbd14956a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.00069
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da36845d536d7534eb58797cbd14956a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.00142
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: da36845d536d7534eb58797cbd14956a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -45010,6 +45022,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7610889567837546266, guid: da36845d536d7534eb58797cbd14956a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 4874126678125670354, guid: 2f0a2599e256a7f4c92f1869aadbdf8f, type: 3}
     - target: {fileID: 919132149155446097, guid: da36845d536d7534eb58797cbd14956a, type: 3}
       propertyPath: m_Name
       value: Telescope_Zbrush
