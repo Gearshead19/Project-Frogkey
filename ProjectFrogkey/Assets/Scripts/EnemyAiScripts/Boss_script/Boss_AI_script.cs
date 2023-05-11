@@ -19,6 +19,11 @@ public enum Boss_Attacks
 
 public class Boss_AI_script : MonoBehaviour
 {
+
+    public GameObject spread_attack;
+
+    public GameObject follow_attack;
+
     public Boss_States Boss_state = new Boss_States();
 
     public Boss_Attacks Boss_Attack = new Boss_Attacks();
@@ -29,6 +34,8 @@ public class Boss_AI_script : MonoBehaviour
 
     private float dis = 0;
 
+
+    //ditance for swichting type of attack states
     public float close_dis = 1;
 
     public float far_dis = 10;
@@ -51,12 +58,17 @@ public class Boss_AI_script : MonoBehaviour
 
     public float turn_speed = 60;
 
+    private GameObject melee_attack;
+
     void Start()
     {
         start_pos = this.transform.position;
         froggy_player = GameObject.FindGameObjectWithTag("FindPlayer");
         heal = GameObject.FindGameObjectWithTag("boss_heal");
         boss_body = GameObject.FindGameObjectWithTag("boss_body");
+        melee_attack = GameObject.FindGameObjectWithTag("boss_melee");
+
+        melee_attack.SetActive(false);
     }
 
     void Update()
@@ -142,14 +154,14 @@ public class Boss_AI_script : MonoBehaviour
                 break;
 
             case Boss_States.REJUVENATEGOTO:
-                if (heal != null || heal.activeSelf == true)
+                if (heal != null && heal.activeSelf == true)
                 {
                     Move_to_player(heal);
                 }
 
                 if (heal_dis < 1)
                 {
-
+                    heal.GetComponent<Heal_obj>().Half_time_spawns();
                     boss_body.GetComponent<EnemyHealth>().Untouchable();
                     Boss_state = Boss_States.REJUVENATE;
                 }
@@ -177,21 +189,40 @@ public class Boss_AI_script : MonoBehaviour
         }
     }
 
+    void Stop_close_attack()
+    {
+        Boss_Attack = Boss_Attacks.IDLE_ATTACK;
+        melee_attack.SetActive(false);
+    }
+
     void Boss_attack_event()
     {
         switch (Boss_Attack)
         {
             case Boss_Attacks.CLOSE_ATTACK:
 
+                if(melee_attack.activeSelf == false)
+                {
 
+                    Invoke("Stop_close_attack", .2f);
+                }
+
+                melee_attack.SetActive(true);
+                
                 break;
 
             case Boss_Attacks.RANGE_FOLLOW_ATTACK:
+
+                Range_follow_attack();
+                Boss_Attack =  Boss_Attacks.IDLE_ATTACK;
 
                 break;
 
             case Boss_Attacks.RANGE_SPREAD_ATTACK:
 
+                Range_spread_attack();
+                Boss_Attack = Boss_Attacks.IDLE_ATTACK;
+                
                 break;
 
             case Boss_Attacks.IDLE_ATTACK:
@@ -228,6 +259,20 @@ public class Boss_AI_script : MonoBehaviour
         }
 
     }
+
+
+    void Range_spread_attack()
+    {
+
+    }
+
+    void Range_follow_attack()
+    {
+
+    }
+
+
+
 
     void Move_to_player(GameObject goto_location)
     {
