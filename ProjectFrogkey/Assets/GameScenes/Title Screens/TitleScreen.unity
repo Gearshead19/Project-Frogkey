@@ -729,6 +729,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1213901098}
   m_CullTransparentMesh: 1
+--- !u!1 &1262975158 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3122629322592545378, guid: e428766009439f245a9df86e0626b992, type: 3}
+  m_PrefabInstance: {fileID: 845353052}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1350616111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,6 +1261,17 @@ MonoBehaviour:
     positionOffset: {x: 0, y: 0, z: 0}
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
+--- !u!114 &1900319679 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9031161556039516351, guid: e428766009439f245a9df86e0626b992, type: 3}
+  m_PrefabInstance: {fileID: 845353052}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def886564adb2cf49a42e907bd7ee5cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1913319836
 GameObject:
   m_ObjectHideFlags: 0
@@ -1716,6 +1732,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cca42fbabbd56c14c9300d3b900ad5f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui: {fileID: 0}
-  sceneFader: {fileID: 0}
+  ui: {fileID: 1262975158}
+  sceneFader: {fileID: 1900319679}
   menuSceneName: TitleScreen
