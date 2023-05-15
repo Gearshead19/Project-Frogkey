@@ -320,8 +320,8 @@ public class PlayerMovement : MonoBehaviour
 
         inputVector = value.Get<Vector2>();
 
-        inputVector.x = horizontalInput;
-        inputVector.y = verticalInput;
+        inputVector.x = horizontalInput * Time.deltaTime;
+        inputVector.y = verticalInput * Time.deltaTime;
 
         //  Debug.Log("H: " + horizontalInput + "V: " + verticalInput);
         Debug.Log(desiredMoveSpeed);
